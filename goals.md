@@ -1,0 +1,12 @@
+Week 1
+- [ ] Brainstorming different acts of kindness and categoriezing them
+- [ ] Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
+- [ ] Homepage with selected tasks on it
+- [ ] Having task categories and lists of tasks in each category
+- [ ] Adding tasks to your homepage via the categorized task lists ^
+- [ ] Removing tasks from your homepage
+- [ ] Clicking "done" on a task will update the daily streak if needed
+- [ ] User profile page
+  - [ ] Name label
+  - [ ] Static profile picture and location label temporarily
+  - [ ] Functional streak label
