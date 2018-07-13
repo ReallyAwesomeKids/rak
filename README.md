@@ -88,15 +88,15 @@ CORE
   - [ ] Name label
   - [ ] Static profile picture and location label temporarily
   - [ ] Functional streak label
+- [ ] (Haley) Detail view of each task
+  - [ ] User's progress
+  - [ ] Difficulty level
   
 EXTENDED
 - [ ] Design launch screen and logo
 - [ ] Determine color scheme
 
 ### Week 2
-- [ ] Detail view of each task
-  - [ ] User's progress
-  - [ ] Difficulty level
 - [ ] Searching for users tab
 - [ ] Invite/challenge friend via text message/email
 - [ ] Badges on profile page
