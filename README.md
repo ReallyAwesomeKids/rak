@@ -25,7 +25,7 @@ What will your final demo look like?
 
 What mobile features do you leverage?
 - **Convenience and mobility of phones**: Everyone always has their phone, so it's easy to open the app and mark the act of kindness you completed right after you did it
-- *Maps**: The Local Needs tab uses a map to show needs in the community
+- **Maps**: The Local Needs tab uses a map to show needs in the community
 
 What are your technical concerns?
 - Working with complex database objects (ex. dictionary)
@@ -106,7 +106,7 @@ EXTENDED
   - [ ] Share to Facebook
   - [ ] Share to Twitter
   
-Week 3
+### Week 3
 - [ ] Map view
   - [ ] See pins from db
   - [ ] Make pins
