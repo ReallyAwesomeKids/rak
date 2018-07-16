@@ -76,7 +76,7 @@ What are your technical concerns?
 ### Week 1
 
 CORE
-- [ ] (Everyone) Redo wireframes with details
+- [x] (Everyone) Redo wireframes with details
 - [ ] (Everyone) Brainstorming different acts of kindness and categoriezing them
 - [ ] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
 - [ ] (Gustavo) Homepage with selected tasks on it
