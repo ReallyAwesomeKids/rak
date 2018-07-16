@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B8A20FD4110004568EF /* CategoriesCell.m */; };
 		48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDF13E0D63C064B2817FBB /* libPods-rak.a */; };
 		5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CEA20FD15A200C180C9 /* AppDelegate.m */; };
 		5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CEF20FD15A200C180C9 /* Main.storyboard */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C5C3B8920FD4110004568EF /* CategoriesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesCell.h; sourceTree = "<group>"; };
+		2C5C3B8A20FD4110004568EF /* CategoriesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesCell.m; sourceTree = "<group>"; };
 		2ECDF13E0D63C064B2817FBB /* libPods-rak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rakUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		317354D07177A40A39F507D7 /* libPods-rakTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rakTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +128,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C5C3B8520FD3F98004568EF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2C5C3B8920FD4110004568EF /* CategoriesCell.h */,
+				2C5C3B8A20FD4110004568EF /* CategoriesCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		5D329CDD20FD15A200C180C9 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				5D329D2520FD163C00C180C9 /* Models */,
+				2C5C3B8520FD3F98004568EF /* Cells */,
 				5D329D2420FD163000C180C9 /* View Controllers */,
 				5D329D2320FD161300C180C9 /* Storyboards */,
 				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
@@ -474,6 +487,7 @@
 				5D329CF920FD15A300C180C9 /* main.m in Sources */,
 				5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
+				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
 				5D329D4220FD1C9C00C180C9 /* CustomUser.m in Sources */,
 				5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */,
