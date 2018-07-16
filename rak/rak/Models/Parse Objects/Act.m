@@ -14,6 +14,6 @@
     return @"Act";
 }
 
-@dynamic actName, actDescription, difficultyLevel, levelRequirements;
+@dynamic actName, difficultyLevel, category;
 
 @end

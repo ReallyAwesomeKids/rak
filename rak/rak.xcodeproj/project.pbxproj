@@ -28,6 +28,7 @@
 		5D329D4220FD1C9C00C180C9 /* CustomUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D4120FD1C9C00C180C9 /* CustomUser.m */; };
 		5D329D4520FD1F4200C180C9 /* Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D4420FD1F4200C180C9 /* Badge.m */; };
 		5D329D4720FD208200C180C9 /* ActDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329D4620FD208200C180C9 /* ActDetail.storyboard */; };
+		5D329D4D20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D4C20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m */; };
 		8C1A5F2E1E6BC31C46ECD42B /* libPods-rakUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */; };
 		FBFA6E4C50DF6C67769C0BAA /* libPods-rakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317354D07177A40A39F507D7 /* libPods-rakTests.a */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,8 @@
 		5D329D4320FD1F4200C180C9 /* Badge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Badge.h; sourceTree = "<group>"; };
 		5D329D4420FD1F4200C180C9 /* Badge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Badge.m; sourceTree = "<group>"; };
 		5D329D4620FD208200C180C9 /* ActDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ActDetail.storyboard; sourceTree = "<group>"; };
+		5D329D4B20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExperiencePointsToLevelConverter.h; sourceTree = "<group>"; };
+		5D329D4C20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExperiencePointsToLevelConverter.m; sourceTree = "<group>"; };
 		619B39390757B38624E8FACC /* Pods-rakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakUITests/Pods-rakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BAF82B4EFD8956D071E8D9F /* Pods-rak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rak.release.xcconfig"; path = "Pods/Target Support Files/Pods-rak/Pods-rak.release.xcconfig"; sourceTree = "<group>"; };
 		9F3DB2BA3A4F1BCE6D085B20 /* Pods-rakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakTests/Pods-rakTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 				5D329D4120FD1C9C00C180C9 /* CustomUser.m */,
 				5D329D4320FD1F4200C180C9 /* Badge.h */,
 				5D329D4420FD1F4200C180C9 /* Badge.m */,
+				5D329D4B20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.h */,
+				5D329D4C20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m */,
 			);
 			path = "Parse Objects";
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
+				5D329D4D20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m in Sources */,
 				5D329D4220FD1C9C00C180C9 /* CustomUser.m in Sources */,
 				5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */,
 				5D329D3F20FD1AA900C180C9 /* Act.m in Sources */,
