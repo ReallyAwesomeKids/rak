@@ -32,6 +32,8 @@
 		5D329D4720FD208200C180C9 /* ActDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329D4620FD208200C180C9 /* ActDetail.storyboard */; };
 		5D329D4D20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D4C20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m */; };
 		5D329D5020FD436C00C180C9 /* InitializeDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D4F20FD436C00C180C9 /* InitializeDB.m */; };
+		5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D5220FD4BB800C180C9 /* ProfileHeader.m */; };
+		5D329D5620FD4CBA00C180C9 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D5520FD4CBA00C180C9 /* BadgeCell.m */; };
 		8C1A5F2E1E6BC31C46ECD42B /* libPods-rakUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */; };
 		FBFA6E4C50DF6C67769C0BAA /* libPods-rakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317354D07177A40A39F507D7 /* libPods-rakTests.a */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,10 @@
 		5D329D4C20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExperiencePointsToLevelConverter.m; sourceTree = "<group>"; };
 		5D329D4E20FD436C00C180C9 /* InitializeDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitializeDB.h; sourceTree = "<group>"; };
 		5D329D4F20FD436C00C180C9 /* InitializeDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitializeDB.m; sourceTree = "<group>"; };
+		5D329D5120FD4BB800C180C9 /* ProfileHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileHeader.h; sourceTree = "<group>"; };
+		5D329D5220FD4BB800C180C9 /* ProfileHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileHeader.m; sourceTree = "<group>"; };
+		5D329D5420FD4CBA00C180C9 /* BadgeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BadgeCell.h; sourceTree = "<group>"; };
+		5D329D5520FD4CBA00C180C9 /* BadgeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeCell.m; sourceTree = "<group>"; };
 		619B39390757B38624E8FACC /* Pods-rakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakUITests/Pods-rakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BAF82B4EFD8956D071E8D9F /* Pods-rak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rak.release.xcconfig"; path = "Pods/Target Support Files/Pods-rak/Pods-rak.release.xcconfig"; sourceTree = "<group>"; };
 		9F3DB2BA3A4F1BCE6D085B20 /* Pods-rakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakTests/Pods-rakTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +150,10 @@
 				2C5C3B8A20FD4110004568EF /* CategoriesCell.m */,
 				548B222B20FD508200D667F7 /* ActsTableViewCell.h */,
 				548B222C20FD508200D667F7 /* ActsTableViewCell.m */,
+				5D329D5120FD4BB800C180C9 /* ProfileHeader.h */,
+				5D329D5220FD4BB800C180C9 /* ProfileHeader.m */,
+				5D329D5420FD4CBA00C180C9 /* BadgeCell.h */,
+				5D329D5520FD4CBA00C180C9 /* BadgeCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -502,10 +512,12 @@
 				5D329CF920FD15A300C180C9 /* main.m in Sources */,
 				5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
+				5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */,
 				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
 				5D329D5020FD436C00C180C9 /* InitializeDB.m in Sources */,
+				5D329D5620FD4CBA00C180C9 /* BadgeCell.m in Sources */,
 				5D329D4D20FD3FB300C180C9 /* ExperiencePointsToLevelConverter.m in Sources */,
 				5D329D4220FD1C9C00C180C9 /* CustomUser.m in Sources */,
 				5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */,

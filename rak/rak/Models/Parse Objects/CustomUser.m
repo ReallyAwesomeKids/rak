@@ -12,4 +12,15 @@
 
 @dynamic username, password, profileImage, displayName, location, streak, experiencePoints, badges;
 
++ (PFFile *)getPFFileFromImage:(UIImage *)image {
+    if (!image) {
+        return nil;
+    }
+    NSData *imageData = UIImagePNGRepresentation(image);
+    if (!imageData) {
+        return nil;
+    }
+    return [PFFile fileWithName:@"profileImage.png" data:imageData];
+}
+
 @end

@@ -20,4 +20,6 @@
 @property (strong, nonatomic) NSArray *badges;
 
 
++ (PFFile *)getPFFileFromImage:(UIImage *)image;
+
 @end
