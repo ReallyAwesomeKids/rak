@@ -16,6 +16,8 @@
 @property (strong, nonatomic) NSString *displayName;
 @property (strong, nonatomic) NSString *location;
 @property (nonatomic) NSInteger streak;
+@property (nonatomic) NSInteger experiencePoints;
 @property (strong, nonatomic) NSArray *badges;
+
 
 @end

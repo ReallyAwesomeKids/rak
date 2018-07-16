@@ -10,6 +10,6 @@
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, badges;
+@dynamic username, password, profileImage, displayName, location, streak, experiencePoints, badges;
 
 @end

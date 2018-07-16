@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "Act.h"
 
 @interface HomeViewController ()
 

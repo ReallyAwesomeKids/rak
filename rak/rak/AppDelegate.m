@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import <Parse/Parse.h>
+#import "InitializeDB.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +28,10 @@
     }];
     
     [Parse initializeWithConfiguration:config];
-    // Override point for customization after application launch.
+  
+    /* DO NOT UNCOMMENT unless you want to add all tasks to the db!! */
+    // [InitializeDB initializeDatabase];
+    
     return YES;
 }
 
