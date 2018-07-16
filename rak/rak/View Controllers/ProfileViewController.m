@@ -39,9 +39,7 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     ProfileHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"profileHeader" forIndexPath:indexPath];
-    header.displayNameLabel.text = @"Haley";
-    header.levelLabel.text = @"Level 11";
-    header.percentToNextLevelLabel.text = @"15% to Level 12";
+    header.user = CustomUser.currentUser;
     
     return header;
 }
