@@ -77,7 +77,7 @@ What are your technical concerns?
 
 CORE
 - [x] (Everyone) Redo wireframes with details
-- [ ] (Everyone) Brainstorming different acts of kindness and categoriezing them
+- [x] (Everyone) Brainstorming different acts of kindness and categoriezing them
 - [ ] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
 - [ ] (Gustavo) Homepage with selected tasks on it
 - [ ] (Gustavo) Removing tasks from your homepage
