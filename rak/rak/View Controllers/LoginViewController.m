@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "CustomUser.h"
 
 @interface LoginViewController ()
 
@@ -21,7 +22,33 @@
 
 
 - (IBAction)didTap:(id)sender {
-    [self performSegueWithIdentifier:@"toGustavoSegue" sender:nil];
+   
+   /*
+    CustomUser *newUser = [CustomUser new];
+
+    newUser.username = @"a";
+    newUser.password = @"a";
+    
+    newUser.profileImage = [CustomUser getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
+    newUser.displayName = @"Ayyyy";
+    newUser.location = @"Menlo Park";
+    newUser.streak = 0;
+    newUser.experiencePoints = 0;
+    newUser.badges = [NSArray new];
+    
+    [newUser signUpInBackground];
+    */
+    [CustomUser logInWithUsernameInBackground:@"a"
+                                     password:@"a"
+                                        block:^(PFUser * _Nullable user, NSError * _Nullable error) {
+                                            if (error != nil) {
+                                                NSLog(@"error: %@", error.localizedDescription);
+                                            }
+                                            else {
+                                                [self performSegueWithIdentifier:@"toGustavoSegue" sender:nil];
+                                            }
+                                        }];
+    
 }
 
 
@@ -31,13 +58,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
