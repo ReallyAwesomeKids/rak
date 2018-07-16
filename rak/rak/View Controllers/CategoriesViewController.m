@@ -9,7 +9,8 @@
 #import "CategoriesViewController.h"
 #import "CategoriesCell.h"
 #import "Parse/Parse.h"
-
+#import "InitializeDB.h"
+#import "Act.h"
 @interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
 @property (strong,nonatomic) CategoriesCell *cell;
@@ -25,6 +26,7 @@
     self.categoriesCollectionView.dataSource = self;
     // Do any additional setup after loading the view.
     [self changeCategoriesLayout];
+    [self fetchCategories];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,15 +34,18 @@
     // Dispose of any resources that can be recreated.
 }
 - (void) changeCategoriesLayout {
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
-    
-    layout.minimumInteritemSpacing = 5;
-    layout.minimumLineSpacing = 5;
-    CGFloat categoriesPerLine = 3;
-    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - 1))/ categoriesPerLine;
-    CGFloat itemHeight = itemWidth * 1.5;
-    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+//    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
+//    
+//    layout.minimumInteritemSpacing = 5;
+//    layout.minimumLineSpacing = 5;
+//    CGFloat categoriesPerLine = 3;
+//    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - 1))/ categoriesPerLine;
+//    CGFloat itemHeight = itemWidth * 1.5;
+//    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
     self.cell.categoriesView.layer.cornerRadius = self.cell.categoriesView.frame.size.width/2;
+    self.cell.categoriesView.layer.borderWidth = 2.0f;
+    self.cell.categoriesView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.cell.categoriesView.layer.masksToBounds = YES;
 }
 /*
 #pragma mark - Navigation
@@ -51,22 +56,30 @@
     // Pass the selected object to the new view controller.
 }
 */
-//**************************
-/*
+
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    <#code#>
+    
+    self.cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoriesCell" forIndexPath:indexPath];
+    
+    
+    Act *act = self.categories[indexPath.row];
+    
+    [self.cell configureCell:(Act*)act];
+
+    return self.cell;
 
 }
-*/
+
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     return self.categories.count;
 }
 
 - (void)fetchCategories {
     PFQuery *query = [PFQuery queryWithClassName:@"Act"];
     [query includeKey:@"category"];
+    [query whereKeyExists:@"category"];
     query.limit = 20;
-    [query orderByDescending:@"createdAt"];
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *categories, NSError *error) {
         if (categories != nil) {
