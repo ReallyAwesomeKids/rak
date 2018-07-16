@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="-767" y="724"/>
         </scene>
-        <!--Category-->
+        <!--Categories-->
         <scene sceneID="JDL-Fo-5Dq">
             <objects>
-                <viewControllerPlaceholder storyboardName="Category" id="pj1-IN-X35" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Category" referencedIdentifier="Categories" id="pj1-IN-X35" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="j7b-Zf-fdJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgy-51-gi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
