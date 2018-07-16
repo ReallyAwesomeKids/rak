@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) NSString *actName;
 @property (strong, nonatomic) NSString *difficultyLevel;
-@property (strong, nonatomic) NSDictionary *levelRequirements;
 @property (strong, nonatomic) NSString *category;
 
 @end
