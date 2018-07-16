@@ -12,7 +12,7 @@
 @interface Act : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) NSString *actName;
-@property (strong, nonatomic) NSString *difficultyLevel;
+@property (nonatomic) NSInteger pointsWorth;
 @property (strong, nonatomic) NSString *category;
 
 @end
