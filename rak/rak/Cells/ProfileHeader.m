@@ -18,6 +18,7 @@
 - (void)configureProfileHeader {
     self.displayNameLabel.text = self.user.displayName;
     self.locationLabel.text = self.user.location;
+    
     self.levelLabel.text = @"(temp) Level 0";
     self.percentToNextLevelLabel.text = @"(temp) 12% to Level 1";
 }

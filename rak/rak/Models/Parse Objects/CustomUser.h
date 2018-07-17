@@ -17,7 +17,10 @@
 @property (strong, nonatomic) NSString *location;
 @property (nonatomic) NSInteger streak;
 @property (nonatomic) NSInteger experiencePoints;
+@property (nonatomic) NSDictionary *actsDone;
 @property (strong, nonatomic) NSArray *badges;
+
+@property (strong, nonatomic) NSArray *chosenActs;
 
 
 + (PFFile *)getPFFileFromImage:(UIImage *)image;

@@ -22,6 +22,7 @@
 }
 
 - (void) setAct:(Act *)act {
-    
+    _act = act;
+    self.homeCellActName.text = self.act.actName;
 }
 @end
