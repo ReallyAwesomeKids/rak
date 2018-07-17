@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B8A20FD4110004568EF /* CategoriesCell.m */; };
+		2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B8D20FE672F004568EF /* ActsCell.m */; };
 		48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDF13E0D63C064B2817FBB /* libPods-rak.a */; };
 		548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 548B222C20FD508200D667F7 /* ActsTableViewCell.m */; };
 		5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CEA20FD15A200C180C9 /* AppDelegate.m */; };
@@ -58,6 +59,8 @@
 /* Begin PBXFileReference section */
 		2C5C3B8920FD4110004568EF /* CategoriesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesCell.h; sourceTree = "<group>"; };
 		2C5C3B8A20FD4110004568EF /* CategoriesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesCell.m; sourceTree = "<group>"; };
+		2C5C3B8C20FE672F004568EF /* ActsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActsCell.h; sourceTree = "<group>"; };
+		2C5C3B8D20FE672F004568EF /* ActsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActsCell.m; sourceTree = "<group>"; };
 		2ECDF13E0D63C064B2817FBB /* libPods-rak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rakUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		317354D07177A40A39F507D7 /* libPods-rakTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rakTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +149,8 @@
 		2C5C3B8520FD3F98004568EF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2C5C3B8C20FE672F004568EF /* ActsCell.h */,
+				2C5C3B8D20FE672F004568EF /* ActsCell.m */,
 				2C5C3B8920FD4110004568EF /* CategoriesCell.h */,
 				2C5C3B8A20FD4110004568EF /* CategoriesCell.m */,
 				548B222B20FD508200D667F7 /* ActsTableViewCell.h */,
@@ -511,6 +516,7 @@
 				5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */,
 				5D329CF920FD15A300C180C9 /* main.m in Sources */,
 				5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */,
+				2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
 				5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */,
 				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,

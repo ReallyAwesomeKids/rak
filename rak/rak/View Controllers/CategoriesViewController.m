@@ -34,18 +34,19 @@
     // Dispose of any resources that can be recreated.
 }
 - (void) changeCategoriesLayout {
-//    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
-//    
-//    layout.minimumInteritemSpacing = 5;
-//    layout.minimumLineSpacing = 5;
-//    CGFloat categoriesPerLine = 3;
-//    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - 1))/ categoriesPerLine;
-//    CGFloat itemHeight = itemWidth * 1.5;
-//    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
-    self.cell.categoriesView.layer.cornerRadius = self.cell.categoriesView.frame.size.width/2;
-    self.cell.categoriesView.layer.borderWidth = 2.0f;
-    self.cell.categoriesView.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.cell.categoriesView.layer.masksToBounds = YES;
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
+    
+    layout.minimumInteritemSpacing = 5;
+    layout.minimumLineSpacing = 5;
+    CGFloat categoriesPerLine = 3;
+    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - 1))/ categoriesPerLine;
+    CGFloat itemHeight = itemWidth * 1.5;
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    
+//    self.cell.categoriesView.layer.cornerRadius = self.cell.categoriesView.frame.size.width/2;
+//    self.cell.categoriesView.layer.borderWidth = 2.0f;
+//    self.cell.categoriesView.layer.borderColor = [UIColor whiteColor].CGColor;
+//    self.cell.categoriesView.layer.masksToBounds = YES;
 }
 /*
 #pragma mark - Navigation
