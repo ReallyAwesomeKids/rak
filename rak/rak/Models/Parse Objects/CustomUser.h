@@ -20,6 +20,8 @@
 @property (nonatomic) NSDictionary *actsDone;
 @property (strong, nonatomic) NSArray *badges;
 
+@property (strong, nonatomic) NSArray *chosenActs;
+
 
 + (PFFile *)getPFFileFromImage:(UIImage *)image;
 

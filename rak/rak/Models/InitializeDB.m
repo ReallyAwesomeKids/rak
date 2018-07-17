@@ -30,8 +30,15 @@
      newUser.experiencePoints = 0;
      newUser.actsDone = @{};
      newUser.badges = [NSArray new];
+     newUser.chosenActs = [NSArray new];
      
-     [newUser signUpInBackground];
+    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error)
+            NSLog(@"error signing up: %@", error.localizedDescription);
+        else {
+            NSLog(@"success signing up");
+        }
+    }];
 }
 
 + (void)initializeActs {

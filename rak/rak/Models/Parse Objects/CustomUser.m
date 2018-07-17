@@ -10,7 +10,7 @@
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, experiencePoints, actsDone, badges;
+@dynamic username, password, profileImage, displayName, location, streak, experiencePoints, actsDone, badges, chosenActs;
 
 + (PFFile *)getPFFileFromImage:(UIImage *)image {
     if (!image) {
