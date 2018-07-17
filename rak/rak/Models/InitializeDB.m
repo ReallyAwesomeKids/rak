@@ -37,9 +37,6 @@
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)
             NSLog(@"error signing up: %@", error.localizedDescription);
-        else {
-            NSLog(@"success signing up");
-        }
     }];
 }
 
@@ -94,9 +91,7 @@
             act.category = key;
             [act saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (error)
-                    NSLog(@"error: %@", error.localizedDescription);
-                else
-                    NSLog(@"logged %@", act.actName);
+                    NSLog(@"error initializing acts: %@", error.localizedDescription);
             }];
         }
     }
@@ -115,8 +110,8 @@
         [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable acts, NSError * _Nullable error) {
             category.acts = acts;
             [category saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                if (!error) {
-                    NSLog(@"successfully saved %@", cat);
+                if (error) {
+                    NSLog(@"error initializing category: %@", error.localizedDescription);
                 }
             }];
         }];
