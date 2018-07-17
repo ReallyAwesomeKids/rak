@@ -29,7 +29,4 @@
 
 - (void)updateDailyStreak;
 
-
-+ (PFFile *)getPFFileFromImage:(UIImage *)image;
-
 @end
