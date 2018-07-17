@@ -29,8 +29,7 @@
     
     [Parse initializeWithConfiguration:config];
   
-    /* DO NOT UNCOMMENT unless you want to add all tasks to the db!! */
-    // [InitializeDB initializeDatabase];
+    [InitializeDB initializeDatabase];
     
     return YES;
 }
