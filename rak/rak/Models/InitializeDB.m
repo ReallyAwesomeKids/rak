@@ -9,12 +9,12 @@
 #import "InitializeDB.h"
 #import "Act.h"
 #import "CustomUser.h"
-#import "Category.h"
+#import "ActCategory.h"
 
 @implementation InitializeDB
 
 + (void) initializeDatabase {
-    //[self initializeCategories];
+    [self initializeActCategories];
     //[self initializeUser];
     //[self initializeActs];
 }
@@ -102,11 +102,11 @@
     }
 }
 
-+ (void)initializeCategories {
++ (void)initializeActCategories {
     NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work"];
     for (NSString *cat in cats) {
         
-        Category *category = [[Category alloc] init];
+        ActCategory *category = [[ActCategory alloc] init];
         category.categoryName = cat;
         PFQuery *query = [PFQuery queryWithClassName:@"Act"];
         [query orderByAscending:@"actName"];

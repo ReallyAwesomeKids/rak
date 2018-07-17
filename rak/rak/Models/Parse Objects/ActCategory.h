@@ -1,5 +1,5 @@
 //
-//  Category.h
+//  ActCategory.h
 //  rak
 //
 //  Created by Haley Zeng on 7/17/18.
@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@interface Category : PFObject <PFSubclassing>
+@interface ActCategory : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) NSString *categoryName;
 @property (strong, nonatomic) NSArray *acts;
+
 
 
 @end
