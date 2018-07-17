@@ -80,7 +80,7 @@ What are your technical concerns?
 CORE
 - [x] (Everyone) Redo wireframes with details
 - [x] (Everyone) Brainstorming different acts of kindness and categoriezing them
-- [ ] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
+- [x] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
 - [ ] (Gustavo) Homepage with selected tasks on it
 - [ ] (Gustavo) Removing tasks from your homepage
 - [ ] (Gustavo) Clicking "done" on a task will update the daily streak if needed
@@ -97,6 +97,8 @@ CORE
 EXTENDED
 - [ ] Design launch screen and logo
 - [ ] Determine color scheme
+- [ ] (Gustavo) Homepage notifications when button clicked "done"
+
 
 ### Week 2
 - [ ] Searching for users tab
