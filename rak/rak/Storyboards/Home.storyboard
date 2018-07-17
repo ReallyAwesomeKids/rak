@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Wp-XI-8V7">
-                                <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                                <rect key="frame" x="0.0" y="168" width="375" height="499"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -56,13 +56,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ3-ZR-dSE">
-                                                    <rect key="frame" x="9" y="15" width="320" height="41"/>
+                                                    <rect key="frame" x="9" y="15" width="316" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1k-5F-Kki">
-                                                    <rect key="frame" x="338" y="15" width="25" height="25"/>
+                                                    <rect key="frame" x="334" y="15" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="63O-Mq-Thl"/>
                                                         <constraint firstAttribute="width" constant="25" id="mh8-fM-bhd"/>
@@ -76,7 +76,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="SQ3-ZR-dSE" secondAttribute="bottom" constant="8.5" id="Ale-JT-EtK"/>
-                                                <constraint firstAttribute="trailing" secondItem="n1k-5F-Kki" secondAttribute="trailing" constant="12" id="DcE-Rh-jZi"/>
+                                                <constraint firstAttribute="trailing" secondItem="n1k-5F-Kki" secondAttribute="trailing" constant="16" id="DcE-Rh-jZi"/>
                                                 <constraint firstItem="SQ3-ZR-dSE" firstAttribute="leading" secondItem="OJ5-FV-LSE" secondAttribute="leading" constant="9" id="L6l-01-XKI"/>
                                                 <constraint firstItem="n1k-5F-Kki" firstAttribute="top" secondItem="OJ5-FV-LSE" secondAttribute="top" constant="15" id="XIj-eb-D7d"/>
                                                 <constraint firstItem="n1k-5F-Kki" firstAttribute="leading" secondItem="SQ3-ZR-dSE" secondAttribute="trailing" constant="9" id="bV0-PJ-1up"/>
@@ -92,41 +92,63 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-sv-jpY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-sv-jpY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="105"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="challenge" translatesAutoresizingMaskIntoConstraints="NO" id="10G-vc-XkH">
-                                        <rect key="frame" x="8" y="4" width="65" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="challenge" translatesAutoresizingMaskIntoConstraints="NO" id="10G-vc-XkH">
+                                        <rect key="frame" x="8" y="20" width="65" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="awi-b7-xM2"/>
+                                            <constraint firstAttribute="width" constant="65" id="pRv-HO-9Fl"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
-                                        <rect key="frame" x="81" y="28" width="226" height="17"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily Challenge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-Zo-TKf">
-                                        <rect key="frame" x="81" y="4" width="129" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Challenge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-Zo-TKf">
+                                        <rect key="frame" x="83" y="20" width="243" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-r4-Rdd">
-                                        <rect key="frame" x="325" y="21" width="25" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-r4-Rdd">
+                                        <rect key="frame" x="334" y="40" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="7vq-5E-kgL"/>
+                                            <constraint firstAttribute="width" constant="25" id="MV9-v9-RPf"/>
+                                        </constraints>
                                         <state key="normal" image="xx"/>
                                         <connections>
                                             <action selector="didTapCheckmarkButton:" destination="9DP-4D-YYf" eventType="touchUpInside" id="p8r-Mh-jHz"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
+                                        <rect key="frame" x="85" y="44" width="239" height="33"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.76862745098039209" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="GPj-mr-fdr" firstAttribute="leading" secondItem="HvJ-sv-jpY" secondAttribute="leading" constant="85" id="0bc-bZ-okT"/>
+                                    <constraint firstItem="A7O-Zo-TKf" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="20" id="0wP-g5-ts2"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHC-r4-Rdd" secondAttribute="trailing" constant="16" id="1Ms-5C-PUX"/>
+                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="GPj-mr-fdr" secondAttribute="trailing" constant="10" id="1lk-X8-EaZ"/>
+                                    <constraint firstItem="10G-vc-XkH" firstAttribute="leading" secondItem="HvJ-sv-jpY" secondAttribute="leading" constant="8" id="2P2-vP-oFF"/>
+                                    <constraint firstItem="A7O-Zo-TKf" firstAttribute="leading" secondItem="10G-vc-XkH" secondAttribute="trailing" constant="10" id="KUA-c0-7CK"/>
+                                    <constraint firstAttribute="bottom" secondItem="GPj-mr-fdr" secondAttribute="bottom" constant="28" id="dqo-tJ-gfH"/>
+                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="40" id="eom-wb-iGk"/>
+                                    <constraint firstAttribute="bottom" secondItem="cHC-r4-Rdd" secondAttribute="bottom" constant="40" id="oVf-rS-RHR"/>
+                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="A7O-Zo-TKf" secondAttribute="trailing" constant="8" id="tqh-Yi-uUQ"/>
+                                    <constraint firstItem="10G-vc-XkH" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="20" id="yMA-7G-SPW"/>
+                                    <constraint firstItem="GPj-mr-fdr" firstAttribute="top" secondItem="A7O-Zo-TKf" secondAttribute="bottom" constant="3" id="zZ2-tx-Yut"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HvJ-sv-jpY" firstAttribute="leading" secondItem="6a3-fm-iIK" secondAttribute="leading" id="6d2-u0-dsa"/>
+                            <constraint firstItem="HvJ-sv-jpY" firstAttribute="trailing" secondItem="6a3-fm-iIK" secondAttribute="trailing" id="DoO-h2-A0C"/>
+                            <constraint firstItem="HvJ-sv-jpY" firstAttribute="top" secondItem="6a3-fm-iIK" secondAttribute="top" id="yTn-eA-YYU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6a3-fm-iIK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="hfF-By-Rx7">

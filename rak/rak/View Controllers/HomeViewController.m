@@ -17,8 +17,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
 
 @property (nonatomic, strong) NSMutableArray *acts;
-@property (nonatomic, strong) NSArray *userActs;
 
+// Used in fetchDailyChallenges
+@property (nonatomic, strong) NSMutableArray *dailyChallenges;
+
+// Used in fetchUserActs
+@property (nonatomic, strong) NSArray *userActs;
 
 
 @end
@@ -32,9 +36,13 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    self.dailyChallenges = [[NSMutableArray alloc] init];
 
-    // fetch user acts from db
+    // fetch data from db
     [self fetchUserActs];
+    [self fetchDailyChallenge];
+
 }
 
 
@@ -62,14 +70,29 @@
     }];
 }
 
+- (void) fetchDailyChallenge {
+    PFQuery *challengeQuery = [Act query];
+    [challengeQuery includeKey:@"category"];
+    [challengeQuery whereKey:@"category" equalTo:@"Daily Challenges"];
+
+    // fetch data asynchronously
+    [challengeQuery findObjectsInBackgroundWithBlock:^(NSArray *acts, NSError *error) {
+        if (acts != nil) {
+            for (PFObject *act in acts) {
+                NSLog(@"daily challenges fetched: %@", act);
+                Act *displayedChallenge = acts[0];
+                self.homeTaskName.text = displayedChallenge.actName;
+                [self.dailyChallenges addObject:act];
+            }
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
 - (IBAction)didTapCheckmarkButton:(id)sender {
-    
-    
-    
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
-//    ActsTableViewCell *cell = (ActsTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-//    cell.backgroundColor = [UIColor redColor];
-//    sender.hidden = YES;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
