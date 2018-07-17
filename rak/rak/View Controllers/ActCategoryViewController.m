@@ -12,9 +12,12 @@
 #import "CategoriesViewController.h"
 #import "Parse/Parse.h"
 #import "ActsCell.h"
+#import "CustomUser.h"
+
 @interface ActCategoryViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *actCategoryTableView;
 @property (strong, nonatomic) NSArray *acts;
+@property (strong, nonatomic) NSMutableArray *personalAct;
 @end
 
 @implementation ActCategoryViewController
@@ -56,6 +59,20 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     return self.acts.count;
+}
+- (IBAction)addingPersonalAct:(id)sender {
+    NSLog(@"I tapped on the button");
+    UIButton *actAdd = (UIButton*) sender;
+    ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
+    
+    self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
+    [self.personalAct addObject:actCell.selectAct];
+    CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:self.personalAct];
+    [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saved in background");
+        if (error)
+            NSLog(@"error: %@", error.localizedDescription);
+    }];
 }
 
 @end

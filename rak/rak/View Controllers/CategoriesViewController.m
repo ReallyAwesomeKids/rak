@@ -42,7 +42,7 @@
     
     layout.minimumInteritemSpacing = 5;
     layout.minimumLineSpacing = 5;
-    CGFloat categoriesPerLine = 3;
+    CGFloat categoriesPerLine = 2;
     CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - 1))/ categoriesPerLine;
     CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
@@ -64,7 +64,7 @@
     ActCategory *actCategory = self.categories[indexPath.row];
     ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
     
-    actViewController.actCategory= actCategory;
+    actViewController.actCategory = actCategory;
     NSLog(@"Tapping on a post!");
     [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
