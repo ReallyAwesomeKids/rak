@@ -81,11 +81,10 @@ CORE
 - [x] (Everyone) Redo wireframes with details
 - [x] (Everyone) Brainstorming different acts of kindness and categoriezing them
 - [x] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
-- [ ] (Gustavo) Homepage with selected tasks on it
-- [ ] (Gustavo) Removing tasks from your homepage
-- [ ] (Gustavo) Clicking "done" on a task will update the daily streak if needed
-- [ ] (Halima) Having task categories and lists of tasks in each category
-- [ ] (Halima) Adding tasks to your homepage via the categorized task lists ^
+- [x] (Gustavo) Homepage with selected tasks on it
+- [x] (Gustavo) Done functionality on a cell
+- [X] (Halima) Having task categories and lists of tasks in each category
+- [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
 - [ ] (Haley) User profile page
   - [ ] Name label
   - [ ] Static profile picture and location label temporarily
@@ -93,7 +92,8 @@ CORE
 - [ ] (Haley) Detail view of each task
   - [ ] User's progress
   - [ ] Difficulty level
-  
+- [ ] () Removing tasks from your homepage by DetailsVC
+
 EXTENDED
 - [ ] Design launch screen and logo
 - [ ] Determine color scheme
@@ -125,7 +125,7 @@ EXTENDED
   - Location (NSString)
   - Streak (NSInteger)
   - Total experience points (EXP) (NSInteger)
-  - History of acts done (NSDictionary: {@"Compliment a stranger": 2, ...})
+  - History of acts done (NSDictionary: {ActObjectId: [NSDate, NSDate, ...], ...})
   - Badges/achievements (NSArray)
   
 - Act

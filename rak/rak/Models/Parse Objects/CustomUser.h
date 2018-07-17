@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import <Parse/Parse.h>
+#import "Act.h"
 
 @interface CustomUser : PFUser <PFSubclassing>
 
@@ -16,11 +17,17 @@
 @property (strong, nonatomic) NSString *displayName;
 @property (strong, nonatomic) NSString *location;
 @property (nonatomic) NSInteger streak;
+@property (nonatomic) NSDate *dateLastDidAct;
 @property (nonatomic) NSInteger experiencePoints;
 @property (nonatomic) NSDictionary *actsDone;
 @property (strong, nonatomic) NSArray *badges;
 
 @property (strong, nonatomic) NSArray *chosenActs;
+
+- (void)addToDailyStreak;
+- (void)addToActHistoryWithAct:(Act *)act;
+
+- (void)updateDailyStreak;
 
 
 + (PFFile *)getPFFileFromImage:(UIImage *)image;

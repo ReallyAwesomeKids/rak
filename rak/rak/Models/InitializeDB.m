@@ -14,26 +14,33 @@
 @implementation InitializeDB
 
 + (void) initializeDatabase {
-    //[self initializeActCategories];
     //[self initializeUser];
     //[self initializeActs];
+    //[self initializeActCategories];
 }
 
 + (void)initializeUser {
-     CustomUser *newUser = [CustomUser new];
-     
-     newUser.username = @"a";
-     newUser.password = @"a";
-     
-     newUser.profileImage = [CustomUser getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
-     newUser.displayName = @"Ayy";
-     newUser.location = @"Menlo Park";
-     newUser.streak = 0;
-     newUser.experiencePoints = 0;
-     newUser.actsDone = @{};
-     newUser.badges = [NSArray new];
-     newUser.chosenActs = [NSArray new];
-     
+    CustomUser *newUser = [CustomUser new];
+    
+    newUser.username = @"a";
+    newUser.password = @"a";
+    
+    newUser.profileImage = [CustomUser getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
+    newUser.displayName = @"Ayy";
+    newUser.location = @"Menlo Park";
+    newUser.streak = 0;
+    newUser.dateLastDidAct = nil;
+    newUser.experiencePoints = 0;
+    newUser.actsDone = @{};
+    newUser.badges = [NSArray new];
+    
+    Act *act = [Act new];
+    act.actName = @"Testing the database";
+    act.pointsWorth = 1;
+    act.category = @"fake category";
+    
+    newUser.chosenActs = @[act];
+    
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)
             NSLog(@"error signing up: %@", error.localizedDescription);
@@ -41,6 +48,8 @@
 }
 
 + (void)initializeActs {
+    
+    
     NSArray *community = @[@"Buy food for a homeless person",
                            @"Have a conversation with a homeless person",
                            @"Serve at a homeless shelter",
@@ -75,12 +84,23 @@
                        @"Put sticky notes with positive slogans on the mirrors in your work restroom",
                        @"Send anonymous flowers to the receptionist at work",
                        @"Say thank you to your custodial staff"];
+    NSArray *dailyChallenges = @[@"Do a favor without asking for anything in return",
+                                 @"Buy flowers and hand them out on the street",
+                                 @"Say \"I love you\" to someone you love",
+                                 @"Connect two people you believe should know each other",
+                                 @"Send someone a hand written note of thanks",
+                                 @"Send someone a small gift anonymously",
+                                 @"Tweet or Facebook message a genuine compliment to three people right now",
+                                 @"IM or email that person you're afraid to talk to because you don't want to bother them"];
     
     NSDictionary *categories = @{@"Community" : community,
                                  @"Family" : family,
                                  @"Friends" : friends,
                                  @"Dating" : dating,
-                                 @"Work" : work};
+                                 @"Work" : work,
+                                 @"Daily Challenges" : dailyChallenges
+                                 };
+    
     
     for (NSString *key in categories) {
         NSArray *arr = [categories objectForKey:key];
@@ -98,7 +118,8 @@
 }
 
 + (void)initializeActCategories {
-    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work"];
+    NSArray *cats = @[@"Daily Challenges"];
+    // NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work"];
     for (NSString *cat in cats) {
         
         ActCategory *category = [[ActCategory alloc] init];

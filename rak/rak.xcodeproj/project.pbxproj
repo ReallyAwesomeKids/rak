@@ -191,12 +191,12 @@
 		5D329CE820FD15A200C180C9 /* rak */ = {
 			isa = PBXGroup;
 			children = (
+				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
+				5D329CEA20FD15A200C180C9 /* AppDelegate.m */,
 				5D329D2520FD163C00C180C9 /* Models */,
 				2C5C3B8520FD3F98004568EF /* Cells */,
 				5D329D2420FD163000C180C9 /* View Controllers */,
 				5D329D2320FD161300C180C9 /* Storyboards */,
-				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
-				5D329CEA20FD15A200C180C9 /* AppDelegate.m */,
 				5D329CF220FD15A300C180C9 /* Assets.xcassets */,
 				5D329CF720FD15A300C180C9 /* Info.plist */,
 				5D329CF820FD15A300C180C9 /* main.m */,

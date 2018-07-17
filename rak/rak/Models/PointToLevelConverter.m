@@ -28,4 +28,20 @@
     return level;
 }
 
++ (NSInteger)getPercentToNextLevelFromPoints:(NSInteger)points {
+    NSArray *conversion = [self conversion];
+    NSInteger currentLevel = [self getCurrentLevelFromPoints:points];
+    for (int i = 0; i < currentLevel - 1; i++)
+        points -= [(NSNumber *)[conversion objectAtIndex:i] integerValue];
+    
+    if (points <= 0)
+        return 0;
+    
+    float pointsNeededForNextLevel = [(NSNumber *)[conversion objectAtIndex:currentLevel - 1] floatValue];
+    
+    float percentageDecimal = points / pointsNeededForNextLevel;
+    NSInteger percentage = (NSInteger)(percentageDecimal * 100 + 0.5);
+    return percentage;
+}
+
 @end
