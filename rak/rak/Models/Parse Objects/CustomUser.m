@@ -10,7 +10,15 @@
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, experiencePoints, actsDone, badges, chosenActs;
+@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actsDone, badges, chosenActs;
+
+- (void)updateDailyStreak {
+    
+}
+
+- (void)updateActHistoryWithAct:(Act *)act {
+    
+}
 
 + (PFFile *)getPFFileFromImage:(UIImage *)image {
     if (!image) {
