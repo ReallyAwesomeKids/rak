@@ -125,7 +125,7 @@ EXTENDED
   - Location (NSString)
   - Streak (NSInteger)
   - Total experience points (EXP) (NSInteger)
-  - History of acts done (NSDictionary: {@"Compliment a stranger": 2, ...})
+  - History of acts done (NSDictionary: {ActObjectId: [NSDate, NSDate, ...], ...})
   - Badges/achievements (NSArray)
   
 - Act
