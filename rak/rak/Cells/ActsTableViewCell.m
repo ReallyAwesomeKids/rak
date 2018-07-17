@@ -25,4 +25,8 @@
     _act = act;
     self.homeCellActName.text = self.act.actName;
 }
+
+- (IBAction)didTapCellCheckButton:(UIButton *)sender {
+    self.cellView.backgroundColor = [UIColor colorWithRed:0.53 green:0.88 blue:0.53 alpha:1.0];
+}
 @end

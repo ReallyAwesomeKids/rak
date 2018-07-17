@@ -11,6 +11,10 @@
 #import "Parse/Parse.h"
 #import "InitializeDB.h"
 #import "ActCategory.h"
+#import "Act.h"
+#import "ActsCell.h"
+#import "ActCategoryViewController.h"
+
 @interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
 @property (strong,nonatomic) CategoriesCell *cell;
@@ -38,7 +42,7 @@
     
     layout.minimumInteritemSpacing = 5;
     layout.minimumLineSpacing = 5;
-    CGFloat categoriesPerLine = 3;
+    CGFloat categoriesPerLine = 2;
     CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - 1))/ categoriesPerLine;
     CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
@@ -48,15 +52,26 @@
 //    self.cell.categoriesView.layer.borderColor = [UIColor whiteColor].CGColor;
 //    self.cell.categoriesView.layer.masksToBounds = YES;
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"actCategorySegue"])
+    {
+        CategoriesCell *tappedCell = (CategoriesCell*) sender;
+    NSIndexPath *indexPath = [self.categoriesCollectionView indexPathForCell:tappedCell];
+    ActCategory *actCategory = self.categories[indexPath.row];
+    ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
+    
+    actViewController.actCategory = actCategory;
+    NSLog(@"Tapping on a post!");
+    [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     

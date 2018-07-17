@@ -8,14 +8,16 @@
 
 #import "ActCategoryViewController.h"
 #import "Act.h"
+#import "ActCategory.h"
 #import "CategoriesViewController.h"
 #import "Parse/Parse.h"
 #import "ActsCell.h"
+#import "CustomUser.h"
+
 @interface ActCategoryViewController () <UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UITableView *actCategoryCollectionView;
-@property (strong,nonatomic) CategoriesCell *cell;
-@property (strong, nonatomic) ActsCell *actscell;
+@property (weak, nonatomic) IBOutlet UITableView *actCategoryTableView;
 @property (strong, nonatomic) NSArray *acts;
+@property (strong, nonatomic) NSMutableArray *personalAct;
 @end
 
 @implementation ActCategoryViewController
@@ -23,8 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self fetchActs];
-    
+    self.actCategoryTableView.dataSource = self;
+    self.actCategoryTableView.delegate = self;
+    self.acts = self.actCategory.acts;
+    [self.actCategoryTableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,33 +48,31 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath { 
     
-    self.actscell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
+    ActsCell *actCell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
     
-    Act *act = self.acts[indexPath.row];
+   Act *actPiece = self.acts[indexPath.row];
+    actCell.selectAct = actPiece;
+    //[self.actcell configureCell:(Act*)cat];
     
-    [self.actscell configureCell:(Act*)act];
-    
-    return self.actscell;
+    return actCell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     return self.acts.count;
 }
-
-- (void)fetchActs {
-    PFQuery *query = [PFQuery queryWithClassName:@"Act"];
-    [query includeKey:@"category"];
-    [query includeKey:@"actName"];
-    [query whereKey:@"category" equalTo: self.cell];
-    query.limit = 50;
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *acts, NSError *error) {
-        if (acts != nil) {
-            self.actscell= self.actscell;
-            [self.actCategoryCollectionView reloadData];
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
+- (IBAction)addingPersonalAct:(id)sender {
+    NSLog(@"I tapped on the button");
+    UIButton *actAdd = (UIButton*) sender;
+    ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
+    
+    self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
+    [self.personalAct addObject:actCell.selectAct];
+    CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:self.personalAct];
+    [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saved in background");
+        if (error)
+            NSLog(@"error: %@", error.localizedDescription);
     }];
 }
+
 @end

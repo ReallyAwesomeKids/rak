@@ -17,8 +17,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
 
 @property (nonatomic, strong) NSMutableArray *acts;
+@property (nonatomic, strong) NSArray *userActs;
 
-- (IBAction)didTapCheckmarkButton:(id)sender;
+
 
 @end
 
@@ -31,55 +32,55 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    [self.tableView reloadData];
-    
-    // initialization of array acts
-    self.acts = [[NSMutableArray alloc] init];
-    
-    // fetch acts from database
-    [self fetchActs];
 
+    // fetch user acts from db
+    [self fetchUserActs];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void) fetchActs {
-    PFQuery *actQuery = [Act query];
-    [actQuery orderByDescending:@"createdAt"];
+- (void) fetchUserActs {
+    PFQuery *userActQuery = [CustomUser query];
+    [userActQuery whereKey:@"objectId" equalTo:CustomUser.currentUser.objectId];
+    [userActQuery includeKey:@"chosenActs"];
     
     // fetch data asynchronously
-    [actQuery findObjectsInBackgroundWithBlock:^(NSArray *allActs, NSError *error) {
-        if (allActs != nil) {
-            [self.acts removeAllObjects];
-            // do something with the array of object returned by the call
-            for (PFObject *act in allActs) {
-                [self.acts addObject:act];
-                NSLog(@"%@", act);
-            }
+    [userActQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+        if (users != nil) {
+            CustomUser *currentUser = users[0];
+            NSLog(@"acts fetched: %@", currentUser);
+            self.userActs = currentUser.chosenActs;
             [self.tableView reloadData];
         }
         else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    [self.tableView reloadData];
 }
 
 - (IBAction)didTapCheckmarkButton:(id)sender {
+    
+    
+    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
+//    ActsTableViewCell *cell = (ActsTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor redColor];
+//    sender.hidden = YES;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];
-    Act *act = self.acts[indexPath.row];
+    Act *act = self.userActs[indexPath.row];
     cell.act = act;
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.acts.count;
+    return self.userActs.count;
 }
 
 /*

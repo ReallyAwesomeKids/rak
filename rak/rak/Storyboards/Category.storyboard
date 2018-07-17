@@ -85,22 +85,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-dn-m0d">
-                                                    <rect key="frame" x="338" y="36" width="22" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="check"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task that directly correlates to this category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-jY-wXH">
-                                                    <rect key="frame" x="15" y="12" width="315" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task that directly correlates to this category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-jY-wXH">
+                                                    <rect key="frame" x="6" y="37" width="336" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-dn-m0d">
+                                                    <rect key="frame" x="350" y="37" width="25" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="7hi-JP-rvA"/>
+                                                        <constraint firstAttribute="height" constant="22" id="gPg-tC-i7a"/>
+                                                    </constraints>
+                                                    <state key="normal" image="check"/>
+                                                    <connections>
+                                                        <action selector="addingPersonalAct:" destination="rP0-wh-l6X" eventType="touchUpInside" id="hqL-yO-Gt3"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="gbm-dn-m0d" secondAttribute="trailing" id="GWe-D9-PSp"/>
+                                                <constraint firstItem="sH9-jY-wXH" firstAttribute="leading" secondItem="hun-Vt-cKz" secondAttribute="leading" constant="6" id="N7q-sC-iGY"/>
+                                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="sH9-jY-wXH" secondAttribute="bottom" constant="34.5" id="Npw-4J-u1u"/>
+                                                <constraint firstItem="gbm-dn-m0d" firstAttribute="top" secondItem="hun-Vt-cKz" secondAttribute="top" constant="37" id="llU-p7-siw"/>
+                                                <constraint firstItem="gbm-dn-m0d" firstAttribute="leading" secondItem="sH9-jY-wXH" secondAttribute="trailing" constant="8" id="n3Y-kb-9sC"/>
+                                                <constraint firstItem="sH9-jY-wXH" firstAttribute="top" secondItem="hun-Vt-cKz" secondAttribute="top" constant="37" id="sM5-PL-Gfg"/>
+                                                <constraint firstAttribute="bottom" secondItem="gbm-dn-m0d" secondAttribute="bottom" constant="33.5" id="wnZ-LD-7gC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="actsView" destination="sH9-jY-wXH" id="Ywo-C9-Yvb"/>
+                                            <outlet property="actsView" destination="sH9-jY-wXH" id="xXO-NO-7H2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -114,7 +128,7 @@
                         <viewLayoutGuide key="safeArea" id="7Dn-d2-ikp"/>
                     </view>
                     <connections>
-                        <outlet property="actCategoryCollectionView" destination="e97-FS-vXF" id="jcl-l1-nnR"/>
+                        <outlet property="actCategoryTableView" destination="e97-FS-vXF" id="BzP-fX-Itz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MI-Ef-e1w" userLabel="First Responder" sceneMemberID="firstResponder"/>

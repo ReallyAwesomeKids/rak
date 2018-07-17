@@ -84,8 +84,8 @@ CORE
 - [ ] (Gustavo) Homepage with selected tasks on it
 - [ ] (Gustavo) Removing tasks from your homepage
 - [ ] (Gustavo) Clicking "done" on a task will update the daily streak if needed
-- [ ] (Halima) Having task categories and lists of tasks in each category
-- [ ] (Halima) Adding tasks to your homepage via the categorized task lists ^
+- [X] (Halima) Having task categories and lists of tasks in each category
+- [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
 - [ ] (Haley) User profile page
   - [ ] Name label
   - [ ] Static profile picture and location label temporarily
