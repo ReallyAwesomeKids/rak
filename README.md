@@ -82,8 +82,7 @@ CORE
 - [x] (Everyone) Brainstorming different acts of kindness and categoriezing them
 - [x] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
 - [x] (Gustavo) Homepage with selected tasks on it
-- [x] (Gustavo) Removing tasks from your homepage
-- [x] (Gustavo) Clicking "done" on a task will update the daily streak if needed
+- [x] (Gustavo) Done functionality on a cell
 - [X] (Halima) Having task categories and lists of tasks in each category
 - [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
 - [ ] (Haley) User profile page
@@ -93,7 +92,8 @@ CORE
 - [ ] (Haley) Detail view of each task
   - [ ] User's progress
   - [ ] Difficulty level
-  
+- [ ] () Removing tasks from your homepage by DetailsVC
+
 EXTENDED
 - [ ] Design launch screen and logo
 - [ ] Determine color scheme
