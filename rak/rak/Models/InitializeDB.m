@@ -32,7 +32,13 @@
      newUser.experiencePoints = 0;
      newUser.actsDone = @{};
      newUser.badges = [NSArray new];
-     newUser.chosenActs = [NSArray new];
+    
+    Act *act = [Act new];
+    act.actName = @"Testing the database";
+    act.pointsWorth = 1;
+    act.category = @"fake category";
+    
+     newUser.chosenActs = @[act];
      
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)

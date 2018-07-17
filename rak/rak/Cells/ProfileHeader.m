@@ -24,7 +24,7 @@
     self.levelLabel.text = [NSString stringWithFormat:@"Level %ld", levelNumber];
     
     NSInteger percentToNextLevel = [PointToLevelConverter getPercentToNextLevelFromPoints:self.user.experiencePoints];
-    self.percentToNextLevelLabel.text = [NSString stringWithFormat:@"%lu%% to Level 1", percentToNextLevel];
+    self.percentToNextLevelLabel.text = [NSString stringWithFormat:@"%lu%% to Level %lu", percentToNextLevel, (levelNumber + 1)];
 }
 
 @end
