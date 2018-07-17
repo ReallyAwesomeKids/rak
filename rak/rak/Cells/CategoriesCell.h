@@ -11,6 +11,6 @@
 
 @interface CategoriesCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *categoriesView;
-@property (strong, nonatomic) Act *act;
-- (void)configureCell: (Act *) act;
+@property (strong, nonatomic) Category *Cat;
+- (void)configureCell: (Category *) Cat;
 @end
