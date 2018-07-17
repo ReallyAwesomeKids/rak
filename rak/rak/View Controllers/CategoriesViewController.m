@@ -10,7 +10,7 @@
 #import "CategoriesCell.h"
 #import "Parse/Parse.h"
 #import "InitializeDB.h"
-#import "Category.h"
+#import "ActCategory.h"
 @interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
 @property (strong,nonatomic) CategoriesCell *cell;
@@ -62,9 +62,9 @@
     
     self.cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoriesCell" forIndexPath:indexPath];
     
-    Category *cat = self.categories[indexPath.row];
+    ActCategory *cat = self.categories[indexPath.row];
     
-    [self.cell configureCell:(Category *)cat];
+    [self.cell configureCell:(ActCategory *)cat];
 
     return self.cell;
 
@@ -76,13 +76,16 @@
 }
 
 - (void)fetchCategories {
-    PFQuery *query = [PFQuery queryWithClassName:@"Category"];
+    PFQuery *query = [PFQuery queryWithClassName:@"ActCategory"];
     [query includeKey:@"categoryName"];
-    query.limit = 20;
+    [query includeKey:@"acts"];
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *categories, NSError *error) {
         if (categories != nil) {
             self.categories= categories;
+            NSLog(@"===================");
+            NSLog(@"%@", self.categories);
+            NSLog(@"category count: %lu", self.categories.count);
             [self.categoriesCollectionView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);

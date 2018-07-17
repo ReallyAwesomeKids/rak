@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Act.h"
-
+#import "ActCategory.h"
 @interface CategoriesCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *categoriesView;
-@property (strong, nonatomic) Category *Cat;
-- (void)configureCell: (Category *) Cat;
+@property (strong, nonatomic) ActCategory *cat;
+- (void)configureCell: (ActCategory *) cat;
 @end
