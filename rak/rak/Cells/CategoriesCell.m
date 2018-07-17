@@ -15,5 +15,10 @@
     self.cat = cat;
     self.categoriesView.text = self.cat[@"categoryName"];
 }
-
+-(void)changeShape{
+    self.layer.cornerRadius = self.frame.size.width/2;
+    self.layer.borderWidth = 2.0f;
+    self.layer.borderColor = [UIColor blackColor].CGColor;
+    self.layer.masksToBounds = YES;
+}
 @end

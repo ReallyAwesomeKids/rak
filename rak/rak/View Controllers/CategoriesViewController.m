@@ -17,7 +17,6 @@
 
 @interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
-@property (strong,nonatomic) CategoriesCell *cell;
 @property (strong,nonatomic) NSArray *categories;
 @end
 
@@ -46,11 +45,6 @@
     CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - 1))/ categoriesPerLine;
     CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
-    
-//    self.cell.categoriesView.layer.cornerRadius = self.cell.categoriesView.frame.size.width/2;
-//    self.cell.categoriesView.layer.borderWidth = 2.0f;
-//    self.cell.categoriesView.layer.borderColor = [UIColor whiteColor].CGColor;
-//    self.cell.categoriesView.layer.masksToBounds = YES;
 }
 
 #pragma mark - Navigation
@@ -75,13 +69,13 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    self.cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoriesCell" forIndexPath:indexPath];
+    CategoriesCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoriesCell" forIndexPath:indexPath];
     
     ActCategory *cat = self.categories[indexPath.row];
     
-    [self.cell configureCell:(ActCategory *)cat];
-
-    return self.cell;
+    [cell configureCell:(ActCategory *)cat];
+    [cell changeShape];
+    return cell;
 
 }
 
