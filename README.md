@@ -98,6 +98,8 @@ EXTENDED
 - [ ] Design launch screen and logo
 - [ ] Determine color scheme
 - [ ] (Gustavo) Homepage notifications when button clicked "done"
+- [ ] (Gustavo) Swipable cells instead of the button done
+
 
 
 ### Week 2
