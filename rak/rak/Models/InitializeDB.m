@@ -26,7 +26,7 @@
     newUser.username = @"a";
     newUser.password = @"a";
     
-    newUser.profileImage = [CustomUser getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
+    newUser.profileImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
     newUser.displayName = @"Ayy";
     newUser.location = @"Menlo Park";
     newUser.streak = 0;
@@ -119,8 +119,7 @@
 }
 
 + (void)initializeActCategories {
-    NSArray *cats = @[@"Daily Challenges"];
-    // NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work"];
+    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Daily Challenges"];
     for (NSString *cat in cats) {
         
         ActCategory *category = [[ActCategory alloc] init];
