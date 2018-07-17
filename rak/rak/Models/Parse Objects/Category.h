@@ -14,4 +14,5 @@
 @property (strong, nonatomic) NSString *categoryName;
 @property (strong, nonatomic) NSArray *acts;
 
+
 @end

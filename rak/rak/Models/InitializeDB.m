@@ -9,10 +9,12 @@
 #import "InitializeDB.h"
 #import "Act.h"
 #import "CustomUser.h"
+#import "Category.h"
 
 @implementation InitializeDB
 
 + (void) initializeDatabase {
+    //[self initializeCategories];
     //[self initializeUser];
     //[self initializeActs];
 }
@@ -97,6 +99,28 @@
                     NSLog(@"logged %@", act.actName);
             }];
         }
+    }
+}
+
++ (void)initializeCategories {
+    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work"];
+    for (NSString *cat in cats) {
+        
+        Category *category = [[Category alloc] init];
+        category.categoryName = cat;
+        PFQuery *query = [PFQuery queryWithClassName:@"Act"];
+        [query orderByAscending:@"actName"];
+        [query whereKey:@"category" equalTo:cat];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable acts, NSError * _Nullable error) {
+            category.acts = acts;
+            [category saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (!error) {
+                    NSLog(@"successfully saved %@", cat);
+                }
+            }];
+        }];
+        
     }
 }
 

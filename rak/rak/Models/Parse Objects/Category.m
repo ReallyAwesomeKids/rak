@@ -10,10 +10,10 @@
 
 @implementation Category
 
+@dynamic categoryName, acts;
+
 + (NSString *)parseClassName {
     return @"Category";
 }
-
-@dynamic categoryName, acts;
 
 @end
