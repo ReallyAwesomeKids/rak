@@ -10,6 +10,6 @@
 
 @interface PointToLevelConverter : NSObject
 
-+ (NSArray *)conversion;
++ (NSInteger)getCurrentLevelFromPoints:(NSInteger)points;
 
 @end
