@@ -81,9 +81,9 @@ CORE
 - [x] (Everyone) Redo wireframes with details
 - [x] (Everyone) Brainstorming different acts of kindness and categoriezing them
 - [x] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
-- [ ] (Gustavo) Homepage with selected tasks on it
-- [ ] (Gustavo) Removing tasks from your homepage
-- [ ] (Gustavo) Clicking "done" on a task will update the daily streak if needed
+- [x] (Gustavo) Homepage with selected tasks on it
+- [x] (Gustavo) Removing tasks from your homepage
+- [x] (Gustavo) Clicking "done" on a task will update the daily streak if needed
 - [X] (Halima) Having task categories and lists of tasks in each category
 - [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
 - [ ] (Haley) User profile page
@@ -125,7 +125,7 @@ EXTENDED
   - Location (NSString)
   - Streak (NSInteger)
   - Total experience points (EXP) (NSInteger)
-  - History of acts done (NSDictionary: {@"Compliment a stranger": 2, ...})
+  - History of acts done (NSDictionary: {ActObjectId: [NSDate, NSDate, ...], ...})
   - Badges/achievements (NSArray)
   
 - Act
