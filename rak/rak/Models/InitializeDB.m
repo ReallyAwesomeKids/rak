@@ -10,6 +10,7 @@
 #import "Act.h"
 #import "CustomUser.h"
 #import "ActCategory.h"
+#import "ImageToFileConversion.h"
 
 @implementation InitializeDB
 
@@ -124,6 +125,8 @@
         
         ActCategory *category = [[ActCategory alloc] init];
         category.categoryName = cat;
+        category.categoryImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:cat]];
+        
         PFQuery *query = [PFQuery queryWithClassName:@"Act"];
         [query orderByAscending:@"actName"];
         [query whereKey:@"category" equalTo:cat];
