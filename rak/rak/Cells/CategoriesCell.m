@@ -7,13 +7,13 @@
 //
 
 #import "CategoriesCell.h"
-#import "Act.h"
+#import "Category.h"
 #import "Parse/Parse.h"
 
 @implementation CategoriesCell
-- (void)configureCell: (Act *) act {
-    self.act = act;
-    self.categoriesView.text = self.act[@"category"];
+- (void)configureCell: (Category *) cat {
+    self.cat = cat;
+    self.categoriesView.text = self.cat[@"categoryName"];
 }
 
 @end
