@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoriesView;
 @property (strong, nonatomic) ActCategory *cat;
 - (void)configureCell: (ActCategory *) cat;
+-(void)changeShape;
 @end
