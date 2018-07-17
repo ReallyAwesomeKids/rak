@@ -14,7 +14,7 @@
 @implementation InitializeDB
 
 + (void) initializeDatabase {
-    [self initializeActCategories];
+    //[self initializeActCategories];
     //[self initializeUser];
     //[self initializeActs];
 }
