@@ -28,4 +28,9 @@
     return level;
 }
 
++ (NSInteger)getPercentToNextLevelFromPoints:(NSInteger)points {
+   // NSInteger currentLevel = [self getCurrentLevelFromPoints:points];
+    return 0;
+}
+
 @end
