@@ -20,7 +20,6 @@
 @property (nonatomic, strong) NSArray *userActs;
 
 
-- (IBAction)didTapCheckmarkButton:(id)sender;
 
 @end
 
@@ -35,7 +34,7 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 
     // fetch user acts from db
-    [self fetchUserActs];    
+    [self fetchUserActs];
 }
 
 
@@ -82,11 +81,6 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.userActs.count;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Deselect the row which was tapped
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 /*

@@ -17,7 +17,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *homeCellActName;
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
--(IBAction)didTapCellCheckButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
+
+- (IBAction)didTapCellCheckButton:(UIButton *)sender;
 
 
 @end

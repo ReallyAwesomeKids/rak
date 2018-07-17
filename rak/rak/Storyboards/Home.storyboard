@@ -48,7 +48,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActsTableViewCell" rowHeight="65" id="zSa-EQ-5fP" customClass="ActsTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActsTableViewCell" rowHeight="65" id="zSa-EQ-5fP" customClass="ActsTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zSa-EQ-5fP" id="OJ5-FV-LSE">
@@ -70,7 +70,7 @@
                                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="xx"/>
                                                     <connections>
-                                                        <action selector="didTapCellCheckButton:" destination="zSa-EQ-5fP" eventType="touchUpInside" id="KbG-Pz-Khn"/>
+                                                        <action selector="didTapCellCheckButton:" destination="zSa-EQ-5fP" eventType="touchUpInside" id="Yvx-Rp-B0b"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -85,6 +85,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cellView" destination="OJ5-FV-LSE" id="h05-ZW-O6v"/>
                                             <outlet property="checkButton" destination="n1k-5F-Kki" id="Wq8-VV-01S"/>
                                             <outlet property="homeCellActName" destination="SQ3-ZR-dSE" id="qVv-x1-hjq"/>
                                         </connections>
@@ -95,10 +96,9 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10G-vc-XkH">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="challenge" translatesAutoresizingMaskIntoConstraints="NO" id="10G-vc-XkH">
                                         <rect key="frame" x="8" y="4" width="65" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
                                         <rect key="frame" x="81" y="28" width="226" height="17"/>
@@ -193,6 +193,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="challenge" width="65" height="65"/>
         <image name="icons8-customer-30" width="30" height="30"/>
         <image name="xx" width="28" height="28"/>
     </resources>
