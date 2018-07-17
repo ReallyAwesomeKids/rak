@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,9 +37,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="113" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9g-uF-yGg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9g-uF-yGg">
                                                     <rect key="frame" x="10" y="65" width="93" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -46,8 +46,14 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.93369048830000001" green="0.29711738240000002" blue="0.2657249458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="Y9g-uF-yGg" firstAttribute="leading" secondItem="EXJ-88-UGs" secondAttribute="leadingMargin" constant="2" id="3bp-AZ-rAS"/>
+                                            <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="Y9g-uF-yGg" secondAttribute="bottom" constant="56" id="YMe-Cp-Flc"/>
+                                            <constraint firstItem="Y9g-uF-yGg" firstAttribute="top" secondItem="EXJ-88-UGs" secondAttribute="topMargin" constant="57" id="kRQ-Cz-K2z"/>
+                                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Y9g-uF-yGg" secondAttribute="trailing" constant="2" id="t99-6v-b48"/>
+                                        </constraints>
                                         <connections>
-                                            <outlet property="categoriesView" destination="Y9g-uF-yGg" id="HdE-bH-o6d"/>
+                                            <outlet property="categoriesView" destination="Y9g-uF-yGg" id="j45-m3-OMq"/>
                                             <segue destination="rP0-wh-l6X" kind="show" identifier="actCategorySegue" id="O3h-Xw-gCb"/>
                                         </connections>
                                     </collectionViewCell>
@@ -97,7 +103,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="7hi-JP-rvA"/>
                                                         <constraint firstAttribute="height" constant="22" id="gPg-tC-i7a"/>
                                                     </constraints>
-                                                    <state key="normal" image="check"/>
+                                                    <state key="normal" image="check" backgroundImage="check"/>
                                                     <connections>
                                                         <action selector="addingPersonalAct:" destination="rP0-wh-l6X" eventType="touchUpInside" id="hqL-yO-Gt3"/>
                                                     </connections>
