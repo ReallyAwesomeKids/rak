@@ -9,10 +9,12 @@
 #import "InitializeDB.h"
 #import "Act.h"
 #import "CustomUser.h"
+#import "ActCategory.h"
 
 @implementation InitializeDB
 
 + (void) initializeDatabase {
+    //[self initializeActCategories];
     //[self initializeUser];
     //[self initializeActs];
 }
@@ -35,9 +37,6 @@
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)
             NSLog(@"error signing up: %@", error.localizedDescription);
-        else {
-            NSLog(@"success signing up");
-        }
     }];
 }
 
@@ -92,11 +91,31 @@
             act.category = key;
             [act saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (error)
-                    NSLog(@"error: %@", error.localizedDescription);
-                else
-                    NSLog(@"logged %@", act.actName);
+                    NSLog(@"error initializing acts: %@", error.localizedDescription);
             }];
         }
+    }
+}
+
++ (void)initializeActCategories {
+    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work"];
+    for (NSString *cat in cats) {
+        
+        ActCategory *category = [[ActCategory alloc] init];
+        category.categoryName = cat;
+        PFQuery *query = [PFQuery queryWithClassName:@"Act"];
+        [query orderByAscending:@"actName"];
+        [query whereKey:@"category" equalTo:cat];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable acts, NSError * _Nullable error) {
+            category.acts = acts;
+            [category saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (error) {
+                    NSLog(@"error initializing category: %@", error.localizedDescription);
+                }
+            }];
+        }];
+        
     }
 }
 

@@ -17,10 +17,10 @@
 + (NSInteger)getCurrentLevelFromPoints:(NSInteger)points {
     NSArray *conversion = [self conversion];
     NSInteger index = 0;
-    points -= (NSInteger) conversion[index];
+    points -= [(NSNumber *)[conversion objectAtIndex:index] integerValue];
     while (points >= 0) {
         index += 1;
-        points -= (NSInteger) conversion[index];
+        points -= [(NSNumber *)[conversion objectAtIndex:index] integerValue];
     }
     
     // index 0 -> level 1, ...

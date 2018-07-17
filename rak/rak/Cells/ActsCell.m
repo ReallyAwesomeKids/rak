@@ -7,7 +7,7 @@
 //
 
 #import "ActsCell.h"
-#import "Act.h"
+#import "ActCategory.h"
 #import "Parse/Parse.h"
 
 @implementation ActsCell
@@ -22,9 +22,12 @@
 
     // Configure the view for the selected state
 }
+- (void)setSelectAct:(Act *)selectAct{
+    _selectAct = selectAct;
+    [self configureCell];
+}
 
-- (void)configureCell: (Act *) act {
-    self.act = act;
-    self.actsView.text = self.act[@"actName"];
+- (void)configureCell{
+    self.actsView.text = self.selectAct.actName;
 }
 @end

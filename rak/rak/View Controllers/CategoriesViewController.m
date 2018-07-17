@@ -10,7 +10,11 @@
 #import "CategoriesCell.h"
 #import "Parse/Parse.h"
 #import "InitializeDB.h"
+#import "ActCategory.h"
 #import "Act.h"
+#import "ActsCell.h"
+#import "ActCategoryViewController.h"
+
 @interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
 @property (strong,nonatomic) CategoriesCell *cell;
@@ -48,24 +52,34 @@
 //    self.cell.categoriesView.layer.borderColor = [UIColor whiteColor].CGColor;
 //    self.cell.categoriesView.layer.masksToBounds = YES;
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"actCategorySegue"])
+    {
+        CategoriesCell *tappedCell = (CategoriesCell*) sender;
+    NSIndexPath *indexPath = [self.categoriesCollectionView indexPathForCell:tappedCell];
+    ActCategory *actCategory = self.categories[indexPath.row];
+    ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
+    
+    actViewController.actCategory= actCategory;
+    NSLog(@"Tapping on a post!");
+    [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     self.cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoriesCell" forIndexPath:indexPath];
     
+    ActCategory *cat = self.categories[indexPath.row];
     
-    Act *act = self.categories[indexPath.row];
-    
-    [self.cell configureCell:(Act*)act];
+    [self.cell configureCell:(ActCategory *)cat];
 
     return self.cell;
 
@@ -77,14 +91,16 @@
 }
 
 - (void)fetchCategories {
-    PFQuery *query = [PFQuery queryWithClassName:@"Act"];
-    [query includeKey:@"category"];
-    [query whereKeyExists:@"category"];
-    query.limit = 20;
+    PFQuery *query = [PFQuery queryWithClassName:@"ActCategory"];
+    [query includeKey:@"categoryName"];
+    [query includeKey:@"acts"];
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *categories, NSError *error) {
         if (categories != nil) {
             self.categories= categories;
+            NSLog(@"===================");
+            NSLog(@"%@", self.categories);
+            NSLog(@"category count: %lu", self.categories.count);
             [self.categoriesCollectionView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);

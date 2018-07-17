@@ -1,19 +1,20 @@
 //
-//  Category.m
+//  ActCategory.m
 //  rak
 //
 //  Created by Haley Zeng on 7/17/18.
 //  Copyright © 2018 Really Awesome Kids. All rights reserved.
 //
 
-#import "Category.h"
+#import "ActCategory.h"
 
-@implementation Category
-
-+ (NSString *)parseClassName {
-    return @"Category";
-}
+@implementation ActCategory
 
 @dynamic categoryName, acts;
+
++ (NSString *)parseClassName {
+    return @"ActCategory";
+}
+
 
 @end

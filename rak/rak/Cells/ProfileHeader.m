@@ -7,6 +7,7 @@
 //
 
 #import "ProfileHeader.h"
+#import "PointToLevelConverter.h"
 
 @implementation ProfileHeader
 
@@ -18,8 +19,8 @@
 - (void)configureProfileHeader {
     self.displayNameLabel.text = self.user.displayName;
     self.locationLabel.text = self.user.location;
-    
-    self.levelLabel.text = @"(temp) Level 0";
+    NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints];
+    self.levelLabel.text = [NSString stringWithFormat:@"Level %ld", levelNumber];
     self.percentToNextLevelLabel.text = @"(temp) 12% to Level 1";
 }
 
