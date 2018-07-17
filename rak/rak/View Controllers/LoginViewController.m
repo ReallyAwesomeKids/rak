@@ -22,22 +22,6 @@
 
 
 - (IBAction)didTap:(id)sender {
-   
-   /*
-    CustomUser *newUser = [CustomUser new];
-
-    newUser.username = @"a";
-    newUser.password = @"a";
-    
-    newUser.profileImage = [CustomUser getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
-    newUser.displayName = @"Ayyyy";
-    newUser.location = @"Menlo Park";
-    newUser.streak = 0;
-    newUser.experiencePoints = 0;
-    newUser.badges = [NSArray new];
-    
-    [newUser signUpInBackground];
-    */
     [CustomUser logInWithUsernameInBackground:@"a"
                                      password:@"a"
                                         block:^(PFUser * _Nullable user, NSError * _Nullable error) {

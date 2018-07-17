@@ -11,6 +11,8 @@
 
 @interface ExperiencePointsToLevelConverter : PFObject <PFSubclassing>
 
-@property (strong, nonatomic) NSDictionary *conversion;
+@property (strong, nonatomic) NSArray *conversion;
+
++ (void)createConverter;
 
 @end

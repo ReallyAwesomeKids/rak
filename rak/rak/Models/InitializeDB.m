@@ -8,10 +8,38 @@
 
 #import "InitializeDB.h"
 #import "Act.h"
+#import "ExperiencePointsToLevelConverter.h"
+#import "CustomUser.h"
 
 @implementation InitializeDB
 
 + (void) initializeDatabase {
+    //[self initializeUser];
+    //[self initializePointLevelConverter];
+    //[self initializeActs];
+}
+
++ (void)initializeUser {
+     CustomUser *newUser = [CustomUser new];
+     
+     newUser.username = @"a";
+     newUser.password = @"a";
+     
+     newUser.profileImage = [CustomUser getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
+     newUser.displayName = @"Ayy";
+     newUser.location = @"Menlo Park";
+     newUser.streak = 0;
+     newUser.experiencePoints = 0;
+     newUser.badges = [NSArray new];
+     
+     [newUser signUpInBackground];
+}
+
++ (void)initializePointLevelConverter {
+    [ExperiencePointsToLevelConverter createConverter];
+}
+
++ (void)initializeActs {
     NSArray *community = @[@"Buy food for a homeless person",
                            @"Have a conversation with a homeless person",
                            @"Serve at a homeless shelter",
@@ -35,10 +63,10 @@
                         @"Let your partner watch their show"];
     
     NSArray *friends = @[@"Slip a nice note in your friend's backpack",
-                          @"Tell a friend you appreciate them",
-                          @"Recommend a book to a friend",
-                          @"Buy an inspirational book for a friend",
-                          @"Frame your friend's favorite lyric or quote and give it to them with a nice note"];
+                         @"Tell a friend you appreciate them",
+                         @"Recommend a book to a friend",
+                         @"Buy an inspirational book for a friend",
+                         @"Frame your friend's favorite lyric or quote and give it to them with a nice note"];
     
     NSArray *work = @[ @"Bring donuts or other delicious sweets to work",
                        @"Sit for lunch with someone who is siting alone",
@@ -65,7 +93,7 @@
                     NSLog(@"error: %@", error.localizedDescription);
                 else
                     NSLog(@"logged %@", act.actName);
-                    }];
+            }];
         }
     }
 }
