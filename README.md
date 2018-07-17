@@ -81,9 +81,9 @@ CORE
 - [x] (Everyone) Redo wireframes with details
 - [x] (Everyone) Brainstorming different acts of kindness and categoriezing them
 - [x] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
-- [ ] (Gustavo) Homepage with selected tasks on it
-- [ ] (Gustavo) Removing tasks from your homepage
-- [ ] (Gustavo) Clicking "done" on a task will update the daily streak if needed
+- [x] (Gustavo) Homepage with selected tasks on it
+- [x] (Gustavo) Removing tasks from your homepage
+- [x] (Gustavo) Clicking "done" on a task will update the daily streak if needed
 - [X] (Halima) Having task categories and lists of tasks in each category
 - [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
 - [ ] (Haley) User profile page
