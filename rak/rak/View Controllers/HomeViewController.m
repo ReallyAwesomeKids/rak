@@ -2,7 +2,7 @@
 //  HomeViewController.m
 //  rak
 //
-//  Created by Haley Zeng on 7/16/18.
+//  Created by Gustavo Coutinho on 7/16/18.
 //  Copyright © 2018 Really Awesome Kids. All rights reserved.
 //
 
@@ -49,7 +49,6 @@
 - (void) fetchActs {
     PFQuery *actQuery = [Act query];
     [actQuery orderByDescending:@"createdAt"];
-    actQuery.limit = 20;
     
     // fetch data asynchronously
     [actQuery findObjectsInBackgroundWithBlock:^(NSArray *allActs, NSError *error) {

@@ -12,5 +12,6 @@
 @interface ActsTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Act *act;
+@property (weak, nonatomic) IBOutlet UILabel *homeCellActName;
 
 @end
