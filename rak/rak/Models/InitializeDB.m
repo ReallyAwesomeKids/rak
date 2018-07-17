@@ -8,14 +8,12 @@
 
 #import "InitializeDB.h"
 #import "Act.h"
-#import "ExperiencePointsToLevelConverter.h"
 #import "CustomUser.h"
 
 @implementation InitializeDB
 
 + (void) initializeDatabase {
     //[self initializeUser];
-    //[self initializePointLevelConverter];
     //[self initializeActs];
 }
 
@@ -36,10 +34,6 @@
      [newUser signUpInBackground];
 }
 
-+ (void)initializePointLevelConverter {
-    [ExperiencePointsToLevelConverter createConverter];
-}
-
 + (void)initializeActs {
     NSArray *community = @[@"Buy food for a homeless person",
                            @"Have a conversation with a homeless person",
@@ -58,7 +52,7 @@
                          @"Call a family member and tell them you appreciate them"];
     
     NSArray *dating = @[@"Tell your partner how amazingly \"hot\" they are",
-                        @"Tell your partner what a good hair/butt day they’re having",
+                        @"Tell your partner what a good hair day they’re having",
                         @"Tell your partners parents how talented your partner is at something",
                         @"Do the dishes for your partner",
                         @"Let your partner watch their show"];
