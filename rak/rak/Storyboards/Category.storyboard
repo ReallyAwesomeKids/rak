@@ -85,22 +85,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-dn-m0d">
-                                                    <rect key="frame" x="338" y="36" width="22" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" image="check"/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task that directly correlates to this category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-jY-wXH">
-                                                    <rect key="frame" x="15" y="12" width="315" height="70"/>
+                                                    <rect key="frame" x="6" y="37" width="336" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-dn-m0d">
+                                                    <rect key="frame" x="350" y="37" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="check"/>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="actsView" destination="sH9-jY-wXH" id="Ywo-C9-Yvb"/>
+                                            <outlet property="actsView" destination="sH9-jY-wXH" id="xXO-NO-7H2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -114,7 +114,7 @@
                         <viewLayoutGuide key="safeArea" id="7Dn-d2-ikp"/>
                     </view>
                     <connections>
-                        <outlet property="actCategoryCollectionView" destination="e97-FS-vXF" id="jcl-l1-nnR"/>
+                        <outlet property="actCategoryTableView" destination="e97-FS-vXF" id="BzP-fX-Itz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MI-Ef-e1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
