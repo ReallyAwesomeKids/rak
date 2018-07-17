@@ -55,22 +55,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ3-ZR-dSE">
-                                                    <rect key="frame" x="15" y="11" width="292" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ3-ZR-dSE">
+                                                    <rect key="frame" x="9" y="15" width="320" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1k-5F-Kki">
-                                                    <rect key="frame" x="325" y="5" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1k-5F-Kki">
+                                                    <rect key="frame" x="338" y="15" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="63O-Mq-Thl"/>
+                                                        <constraint firstAttribute="width" constant="25" id="mh8-fM-bhd"/>
+                                                    </constraints>
                                                     <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" image="check"/>
+                                                    <state key="normal" image="xx"/>
+                                                    <connections>
+                                                        <action selector="didTapCellCheckButton:" destination="zSa-EQ-5fP" eventType="touchUpInside" id="KbG-Pz-Khn"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="SQ3-ZR-dSE" secondAttribute="bottom" constant="8.5" id="Ale-JT-EtK"/>
+                                                <constraint firstAttribute="trailing" secondItem="n1k-5F-Kki" secondAttribute="trailing" constant="12" id="DcE-Rh-jZi"/>
+                                                <constraint firstItem="SQ3-ZR-dSE" firstAttribute="leading" secondItem="OJ5-FV-LSE" secondAttribute="leading" constant="9" id="L6l-01-XKI"/>
+                                                <constraint firstItem="n1k-5F-Kki" firstAttribute="top" secondItem="OJ5-FV-LSE" secondAttribute="top" constant="15" id="XIj-eb-D7d"/>
+                                                <constraint firstItem="n1k-5F-Kki" firstAttribute="leading" secondItem="SQ3-ZR-dSE" secondAttribute="trailing" constant="9" id="bV0-PJ-1up"/>
+                                                <constraint firstItem="SQ3-ZR-dSE" firstAttribute="top" secondItem="OJ5-FV-LSE" secondAttribute="top" constant="15" id="eYR-AL-Dme"/>
+                                                <constraint firstAttribute="bottom" secondItem="n1k-5F-Kki" secondAttribute="bottom" constant="24.5" id="lbc-c2-yoe"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkButton" destination="n1k-5F-Kki" id="Wq8-VV-01S"/>
                                             <outlet property="homeCellActName" destination="SQ3-ZR-dSE" id="qVv-x1-hjq"/>
                                         </connections>
                                     </tableViewCell>
@@ -100,9 +115,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-r4-Rdd">
-                                        <rect key="frame" x="325" y="21" width="30" height="30"/>
+                                        <rect key="frame" x="325" y="21" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="check"/>
+                                        <state key="normal" image="xx"/>
                                         <connections>
                                             <action selector="didTapCheckmarkButton:" destination="9DP-4D-YYf" eventType="touchUpInside" id="p8r-Mh-jHz"/>
                                         </connections>
@@ -115,7 +130,7 @@
                         <viewLayoutGuide key="safeArea" id="6a3-fm-iIK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="hfF-By-Rx7">
-                        <barButtonItem key="leftBarButtonItem" title="Profile" image="profile" id="MGy-UX-nGP">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" image="icons8-customer-30" id="MGy-UX-nGP">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="yPY-Ld-PMU" kind="show" id="vwV-xw-7qF"/>
@@ -178,7 +193,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="check" width="40" height="40"/>
-        <image name="profile" width="35" height="35"/>
+        <image name="icons8-customer-30" width="30" height="30"/>
+        <image name="xx" width="28" height="28"/>
     </resources>
 </document>

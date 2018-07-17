@@ -25,4 +25,7 @@
     _act = act;
     self.homeCellActName.text = self.act.actName;
 }
+
+- (IBAction)didTapCellCheckButton:(id)sender {
+}
 @end
