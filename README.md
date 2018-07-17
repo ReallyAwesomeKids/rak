@@ -117,18 +117,24 @@ EXTENDED
 
 ## Database Schema
 - User
-  - NSString name
-  - NSString location
-  - NSNumber streak
-  - NSDictionary {task: [level, repetitions]}
-  - NSArray - badges/achievements
+  - Username (NSString)
+  - Password (NSString)
+  - Display name (NSString)
+  - Location (NSString)
+  - Streak (NSInteger)
+  - Total experience points (EXP) (NSInteger)
+  - History of acts done (NSDictionary: {@"Compliment a stranger": 2, ...})
+  - Badges/achievements (NSArray)
   
-- Task
-  - NSString name
-  - NSString description
-  - NSString difficulty level
-  - NSDictionary {level: repetitions}
+- Act
+  - Name (NSString)
+  - How many EXP points it's worth (NSInteger)
+  - Category it's under (NSString)
 
 - Badge
-  - NSString name
-  - UIImage image
+  - Name (NSString)
+  - Badge icon (UIImage)
+  - Badge description (NSString)
+  
+- ExperiencePointsToLevelConverter
+  - Conversion chart between level and points needed to complete level (NSDictionary: {@"1" : 100, ...}

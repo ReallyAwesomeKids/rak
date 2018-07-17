@@ -47,6 +47,30 @@
                                 <rect key="frame" x="0.0" y="144" width="375" height="523"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActsTableViewCell" rowHeight="65" id="zSa-EQ-5fP" customClass="ActsTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zSa-EQ-5fP" id="OJ5-FV-LSE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ3-ZR-dSE">
+                                                    <rect key="frame" x="15" y="11" width="292" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1k-5F-Kki">
+                                                    <rect key="frame" x="325" y="5" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="check"/>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-sv-jpY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="72"/>
@@ -58,7 +82,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
-                                        <rect key="frame" x="81" y="28" width="286" height="17"/>
+                                        <rect key="frame" x="81" y="28" width="226" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -71,6 +95,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-r4-Rdd">
+                                        <rect key="frame" x="325" y="21" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="check"/>
+                                        <connections>
+                                            <action selector="didTapCheckmarkButton:" destination="9DP-4D-YYf" eventType="touchUpInside" id="p8r-Mh-jHz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -79,12 +111,17 @@
                         <viewLayoutGuide key="safeArea" id="6a3-fm-iIK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="hfF-By-Rx7">
-                        <barButtonItem key="leftBarButtonItem" title="Profile" id="MGy-UX-nGP">
+                        <barButtonItem key="leftBarButtonItem" title="Profile" image="profile" id="MGy-UX-nGP">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="yPY-Ld-PMU" kind="show" id="vwV-xw-7qF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="homeTaskName" destination="GPj-mr-fdr" id="LIZ-Bu-0oT"/>
+                        <outlet property="tableView" destination="5Wp-XI-8V7" id="PBE-1h-9Kd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9a-Mi-zqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="-767" y="724"/>
         </scene>
-        <!--Category-->
+        <!--Categories-->
         <scene sceneID="JDL-Fo-5Dq">
             <objects>
-                <viewControllerPlaceholder storyboardName="Category" id="pj1-IN-X35" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Category" referencedIdentifier="Categories" id="pj1-IN-X35" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="j7b-Zf-fdJ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lgy-51-gi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,4 +173,8 @@
             <point key="canvasLocation" x="-1506" y="-75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="check" width="40" height="40"/>
+        <image name="profile" width="35" height="35"/>
+    </resources>
 </document>
