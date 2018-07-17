@@ -30,6 +30,7 @@
      newUser.location = @"Menlo Park";
      newUser.streak = 0;
      newUser.experiencePoints = 0;
+     newUser.actsDone = @{};
      newUser.badges = [NSArray new];
      
      [newUser signUpInBackground];
