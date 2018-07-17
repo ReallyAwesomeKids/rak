@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self fetchActs];
     
 }
 
@@ -60,7 +61,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Act"];
     [query includeKey:@"category"];
     [query includeKey:@"actName"];
-    [query whereKey:@"category" equalTo: self.actscell];
+    [query whereKey:@"category" equalTo: self.cell];
     query.limit = 50;
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *acts, NSError *error) {
