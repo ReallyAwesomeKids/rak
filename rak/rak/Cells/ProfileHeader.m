@@ -20,6 +20,9 @@
     self.displayNameLabel.text = self.user.displayName;
     self.locationLabel.text = self.user.location;
     
+    [self.user updateDailyStreak];
+    self.streakLabel.text = [NSString stringWithFormat:@"Streak: %ld", self.user.streak];
+    
     NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints];
     self.levelLabel.text = [NSString stringWithFormat:@"Level %ld", levelNumber];
     

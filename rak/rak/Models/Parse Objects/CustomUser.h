@@ -24,9 +24,11 @@
 
 @property (strong, nonatomic) NSArray *chosenActs;
 
+- (void)addToDailyStreak;
+- (void)addToActHistoryWithAct:(Act *)act;
+
 - (void)updateDailyStreak;
 
-- (void)updateActHistoryWithAct:(Act *)act;
 
 + (PFFile *)getPFFileFromImage:(UIImage *)image;
 
