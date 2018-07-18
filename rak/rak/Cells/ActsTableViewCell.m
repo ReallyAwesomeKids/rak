@@ -27,7 +27,7 @@
 }
 
 - (IBAction)didTapCellCheckButton:(UIButton *)sender {
-    self.cellView.backgroundColor = [UIColor colorWithRed:0.53 green:0.88 blue:0.53 alpha:1.0];
+//    self.cellView.backgroundColor = [UIColor colorWithRed:0.53 green:0.88 blue:0.53 alpha:1.0];
     
     // Updates streak from the user
     UIButton *button = (UIButton *)sender;

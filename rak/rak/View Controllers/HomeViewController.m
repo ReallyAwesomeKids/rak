@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @property (nonatomic, strong) NSMutableArray *acts;
 
@@ -27,7 +28,6 @@
 
 // Used in fetchUserActs
 @property (nonatomic, strong) NSArray *userActs;
-
 
 @end
 
@@ -41,12 +41,20 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    // array initialization
+    // initialization
+    self.refreshControl = [[UIRefreshControl alloc] init];
     self.dailyChallenges = [[NSMutableArray alloc] init];
 
     // fetch data from db
     [self fetchUserActs];
     [self fetchDailyChallenge];
+    
+    // Programagtic view of dragging and dropping in code
+    [self.refreshControl addTarget:self action:@selector(fetchUserActs) forControlEvents:UIControlEventValueChanged];
+    
+    // Nests views into subviews
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    [self.tableView sendSubviewToBack:self.refreshControl];
 
 }
 
@@ -67,6 +75,7 @@
             NSLog(@"acts fetched: %@", currentUser);
             self.userActs = currentUser.chosenActs;
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
         }
         else {
             NSLog(@"%@", error.localizedDescription);
@@ -94,6 +103,7 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+    
 }
 
 - (IBAction)didTapCheckmarkButton:(id)sender {

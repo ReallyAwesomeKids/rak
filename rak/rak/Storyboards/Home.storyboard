@@ -14,7 +14,7 @@
         <scene sceneID="eZK-em-4DC">
             <objects>
                 <navigationController id="2gF-Dj-Naj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="2pB-0S-hbR"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-1" id="2pB-0S-hbR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZkW-zH-8oX">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,7 +47,7 @@
         <scene sceneID="YqV-wh-GJ0">
             <objects>
                 <navigationController id="ma8-fJ-hCl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Timeline" id="N6O-UC-Kmx"/>
+                    <tabBarItem key="tabBarItem" title="Timeline" image="timeline" id="N6O-UC-Kmx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rk4-nl-xCJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -74,7 +74,7 @@
         <scene sceneID="wDD-hV-NGH">
             <objects>
                 <navigationController id="wXO-My-9EM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="kfh-vJ-xpw"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="kfh-vJ-xpw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qnz-gk-Gxj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -105,9 +105,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Wp-XI-8V7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Wp-XI-8V7">
                                 <rect key="frame" x="0.0" y="168" width="375" height="499"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActsTableViewCell" rowHeight="65" id="zSa-EQ-5fP" customClass="ActsTableViewCell">
@@ -118,7 +117,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ3-ZR-dSE">
-                                                    <rect key="frame" x="20" y="4" width="312" height="46.5"/>
+                                                    <rect key="frame" x="20" y="4" width="312" height="47"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -183,7 +182,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Daily Challenge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-Zo-TKf">
-                                        <rect key="frame" x="83" y="15" width="243" height="20"/>
+                                        <rect key="frame" x="83" y="15" width="243" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -210,6 +209,10 @@
                         <constraints>
                             <constraint firstItem="HvJ-sv-jpY" firstAttribute="leading" secondItem="6a3-fm-iIK" secondAttribute="leading" id="6d2-u0-dsa"/>
                             <constraint firstItem="HvJ-sv-jpY" firstAttribute="trailing" secondItem="6a3-fm-iIK" secondAttribute="trailing" id="DoO-h2-A0C"/>
+                            <constraint firstItem="5Wp-XI-8V7" firstAttribute="trailing" secondItem="6a3-fm-iIK" secondAttribute="trailing" id="G6H-dC-Nbr"/>
+                            <constraint firstAttribute="bottom" secondItem="5Wp-XI-8V7" secondAttribute="bottom" id="ILi-og-h21"/>
+                            <constraint firstItem="5Wp-XI-8V7" firstAttribute="top" secondItem="6a3-fm-iIK" secondAttribute="top" constant="104" id="aDK-4M-MJq"/>
+                            <constraint firstItem="5Wp-XI-8V7" firstAttribute="leading" secondItem="6a3-fm-iIK" secondAttribute="leading" id="eRo-ZR-QPp"/>
                             <constraint firstItem="HvJ-sv-jpY" firstAttribute="top" secondItem="6a3-fm-iIK" secondAttribute="top" id="yTn-eA-YYU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6a3-fm-iIK"/>
@@ -235,7 +238,7 @@
         <scene sceneID="YMN-DX-WmM">
             <objects>
                 <navigationController id="Ld1-pr-MG3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Categories" id="jix-eJ-Plu"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="category" id="jix-eJ-Plu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2mH-il-MRt">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -252,7 +255,7 @@
         <scene sceneID="3bJ-VE-rJS">
             <objects>
                 <navigationController id="brM-65-nYx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="5Uf-J7-8qg"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="5Uf-J7-8qg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bE9-6J-PhL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -309,7 +312,12 @@
     </scenes>
     <resources>
         <image name="Daily Challenges" width="65" height="65"/>
+        <image name="category" width="25" height="25"/>
+        <image name="home-1" width="25" height="25"/>
         <image name="icons8-customer-30" width="30" height="30"/>
+        <image name="map" width="25" height="25"/>
+        <image name="search" width="25" height="25"/>
+        <image name="timeline" width="25" height="25"/>
         <image name="xx" width="28" height="28"/>
     </resources>
 </document>
