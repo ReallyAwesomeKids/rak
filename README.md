@@ -92,6 +92,7 @@ CORE
   - [x] Functional streak label
   - [x] Level and level progress labels update correctly
 - [x] (Haley) Detail view of each task
+  - [x] Shows log of when user completed it
 
 EXTENDED
 - [ ] Design launch screen and logo
