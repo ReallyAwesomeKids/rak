@@ -9,6 +9,7 @@
 #import "CategoriesCell.h"
 #import "ActCategory.h"
 #import "Parse/Parse.h"
+#import "ParseUI/ParseUI.h"
 
 @implementation CategoriesCell
 - (void)configureCell: (ActCategory *) cat {

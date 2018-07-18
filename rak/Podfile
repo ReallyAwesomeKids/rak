@@ -7,7 +7,7 @@ target 'rak' do
 
   # Pods for rak
   pod 'Parse'
-
+  pod 'ParseUI'
 
   target 'rakTests' do
     inherit! :search_paths
