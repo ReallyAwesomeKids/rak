@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet PFImageView *searchProfileImage;
 @property (weak, nonatomic) IBOutlet UILabel *searchProfileName;
 @property (weak, nonatomic) IBOutlet UILabel *searchProfilePoints;
-- (void)configureCell;
+- (void)configureCell:(CustomUser *)user;
 @end
