@@ -35,11 +35,11 @@
             </objects>
             <point key="canvasLocation" x="558" y="-76"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="YqV-wh-GJ0">
             <objects>
                 <navigationController id="ma8-fJ-hCl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Search" id="N6O-UC-Kmx"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" id="N6O-UC-Kmx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rk4-nl-xCJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="-765" y="-764"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Search-->
         <scene sceneID="AoB-W3-gE2">
             <objects>
-                <viewControllerPlaceholder id="TmF-sN-bIV" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Search" id="TmF-sN-bIV" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="y5q-wR-3m3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSC-za-4RJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

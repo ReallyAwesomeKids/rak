@@ -28,4 +28,6 @@
 
 - (void)updateDailyStreak;
 
+- (void)saveChangesInUserData;
+    
 @end
