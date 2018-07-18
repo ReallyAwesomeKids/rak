@@ -30,6 +30,7 @@
     // Do any additional setup after loading the view.
     [self changeCategoriesLayout];
     [self fetchCategories];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +43,7 @@
     layout.minimumInteritemSpacing = 5;
     layout.minimumLineSpacing = 5;
     CGFloat categoriesPerLine = 2;
-    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - 1))/ categoriesPerLine;
+    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - .5))/ categoriesPerLine;
     CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }

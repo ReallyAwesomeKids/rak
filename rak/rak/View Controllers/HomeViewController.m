@@ -18,6 +18,9 @@
 
 @property (nonatomic, strong) NSMutableArray *acts;
 
+// Array used when perfoming the swipable option of deleting an act
+@property (nonatomic, strong) NSMutableArray *deletedActs;
+
 // Used in fetchDailyChallenges
 @property (nonatomic, strong) NSMutableArray *dailyChallenges;
 
@@ -37,6 +40,7 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
+    // array initialization
     self.dailyChallenges = [[NSMutableArray alloc] init];
 
     // fetch data from db
@@ -109,25 +113,29 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
+        // Removes from Parse
+        self.deletedActs = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
+        [self.deletedActs removeObjectAtIndex:indexPath.row];
+        
+        // Removes from the table view
         NSMutableArray *userActsMutable = [self createMutableArray:self.userActs];
-        
-        [userActsMutable removeObjectAtIndex:[indexPath row]];
-
+        [userActsMutable removeObjectAtIndex:indexPath.row];
         NSArray *array = [userActsMutable copy];
-        
         self.userActs = array;
         
+        // Updates Parse
+        CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:self.deletedActs];
+        [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Act deleted succesfully");
+            if (error)
+                NSLog(@"error: %@", error.localizedDescription);
+        }];
         [self.tableView reloadData];
-        
-        // Gustavo, this is a note for your morning tomorrow
-        // You are not deleting the tasks in the db chosenActs
-        // That's why when you reload it will show up again
-        // Abraços, Gustavo from yesterday 548pm
-        
-        // There is a bug in your background color cell view. Every time you delete,
-        // the view is still green
     }
 }
+
+// There is a bug in your background color cell view. Every time you delete,
+// the view is still green
 
 - (NSMutableArray *)createMutableArray:(NSArray *)array
 {
