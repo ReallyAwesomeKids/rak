@@ -10,6 +10,7 @@
 #import "Act.h"
 #import "Parse.h"
 #import "ActsTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -142,14 +143,20 @@
     return [NSMutableArray arrayWithArray:array];
 }
 
-/*
+
  #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+    //  Get the new view controller using [segue destinationViewController].
+    //  Pass the selected object to the new view controller.
+     
+     if ([segue.identifier  isEqual: @"detailSegue"]) {
+         UITableView *tappedCell = sender;
+         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+         Act *act = self.userActs[indexPath.row];
+         DetailViewController *detailViewController = [segue destinationViewController];
+         detailViewController.act = act;
+     }
  }
- */
+ 
 
 @end
