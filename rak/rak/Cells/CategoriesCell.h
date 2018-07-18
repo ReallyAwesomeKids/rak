@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ActCategory.h"
+#import "Parse/Parse.h"
 @interface CategoriesCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *categoriesView;
 @property (strong, nonatomic) ActCategory *cat;

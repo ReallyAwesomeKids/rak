@@ -43,6 +43,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzg-85-KH3" customClass="PF">
+                                                    <rect key="frame" x="0.0" y="2" width="113" height="148"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.93369048830000001" green="0.29711738240000002" blue="0.2657249458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
