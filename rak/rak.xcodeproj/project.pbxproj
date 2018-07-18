@@ -36,6 +36,7 @@
 		5D329D5620FD4CBA00C180C9 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D5520FD4CBA00C180C9 /* BadgeCell.m */; };
 		5DB1009120FE64A70085C785 /* PointToLevelConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009020FE64A70085C785 /* PointToLevelConverter.m */; };
 		5DB1009720FE725D0085C785 /* ActCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009620FE725D0085C785 /* ActCategory.m */; };
+		5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */; };
 		8C1A5F2E1E6BC31C46ECD42B /* libPods-rakUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */; };
 		FBFA6E4C50DF6C67769C0BAA /* libPods-rakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317354D07177A40A39F507D7 /* libPods-rakTests.a */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,8 @@
 		5DB1009020FE64A70085C785 /* PointToLevelConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PointToLevelConverter.m; sourceTree = "<group>"; };
 		5DB1009520FE725D0085C785 /* ActCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActCategory.h; sourceTree = "<group>"; };
 		5DB1009620FE725D0085C785 /* ActCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActCategory.m; sourceTree = "<group>"; };
+		5DB1009820FEB7CE0085C785 /* ImageToFileConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageToFileConversion.h; sourceTree = "<group>"; };
+		5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageToFileConversion.m; sourceTree = "<group>"; };
 		619B39390757B38624E8FACC /* Pods-rakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakUITests/Pods-rakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BAF82B4EFD8956D071E8D9F /* Pods-rak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rak.release.xcconfig"; path = "Pods/Target Support Files/Pods-rak/Pods-rak.release.xcconfig"; sourceTree = "<group>"; };
 		9F3DB2BA3A4F1BCE6D085B20 /* Pods-rakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakTests/Pods-rakTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 				5D329D4F20FD436C00C180C9 /* InitializeDB.m */,
 				5DB1008F20FE64A70085C785 /* PointToLevelConverter.h */,
 				5DB1009020FE64A70085C785 /* PointToLevelConverter.m */,
+				5DB1009820FEB7CE0085C785 /* ImageToFileConversion.h */,
+				5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -529,6 +534,7 @@
 				5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */,
 				2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
+				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
 				5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */,
 				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
