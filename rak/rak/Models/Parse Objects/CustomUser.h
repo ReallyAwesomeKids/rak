@@ -24,8 +24,7 @@
 
 @property (strong, nonatomic) NSArray *chosenActs;
 
-- (void)addToDailyStreakIfNeeded;
-- (void)addToActHistoryWithAct:(Act *)act;
+- (void)userDidCompleteAct:(Act *)act;
 
 - (void)updateDailyStreak;
 

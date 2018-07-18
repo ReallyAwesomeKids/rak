@@ -64,13 +64,27 @@
     [self saveChangesInUserData];
 }
 
+- (void)userDidCompleteAct:(Act *)act {
+    [self addToDailyStreakIfNeeded];
+    [self updateDateLastDidAct];
+    [self addToActHistoryWithAct:act];
+}
+
 - (void)addToDailyStreakIfNeeded {
     [self updateDailyStreak];
     
-    NSDate *today = [self getToday];
-    if ([self.dateLastDidAct timeIntervalSinceDate:today] < 0) {
-        self.streak += 1;
+    if (self.dateLastDidAct == nil) {
+        self.streak = 1;
     }
+    else {
+        NSDate *today = [self getToday];
+        if ([self.dateLastDidAct timeIntervalSinceDate:today] < 0) {
+        self.streak += 1;
+        }
+    }
+}
+
+- (void)updateDateLastDidAct {
     NSDate *now = [NSDate date];
     self.dateLastDidAct = now;
     [self saveChangesInUserData];
@@ -85,8 +99,11 @@
     }
     [mutableArray addObject:now];
     NSArray *immutableArray = [mutableArray copy];
-    [self.actsDone setValue:immutableArray forKey:key];
     
+    NSMutableDictionary *mutableDict = [self.actsDone mutableCopy];
+    [mutableDict setValue:immutableArray forKey:key];
+   
+    self.actsDone = [mutableDict copy];
     [self saveChangesInUserData];
 }
 
