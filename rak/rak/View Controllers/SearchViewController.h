@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomUser.h"
 
 @interface SearchViewController : UIViewController
-
+@property (strong, nonatomic) CustomUser *userObject;
 @end
