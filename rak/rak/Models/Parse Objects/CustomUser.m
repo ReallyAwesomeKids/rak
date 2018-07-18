@@ -7,39 +7,11 @@
 //
 
 #import "CustomUser.h"
+#import "DateFunctions.h"
 
 @implementation CustomUser
 
 @dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actsDone, badges, chosenActs;
-
--(NSDate *)getYesterday {
-    NSDate *now = [NSDate date];
-    int daysToAdd = -1;
-    
-    NSDateComponents *components = [[NSDateComponents alloc] init];
-    [components setDay:daysToAdd];
-    
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    
-    NSDate *yesterday = [gregorian dateByAddingComponents:components toDate:now options:0];
-    
-    NSDateComponents *dateComponents = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:yesterday];
-    
-    yesterday = [gregorian dateFromComponents:dateComponents];
-
-    return yesterday;
-}
-
-- (NSDate *)getToday {
-    NSDate *now = [NSDate date];
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    
-    NSDateComponents *dateComponents = [gregorian components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:now];
-    
-    NSDate *today = [gregorian dateFromComponents:dateComponents];
-    
-    return today;
-}
 
 - (void)saveChangesInUserData {
     [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
@@ -54,7 +26,7 @@
     if (self.dateLastDidAct == nil)
         self.streak = 0;
     else {
-        NSDate *yesterday = [self getYesterday];
+        NSDate *yesterday = [DateFunctions getYesterday];
         
         // if dateLastDidAct is earlier than yesterday at midnight, reset streak
         if ([self.dateLastDidAct timeIntervalSinceDate:yesterday] < 0) {
@@ -77,7 +49,7 @@
         self.streak = 1;
     }
     else {
-        NSDate *today = [self getToday];
+        NSDate *today = [DateFunctions getToday];
         if ([self.dateLastDidAct timeIntervalSinceDate:today] < 0) {
         self.streak += 1;
         }

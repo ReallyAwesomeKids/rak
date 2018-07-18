@@ -11,13 +11,33 @@
 #import "CustomUser.h"
 #import "ActCategory.h"
 #import "ImageToFileConversion.h"
+#import "DateFunctions.h"
 
 @implementation InitializeDB
+
 
 + (void) initializeDatabase {
     //[self initializeUser];
     //[self initializeActs];
     //[self initializeActCategories];
+    //[self updateActs];
+}
+
++ (void)updateActs {
+    PFQuery *challengeQuery = [Act query];
+    [challengeQuery includeKey:@"category"];
+    [challengeQuery whereKey:@"category" equalTo:@"Daily Challenges"];
+    [challengeQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        for (Act *act in objects) {
+            act.dateLastFeatured = nil  ;
+            [act saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (error)
+                    NSLog(@"error saving....");
+                else
+                    NSLog(@"success saving...");
+            }];
+        }
+    }];
 }
 
 + (void)initializeUser {
