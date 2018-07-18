@@ -45,7 +45,6 @@
 
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -104,6 +103,35 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.userActs.count;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSMutableArray *userActsMutable = [self createMutableArray:self.userActs];
+        
+        [userActsMutable removeObjectAtIndex:[indexPath row]];
+
+        NSArray *array = [userActsMutable copy];
+        
+        self.userActs = array;
+        
+        [self.tableView reloadData];
+        
+        // Gustavo, this is a note for your morning tomorrow
+        // You are not deleting the tasks in the db chosenActs
+        // That's why when you reload it will show up again
+        // Abraços, Gustavo from yesterday 548pm
+        
+        // There is a bug in your background color cell view. Every time you delete,
+        // the view is still green
+    }
+}
+
+- (NSMutableArray *)createMutableArray:(NSArray *)array
+{
+    return [NSMutableArray arrayWithArray:array];
 }
 
 /*

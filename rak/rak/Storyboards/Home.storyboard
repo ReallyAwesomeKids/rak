@@ -95,7 +95,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-sv-jpY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="105"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="challenge" translatesAutoresizingMaskIntoConstraints="NO" id="10G-vc-XkH">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Daily Challenges" translatesAutoresizingMaskIntoConstraints="NO" id="10G-vc-XkH">
                                         <rect key="frame" x="8" y="20" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="awi-b7-xM2"/>
@@ -215,7 +215,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="challenge" width="65" height="65"/>
+        <image name="Daily Challenges" width="65" height="65"/>
         <image name="icons8-customer-30" width="30" height="30"/>
         <image name="xx" width="28" height="28"/>
     </resources>
