@@ -7,15 +7,25 @@
 //
 
 #import "SearchViewController.h"
+#import "Parse/Parse.h"
+#import "ParseUI/ParseUI.h"
+#import "CustomUser.h"
+#import "SearchCell.h"
 
-@interface SearchViewController ()
-
+@interface SearchViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *searchTableView;
+@property (strong, nonatomic) NSArray *users;
+//@property (strong, nonatomic) NSArray *userPointImage;
 @end
 
 @implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.searchTableView.delegate = self;
+    self.searchTableView.dataSource = self;
+    [self.searchTableView reloadData];
+    //self.users = @{self.userObject.displayName:@[self.userObject.profileImage, points = [@self.userObject.experiencePoints stringValue]};
     // Do any additional setup after loading the view.
 }
 
@@ -34,4 +44,18 @@
 }
 */
 
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    SearchCell *searchCell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];
+    
+    CustomUser *user = self.users[indexPath.row];
+    //searchCell.searchUser = user;
+    //[self.actcell configureCell:(Act*)cat];
+    
+    //return actCell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //self.userSearching.count;
+}
 @end
