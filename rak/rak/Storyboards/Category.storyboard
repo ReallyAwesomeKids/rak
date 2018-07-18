@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,23 +36,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="113" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9g-uF-yGg">
-                                                    <rect key="frame" x="10" y="65" width="93" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hzg-85-KH3" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="150"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" red="0.93369048830000001" green="0.29711738240000002" blue="0.2657249458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="Y9g-uF-yGg" firstAttribute="leading" secondItem="EXJ-88-UGs" secondAttribute="leadingMargin" constant="2" id="3bp-AZ-rAS"/>
-                                            <constraint firstAttribute="bottomMargin" relation="lessThanOrEqual" secondItem="Y9g-uF-yGg" secondAttribute="bottom" constant="56" id="YMe-Cp-Flc"/>
-                                            <constraint firstItem="Y9g-uF-yGg" firstAttribute="top" secondItem="EXJ-88-UGs" secondAttribute="topMargin" constant="57" id="kRQ-Cz-K2z"/>
-                                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="Y9g-uF-yGg" secondAttribute="trailing" constant="2" id="t99-6v-b48"/>
+                                            <constraint firstItem="hzg-85-KH3" firstAttribute="top" secondItem="EXJ-88-UGs" secondAttribute="top" id="5lz-cW-Dsd"/>
+                                            <constraint firstItem="hzg-85-KH3" firstAttribute="leading" secondItem="EXJ-88-UGs" secondAttribute="leading" id="7dp-14-OjN"/>
+                                            <constraint firstAttribute="bottom" secondItem="hzg-85-KH3" secondAttribute="bottom" id="p1R-rm-vqH"/>
+                                            <constraint firstAttribute="trailing" secondItem="hzg-85-KH3" secondAttribute="trailing" id="xvn-Vo-UjB"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="categoriesView" destination="Y9g-uF-yGg" id="j45-m3-OMq"/>
+                                            <outlet property="categoriesImageView" destination="hzg-85-KH3" id="zLy-O3-fin"/>
                                             <segue destination="rP0-wh-l6X" kind="show" identifier="actCategorySegue" id="O3h-Xw-gCb"/>
                                         </connections>
                                     </collectionViewCell>
@@ -92,8 +87,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task that directly correlates to this category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-jY-wXH">
-                                                    <rect key="frame" x="6" y="37" width="336" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="6" y="37" width="336" height="23.5"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -103,7 +98,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="7hi-JP-rvA"/>
                                                         <constraint firstAttribute="height" constant="22" id="gPg-tC-i7a"/>
                                                     </constraints>
-                                                    <state key="normal" image="check" backgroundImage="check"/>
+                                                    <state key="normal" image="xx" backgroundImage="xx"/>
                                                     <connections>
                                                         <action selector="addingPersonalAct:" destination="rP0-wh-l6X" eventType="touchUpInside" id="hqL-yO-Gt3"/>
                                                     </connections>
@@ -143,6 +138,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="check" width="40" height="40"/>
+        <image name="xx" width="28" height="28"/>
     </resources>
 </document>

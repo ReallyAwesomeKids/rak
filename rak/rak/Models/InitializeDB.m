@@ -10,6 +10,7 @@
 #import "Act.h"
 #import "CustomUser.h"
 #import "ActCategory.h"
+#import "ImageToFileConversion.h"
 
 @implementation InitializeDB
 
@@ -25,7 +26,7 @@
     newUser.username = @"a";
     newUser.password = @"a";
     
-    newUser.profileImage = [CustomUser getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
+    newUser.profileImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
     newUser.displayName = @"Ayy";
     newUser.location = @"Menlo Park";
     newUser.streak = 0;
@@ -118,12 +119,13 @@
 }
 
 + (void)initializeActCategories {
-    NSArray *cats = @[@"Daily Challenges"];
-    // NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work"];
+    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Daily Challenges"];
     for (NSString *cat in cats) {
         
         ActCategory *category = [[ActCategory alloc] init];
         category.categoryName = cat;
+        category.categoryImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:cat]];
+        
         PFQuery *query = [PFQuery queryWithClassName:@"Act"];
         [query orderByAscending:@"actName"];
         [query whereKey:@"category" equalTo:cat];

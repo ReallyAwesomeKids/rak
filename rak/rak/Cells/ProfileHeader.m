@@ -17,6 +17,8 @@
 }
 
 - (void)configureProfileHeader {
+    
+    
     self.displayNameLabel.text = self.user.displayName;
     self.locationLabel.text = self.user.location;
     
