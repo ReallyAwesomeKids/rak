@@ -83,6 +83,7 @@ CORE
 - [x] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
 - [x] (Gustavo) Homepage with selected tasks on it
 - [x] (Gustavo) Done functionality on a cell
+- [ ] (Gustavo) Removing tasks from your homepage by DetailsVC
 - [X] (Halima) Having task categories and lists of tasks in each category
 - [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
 - [x] (Haley) User profile page
