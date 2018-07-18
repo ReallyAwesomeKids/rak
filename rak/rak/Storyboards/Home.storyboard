@@ -27,13 +27,21 @@
             </objects>
             <point key="canvasLocation" x="-767" y="-75"/>
         </scene>
+        <!--ActDetail-->
+        <scene sceneID="Elb-5S-v8E">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ActDetail" id="QBb-IM-bVv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBg-Qk-rBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="518" y="-185"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="eAm-lt-85I">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="yPY-Ld-PMU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fM-1V-FOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="-76"/>
+            <point key="canvasLocation" x="504" y="25"/>
         </scene>
         <!--Search-->
         <scene sceneID="YqV-wh-GJ0">
@@ -115,6 +123,7 @@
                                             <outlet property="cellView" destination="OJ5-FV-LSE" id="h05-ZW-O6v"/>
                                             <outlet property="checkButton" destination="n1k-5F-Kki" id="Wq8-VV-01S"/>
                                             <outlet property="homeCellActName" destination="SQ3-ZR-dSE" id="qVv-x1-hjq"/>
+                                            <segue destination="QBb-IM-bVv" kind="show" identifier="detailSegue" id="64S-wR-wDa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
