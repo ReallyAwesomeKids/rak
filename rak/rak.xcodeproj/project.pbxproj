@@ -17,6 +17,7 @@
 		548438AB20FFF7F900592EB1 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438AA20FFF7F900592EB1 /* Timeline.storyboard */; };
 		548438AD20FFF8EB00592EB1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438AC20FFF8EB00592EB1 /* Map.storyboard */; };
 		548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 548B222C20FD508200D667F7 /* ActsTableViewCell.m */; };
+		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
 		5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CEA20FD15A200C180C9 /* AppDelegate.m */; };
 		5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CEF20FD15A200C180C9 /* Main.storyboard */; };
 		5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CF220FD15A300C180C9 /* Assets.xcassets */; };
@@ -43,7 +44,6 @@
 		5DB1009120FE64A70085C785 /* PointToLevelConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009020FE64A70085C785 /* PointToLevelConverter.m */; };
 		5DB1009720FE725D0085C785 /* ActCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009620FE725D0085C785 /* ActCategory.m */; };
 		5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */; };
-		5DB1009D20FEE5EF0085C785 /* DetailViewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009C20FEE5EF0085C785 /* DetailViewHeaderCell.m */; };
 		5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009F20FEE5FF0085C785 /* DetailViewTableViewCell.m */; };
 		8C1A5F2E1E6BC31C46ECD42B /* libPods-rakUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */; };
 		FBFA6E4C50DF6C67769C0BAA /* libPods-rakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317354D07177A40A39F507D7 /* libPods-rakTests.a */; };
@@ -86,6 +86,8 @@
 		548438AC20FFF8EB00592EB1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		548B222B20FD508200D667F7 /* ActsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActsTableViewCell.h; sourceTree = "<group>"; };
 		548B222C20FD508200D667F7 /* ActsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActsTableViewCell.m; sourceTree = "<group>"; };
+		5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
+		5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
 		5D329CE620FD15A200C180C9 /* rak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D329CE920FD15A200C180C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D329CEA20FD15A200C180C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -134,8 +136,6 @@
 		5DB1009620FE725D0085C785 /* ActCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActCategory.m; sourceTree = "<group>"; };
 		5DB1009820FEB7CE0085C785 /* ImageToFileConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageToFileConversion.h; sourceTree = "<group>"; };
 		5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageToFileConversion.m; sourceTree = "<group>"; };
-		5DB1009B20FEE5EF0085C785 /* DetailViewHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewHeaderCell.h; sourceTree = "<group>"; };
-		5DB1009C20FEE5EF0085C785 /* DetailViewHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewHeaderCell.m; sourceTree = "<group>"; };
 		5DB1009E20FEE5FF0085C785 /* DetailViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewTableViewCell.h; sourceTree = "<group>"; };
 		5DB1009F20FEE5FF0085C785 /* DetailViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewTableViewCell.m; sourceTree = "<group>"; };
 		619B39390757B38624E8FACC /* Pods-rakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakUITests/Pods-rakUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,12 +186,12 @@
 				5D329D5220FD4BB800C180C9 /* ProfileHeader.m */,
 				5D329D5420FD4CBA00C180C9 /* BadgeCell.h */,
 				5D329D5520FD4CBA00C180C9 /* BadgeCell.m */,
-				5DB1009B20FEE5EF0085C785 /* DetailViewHeaderCell.h */,
-				5DB1009C20FEE5EF0085C785 /* DetailViewHeaderCell.m */,
 				5DB1009E20FEE5FF0085C785 /* DetailViewTableViewCell.h */,
 				5DB1009F20FEE5FF0085C785 /* DetailViewTableViewCell.m */,
 				2C5C3B8F20FFB902004568EF /* SearchCell.h */,
 				2C5C3B9020FFB902004568EF /* SearchCell.m */,
+				5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */,
+				5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -583,10 +583,10 @@
 				5DB1009120FE64A70085C785 /* PointToLevelConverter.m in Sources */,
 				5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */,
 				5D329D3F20FD1AA900C180C9 /* Act.m in Sources */,
-				5DB1009D20FEE5EF0085C785 /* DetailViewHeaderCell.m in Sources */,
 				5D329D3320FD170500C180C9 /* CategoriesViewController.m in Sources */,
 				2C5C3B9120FFB902004568EF /* SearchCell.m in Sources */,
 				5D329D2920FD169800C180C9 /* HomeViewController.m in Sources */,
+				5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */,
 				548438A720FFB65700592EB1 /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
