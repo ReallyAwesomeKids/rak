@@ -11,6 +11,7 @@
 #import "Parse.h"
 #import "ActsTableViewCell.h"
 #import "DetailViewController.h"
+#import "DateFunctions.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -86,24 +87,34 @@
 - (void) fetchDailyChallenge {
     PFQuery *challengeQuery = [Act query];
     [challengeQuery includeKey:@"category"];
+    [challengeQuery includeKey:@"dateLastFeatured"];
     [challengeQuery whereKey:@"category" equalTo:@"Daily Challenges"];
-
+    [challengeQuery orderByAscending:@"dateLastFeatured"];
+    
     // fetch data asynchronously
     [challengeQuery findObjectsInBackgroundWithBlock:^(NSArray *acts, NSError *error) {
         if (acts != nil) {
-            for (PFObject *act in acts) {
-                NSLog(@"daily challenges fetched: %@", act);
-                Act *displayedChallenge = acts[0];
-                self.homeTaskName.text = displayedChallenge.actName;
-                [self.dailyChallenges addObject:act];
+            NSLog(@"daily challenges fetched: %@", acts);
+            Act *displayedChallenge;
+            Act *mostRecentChallenge = acts[0];
+            NSDate *today = [DateFunctions getToday];
+            
+            if ([mostRecentChallenge.dateLastFeatured compare:today] == NSOrderedSame) {
+                displayedChallenge = mostRecentChallenge;
             }
+            else {
+                Act *leastRecentChallenge = acts[acts.count - 1];
+                displayedChallenge = leastRecentChallenge;
+            }
+            [displayedChallenge updateDateLastFeatured];
+            self.homeTaskName.text = displayedChallenge.actName;
+            
             [self.tableView reloadData];
         }
         else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    
 }
 
 - (IBAction)didTapCheckmarkButton:(id)sender {
