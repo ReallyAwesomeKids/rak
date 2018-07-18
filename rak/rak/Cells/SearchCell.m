@@ -23,12 +23,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setUserSearch:(CustomUser *)searchUser{
-    searchUser = searchUser;
-    [self configureCell];
-}
-
-- (void)configureCell{
+- (void)configureCell: (CustomUser *) user {
     self.searchProfileImage.image = nil;
     self.searchProfileImage.file = self.user[@"profileImage"];
     [self.searchProfileImage loadInBackground];

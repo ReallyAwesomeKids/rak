@@ -12,9 +12,11 @@
 #import "CustomUser.h"
 #import "SearchCell.h"
 
-@interface SearchViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface SearchViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *users;
+@property (strong, nonatomic) NSArray *searchingUsers;
 //@property (strong, nonatomic) NSArray *userPointImage;
 @end
 
@@ -24,6 +26,7 @@
     [super viewDidLoad];
     self.searchTableView.delegate = self;
     self.searchTableView.dataSource = self;
+    [self fetchUser];
     [self.searchTableView reloadData];
     //self.users = @{self.userObject.displayName:@[self.userObject.profileImage, points = [@self.userObject.experiencePoints stringValue]};
     // Do any additional setup after loading the view.
@@ -49,13 +52,33 @@
     SearchCell *searchCell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];
     
     CustomUser *user = self.users[indexPath.row];
-    //searchCell.searchUser = user;
-    //[self.actcell configureCell:(Act*)cat];
+    searchCell.user = user;
+    [searchCell configureCell:(CustomUser *)user];
     
-    //return actCell;
+    return searchCell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //self.userSearching.count;
+   return self.users.count;
+    
 }
+
+-(void)fetchUser {
+    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
+    [query includeKey:@"profileImage"];
+    [query includeKey:@"displayName"];
+    [query includeKey:@"experiencePoints"];
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+        if (users != nil) {
+            self.users = users;
+            NSLog(@"===================");
+            NSLog(@"%@", self.users);
+            [self.searchTableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
 @end
