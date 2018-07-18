@@ -13,6 +13,9 @@
 		48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDF13E0D63C064B2817FBB /* libPods-rak.a */; };
 		548438A420FFAD8B00592EB1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438A320FFAD8B00592EB1 /* Search.storyboard */; };
 		548438A720FFB65700592EB1 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548438A620FFB65700592EB1 /* SearchViewController.m */; };
+		548438A920FFEB4900592EB1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548438A820FFEB4900592EB1 /* UserNotifications.framework */; };
+		548438AB20FFF7F900592EB1 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438AA20FFF7F900592EB1 /* Timeline.storyboard */; };
+		548438AD20FFF8EB00592EB1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438AC20FFF8EB00592EB1 /* Map.storyboard */; };
 		548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 548B222C20FD508200D667F7 /* ActsTableViewCell.m */; };
 		5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CEA20FD15A200C180C9 /* AppDelegate.m */; };
 		5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CEF20FD15A200C180C9 /* Main.storyboard */; };
@@ -78,6 +81,9 @@
 		548438A320FFAD8B00592EB1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		548438A520FFB65700592EB1 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		548438A620FFB65700592EB1 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		548438A820FFEB4900592EB1 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		548438AA20FFF7F900592EB1 /* Timeline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timeline.storyboard; sourceTree = "<group>"; };
+		548438AC20FFF8EB00592EB1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		548B222B20FD508200D667F7 /* ActsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActsTableViewCell.h; sourceTree = "<group>"; };
 		548B222C20FD508200D667F7 /* ActsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActsTableViewCell.m; sourceTree = "<group>"; };
 		5D329CE620FD15A200C180C9 /* rak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rak.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				548438A920FFEB4900592EB1 /* UserNotifications.framework in Frameworks */,
 				48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +262,8 @@
 				5D329D2120FD160C00C180C9 /* Profile.storyboard */,
 				5D329D4620FD208200C180C9 /* ActDetail.storyboard */,
 				548438A320FFAD8B00592EB1 /* Search.storyboard */,
+				548438AA20FFF7F900592EB1 /* Timeline.storyboard */,
+				548438AC20FFF8EB00592EB1 /* Map.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -325,6 +334,7 @@
 		EA718A4FA4E3D76E6A42E741 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				548438A820FFEB4900592EB1 /* UserNotifications.framework */,
 				2ECDF13E0D63C064B2817FBB /* libPods-rak.a */,
 				317354D07177A40A39F507D7 /* libPods-rakTests.a */,
 				30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */,
@@ -446,6 +456,8 @@
 				5D329D2020FD15FE00C180C9 /* Home.storyboard in Resources */,
 				5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */,
 				548438A420FFAD8B00592EB1 /* Search.storyboard in Resources */,
+				548438AD20FFF8EB00592EB1 /* Map.storyboard in Resources */,
+				548438AB20FFF7F900592EB1 /* Timeline.storyboard in Resources */,
 				5D329D4720FD208200C180C9 /* ActDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
