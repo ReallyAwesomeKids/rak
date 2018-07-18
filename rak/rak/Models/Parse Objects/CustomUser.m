@@ -66,7 +66,16 @@
 }
 
 - (void)addToActHistoryWithAct:(Act *)act {
+    NSDate *now = [NSDate date];
+    NSString *key = act.objectId;
+    NSMutableArray *mutableArray = [NSMutableArray new];
+    if ([self.actsDone objectForKey:key]) {
+        mutableArray = [NSMutableArray arrayWithArray:self.actsDone[key]];
+    }
     
+    [mutableArray addObject:now];
+    NSArray *immutableArray = [mutableArray copy];
+    [self.actsDone setValue:immutableArray forKey:key];
 }
 
 @end
