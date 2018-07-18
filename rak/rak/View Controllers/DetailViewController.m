@@ -25,7 +25,9 @@
     self.tableView.dataSource = self;
     NSString *actObjectId = self.act.objectId;
     self.completionLog = CustomUser.currentUser.actsDone[actObjectId];
-
+    if (self.completionLog == nil)
+        self.completionLog = [NSArray new];
+    [self.tableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
