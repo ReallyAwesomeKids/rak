@@ -123,9 +123,11 @@
         // You are not deleting the tasks in the db chosenActs
         // That's why when you reload it will show up again
         // Abraços, Gustavo from yesterday 548pm
+        
+        // There is a bug in your background color cell view. Every time you delete,
+        // the view is still green
     }
 }
-
 
 - (NSMutableArray *)createMutableArray:(NSArray *)array
 {
