@@ -42,8 +42,8 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // initialization
-    self.dailyChallenges = [[NSMutableArray alloc] init];
     self.refreshControl = [[UIRefreshControl alloc] init];
+    self.dailyChallenges = [[NSMutableArray alloc] init];
 
     // fetch data from db
     [self fetchUserActs];
