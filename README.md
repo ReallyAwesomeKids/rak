@@ -85,14 +85,12 @@ CORE
 - [x] (Gustavo) Done functionality on a cell
 - [X] (Halima) Having task categories and lists of tasks in each category
 - [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
-- [ ] (Haley) User profile page
-  - [ ] Name label
-  - [ ] Static profile picture and location label temporarily
-  - [ ] Functional streak label
+- [x] (Haley) User profile page
+  - [x] Name label
+  - [x] Static profile picture and location label temporarily
+  - [x] Functional streak label
+  - [x] Level and level progress labels update correctly
 - [ ] (Haley) Detail view of each task
-  - [ ] User's progress
-  - [ ] Difficulty level
-- [ ] () Removing tasks from your homepage by DetailsVC
 
 EXTENDED
 - [ ] Design launch screen and logo
