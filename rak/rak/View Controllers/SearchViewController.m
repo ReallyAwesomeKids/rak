@@ -9,6 +9,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *users;
 @property (strong, nonatomic) NSArray *searchingUsers;
+@property (strong, nonatomic) NSMutableArray *filteredNames;
 //@property (strong, nonatomic) NSArray *userPointImage;
 @end
 
@@ -18,6 +19,7 @@
     [super viewDidLoad];
     self.searchTableView.delegate = self;
     self.searchTableView.dataSource = self;
+    self.searchBar.delegate = self;
     [self fetchUser];
     [self.searchTableView reloadData];
     //self.users = @{self.userObject.displayName:@[self.userObject.profileImage, points = [@self.userObject.experiencePoints stringValue]};
@@ -72,5 +74,4 @@
         }
     }];
 }
-
 @end

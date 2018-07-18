@@ -82,8 +82,10 @@ CORE
 - [x] (Everyone) Brainstorming different acts of kindness and categoriezing them
 - [x] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
 - [x] (Gustavo) Homepage with selected tasks on it
+  - [x] (Gustavo) Implementing a refresh control to load data
 - [x] (Gustavo) Done functionality on a cell
-- [x] (Gustavo) Removing tasks from your homepage by DetailsVC
+- [x] (Gustavo) Removing tasks from your homepage 
+  - [x] (Gustavo) Swipable cells instead of the close button
 - [X] (Halima) Having task categories and lists of tasks in each category
 - [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
 - [x] (Haley) User profile page
@@ -98,7 +100,6 @@ EXTENDED
 - [ ] Design launch screen and logo
 - [ ] Determine color scheme
 - [ ] (Gustavo) Homepage notifications when button clicked "done"
-- [x] (Gustavo) Swipable cells instead of the close button
 
 
 
