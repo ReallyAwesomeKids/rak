@@ -41,6 +41,15 @@
     return today;
 }
 
+- (void)saveChangesInUserData {
+    [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error)
+            NSLog(@"error updating user: %@", error.localizedDescription);
+        else
+            NSLog(@"successfully updated user");
+    }];
+}
+
 - (void)updateDailyStreak {
     if (self.dateLastDidAct == nil)
         self.streak = 0;
@@ -52,6 +61,7 @@
             self.streak = 0;
         }
     }
+    [self saveChangesInUserData];
 }
 
 - (void)addToDailyStreakIfNeeded {
@@ -63,6 +73,7 @@
     }
     NSDate *now = [NSDate date];
     self.dateLastDidAct = now;
+    [self saveChangesInUserData];
 }
 
 - (void)addToActHistoryWithAct:(Act *)act {
@@ -72,10 +83,11 @@
     if ([self.actsDone objectForKey:key]) {
         mutableArray = [NSMutableArray arrayWithArray:self.actsDone[key]];
     }
-    
     [mutableArray addObject:now];
     NSArray *immutableArray = [mutableArray copy];
     [self.actsDone setValue:immutableArray forKey:key];
+    
+    [self saveChangesInUserData];
 }
 
 @end
