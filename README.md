@@ -91,7 +91,7 @@ CORE
   - [x] Static profile picture and location label temporarily
   - [x] Functional streak label
   - [x] Level and level progress labels update correctly
-- [ ] (Haley) Detail view of each task
+- [x] (Haley) Detail view of each task
 
 EXTENDED
 - [ ] Design launch screen and logo
