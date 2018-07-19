@@ -174,7 +174,7 @@
         Badge *badge = [Badge new];
 
         NSInteger val = [value integerValue];
-        NSString *desc = @"Completed %ld acts of kindness";
+        NSString *desc = [NSString stringWithFormat:@"Achieved a %ld day streak", val];
         badge.badgeDescription = desc;
         badge.value = val;
         badge.badgeType = @"Overall";
@@ -188,7 +188,7 @@
         Badge *badge = [Badge new];
         
         NSInteger val = [value integerValue];
-        NSString *desc =[NSString stringWithFormat:@"Achieved a %ld day streak", val];
+        NSString *desc = [NSString stringWithFormat:@"Achieved a %ld day streak", val];
         badge.badgeDescription = desc;
         badge.value = val;
         badge.badgeType = @"Streak";

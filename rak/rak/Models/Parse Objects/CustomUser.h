@@ -10,6 +10,7 @@
 
 #import <Parse/Parse.h>
 #import "Act.h"
+#import "Badge.h"
 
 @interface CustomUser : PFUser <PFSubclassing>
 
@@ -32,5 +33,7 @@
 - (void)updateDailyStreak;
 
 - (void)saveChangesInUserData;
-    
+
+- (Badge *)checkForNewBadgeOfType:(NSString *)badgeType;
+
 @end
