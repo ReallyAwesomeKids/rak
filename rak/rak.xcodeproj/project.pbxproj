@@ -613,11 +613,8 @@
 				5D329CF920FD15A300C180C9 /* main.m in Sources */,
 				2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */,
 				5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */,
-<<<<<<< HEAD
 				5451684921010DD200D45FE3 /* TimelineTableViewCell.m in Sources */,
-=======
 				2C5C3B9A21010DAA004568EF /* PhotoMapViewController.m in Sources */,
->>>>>>> 14ba2a87f3cce5b75e9227bfc0ed1ecd53373f77
 				2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
 				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
