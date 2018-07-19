@@ -1,4 +1,4 @@
-"NumberOfActsDoneOverall" - Number of acts done overall
+"Overall" - Number of acts done overall
 - 1 act
 - 10 acts
 - 50 acts
@@ -7,7 +7,7 @@
 - 500 acts
 - 1000 acts
 
-"NumberOfActsDoneOfOneKind" - Number of times did specific act
+"OneKind" - Number of times did specific act
 - 5 times
 - 10 times
 - 25 times
