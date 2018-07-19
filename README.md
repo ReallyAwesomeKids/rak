@@ -108,17 +108,10 @@ EXTENDED
   - [ ] Share to Twitter  
 - [ ] (Gustavo) Homepage notifications when button clicked "done"
 
-
-
 ### Week 2
-- [ ] Searching for users tab
+- [X] Searching for users tab
 - [ ] Invite/challenge friend via text message/email
 - [ ] Badges on profile page
-- [ ] Timeline
-  - [ ] See other people's posts
-  - [ ] Make your own posts
-  - [ ] Share to Facebook
-  - [ ] Share to Twitter
   
 ### Week 3
 - [ ] Map view
