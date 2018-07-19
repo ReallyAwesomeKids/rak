@@ -84,6 +84,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Compose" id="5rw-k7-HNk">
                             <connections>
                                 <action selector="didTapCompose:" destination="iY0-WQ-MqD" id="3f1-LZ-rcy"/>
+                                <segue destination="CcO-Aa-XpY" kind="show" identifier="composeSegue" id="rNt-Wv-N3z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -95,6 +96,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2U-rw-ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="639.20000000000005" y="-46.326836581709152"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="6jg-v0-Ujj">
+            <objects>
+                <viewController id="CcO-Aa-XpY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Sn-CV-qgP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0eL-uq-Un5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W6G-ud-0uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1391" y="-46"/>
         </scene>
     </scenes>
     <resources>
