@@ -8,9 +8,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *users;
-@property (strong, nonatomic) NSArray *searchingUsers;
-@property (strong, nonatomic) NSMutableArray *filteredNames;
-//@property (strong, nonatomic) NSArray *userPointImage;
+@property (strong, nonatomic) NSArray *filteredUsers;
+@property (strong, nonatomic) NSArray *userSearch;
 @end
 
 @implementation SearchViewController
@@ -45,7 +44,7 @@
     
     SearchCell *searchCell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell" forIndexPath:indexPath];
     
-    CustomUser *user = self.users[indexPath.row];
+    CustomUser *user = self.filteredUsers[indexPath.row];
     searchCell.user = user;
     [searchCell configureCell:(CustomUser *)user];
     
@@ -53,7 +52,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   return self.users.count;
+   return self.filteredUsers.count;
     
 }
 
@@ -66,6 +65,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         if (users != nil) {
             self.users = users;
+            self.filteredUsers = users;
             NSLog(@"===================");
             NSLog(@"%@", self.users);
             [self.searchTableView reloadData];
@@ -74,4 +74,25 @@
         }
     }];
 }
+
+-(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
+            return [evaluatedObject[@"displayName"] containsString:searchText];
+        }];
+        self.filteredUsers = [self.users filteredArrayUsingPredicate:predicate];
+        
+        NSLog(@"%@", self.filteredUsers);
+        
+    }
+    else {
+        self.filteredUsers= self.users;
+    }
+    
+    [self.searchTableView reloadData];
+    
+}
+
 @end
