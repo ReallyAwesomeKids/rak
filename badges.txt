@@ -7,7 +7,7 @@
 - 500 acts
 - 1000 acts
 
-"OneKind" - Number of times did specific act
+"Habit" - Number of times did specific act
 - 5 times
 - 10 times
 - 25 times
