@@ -13,6 +13,9 @@
 @end
 
 @implementation TimelineViewController
+- (IBAction)didTapCompose:(id)sender {
+    NSLog(@"tapping");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

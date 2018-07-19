@@ -16,6 +16,7 @@
 		2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9E2101105C004568EF /* LocationsViewController.m */; };
 		2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3BA4210112AB004568EF /* LocationCell.m */; };
 		48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDF13E0D63C064B2817FBB /* libPods-rak.a */; };
+		54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54516845210018CC00D45FE3 /* TimelineViewController.m */; };
 		548438A420FFAD8B00592EB1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438A320FFAD8B00592EB1 /* Search.storyboard */; };
 		548438A720FFB65700592EB1 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548438A620FFB65700592EB1 /* SearchViewController.m */; };
 		548438A920FFEB4900592EB1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548438A820FFEB4900592EB1 /* UserNotifications.framework */; };
@@ -94,6 +95,8 @@
 		317354D07177A40A39F507D7 /* libPods-rakTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rakTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9A6A7785C92F60E4FC7424 /* Pods-rak.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rak.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rak/Pods-rak.debug.xcconfig"; sourceTree = "<group>"; };
 		4CEB9DAA8DEDF6E751A58229 /* Pods-rakTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-rakTests/Pods-rakTests.debug.xcconfig"; sourceTree = "<group>"; };
+		54516844210018CC00D45FE3 /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		54516845210018CC00D45FE3 /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		548438A320FFAD8B00592EB1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		548438A520FFB65700592EB1 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		548438A620FFB65700592EB1 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				2C5C3B9921010DAA004568EF /* PhotoMapViewController.m */,
 				2C5C3B9D2101105C004568EF /* LocationsViewController.h */,
 				2C5C3B9E2101105C004568EF /* LocationsViewController.m */,
+				54516844210018CC00D45FE3 /* TimelineViewController.h */,
+				54516845210018CC00D45FE3 /* TimelineViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -612,6 +617,7 @@
 				5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */,
 				2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */,
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
+				54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */,
 				5DB1009720FE725D0085C785 /* ActCategory.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
 				5D190FC321000EB3002A469B /* Post.m in Sources */,

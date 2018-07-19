@@ -55,8 +55,9 @@
     newUser.streak = 0;
     newUser.dateLastDidAct = nil;
     newUser.experiencePoints = 0;
-    newUser.actsDone = @{};
-    newUser.badges = [NSArray new];
+    newUser.actHistory = @{};
+    newUser.amountActsDone = 0;
+    newUser.badges = @{@"Overall": @[], @"Streak": @[]};
     
     Act *act = [Act new];
     act.actName = @"Testing the database";
@@ -173,7 +174,7 @@
         Badge *badge = [Badge new];
 
         NSInteger val = [value integerValue];
-        NSString *desc = @"Completed %ld acts of kindness";
+        NSString *desc = [NSString stringWithFormat:@"Achieved a %ld day streak", val];
         badge.badgeDescription = desc;
         badge.value = val;
         badge.badgeType = @"Overall";
@@ -187,7 +188,7 @@
         Badge *badge = [Badge new];
         
         NSInteger val = [value integerValue];
-        NSString *desc =[NSString stringWithFormat:@"Achieved a %ld day streak", val];
+        NSString *desc = [NSString stringWithFormat:@"Achieved a %ld day streak", val];
         badge.badgeDescription = desc;
         badge.value = val;
         badge.badgeType = @"Streak";

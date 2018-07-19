@@ -8,6 +8,7 @@
 
 #import "Badge.h"
 #import "Act.h"
+#import "CustomUser.h"
 
 @implementation Badge
 
@@ -17,19 +18,19 @@
     return @"Badge";
 }
 
-+ (void)checkForNewBadgeOfType:(NSString *)type {
-    if ([type isEqualToString:@"Overall"])
-        [self checkForNewOverallBadge];
-    else if ([type isEqualToString:@"Streak"])
-        [self checkForNewStreakBadge];
+
++ (Badge *)fetchBadgeOfType:(NSString *)badgeType withValueGreaterThan:(NSInteger)value {
+    PFQuery *query = [PFQuery queryWithClassName:@"Badge"];
+    [query includeKey:@"badgeImage"];
+    [query whereKey:@"badgeType" equalTo:badgeType];
+    [query whereKey:@"value" greaterThan:[NSNumber numberWithInteger:value]];
+    [query orderByAscending:@"value"];
+    NSArray *badges = [query findObjects];
+    if (badges == nil || badges.count == 0)
+        return nil;
+    else
+        return badges[0];
 }
 
-+ (void)checkForNewOverallBadge {
-    
-}
-
-+ (void)checkForNewStreakBadge {
-
-}
 
 @end
