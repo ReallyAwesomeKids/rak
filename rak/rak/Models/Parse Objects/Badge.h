@@ -14,5 +14,7 @@
 @property (strong, nonatomic) NSString *badgeName;
 @property (strong, nonatomic) NSString *badgeDescription;
 @property (strong, nonatomic) PFFile *badgeImage;
+@property (strong, nonatomic) NSString *badgeType;
+@property (nonatomic) NSInteger value;
 
 @end
