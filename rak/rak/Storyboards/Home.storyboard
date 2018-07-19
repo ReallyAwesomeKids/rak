@@ -175,33 +175,40 @@
                                             <action selector="didTapCheckmarkButton:" destination="9DP-4D-YYf" eventType="touchUpInside" id="p8r-Mh-jHz"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
-                                        <rect key="frame" x="83" y="38.5" width="243" height="38.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Daily Challenge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-Zo-TKf">
+                                        <rect key="frame" x="83" y="12" width="144.5" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="AJX-zf-OlZ"/>
+                                            <constraint firstAttribute="width" constant="144.5" id="acQ-RD-P5l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Daily Challenge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-Zo-TKf">
-                                        <rect key="frame" x="83" y="15" width="243" height="20.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
+                                        <rect key="frame" x="83" y="31" width="243" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="hNi-yf-b92"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.9137254901960784" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="GPj-mr-fdr" firstAttribute="leading" secondItem="HvJ-sv-jpY" secondAttribute="leading" constant="83" id="0bc-bZ-okT"/>
-                                    <constraint firstItem="A7O-Zo-TKf" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="15" id="0wP-g5-ts2"/>
                                     <constraint firstAttribute="trailing" secondItem="cHC-r4-Rdd" secondAttribute="trailing" constant="16" id="1Ms-5C-PUX"/>
-                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="GPj-mr-fdr" secondAttribute="trailing" constant="8" id="1lk-X8-EaZ"/>
                                     <constraint firstItem="10G-vc-XkH" firstAttribute="leading" secondItem="HvJ-sv-jpY" secondAttribute="leading" constant="8" id="2P2-vP-oFF"/>
-                                    <constraint firstItem="A7O-Zo-TKf" firstAttribute="leading" secondItem="10G-vc-XkH" secondAttribute="trailing" constant="10" id="KUA-c0-7CK"/>
-                                    <constraint firstAttribute="bottom" secondItem="GPj-mr-fdr" secondAttribute="bottom" constant="28" id="dqo-tJ-gfH"/>
+                                    <constraint firstItem="GPj-mr-fdr" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="31" id="AqY-Uk-Cg8"/>
+                                    <constraint firstAttribute="bottom" secondItem="A7O-Zo-TKf" secondAttribute="bottom" constant="67" id="Eca-Dy-ezf"/>
+                                    <constraint firstItem="A7O-Zo-TKf" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="12" id="TEm-SD-XPY"/>
+                                    <constraint firstItem="A7O-Zo-TKf" firstAttribute="leading" secondItem="10G-vc-XkH" secondAttribute="trailing" constant="10" id="X3i-71-xP1"/>
                                     <constraint firstItem="cHC-r4-Rdd" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="40" id="eom-wb-iGk"/>
+                                    <constraint firstAttribute="bottom" secondItem="GPj-mr-fdr" secondAttribute="bottom" constant="4" id="isl-8W-skk"/>
+                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="GPj-mr-fdr" secondAttribute="trailing" constant="8" id="kgT-n9-uSu"/>
+                                    <constraint firstItem="GPj-mr-fdr" firstAttribute="leading" secondItem="10G-vc-XkH" secondAttribute="trailing" constant="10" id="oAN-Ub-SsM"/>
                                     <constraint firstAttribute="bottom" secondItem="cHC-r4-Rdd" secondAttribute="bottom" constant="40" id="oVf-rS-RHR"/>
-                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="A7O-Zo-TKf" secondAttribute="trailing" constant="8" id="tqh-Yi-uUQ"/>
                                     <constraint firstItem="10G-vc-XkH" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="20" id="yMA-7G-SPW"/>
-                                    <constraint firstItem="GPj-mr-fdr" firstAttribute="top" secondItem="A7O-Zo-TKf" secondAttribute="bottom" constant="3" id="zZ2-tx-Yut"/>
                                 </constraints>
                             </view>
                         </subviews>
