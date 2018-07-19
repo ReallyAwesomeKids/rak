@@ -82,10 +82,10 @@ CORE
 - [x] (Everyone) Brainstorming different acts of kindness and categoriezing them
 - [x] (Everyone) Datebase design from scratch (figuring out what kind of Parse objects we need and how to structure it)
 - [x] (Gustavo) Homepage with selected tasks on it
-  - [x] (Gustavo) Implementing a refresh control to load data
+- [x] (Gustavo) Implementing a refresh control to load data
 - [x] (Gustavo) Done functionality on a cell
 - [x] (Gustavo) Removing tasks from your homepage 
-  - [x] (Gustavo) Swipable cells instead of the close button
+- [x] (Gustavo) Swipable cells instead of the close button
 - [X] (Halima) Having task categories and lists of tasks in each category
 - [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
 - [x] (Haley) User profile page
@@ -99,6 +99,13 @@ CORE
 EXTENDED
 - [ ] Design launch screen and logo
 - [ ] Determine color scheme
+- [ ] (Gustavo) Timeline
+  - [ ] See other people's posts
+  - [ ] Create Compose VC
+  - [ ] Make your own posts
+  - [ ] Clicking at Profile picture leads to the User profile
+  - [ ] Share to Facebook
+  - [ ] Share to Twitter  
 - [ ] (Gustavo) Homepage notifications when button clicked "done"
 
 
