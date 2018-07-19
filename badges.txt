@@ -1,4 +1,4 @@
-Number of acts done overall
+"NumberOfActsDoneOverall" - Number of acts done overall
 - 1 act
 - 10 acts
 - 50 acts
@@ -7,14 +7,14 @@ Number of acts done overall
 - 500 acts
 - 1000 acts
 
-Number of times did specific act
+"NumberOfActsDoneOfOneKind" - Number of times did specific act
 - 5 times
 - 10 times
 - 25 times
 - 50 times
 - 100 times
 
-Streaks
+"Streak" - Streaks
 - 7 days
 - 30 days
 - 100 days
