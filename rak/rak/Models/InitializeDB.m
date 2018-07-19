@@ -12,6 +12,7 @@
 #import "ActCategory.h"
 #import "ImageToFileConversion.h"
 #import "DateFunctions.h"
+#import "Post.h"
 
 @implementation InitializeDB
 

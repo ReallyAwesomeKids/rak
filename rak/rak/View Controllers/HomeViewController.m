@@ -24,9 +24,6 @@
 // Array used when perfoming the swipable option of deleting an act
 @property (nonatomic, strong) NSMutableArray *deletedActs;
 
-// Used in fetchDailyChallenges
-@property (nonatomic, strong) NSMutableArray *dailyChallenges;
-
 // Used in fetchUserActs
 @property (nonatomic, strong) NSArray *userActs;
 
@@ -44,8 +41,7 @@
     
     // initialization
     self.refreshControl = [[UIRefreshControl alloc] init];
-    self.dailyChallenges = [[NSMutableArray alloc] init];
-
+    
     // fetch data from db
     [self fetchUserActs];
     [self fetchDailyChallenge];
