@@ -24,7 +24,8 @@
 - (void) setPost:(Post *)post {
     _post = post;
     self.timelineText.text = self.post.postText;
-    
+    self.timelineProfileName.text = [NSString stringWithFormat: @"%@", self.post.author.displayName];
+                                     
 //    self.timelineProfilePicture.file = post.author.profilePic;
 //    [self.timelineProfilePicture loadInBackground];
     
