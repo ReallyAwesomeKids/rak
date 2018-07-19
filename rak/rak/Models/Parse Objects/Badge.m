@@ -17,20 +17,14 @@
     return @"Badge";
 }
 
-+ (void)checkForNewBadgeOfType:(NSString *)type withSender:(Act *)act {
++ (void)checkForNewBadgeOfType:(NSString *)type {
     if ([type isEqualToString:@"Overall"])
         [self checkForNewOverallBadge];
-    else if ([type isEqualToString:@"Habit"])
-        [self checkForNewHabitBadgeWithAct:act];
     else if ([type isEqualToString:@"Streak"])
         [self checkForNewStreakBadge];
 }
 
 + (void)checkForNewOverallBadge {
-    
-}
-
-+ (void)checkForNewHabitBadgeWithAct:(Act *)act {
     
 }
 

@@ -17,4 +17,6 @@
 @property (strong, nonatomic) NSString *badgeType;
 @property (nonatomic) NSInteger value;
 
++ (void)checkForNewBadgeOfType:(NSString *)type;
+
 @end

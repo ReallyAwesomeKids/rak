@@ -167,7 +167,6 @@
 
 + (void)initializeBadges {
     NSArray *overalls = @[@1, @10, @50, @100, @250, @500, @1000];
-    NSArray *specific = @[@5, @10, @25, @50, @100];
     NSArray *streak = @[@7, @30, @100, @365];
     
     for (NSNumber *value in overalls) {
@@ -183,19 +182,6 @@
         [badge saveInBackground];
     }
     
-    for (NSNumber *value in specific) {
-        Badge *badge = [Badge new];
-        
-        NSInteger val = [value integerValue];
-        NSString *desc = @"Completed an act of kindness %ld times";
-        badge.badgeDescription = desc;
-        badge.value = val;
-        badge.badgeType = @"Habit";
-        badge.badgeName = @"def";
-        
-        badge.badgeImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
-        [badge saveInBackground];
-    }
     
     for (NSNumber *value in streak) {
         Badge *badge = [Badge new];
