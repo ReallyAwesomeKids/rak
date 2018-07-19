@@ -16,15 +16,18 @@
 @property (strong, nonatomic) PFFile *profileImage;
 @property (strong, nonatomic) NSString *displayName;
 @property (strong, nonatomic) NSString *location;
+
 @property (nonatomic) NSInteger streak;
 @property (nonatomic) NSDate *dateLastDidAct;
 @property (nonatomic) NSInteger experiencePoints;
-@property (nonatomic) NSDictionary *actsDone;
-@property (strong, nonatomic) NSArray *badges;
+@property (nonatomic) NSDictionary *actHistory;
+@property (nonatomic) NSInteger amountActsDone;
+
+@property (strong, nonatomic) NSDictionary *badges;
 
 @property (strong, nonatomic) NSArray *chosenActs;
 
-- (void)userDidCompleteAct:(Act *)act;
+- (NSArray *)userDidCompleteAct:(Act *)act;
 
 - (void)updateDailyStreak;
 

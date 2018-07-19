@@ -25,7 +25,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     NSString *actObjectId = self.act.objectId;
-    NSArray *log = CustomUser.currentUser.actsDone[actObjectId];
+    NSArray *log = CustomUser.currentUser.actHistory[actObjectId];
     self.completionLog = [[log reverseObjectEnumerator] allObjects];
     if (self.completionLog == nil)
         self.completionLog = [NSArray new];

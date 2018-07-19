@@ -28,7 +28,7 @@
     self.pointsLabel.text = [NSString stringWithFormat:@"%ld points", self.act.pointsWorth];
     
     NSString *actObjectId = self.act.objectId;
-    NSArray *completionLog = CustomUser.currentUser.actsDone[actObjectId];
+    NSArray *completionLog = CustomUser.currentUser.actHistory[actObjectId];
     self.completedCountLabel.text = [NSString stringWithFormat:@"Completed %ld times", completionLog.count];
 }
 

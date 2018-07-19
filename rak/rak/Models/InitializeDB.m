@@ -55,8 +55,9 @@
     newUser.streak = 0;
     newUser.dateLastDidAct = nil;
     newUser.experiencePoints = 0;
-    newUser.actsDone = @{};
-    newUser.badges = [NSArray new];
+    newUser.actHistory = @{};
+    newUser.amountActsDone = 0;
+    newUser.badges = @{@"Overall": @[], @"Streak": @[]};
     
     Act *act = [Act new];
     act.actName = @"Testing the database";
