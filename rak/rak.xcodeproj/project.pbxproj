@@ -10,7 +10,6 @@
 		2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B8A20FD4110004568EF /* CategoriesCell.m */; };
 		2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B8D20FE672F004568EF /* ActsCell.m */; };
 		2C5C3B9120FFB902004568EF /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9020FFB902004568EF /* SearchCell.m */; };
-		2C5C3B9721010D96004568EF /* FullImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9621010D96004568EF /* FullImageViewController.m */; };
 		2C5C3B9A21010DAA004568EF /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9921010DAA004568EF /* PhotoMapViewController.m */; };
 		2C5C3B9C21010E4C004568EF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5C3B9B21010E4C004568EF /* MapKit.framework */; };
 		2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9E2101105C004568EF /* LocationsViewController.m */; };
@@ -82,8 +81,6 @@
 		2C5C3B8D20FE672F004568EF /* ActsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActsCell.m; sourceTree = "<group>"; };
 		2C5C3B8F20FFB902004568EF /* SearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
 		2C5C3B9020FFB902004568EF /* SearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchCell.m; sourceTree = "<group>"; };
-		2C5C3B9521010D96004568EF /* FullImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullImageViewController.h; sourceTree = "<group>"; };
-		2C5C3B9621010D96004568EF /* FullImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
 		2C5C3B9821010DAA004568EF /* PhotoMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
 		2C5C3B9921010DAA004568EF /* PhotoMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
 		2C5C3B9B21010E4C004568EF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -316,8 +313,6 @@
 				5D329D3820FD184900C180C9 /* LoginViewController.m */,
 				548438A520FFB65700592EB1 /* SearchViewController.h */,
 				548438A620FFB65700592EB1 /* SearchViewController.m */,
-				2C5C3B9521010D96004568EF /* FullImageViewController.h */,
-				2C5C3B9621010D96004568EF /* FullImageViewController.m */,
 				2C5C3B9821010DAA004568EF /* PhotoMapViewController.h */,
 				2C5C3B9921010DAA004568EF /* PhotoMapViewController.m */,
 				2C5C3B9D2101105C004568EF /* LocationsViewController.h */,
@@ -637,7 +632,6 @@
 				2C5C3B9120FFB902004568EF /* SearchCell.m in Sources */,
 				5D329D2920FD169800C180C9 /* HomeViewController.m in Sources */,
 				5D190FC0210001CA002A469B /* DateFunctions.m in Sources */,
-				2C5C3B9721010D96004568EF /* FullImageViewController.m in Sources */,
 				5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */,
 				548438A720FFB65700592EB1 /* SearchViewController.m in Sources */,
 			);
