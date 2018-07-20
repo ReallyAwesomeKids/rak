@@ -7,6 +7,7 @@
 //
 
 #import "TimelineTableViewCell.h"
+#import "ParseUI.h"
 
 @implementation TimelineTableViewCell
 
@@ -23,11 +24,15 @@
 
 - (void) setPost:(Post *)post {
     _post = post;
+    self.user = CustomUser.currentUser;
+    
     self.timelineText.text = self.post.postText;
     self.timelineProfileName.text = [NSString stringWithFormat: @"%@", self.post.author.displayName];
+    
                                      
-//    self.timelineProfilePicture.file = post.author.profilePic;
-//    [self.timelineProfilePicture loadInBackground];
+    self.timelineProfilePicture.file = self.user.profileImage;
+    self.timelineProfilePicture.layer.cornerRadius = self.timelineProfilePicture.frame.size.height/2;
+    [self.timelineProfilePicture loadInBackground];
     
 }
 

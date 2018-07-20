@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
-
 #import "CustomUser.h"
 
 @interface Post : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) CustomUser *author;
 @property (strong, nonatomic) NSString *postText;
+
++ (void) postText: ( NSString * _Nullable )postText withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 @end

@@ -95,30 +95,34 @@ CORE
   - [x] Level and level progress labels update correctly
 - [x] (Haley) Detail view of each task
   - [x] Shows log of when user completed it
+- [x] Searching for users tab
 
 EXTENDED
-- [ ] Design launch screen and logo
-- [ ] Determine color scheme
+
 - [ ] (Gustavo) Timeline
-  - [ ] See other people's posts
-  - [ ] Create Compose VC
-  - [ ] Make your own posts
+  - [x] See other people's posts
+  - [x] Create Compose VC
+  - [x] Make your own posts
+  - [ ] Refresh Control
   - [ ] Clicking at Profile picture leads to the User profile
   - [ ] Share to Facebook
   - [ ] Share to Twitter  
-- [ ] (Gustavo) Homepage notifications when button clicked "done"
+  - [ ] Styling it beautifully
+  
 
-### Week 2
-- [X] Searching for users tab
+## Week 2
+- [ ] Design launch screen and logo
+- [ ] Determine color scheme
 - [ ] Invite/challenge friend via text message/email
 - [ ] Badges on profile page
-  
-### Week 3
 - [ ] Map view
   - [ ] See pins from db
   - [ ] Make pins
   - [ ] Search for locations with Foursquare API
   - [ ] Select pin to see detail page
+
+- [ ] (Gustavo) Homepage notifications when button clicked "done"
+
 
 ## Database Schema
 - User

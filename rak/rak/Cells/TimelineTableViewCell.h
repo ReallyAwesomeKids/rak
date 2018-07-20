@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *timelineProfileName;
 
 @property (strong, nonatomic) Post *post;
+@property (strong, nonatomic) CustomUser *user;
 
 @end

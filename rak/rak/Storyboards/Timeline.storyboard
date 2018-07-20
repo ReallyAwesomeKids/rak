@@ -22,48 +22,49 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" rowHeight="79" id="UG1-AR-WGT" customClass="TimelineTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="79"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" rowHeight="100" id="UG1-AR-WGT" customClass="TimelineTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UG1-AR-WGT" id="rWh-p3-xTo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Coutinho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-bL-dsS">
-                                                    <rect key="frame" x="71" y="11" width="144" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="73" y="9" width="123" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just bought a facebook notebook  to share what I am grateful for!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-k3-Xh3">
-                                                    <rect key="frame" x="71" y="36" width="269" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="N38-Md-dod" customClass="PFImageView">
-                                                    <rect key="frame" x="13" y="11" width="50" height="50"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-2Q-kQf" customClass="PFImageView">
+                                                    <rect key="frame" x="15" y="11" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="DGD-a0-O3h"/>
-                                                        <constraint firstAttribute="height" constant="50" id="bWY-Tc-0GL"/>
+                                                        <constraint firstAttribute="width" constant="50" id="FWS-tP-RHE"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Hth-XR-WfH"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just bought a facebook notebook  to share what I am grateful for!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-k3-Xh3">
+                                                    <rect key="frame" x="72" y="29" width="283" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="N38-Md-dod" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="13" id="7rV-EW-dfn"/>
-                                                <constraint firstItem="AAk-k3-Xh3" firstAttribute="leading" secondItem="N38-Md-dod" secondAttribute="trailing" constant="8" id="Ekd-py-r1f"/>
-                                                <constraint firstItem="N38-Md-dod" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="11" id="QFu-PO-hKL"/>
-                                                <constraint firstAttribute="trailing" secondItem="1jj-bL-dsS" secondAttribute="trailing" constant="160" id="Sev-zB-Tef"/>
-                                                <constraint firstItem="1jj-bL-dsS" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="11" id="q8N-Eo-qAU"/>
-                                                <constraint firstAttribute="bottom" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="18.5" id="ufe-TQ-VDa"/>
-                                                <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="35" id="yQB-cC-ct4"/>
-                                                <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="1jj-bL-dsS" secondAttribute="bottom" constant="4" id="yh6-xH-GvB"/>
-                                                <constraint firstItem="1jj-bL-dsS" firstAttribute="leading" secondItem="N38-Md-dod" secondAttribute="trailing" constant="8" id="zqi-T4-h8q"/>
+                                                <constraint firstItem="1jj-bL-dsS" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="8" id="86N-nF-wce"/>
+                                                <constraint firstItem="AAk-k3-Xh3" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="7" id="APd-Eh-g1z"/>
+                                                <constraint firstAttribute="bottom" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="17.5" id="DMN-av-jUg"/>
+                                                <constraint firstItem="QMe-2Q-kQf" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="15" id="GIt-I6-QKb"/>
+                                                <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="20" id="ReA-YB-P4p"/>
+                                                <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="1jj-bL-dsS" secondAttribute="bottom" constant="2" id="YzT-wL-LQs"/>
+                                                <constraint firstAttribute="trailing" secondItem="1jj-bL-dsS" secondAttribute="trailing" constant="179" id="bD5-o4-FaW"/>
+                                                <constraint firstItem="1jj-bL-dsS" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="9" id="iXE-r7-Gkn"/>
+                                                <constraint firstAttribute="bottom" secondItem="QMe-2Q-kQf" secondAttribute="bottom" constant="28" id="mnX-Qn-FXb"/>
+                                                <constraint firstItem="QMe-2Q-kQf" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="11" id="qaT-9D-THf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="timelineProfileName" destination="1jj-bL-dsS" id="lin-gx-pwd"/>
-                                            <outlet property="timelineProfilePicture" destination="N38-Md-dod" id="iUN-kQ-ks7"/>
+                                            <outlet property="timelineProfilePicture" destination="QMe-2Q-kQf" id="5LQ-nl-CAe"/>
                                             <outlet property="timelineText" destination="AAk-k3-Xh3" id="cFq-lX-xSl"/>
                                         </connections>
                                     </tableViewCell>
@@ -84,7 +85,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Compose" id="5rw-k7-HNk">
                             <connections>
                                 <action selector="didTapCompose:" destination="iY0-WQ-MqD" id="3f1-LZ-rcy"/>
-                                <segue destination="CcO-Aa-XpY" kind="show" identifier="composeSegue" id="rNt-Wv-N3z"/>
+                                <segue destination="CcO-Aa-XpY" kind="show" id="LRn-7q-fr7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -95,22 +96,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2U-rw-ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639.20000000000005" y="-46.326836581709152"/>
+            <point key="canvasLocation" x="2303" y="-46"/>
         </scene>
-        <!--View Controller-->
+        <!--Composing View Controller-->
         <scene sceneID="6jg-v0-Ujj">
             <objects>
-                <viewController id="CcO-Aa-XpY" sceneMemberID="viewController">
+                <viewController id="CcO-Aa-XpY" customClass="ComposingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Sn-CV-qgP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="N38-Md-dod" customClass="PFImageView">
+                                <rect key="frame" x="27" y="78" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="DGD-a0-O3h"/>
+                                    <constraint firstAttribute="height" constant="50" id="bWY-Tc-0GL"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dY6-Fn-X27">
+                                <rect key="frame" x="85" y="78" width="260" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What good deed have you  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpX-Dx-c0M">
+                                <rect key="frame" x="85" y="81" width="188" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="been up to?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWi-LD-Pd2">
+                                <rect key="frame" x="85" y="99" width="81" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="N38-Md-dod" firstAttribute="leading" secondItem="2Sn-CV-qgP" secondAttribute="leading" constant="27" id="dWF-gx-9Qc"/>
+                            <constraint firstItem="N38-Md-dod" firstAttribute="top" secondItem="2Sn-CV-qgP" secondAttribute="top" constant="78" id="jGy-6z-uYr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0eL-uq-Un5"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dtU-f0-aa8">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="DSZ-Wj-Vni">
+                            <connections>
+                                <action selector="didTapPost:" destination="CcO-Aa-XpY" id="qF7-15-5KW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="composingProfilePicture" destination="N38-Md-dod" id="pLg-v7-BQD"/>
+                        <outlet property="composingText" destination="dY6-Fn-X27" id="IqJ-P8-wZx"/>
+                        <outlet property="placeholderLabel" destination="kpX-Dx-c0M" id="lix-dk-DN9"/>
+                        <outlet property="placeholderLabel2" destination="mWi-LD-Pd2" id="4vI-5p-TeE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6G-ud-0uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1391" y="-46"/>
+            <point key="canvasLocation" x="3012" y="-46"/>
         </scene>
     </scenes>
     <resources>

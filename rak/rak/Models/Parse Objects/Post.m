@@ -16,4 +16,13 @@
     return @"Post";
 }
 
++ (void) postText: ( NSString * _Nullable )postText withCompletion: (PFBooleanResultBlock  _Nullable)completion {
+    
+    Post *newPost = [Post new];
+    newPost.author = (CustomUser *)[PFUser currentUser];
+    newPost.postText = postText;
+    
+    [newPost saveInBackgroundWithBlock: completion];
+}
+
 @end
