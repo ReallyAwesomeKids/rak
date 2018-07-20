@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel2;
 @property (weak, nonatomic) IBOutlet UITextView *composingText;
+- (IBAction)didTapPost:(id)sender;
 
 @end
 
@@ -58,4 +59,17 @@
 }
 */
 
+- (IBAction)didTapPost:(id)sender {
+    
+    [Post postText:self.composingText.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"posted succesfully");
+            self.composingText.text = @"";
+            //                [self dismissViewControllerAnimated:YES completion:nil];
+            [self.parentViewController.tabBarController setSelectedIndex:0];
+        } else {
+            NSLog(@"imaged not posted");
+        }
+    }];
+}
 @end

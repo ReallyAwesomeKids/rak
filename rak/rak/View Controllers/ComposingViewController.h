@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomUser.h"
+#import "Post.h"
 
 @interface ComposingViewController : UIViewController
 

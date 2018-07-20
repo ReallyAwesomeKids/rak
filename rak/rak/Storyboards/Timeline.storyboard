@@ -143,7 +143,11 @@
                         <viewLayoutGuide key="safeArea" id="0eL-uq-Un5"/>
                     </view>
                     <navigationItem key="navigationItem" id="dtU-f0-aa8">
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="DSZ-Wj-Vni"/>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="DSZ-Wj-Vni">
+                            <connections>
+                                <action selector="didTapPost:" destination="CcO-Aa-XpY" id="qF7-15-5KW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="composingProfilePicture" destination="N38-Md-dod" id="pLg-v7-BQD"/>
