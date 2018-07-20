@@ -75,7 +75,7 @@ What are your technical concerns?
 
 ## Sprints
 
-### Week 1
+### Week 1 - 7/16/18 - 7/20/18
 
 CORE
 - [x] (Everyone) Redo wireframes with details
@@ -96,33 +96,44 @@ CORE
 - [x] (Haley) Detail view of each task
   - [x] Shows log of when user completed it
 - [x] Searching for users tab
-
-EXTENDED
-
-- [ ] (Gustavo) Timeline
-  - [x] See other people's posts
-  - [x] Create Compose VC
-  - [x] Make your own posts
-  - [ ] Refresh Control
-  - [ ] Clicking at Profile picture leads to the User profile
-  - [ ] Share to Facebook
-  - [ ] Share to Twitter  
-  - [ ] Styling it beautifully
-  
-
-## Week 2
-- [ ] Design launch screen and logo
-- [ ] Determine color scheme
-- [ ] Invite/challenge friend via text message/email
 - [ ] Badges on profile page
 - [ ] Map view
   - [ ] See pins from db
   - [ ] Make pins
   - [ ] Search for locations with Foursquare API
   - [ ] Select pin to see detail page
+- [x] (Gustavo) Basic timeline
+  - [x] See other people's posts
+  - [x] Create Compose VC
+  - [x] Make your own posts
+  - [x] Refresh Control
 
-- [ ] (Gustavo) Homepage notifications when button clicked "done"
+## Week 2 - 7/23/18 - 7/27/18
+- [ ] (Haley) In-app pop up notifications when did act, level up, earned badge, etc...
+  - [ ] After an act is completed, user can click a "share" button that will share to the timeline.
+  - [ ] After user achieves a new level or earns new badge, they can share the achievement to the timeline
+- [ ] (Everyone) Determine color scheme
+- [ ] (Gustavo) Timeline
+  - [ ] Clicking at Profile picture leads to the User profile
+  - [ ] Share to Facebook
+  - [ ] Share to Twitter  
+  - [ ] Styling it beautifully
+- [ ] (Halima) Autolayout, animations, transitions
 
+## Week 3 - 7/30/18 - 8/3/18
+- [ ] Invite/challenge friend from the detail page
+
+## Week 4 - 8/6/18 - 8/10/18
+- [ ] Design launch screen and logo
+
+## Week 5 - 8/13/18 - 8/17/18
+
+## Bugs found that need to be solved
+- [ ] clicking checkmark button at Home [Home VC]
+- [ ] user should not be able to add the same act multiple times to db [Category VC]
+
+## Extended Functionality Ideas
+- [ ] User can write their own acts of kindness
 
 ## Database Schema
 - User

@@ -14,7 +14,9 @@
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic) NSDictionary *badges;
+@property (strong, nonatomic) CustomUser *user;
+@property (strong, nonatomic) NSArray *overallBadges;
+@property (strong, nonatomic) NSArray *streakBadges;
 
 @end
 
@@ -22,65 +24,67 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (self.user == nil)
+        self.user = CustomUser.currentUser;
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-
 }
 
 - (void)fetchBadges {
     PFQuery *query = [CustomUser query];
-    [query whereKey:@"objectId" equalTo:CustomUser.currentUser.objectId];
-    [query includeKey:@"badges"];
-    
-    // fetch data asynchronously
-    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
-        if (users != nil) {
-            CustomUser *currentUser = users[0];
-            self.badges = currentUser.badges;
-        }
+    [query includeKey:@"overallBadges"];
+    [query includeKey:@"streakBadges"];
+    [query getObjectInBackgroundWithId:self.user.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        NSLog(@"wooo .. %@", object);
+        self.user = (CustomUser *)object;
+        self.overallBadges = self.user.overallBadges;
+        self.streakBadges = self.user.streakBadges;
+        [self.collectionView reloadData];
     }];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//
-//- (Badge *)fetchBadgeWithObjectId:(NSString *)badgeObjectId {
-//    PFQuery *query = [PFQuery queryWithClassName:@"Badge"];
-//    [query includeKey:@"badgeImage"];
-//    [query whereKey:@"objectId" equalTo:badgeObjectId];
-//    NSArray *results = [query findObjects];
-//}
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 2;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSArray *overallBadges = CustomUser.currentUser.badges[@"Overall"];
-    NSArray *streakBadges = CustomUser.currentUser.badges[@"Streak"];
+    NSArray *overallBadges = self.overallBadges;
+    NSArray *streakBadges = self.streakBadges;
     return (section == 0) ? overallBadges.count : streakBadges.count;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     ProfileHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"profileHeader" forIndexPath:indexPath];
-    header.user = CustomUser.currentUser;
     
+    header.user = self.user;
     return header;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return CGSizeMake(self.collectionView.bounds.size.width, 450);
+        
+    } else {
+        return CGSizeZero;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     BadgeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"badgeCell" forIndexPath:indexPath];
     if (indexPath.section == 0) {
-        Badge *badge = CustomUser.currentUser.badges[@"Overall"][indexPath.row];
+        Badge *badge = self.overallBadges[indexPath.row];
         cell.badge = badge;
     }
     else {
-        Badge *badge = CustomUser.currentUser.badges[@"Streak"][indexPath.row];
-      //  cell.badge = badge;
+        Badge *badge = self.streakBadges[indexPath.row];
+        cell.badge = badge;
     }
     return cell;
 }

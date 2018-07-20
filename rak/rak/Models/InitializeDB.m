@@ -24,16 +24,7 @@
     //[self initializeActCategories];
     //[self updateActs];
     //[self initializeBadges];
-    CustomUser.currentUser.overallBadges = @[];
-    CustomUser.currentUser.streakBadges = @[];
-    [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"errrrror");
-        }
-        else {
-            NSLog(@"worked");
-        }
-    }];
+
 }
 
 + (void)updateActs {
@@ -67,8 +58,8 @@
     newUser.experiencePoints = 0;
     newUser.actHistory = @{};
     newUser.amountActsDone = 0;
-    newUser.badges = @{@"Overall": @[], @"Streak": @[]};
-    
+    newUser.overallBadges = @[];
+    newUser.streakBadges = @[];
     Act *act = [Act new];
     act.actName = @"Testing the database";
     act.pointsWorth = 1;
