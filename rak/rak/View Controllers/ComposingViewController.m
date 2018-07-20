@@ -7,6 +7,7 @@
 //
 
 #import "ComposingViewController.h"
+#import "TimelineViewController.h"
 #import "ParseUI.h"
 
 @interface ComposingViewController () <UITextViewDelegate>
@@ -65,8 +66,8 @@
         if (succeeded) {
             NSLog(@"posted succesfully");
             self.composingText.text = @"";
-            //                [self dismissViewControllerAnimated:YES completion:nil];
-            [self.parentViewController.tabBarController setSelectedIndex:0];
+            // [self dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
             NSLog(@"imaged not posted");
         }
