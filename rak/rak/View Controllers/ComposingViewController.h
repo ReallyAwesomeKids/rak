@@ -1,5 +1,5 @@
 //
-//  ComposeViewController.h
+//  ComposingViewController.h
 //  rak
 //
 //  Created by Gustavo Coutinho on 7/19/18.
@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomUser.h"
 
-@interface ComposeViewController : UIViewController
+@interface ComposingViewController : UIViewController
+
+@property (strong, nonatomic) CustomUser *user;
 
 @end
