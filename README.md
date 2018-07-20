@@ -123,6 +123,10 @@ EXTENDED
 
 - [ ] (Gustavo) Homepage notifications when button clicked "done"
 
+## Bugs found that need to be solved
+- [ ] clicking checkmark button at Home [Home VC]
+- [ ] user should not be able to add the same act multiple times to db [Category VC]
+
 
 ## Database Schema
 - User
