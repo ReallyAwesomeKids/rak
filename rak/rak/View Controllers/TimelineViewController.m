@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *timelinePosts;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -28,12 +29,21 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    // initialization of array
+    // initialization
     self.timelinePosts = [[NSMutableArray alloc] init];
-    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self refreshControlSetup];
     [self fetchPosts];
 
 }
+
+- (void) refreshControlSetup {
+    // Programagtic view of dragging and dropping in code
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+    
+    // Nests views into subviews
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    [self.tableView sendSubviewToBack:self.refreshControl];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,8 +64,10 @@
             for (PFObject *post in posts) {
                 [self.timelinePosts addObject:post];
                 NSLog(@"%@", self.timelinePosts);
+                [self.tableView reloadData];
+                [self.refreshControl endRefreshing];
             }
-            [self.tableView reloadData];
+            
         }
         else {
             NSLog(@"%@", error.localizedDescription);
