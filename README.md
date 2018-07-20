@@ -75,7 +75,7 @@ What are your technical concerns?
 
 ## Sprints
 
-### Week 1
+### Week 1 - 7/16/18 - 7/20/18
 
 CORE
 - [x] (Everyone) Redo wireframes with details
@@ -96,33 +96,35 @@ CORE
 - [x] (Haley) Detail view of each task
   - [x] Shows log of when user completed it
 - [x] Searching for users tab
-
-EXTENDED
-
-  
-
-## Week 2
-- [ ] Design launch screen and logo
-- [ ] Determine color scheme
-- [ ] Invite/challenge friend via text message/email
 - [ ] Badges on profile page
 - [ ] Map view
   - [ ] See pins from db
   - [ ] Make pins
   - [ ] Search for locations with Foursquare API
   - [ ] Select pin to see detail page
-
-- [ ] (Gustavo) Timeline
+- [x] (Gustavo) Basic timeline
   - [x] See other people's posts
   - [x] Create Compose VC
   - [x] Make your own posts
-  - [ ] Refresh Control
+  - [x] Refresh Control
+
+## Week 2 - 7/23/18 - 7/27/18
+- [ ] Determine color scheme
+- [ ] (Gustavo) Timeline
   - [ ] Clicking at Profile picture leads to the User profile
   - [ ] Share to Facebook
   - [ ] Share to Twitter  
   - [ ] Styling it beautifully
-  
-- [ ] (Gustavo) Homepage notifications when button clicked "done"
+- [ ] Homepage notifications when button clicked "done"
+- [ ] Autolayout, animations, transitions
+
+## Week 3 - 7/30/18 - 8/3/18
+- [ ] Invite/challenge friend from the detail page
+
+## Week 4 - 8/6/18 - 8/10/18
+- [ ] Design launch screen and logo
+
+## Week 5 - 8/13/18 - 8/17/18
 
 ## Bugs found that need to be solved
 - [ ] clicking checkmark button at Home [Home VC]
