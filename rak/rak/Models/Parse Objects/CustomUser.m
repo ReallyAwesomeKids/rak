@@ -12,7 +12,7 @@
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, badges, amountActsDone, chosenActs;
+@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, badges, amountActsDone, chosenActs,overallBadges, streakBadges ;
 
 - (void)saveChangesInUserData {
     [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
@@ -37,18 +37,17 @@
     [self saveChangesInUserData];
 }
 
-- (NSArray *)userDidCompleteAct:(Act *)act {
+- (void)userDidCompleteAct:(Act *)act {
     [self addToDailyStreakIfNeeded];
     [self addToActHistoryWithAct:act];
     
     self.dateLastDidAct = [NSDate date];
     self.amountActsDone += 1;
     
-    NSArray *newBadges = [self checkForNewBadges];
+    [self checkForNewBadges];
     
     [self saveChangesInUserData];
     
-    return newBadges;
 }
 
 - (void)addToDailyStreakIfNeeded {
@@ -81,23 +80,40 @@
     self.actHistory = [mutableDict copy];
 }
 
-- (NSArray *)checkForNewBadges {
-    NSMutableArray *newBadges = [NSMutableArray new];
-    
-    Badge *overall = [self checkForNewBadgeOfType:@"Overall"];
-    Badge *streak = [self checkForNewBadgeOfType:@"Streak"];
-    
-    if (overall != nil)
-        [newBadges addObject:overall];
-    if (streak != nil)
-        [newBadges addObject:streak];
-    return [newBadges copy];
+- (void)checkForNewBadges {
+    [self fetchUserBadgesWithCompletion:^(BOOL success, NSError *error){
+        if (error)
+            NSLog(@"issues checking for new badge: %@", error.localizedDescription);
+        else {
+            Badge *newOverallBadge = [self checkForNewBadgeOfType:@"Overall"];
+            Badge *newStreakBadge = [self checkForNewBadgeOfType:@"Streak"];
+            if (newOverallBadge != nil) {
+                [self addBadge:newOverallBadge ofType:@"Overall"];
+            }
+            if (newStreakBadge != nil) {
+                [self addBadge:newStreakBadge ofType:@"Streak"];
+            }
+        }
+    }];
+}
+
+- (void)fetchUserBadgesWithCompletion:(void (^)(BOOL succeeded, NSError *error))completion {
+    PFQuery *query = [CustomUser query];
+    [query includeKey:@"badges.Overall"];
+    [query includeKey:@"badges.streak"];
+    [query getObjectInBackgroundWithId:CustomUser.currentUser.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        NSLog(@"FOO: %@", object);
+        if (error == nil)
+            completion(YES, nil);
+        else
+            completion(NO, error);
+    }];
 }
 
 - (Badge *)checkForNewBadgeOfType:(NSString *)badgeType {
+    NSInteger badgeValue = 0;
     NSArray *userBadges = self.badges[badgeType];
     
-    NSInteger badgeValue = 0;
     if (userBadges.count > 0) {
         Badge *mostRecentBadgeReceived = userBadges[userBadges.count - 1];
         badgeValue = mostRecentBadgeReceived.value;
@@ -114,7 +130,6 @@
     }
     
     if (comparisonValue >= nextBadge.value) {
-        [self addBadge:nextBadge ofType:badgeType];
         return nextBadge;
     }
     
@@ -122,12 +137,20 @@
 }
 
 - (void)addBadge:(Badge *)badge ofType:(NSString *)badgeType {
+//    NSMutableArray *mutableArray = [self.overallBadges mutableCopy];
+//    [mutableArray addObject:badge];
+//    NSArray *immutableArray = [mutableArray copy];
+//    self.overallBadges = immutableArray;
+    
     NSMutableDictionary *mutableDict = [self.badges mutableCopy];
     NSMutableArray *mutableArray = mutableDict[badgeType];
     [mutableArray addObject:badge];
     NSArray *immutableArray = [mutableArray copy];
     [mutableDict setObject:immutableArray forKey:badgeType];
-    self.badges = [mutableDict copy];
+    NSDictionary *di = [mutableDict copy];
+    NSLog(@"...%@", di);
+    self.badges = di;
+    [self saveChangesInUserData];
 }
 
 @end

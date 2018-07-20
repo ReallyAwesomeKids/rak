@@ -10,9 +10,11 @@
 
 #import "ProfileHeader.h"
 #import "BadgeCell.h"
+#import "Badge.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSDictionary *badges;
 
 @end
 
@@ -20,21 +22,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+
+}
+
+- (void)fetchBadges {
+    PFQuery *query = [CustomUser query];
+    [query whereKey:@"objectId" equalTo:CustomUser.currentUser.objectId];
+    [query includeKey:@"badges"];
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+        if (users != nil) {
+            CustomUser *currentUser = users[0];
+            self.badges = currentUser.badges;
+        }
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+//
+//- (Badge *)fetchBadgeWithObjectId:(NSString *)badgeObjectId {
+//    PFQuery *query = [PFQuery queryWithClassName:@"Badge"];
+//    [query includeKey:@"badgeImage"];
+//    [query whereKey:@"objectId" equalTo:badgeObjectId];
+//    NSArray *results = [query findObjects];
+//}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 2;
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0)
-        return 1;
-    else
-        // for badges, later
-        return 0;
+    NSArray *overallBadges = CustomUser.currentUser.badges[@"Overall"];
+    NSArray *streakBadges = CustomUser.currentUser.badges[@"Streak"];
+    return (section == 0) ? overallBadges.count : streakBadges.count;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -45,11 +73,15 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-
-    }
     BadgeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"badgeCell" forIndexPath:indexPath];
-    
+    if (indexPath.section == 0) {
+        Badge *badge = CustomUser.currentUser.badges[@"Overall"][indexPath.row];
+        cell.badge = badge;
+    }
+    else {
+        Badge *badge = CustomUser.currentUser.badges[@"Streak"][indexPath.row];
+      //  cell.badge = badge;
+    }
     return cell;
 }
 
