@@ -100,13 +100,15 @@ CORE
 EXTENDED
 
 - [ ] (Gustavo) Timeline
-  - [ ] See other people's posts
-  - [ ] Create Compose VC
-  - [ ] Make your own posts
+  - [x] See other people's posts
+  - [x] Create Compose VC
+  - [x] Make your own posts
+  - [ ] Refresh Control
   - [ ] Clicking at Profile picture leads to the User profile
   - [ ] Share to Facebook
   - [ ] Share to Twitter  
-- [ ] (Gustavo) Homepage notifications when button clicked "done"
+  - [ ] Styling it beautifully
+  
 
 ## Week 2
 - [ ] Design launch screen and logo
@@ -118,6 +120,8 @@ EXTENDED
   - [ ] Make pins
   - [ ] Search for locations with Foursquare API
   - [ ] Select pin to see detail page
+
+- [ ] (Gustavo) Homepage notifications when button clicked "done"
 
 
 ## Database Schema
