@@ -113,8 +113,9 @@
     }];
 }
 
-- (IBAction)didTapCheckmarkButton:(id)sender {
-}
+//- (IBAction)didTapCheckmarkButton:(id)sender {
+//    
+//}
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];

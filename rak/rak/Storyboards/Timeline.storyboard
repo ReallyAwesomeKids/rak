@@ -35,12 +35,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-2Q-kQf" customClass="PFImageView">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-2Q-kQf" customClass="PFImageView">
                                                     <rect key="frame" x="15" y="11" width="50" height="50"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="FWS-tP-RHE"/>
                                                         <constraint firstAttribute="height" constant="50" id="Hth-XR-WfH"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="aVP-AX-Z50" appends="YES" id="M9J-Fi-Y7c"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just bought a facebook notebook  to share what I am grateful for!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-k3-Xh3">
                                                     <rect key="frame" x="72" y="29" width="283" height="31.5"/>
@@ -95,8 +99,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2U-rw-ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aVP-AX-Z50">
+                    <connections>
+                        <segue destination="UYH-EY-Esq" kind="show" identifier="cellProfile" id="S95-qR-rmK"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2303" y="-46"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="rsh-3P-gE9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="UYH-EY-Esq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXE-Ca-UYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2456" y="-560"/>
         </scene>
         <!--Composing View Controller-->
         <scene sceneID="6jg-v0-Ujj">

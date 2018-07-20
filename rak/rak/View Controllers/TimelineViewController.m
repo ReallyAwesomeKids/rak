@@ -9,7 +9,8 @@
 #import "TimelineViewController.h"
 #import "TimelineTableViewCell.h"
 
-@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate>
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, TimelineCellDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *timelinePosts;
@@ -34,7 +35,6 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self refreshControlSetup];
     [self fetchPosts];
-
 }
 
 - (void) refreshControlSetup {
@@ -76,10 +76,13 @@
     [self.tableView reloadData];
 }
 
+
+
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TimelineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimelineTableViewCell"];
     Post *post = self.timelinePosts[indexPath.row];
     cell.post = post;
+//    cell.delegate = self;
     return cell;
 }
 
@@ -87,14 +90,29 @@
     return self.timelinePosts.count;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)timelineTableViewCell:(TimelineTableViewCell *)timelineTableViewCell didTap:(CustomUser *)user {
+    [self performSegueWithIdentifier:@"cellProfile" sender:user];
 }
-*/
+
+
+ #pragma mark - Navigation
+
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+
+     if ([segue.identifier  isEqual: @"cellProfile"]) {
+    
+//        get the user from the segue.destination and pass the user to the profile view controller.
+
+         UINavigationController *navigationController = [segue destinationViewController];
+         ProfileViewController *profileViewController = (ProfileViewController*)navigationController.topViewController;
+             CustomUser *user = sender;
+             profileInstagramViewController.user = user;
+         }
+ }
+
+
 
 @end
