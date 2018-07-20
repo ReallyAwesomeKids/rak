@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Badge.h"
 
 @interface BadgeCell : UICollectionViewCell
+
+@property (strong, nonatomic) Badge *badge;
+
+@property (weak, nonatomic) IBOutlet UIImageView *badgeImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *badgeNameLabel;
+
 
 @end

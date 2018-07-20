@@ -25,10 +25,12 @@
 @property (nonatomic) NSInteger amountActsDone;
 
 @property (strong, nonatomic) NSDictionary *badges;
+@property (strong, nonatomic) NSArray *overallBadges;
+@property (strong, nonatomic) NSArray *streakBadges;
 
 @property (strong, nonatomic) NSArray *chosenActs;
 
-- (NSArray *)userDidCompleteAct:(Act *)act;
+- (void)userDidCompleteAct:(Act *)act;
 
 - (void)updateDailyStreak;
 

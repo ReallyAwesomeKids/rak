@@ -24,6 +24,16 @@
     //[self initializeActCategories];
     //[self updateActs];
     //[self initializeBadges];
+    CustomUser.currentUser.overallBadges = @[];
+    CustomUser.currentUser.streakBadges = @[];
+    [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"errrrror");
+        }
+        else {
+            NSLog(@"worked");
+        }
+    }];
 }
 
 + (void)updateActs {
