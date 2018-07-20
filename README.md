@@ -99,15 +99,6 @@ CORE
 
 EXTENDED
 
-- [ ] (Gustavo) Timeline
-  - [x] See other people's posts
-  - [x] Create Compose VC
-  - [x] Make your own posts
-  - [ ] Refresh Control
-  - [ ] Clicking at Profile picture leads to the User profile
-  - [ ] Share to Facebook
-  - [ ] Share to Twitter  
-  - [ ] Styling it beautifully
   
 
 ## Week 2
@@ -121,6 +112,16 @@ EXTENDED
   - [ ] Search for locations with Foursquare API
   - [ ] Select pin to see detail page
 
+- [ ] (Gustavo) Timeline
+  - [x] See other people's posts
+  - [x] Create Compose VC
+  - [x] Make your own posts
+  - [ ] Refresh Control
+  - [ ] Clicking at Profile picture leads to the User profile
+  - [ ] Share to Facebook
+  - [ ] Share to Twitter  
+  - [ ] Styling it beautifully
+  
 - [ ] (Gustavo) Homepage notifications when button clicked "done"
 
 ## Bugs found that need to be solved
