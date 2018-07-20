@@ -12,7 +12,18 @@
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, badges, amountActsDone, chosenActs,overallBadges, streakBadges ;
+@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges ;
+
+- (void)userDidCompleteAct:(Act *)act {
+    [self addToDailyStreakIfNeeded];
+    [self addToActHistoryWithAct:act];
+    
+    self.dateLastDidAct = [NSDate date];
+    self.amountActsDone += 1;
+    
+    [self checkForNewBadges];
+    [self saveChangesInUserData];
+}
 
 - (void)saveChangesInUserData {
     [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
@@ -35,19 +46,6 @@
         }
     }
     [self saveChangesInUserData];
-}
-
-- (void)userDidCompleteAct:(Act *)act {
-    [self addToDailyStreakIfNeeded];
-    [self addToActHistoryWithAct:act];
-    
-    self.dateLastDidAct = [NSDate date];
-    self.amountActsDone += 1;
-    
-    [self checkForNewBadges];
-    
-    [self saveChangesInUserData];
-    
 }
 
 - (void)addToDailyStreakIfNeeded {
@@ -81,75 +79,73 @@
 }
 
 - (void)checkForNewBadges {
-    [self fetchUserBadgesWithCompletion:^(BOOL success, NSError *error){
-        if (error)
-            NSLog(@"issues checking for new badge: %@", error.localizedDescription);
-        else {
-            Badge *newOverallBadge = [self checkForNewBadgeOfType:@"Overall"];
-            Badge *newStreakBadge = [self checkForNewBadgeOfType:@"Streak"];
-            if (newOverallBadge != nil) {
-                [self addBadge:newOverallBadge ofType:@"Overall"];
-            }
-            if (newStreakBadge != nil) {
-                [self addBadge:newStreakBadge ofType:@"Streak"];
-            }
-        }
-    }];
+    [self checkForNewBadgeOfType:@"Overall"];
+    [self checkForNewBadgeOfType:@"Streak"];
 }
 
-- (void)fetchUserBadgesWithCompletion:(void (^)(BOOL succeeded, NSError *error))completion {
-    PFQuery *query = [CustomUser query];
-    [query includeKey:@"badges.Overall"];
-    [query includeKey:@"badges.streak"];
-    [query getObjectInBackgroundWithId:CustomUser.currentUser.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
-        NSLog(@"FOO: %@", object);
-        if (error == nil)
-            completion(YES, nil);
-        else
-            completion(NO, error);
-    }];
-}
-
-- (Badge *)checkForNewBadgeOfType:(NSString *)badgeType {
-    NSInteger badgeValue = 0;
-    NSArray *userBadges = self.badges[badgeType];
+- (void)checkForNewBadgeOfType:(NSString *)badgeType {
+    NSArray *userBadges;
+    
+    if ([badgeType isEqualToString:@"Overall"])
+        userBadges = self.overallBadges;
+    else
+        userBadges = self.streakBadges;
     
     if (userBadges.count > 0) {
         Badge *mostRecentBadgeReceived = userBadges[userBadges.count - 1];
-        badgeValue = mostRecentBadgeReceived.value;
+        [mostRecentBadgeReceived fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+            
+            NSInteger badgeValue = mostRecentBadgeReceived.value;
+            
+            Badge *nextBadge = [Badge fetchBadgeOfType:badgeType withValueGreaterThan:badgeValue];
+            
+            NSInteger comparisonValue = -1;
+            if ([badgeType isEqualToString:@"Overall"]) {
+                comparisonValue = self.amountActsDone;
+            }
+            else if ([badgeType isEqualToString:@"Streak"]) {
+                comparisonValue = self.streak;
+            }
+            
+            if (comparisonValue >= nextBadge.value) {
+                [self addBadge:nextBadge ofType:badgeType];
+            }
+        }];
+    } else {
+        PFQuery *query = [Badge query];
+        [query whereKey:@"badgeType" equalTo:badgeType];
+        [query includeKey:@"badgeImage"];
+        [query orderByAscending:@"value"];
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject* object, NSError * _Nullable error) {
+            Badge *nextBadge = (Badge *)object;
+            NSInteger comparisonValue = -1;
+            if ([badgeType isEqualToString:@"Overall"]) {
+                comparisonValue = self.amountActsDone;
+            } else if ([badgeType isEqualToString:@"Streak"]) {
+                comparisonValue = self.streak;
+            }
+            if (comparisonValue >= nextBadge.value) {
+                [self addBadge:nextBadge ofType:badgeType];
+            }
+        }];
+        
     }
-    
-    Badge *nextBadge = [Badge fetchBadgeOfType:badgeType withValueGreaterThan:badgeValue];
-    
-    NSInteger comparisonValue = -1;
-    if ([badgeType isEqualToString:@"Overall"]) {
-        comparisonValue = self.amountActsDone;
-    }
-    else if ([badgeType isEqualToString:@"Streak"]) {
-        comparisonValue = self.streak;
-    }
-    
-    if (comparisonValue >= nextBadge.value) {
-        return nextBadge;
-    }
-    
-    return nil;
+   // return nil;
 }
 
 - (void)addBadge:(Badge *)badge ofType:(NSString *)badgeType {
-//    NSMutableArray *mutableArray = [self.overallBadges mutableCopy];
-//    [mutableArray addObject:badge];
-//    NSArray *immutableArray = [mutableArray copy];
-//    self.overallBadges = immutableArray;
+    NSMutableArray *mutableBadgeArray;
+    if ([badgeType isEqualToString:@"Overall"])
+        mutableBadgeArray = [self.overallBadges mutableCopy];
+    else
+        mutableBadgeArray = [self.streakBadges mutableCopy];
+    [mutableBadgeArray addObject:badge];
+    NSArray *newBadgeArray = [mutableBadgeArray copy];
     
-    NSMutableDictionary *mutableDict = [self.badges mutableCopy];
-    NSMutableArray *mutableArray = mutableDict[badgeType];
-    [mutableArray addObject:badge];
-    NSArray *immutableArray = [mutableArray copy];
-    [mutableDict setObject:immutableArray forKey:badgeType];
-    NSDictionary *di = [mutableDict copy];
-    NSLog(@"...%@", di);
-    self.badges = di;
+    if ([badgeType isEqualToString:@"Overall"])
+        self.overallBadges = newBadgeArray;
+    else
+        self.streakBadges = newBadgeArray;
     [self saveChangesInUserData];
 }
 

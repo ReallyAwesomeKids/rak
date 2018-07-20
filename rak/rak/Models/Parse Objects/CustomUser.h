@@ -24,7 +24,6 @@
 @property (nonatomic) NSDictionary *actHistory;
 @property (nonatomic) NSInteger amountActsDone;
 
-@property (strong, nonatomic) NSDictionary *badges;
 @property (strong, nonatomic) NSArray *overallBadges;
 @property (strong, nonatomic) NSArray *streakBadges;
 
@@ -35,7 +34,5 @@
 - (void)updateDailyStreak;
 
 - (void)saveChangesInUserData;
-
-- (Badge *)checkForNewBadgeOfType:(NSString *)badgeType;
 
 @end
