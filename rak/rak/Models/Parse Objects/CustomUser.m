@@ -130,7 +130,6 @@
         }];
         
     }
-   // return nil;
 }
 
 - (void)addBadge:(Badge *)badge ofType:(NSString *)badgeType {
