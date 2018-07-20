@@ -109,14 +109,16 @@ CORE
   - [x] Refresh Control
 
 ## Week 2 - 7/23/18 - 7/27/18
-- [ ] Determine color scheme
+- [ ] (Haley) In-app pop up notifications when did act, level up, earned badge, etc...
+  - [ ] After an act is completed, user can click a "share" button that will share to the timeline.
+  - [ ] After user achieves a new level or earns new badge, they can share the achievement to the timeline
+- [ ] (Everyone) Determine color scheme
 - [ ] (Gustavo) Timeline
   - [ ] Clicking at Profile picture leads to the User profile
   - [ ] Share to Facebook
   - [ ] Share to Twitter  
   - [ ] Styling it beautifully
-- [ ] Homepage notifications when button clicked "done"
-- [ ] Autolayout, animations, transitions
+- [ ] (Halima) Autolayout, animations, transitions
 
 ## Week 3 - 7/30/18 - 8/3/18
 - [ ] Invite/challenge friend from the detail page
@@ -131,8 +133,6 @@ CORE
 - [ ] user should not be able to add the same act multiple times to db [Category VC]
 
 ## Extended Functionality Ideas
-- [ ] After an act is completed, user can click a "share" button that will share to the timeline.
-- [ ] After user achieves a new level or earns new badge, they can share the achievement to the timeline
 - [ ] User can write their own acts of kindness
 
 ## Database Schema
