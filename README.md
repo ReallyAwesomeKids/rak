@@ -127,6 +127,10 @@ EXTENDED
 - [ ] clicking checkmark button at Home [Home VC]
 - [ ] user should not be able to add the same act multiple times to db [Category VC]
 
+## Extended Functionality Ideas
+- [ ] After an act is completed, user can click a "share" button that will share to the timeline.
+- [ ] After user achieves a new level or earns new badge, they can share the achievement to the timeline
+- [ ] User can write their own acts of kindness
 
 ## Database Schema
 - User
