@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,8 +40,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o4x-7W-gCj" customClass="PFImageView">
                                                     <rect key="frame" x="30" y="8" width="65" height="65"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="65" id="ney-hZ-9hf"/>
-                                                        <constraint firstAttribute="height" constant="65" id="wHU-xq-ROT"/>
+                                                        <constraint firstAttribute="width" secondItem="o4x-7W-gCj" secondAttribute="height" multiplier="1:1" id="2Jb-1q-pno"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-it-bR1">
@@ -55,7 +55,9 @@
                                             <constraint firstAttribute="trailing" secondItem="aMG-it-bR1" secondAttribute="trailing" constant="15" id="LVP-3V-twz"/>
                                             <constraint firstItem="o4x-7W-gCj" firstAttribute="centerX" secondItem="hCc-Wr-Plp" secondAttribute="centerX" id="LkN-PL-t8w"/>
                                             <constraint firstItem="aMG-it-bR1" firstAttribute="leading" secondItem="hCc-Wr-Plp" secondAttribute="leading" constant="15" id="Yr8-aG-2xc"/>
+                                            <constraint firstAttribute="trailing" secondItem="o4x-7W-gCj" secondAttribute="trailing" constant="30" id="cnN-c9-kbL"/>
                                             <constraint firstItem="aMG-it-bR1" firstAttribute="top" secondItem="o4x-7W-gCj" secondAttribute="bottom" constant="6" id="ddK-HI-c81"/>
+                                            <constraint firstItem="o4x-7W-gCj" firstAttribute="leading" secondItem="hCc-Wr-Plp" secondAttribute="leading" constant="30" id="f4s-7C-YAn"/>
                                             <constraint firstItem="o4x-7W-gCj" firstAttribute="top" secondItem="hCc-Wr-Plp" secondAttribute="top" constant="8" id="l1p-gC-Y8y"/>
                                         </constraints>
                                         <connections>
