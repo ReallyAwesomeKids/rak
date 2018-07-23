@@ -9,10 +9,11 @@
 #import "CustomUser.h"
 #import "DateFunctions.h"
 #import "Badge.h"
+#import "PointToLevelConverter.h"
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges ;
+@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges, delegate;
 
 - (void)userDidCompleteAct:(Act *)act {
     [self addToDailyStreakIfNeeded];
@@ -21,7 +22,7 @@
     self.dateLastDidAct = [NSDate date];
     self.amountActsDone += 1;
     
-    self.experiencePoints += act.pointsWorth;
+    [self addPointsAndLevelUpIfNecessary:act.pointsWorth];
     
     [self checkForNewBadges];
     [self saveChangesInUserData];
@@ -78,6 +79,16 @@
     [mutableDict setValue:immutableArray forKey:key];
    
     self.actHistory = [mutableDict copy];
+}
+
+- (void)addPointsAndLevelUpIfNecessary:(NSInteger)points{
+    NSInteger levelBeforePointsAdded = [PointToLevelConverter getCurrentLevelFromPoints:self.experiencePoints];
+    
+    self.experiencePoints += points;
+    
+    NSInteger levelAfterPointsAdded = [PointToLevelConverter getCurrentLevelFromPoints:self.experiencePoints];
+    if (levelAfterPointsAdded > levelBeforePointsAdded)
+        [self.delegate userDidLevelUpTo:levelAfterPointsAdded];
 }
 
 - (void)checkForNewBadges {
@@ -148,6 +159,8 @@
     else
         self.streakBadges = newBadgeArray;
     [self saveChangesInUserData];
+    
+    [self.delegate userDidGetNewBadge:badge];
 }
 
 @end

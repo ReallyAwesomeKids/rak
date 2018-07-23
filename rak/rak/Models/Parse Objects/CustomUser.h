@@ -36,6 +36,8 @@
 
 @property (strong, nonatomic) NSArray *chosenActs;
 
+@property (weak, nonatomic) id<CustomUserDelegate> delegate;
+
 - (void)userDidCompleteAct:(Act *)act;
 
 - (void)updateDailyStreak;
