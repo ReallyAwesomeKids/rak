@@ -52,6 +52,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnt-1N-oJK">
+                                                    <rect key="frame" x="18" y="4" width="44" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="8" id="86N-nF-wce"/>
@@ -96,13 +100,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2OY-X6-bVt" id="B1s-HX-vJI"/>
-                        <segue destination="UYH-EY-Esq" kind="show" identifier="toProfileSegue" id="oEd-MC-OOJ"/>
+                        <segue destination="UYH-EY-Esq" kind="show" identifier="goToProfileViewSegue" id="oEd-MC-OOJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2U-rw-ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aVP-AX-Z50"/>
             </objects>
-            <point key="canvasLocation" x="2303" y="-46"/>
+            <point key="canvasLocation" x="2301.5999999999999" y="-46.326836581709152"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rsh-3P-gE9">

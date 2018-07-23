@@ -67,7 +67,6 @@
                 [self.tableView reloadData];
                 [self.refreshControl endRefreshing];
             }
-            
         }
         else {
             NSLog(@"%@", error.localizedDescription);
@@ -76,43 +75,49 @@
     [self.tableView reloadData];
 }
 
-
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TimelineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimelineTableViewCell"];
     Post *post = self.timelinePosts[indexPath.row];
     cell.post = post;
-//    cell.delegate = self;
+    
+    // tap profile picture leads to profile page
+    UITapGestureRecognizer *iconGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(didTapProfileIcon:)];
+    [cell.timelineProfilePicture addGestureRecognizer:iconGesture];
+    cell.timelineProfilePicture.userInteractionEnabled = YES;
+    
     return cell;
+}
+
+- (IBAction)didTapProfileIcon:(id)sender {
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *)sender;
+    UIImageView *profileIcon = (UIImageView *) gesture.view;
+    TimelineTableViewCell *tappedCell = (TimelineTableViewCell *)profileIcon.superview.superview;
+    [self performSegueWithIdentifier:@"goToProfileViewSegue"
+                              sender:tappedCell];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.timelinePosts.count;
 }
 
-- (void)timelineTableViewCell:(TimelineTableViewCell *)timelineTableViewCell didTap:(CustomUser *)user {
-    [self performSegueWithIdentifier:@"cellProfile" sender:user];
-}
+//- (void)timelineTableViewCell:(TimelineTableViewCell *)timelineTableViewCell didTap:(CustomUser *)user {
+//    [self performSegueWithIdentifier:@"cellProfile" sender:user];
+//}
 
 
  #pragma mark - Navigation
 
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+     TimelineTableViewCell *tappedCell = sender;
+     Post *post = tappedCell.post;
 
-//     if ([segue.identifier  isEqual: @"cellProfile"]) {
-//    
-////        get the user from the segue.destination and pass the user to the profile view controller.
-//
-//         UINavigationController *navigationController = [segue destinationViewController];
-//         ProfileViewController *profileViewController = (ProfileViewController*)navigationController.topViewController;
-//             CustomUser *user = sender;
-//             profileInstagramViewController.user = user;
-//         }
+     if ([segue.identifier  isEqual: @"goToProfileViewSegue"]) {
+         ProfileViewController *profileViewController = [segue destinationViewController];
+         profileViewController.userProfile = tappedCell.post.author;
+     }
  }
-
-
 
 @end
