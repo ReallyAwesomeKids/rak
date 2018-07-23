@@ -13,7 +13,7 @@
 #import "DetailViewController.h"
 #import "DateFunctions.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
@@ -113,9 +113,11 @@
     }];
 }
 
+
 //- (IBAction)didTapCheckmarkButton:(id)sender {
 //    
 //}
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];
@@ -151,6 +153,15 @@
         }];
         [self.tableView reloadData];
     }
+}
+
+
+- (void)userDidLevelUpTo:(NSInteger)level {
+    
+}
+
+- (void)userDidGetNewBadge:(Badge *)badge {
+    
 }
 
 // There is a bug in your background color cell view. Every time you delete,

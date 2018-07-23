@@ -12,6 +12,13 @@
 #import "Act.h"
 #import "Badge.h"
 
+@protocol CustomUserDelegate
+
+- (void)userDidGetNewBadge:(Badge *)badge;
+- (void)userDidLevelUpTo:(NSInteger)level;
+
+@end
+
 @interface CustomUser : PFUser <PFSubclassing>
 
 @property (strong, nonatomic) PFFile *profileImage;
@@ -34,5 +41,6 @@
 - (void)updateDailyStreak;
 
 - (void)saveChangesInUserData;
+
 
 @end

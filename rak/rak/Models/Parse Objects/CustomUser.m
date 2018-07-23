@@ -21,6 +21,8 @@
     self.dateLastDidAct = [NSDate date];
     self.amountActsDone += 1;
     
+    self.experiencePoints += act.pointsWorth;
+    
     [self checkForNewBadges];
     [self saveChangesInUserData];
 }

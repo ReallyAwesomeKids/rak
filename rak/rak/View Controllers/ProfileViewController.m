@@ -36,17 +36,12 @@
     [query includeKey:@"overallBadges"];
     [query includeKey:@"streakBadges"];
     [query getObjectInBackgroundWithId:self.user.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
-        NSLog(@"wooo .. %@", object);
         self.user = (CustomUser *)object;
         self.overallBadges = self.user.overallBadges;
         self.streakBadges = self.user.streakBadges;
+        [self adjustCollectionViewCellSize];
         [self.collectionView reloadData];
     }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -87,6 +82,31 @@
         cell.badge = badge;
     }
     return cell;
+}
+
+- (void)adjustCollectionViewCellSize {
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    
+    layout.minimumLineSpacing = 2;
+    layout.minimumInteritemSpacing = 2;
+    
+    CGFloat cellsPerRow = 2;
+    CGFloat width = self.collectionView.frame.size.width;
+    CGFloat itemWidth = (width -
+                         (layout.minimumInteritemSpacing *
+                          (cellsPerRow - 1)
+                          )
+                         ) / cellsPerRow;
+    
+    CGFloat itemHeight = itemWidth;
+    
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*
