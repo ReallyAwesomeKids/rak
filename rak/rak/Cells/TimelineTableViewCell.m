@@ -29,8 +29,9 @@
 - (void) didTapUserProfile:(UITapGestureRecognizer *)sender{
     // TODO: Call method on delegate
     
-    NSLog(@"tapped user profile picture");
-    [self.delegate timelineTableViewCell:self didTap:self.user];
+    NSLog(@"%@", sender);
+//    [self.delegate timelineTableViewCell:self didTap:self.user];
+//    [self performSegueWithIdentifier]
 }
 
 - (void) setPost:(Post *)post {

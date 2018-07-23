@@ -96,14 +96,11 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2OY-X6-bVt" id="B1s-HX-vJI"/>
+                        <segue destination="UYH-EY-Esq" kind="show" identifier="toProfileSegue" id="oEd-MC-OOJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2U-rw-ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="aVP-AX-Z50">
-                    <connections>
-                        <segue destination="UYH-EY-Esq" kind="show" identifier="cellProfile" id="S95-qR-rmK"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aVP-AX-Z50"/>
             </objects>
             <point key="canvasLocation" x="2303" y="-46"/>
         </scene>

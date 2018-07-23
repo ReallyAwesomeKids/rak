@@ -102,15 +102,15 @@
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
 
-     if ([segue.identifier  isEqual: @"cellProfile"]) {
-    
-//        get the user from the segue.destination and pass the user to the profile view controller.
-
-         UINavigationController *navigationController = [segue destinationViewController];
-         ProfileViewController *profileViewController = (ProfileViewController*)navigationController.topViewController;
-             CustomUser *user = sender;
-             profileInstagramViewController.user = user;
-         }
+//     if ([segue.identifier  isEqual: @"cellProfile"]) {
+//    
+////        get the user from the segue.destination and pass the user to the profile view controller.
+//
+//         UINavigationController *navigationController = [segue destinationViewController];
+//         ProfileViewController *profileViewController = (ProfileViewController*)navigationController.topViewController;
+//             CustomUser *user = sender;
+//             profileInstagramViewController.user = user;
+//         }
  }
 
 
