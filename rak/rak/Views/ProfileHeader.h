@@ -11,7 +11,7 @@
 
 #import "CustomUser.h"
 
-@interface ProfileHeader : UICollectionViewCell
+@interface ProfileHeader : UICollectionViewCell	
 
 @property (strong, nonatomic) CustomUser *user;
 
