@@ -10,7 +10,16 @@
 #import "Act.h"
 #import "CustomUser.h"
 
+
+@protocol ActsTableViewDelegate
+
+- (void)userDidCompleteAct:(Act *)act;
+
+@end
+
 @interface ActsTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) id<ActsTableViewDelegate> delegate;
 
 @property (strong, nonatomic) Act *act;
 @property (strong, nonatomic) CustomUser *user;

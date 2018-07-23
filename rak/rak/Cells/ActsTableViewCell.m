@@ -28,11 +28,11 @@
 
 - (IBAction)didTapCellCheckButton:(UIButton *)sender {
 //    self.cellView.backgroundColor = [UIColor colorWithRed:0.53 green:0.88 blue:0.53 alpha:1.0];
-    
+    	
     // Updates streak from the user
     UIButton *button = (UIButton *)sender;
     ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview;
     Act *act = cell.act;
-    [CustomUser.currentUser userDidCompleteAct:act];
+    [self.delegate userDidCompleteAct:act];
 }
 @end

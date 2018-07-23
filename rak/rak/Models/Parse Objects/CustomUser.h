@@ -35,4 +35,10 @@
 
 - (void)saveChangesInUserData;
 
+
+- (void)addToDailyStreakIfNeeded;
+- (void)addToActHistoryWithAct:(Act *)act;
+
+- (void)checkForNewBadges;
+
 @end
