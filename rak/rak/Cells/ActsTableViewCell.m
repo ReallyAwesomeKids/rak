@@ -33,6 +33,6 @@
     UIButton *button = (UIButton *)sender;
     ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview;
     Act *act = cell.act;
-    [self.delegate userDidCompleteAct:act];
+    [CustomUser.currentUser userDidCompleteAct:act];
 }
 @end

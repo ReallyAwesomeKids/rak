@@ -13,7 +13,7 @@
 #import "DetailViewController.h"
 #import "DateFunctions.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, ActsTableViewDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
@@ -53,20 +53,6 @@
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self.tableView sendSubviewToBack:self.refreshControl];
 
-}
-
-
-- (void)userDidCompleteAct:(Act *)act {
-    [CustomUser.currentUser addToDailyStreakIfNeeded];
-    [CustomUser.currentUser addToActHistoryWithAct:act];
-    
-    CustomUser.currentUser.dateLastDidAct = [NSDate date];
-    CustomUser.currentUser.amountActsDone += 1;
-    
-    CustomUser.currentUser.experiencePoints += act.pointsWorth;
-    
-    [CustomUser.currentUser checkForNewBadges];
-    [CustomUser.currentUser saveChangesInUserData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -131,7 +117,6 @@
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];
     Act *act = self.userActs[indexPath.row];
     cell.act = act;
-    cell.delegate = self;
     return cell;
 }
 
@@ -162,6 +147,15 @@
         }];
         [self.tableView reloadData];
     }
+}
+
+
+- (void)userDidLevelUpTo:(NSInteger)level {
+    
+}
+
+- (void)userDidGetNewBadge:(Badge *)badge {
+    
 }
 
 // There is a bug in your background color cell view. Every time you delete,
