@@ -54,6 +54,8 @@
 		5DB1009720FE725D0085C785 /* ActCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009620FE725D0085C785 /* ActCategory.m */; };
 		5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */; };
 		5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009F20FEE5FF0085C785 /* DetailViewTableViewCell.m */; };
+		5DB64CBD21065055002AE20E /* PopupViewXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB64CBC21065055002AE20E /* PopupViewXIB.xib */; };
+		5DB64CC02106507E002AE20E /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB64CBF2106507E002AE20E /* PopupView.m */; };
 		8C1A5F2E1E6BC31C46ECD42B /* libPods-rakUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */; };
 		FBFA6E4C50DF6C67769C0BAA /* libPods-rakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317354D07177A40A39F507D7 /* libPods-rakTests.a */; };
 /* End PBXBuildFile section */
@@ -164,6 +166,9 @@
 		5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageToFileConversion.m; sourceTree = "<group>"; };
 		5DB1009E20FEE5FF0085C785 /* DetailViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewTableViewCell.h; sourceTree = "<group>"; };
 		5DB1009F20FEE5FF0085C785 /* DetailViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewTableViewCell.m; sourceTree = "<group>"; };
+		5DB64CBC21065055002AE20E /* PopupViewXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewXIB.xib; sourceTree = "<group>"; };
+		5DB64CBE2106507D002AE20E /* PopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PopupView.h; path = /Users/hhzeng/Documents/rak/rak/rak/Views/PopupView.h; sourceTree = "<absolute>"; };
+		5DB64CBF2106507E002AE20E /* PopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PopupView.m; path = /Users/hhzeng/Documents/rak/rak/rak/Views/PopupView.m; sourceTree = "<absolute>"; };
 		619B39390757B38624E8FACC /* Pods-rakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakUITests/Pods-rakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BAF82B4EFD8956D071E8D9F /* Pods-rak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rak.release.xcconfig"; path = "Pods/Target Support Files/Pods-rak/Pods-rak.release.xcconfig"; sourceTree = "<group>"; };
 		9F3DB2BA3A4F1BCE6D085B20 /* Pods-rakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakTests/Pods-rakTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -361,10 +366,13 @@
 		5DB64CBB21064AF8002AE20E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5DB64CBE2106507D002AE20E /* PopupView.h */,
+				5DB64CBF2106507E002AE20E /* PopupView.m */,
 				5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */,
 				5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */,
 				5D329D5120FD4BB800C180C9 /* ProfileHeader.h */,
 				5D329D5220FD4BB800C180C9 /* ProfileHeader.m */,
+				5DB64CBC21065055002AE20E /* PopupViewXIB.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -502,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D329D2220FD160C00C180C9 /* Profile.storyboard in Resources */,
+				5DB64CBD21065055002AE20E /* PopupViewXIB.xib in Resources */,
 				5D329D1E20FD15F300C180C9 /* Category.storyboard in Resources */,
 				5D329CF620FD15A300C180C9 /* LaunchScreen.storyboard in Resources */,
 				5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */,
@@ -643,6 +652,7 @@
 				5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */,
 				5D329D3F20FD1AA900C180C9 /* Act.m in Sources */,
 				5D329D3320FD170500C180C9 /* CategoriesViewController.m in Sources */,
+				5DB64CC02106507E002AE20E /* PopupView.m in Sources */,
 				2C5C3B9120FFB902004568EF /* SearchCell.m in Sources */,
 				5D329D2920FD169800C180C9 /* HomeViewController.m in Sources */,
 				5D190FC0210001CA002A469B /* DateFunctions.m in Sources */,
