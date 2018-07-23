@@ -10,9 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupView">
+            <connections>
+                <outlet property="achievementImageView" destination="yEu-AY-cKc" id="j8p-UC-Z7d"/>
+                <outlet property="closeButton" destination="gO4-7o-BOI" id="M2y-Gh-jQZ"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="h6P-dj-aqA"/>
+                <outlet property="descriptionLabel" destination="m1N-lH-DJZ" id="wBj-hK-M9K"/>
+                <outlet property="shareButton" destination="QJv-jn-z1H" id="ZMs-ZC-yze"/>
+                <outlet property="titleLabel" destination="jhm-q3-wS2" id="BfS-3n-Bd9"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PopupView">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -20,6 +29,9 @@
                     <rect key="frame" x="220" y="0.0" width="30" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="X"/>
+                    <connections>
+                        <action selector="didTapClose:" destination="-1" eventType="touchUpInside" id="IYe-BR-gcB"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEu-AY-cKc">
                     <rect key="frame" x="75" y="57" width="100" height="100"/>
@@ -48,13 +60,6 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <connections>
-                <outlet property="achievementImageView" destination="yEu-AY-cKc" id="9vq-n1-9fF"/>
-                <outlet property="closeButton" destination="gO4-7o-BOI" id="ff1-fz-k8b"/>
-                <outlet property="descriptionLabel" destination="m1N-lH-DJZ" id="0hg-bY-wsk"/>
-                <outlet property="shareButton" destination="QJv-jn-z1H" id="dd9-Eq-RX7"/>
-                <outlet property="titleLabel" destination="jhm-q3-wS2" id="Ccm-Vg-Ooo"/>
-            </connections>
             <point key="canvasLocation" x="12" y="16"/>
         </view>
     </objects>
