@@ -366,12 +366,12 @@
 		5DB64CBB21064AF8002AE20E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5DB64CBE2106507D002AE20E /* PopupView.h */,
-				5DB64CBF2106507E002AE20E /* PopupView.m */,
 				5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */,
 				5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */,
 				5D329D5120FD4BB800C180C9 /* ProfileHeader.h */,
 				5D329D5220FD4BB800C180C9 /* ProfileHeader.m */,
+				5DB64CBE2106507D002AE20E /* PopupView.h */,
+				5DB64CBF2106507E002AE20E /* PopupView.m */,
 				5DB64CBC21065055002AE20E /* PopupViewXIB.xib */,
 			);
 			path = Views;
