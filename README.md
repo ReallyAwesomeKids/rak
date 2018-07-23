@@ -114,7 +114,7 @@ CORE
   - [ ] After user achieves a new level or earns new badge, they can share the achievement to the timeline
 - [ ] (Everyone) Determine color scheme
 - [ ] (Gustavo) Timeline
-  - [ ] Clicking at Profile picture leads to the User profile
+  - [x] Clicking at Profile picture leads to the User profile
   - [ ] Share to Facebook
   - [ ] Share to Twitter  
   - [ ] Styling it beautifully
