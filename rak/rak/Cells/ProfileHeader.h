@@ -22,5 +22,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *percentToNextLevelLabel;
 
-
 @end
