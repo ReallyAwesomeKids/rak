@@ -102,9 +102,9 @@
     return self.timelinePosts.count;
 }
 
-//- (void)timelineTableViewCell:(TimelineTableViewCell *)timelineTableViewCell didTap:(CustomUser *)user {
-//    [self performSegueWithIdentifier:@"cellProfile" sender:user];
-//}
+- (void)timelineTableViewCell:(TimelineTableViewCell *)timelineTableViewCell didTap:(CustomUser *)user {
+    [self performSegueWithIdentifier:@"cellProfile" sender:user];
+}
 
 
  #pragma mark - Navigation
@@ -112,7 +112,6 @@
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
      TimelineTableViewCell *tappedCell = sender;
-     Post *post = tappedCell.post;
 
      if ([segue.identifier  isEqual: @"goToProfileViewSegue"]) {
          ProfileViewController *profileViewController = [segue destinationViewController];

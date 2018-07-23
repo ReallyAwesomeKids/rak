@@ -52,10 +52,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnt-1N-oJK">
-                                                    <rect key="frame" x="18" y="4" width="44" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="8" id="86N-nF-wce"/>

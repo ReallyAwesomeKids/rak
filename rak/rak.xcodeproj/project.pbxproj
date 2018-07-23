@@ -601,6 +601,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-rak/Pods-rak-resources.sh",
+				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
 				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
 				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
@@ -608,6 +609,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
@@ -828,7 +830,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QG5695H4LD;
+				DEVELOPMENT_TEAM = 772CD6W863;
+				FRAMEWORK_SEARCH_PATHS = (
+					"~/Documents/FacebookSDK\n\n\"/Users/guscoutinho/Documents/FacebookSDK",
+				);
 				INFOPLIST_FILE = rak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -846,7 +851,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QG5695H4LD;
+				DEVELOPMENT_TEAM = 772CD6W863;
+				FRAMEWORK_SEARCH_PATHS = (
+					"~/Documents/FacebookSDK\n\n\"/Users/guscoutinho/Documents/FacebookSDK",
+				);
 				INFOPLIST_FILE = rak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
