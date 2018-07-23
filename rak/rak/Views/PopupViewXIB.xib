@@ -55,7 +55,7 @@
                 <outlet property="shareButton" destination="QJv-jn-z1H" id="dd9-Eq-RX7"/>
                 <outlet property="titleLabel" destination="jhm-q3-wS2" id="Ccm-Vg-Ooo"/>
             </connections>
-            <point key="canvasLocation" x="13" y="42"/>
+            <point key="canvasLocation" x="12" y="16"/>
         </view>
     </objects>
 </document>
