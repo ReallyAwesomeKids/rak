@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
+#import "Badge.h"
 
 @protocol PopupViewDelegate
 
@@ -20,12 +22,16 @@
 @property (strong, nonatomic) IBOutlet PopupView *contentView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *achievementImageView;
+@property (weak, nonatomic) IBOutlet PFImageView *achievementImageView;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondaryDescriptionLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @property (weak, nonatomic) id<PopupViewDelegate> delegate;
+
+- (void)configurePopupWithBadge:(Badge *)badge;
+- (void)configurePopupWithLevel:(NSInteger)level;
 
 @end

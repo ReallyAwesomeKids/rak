@@ -11,7 +11,7 @@
 @implementation PointToLevelConverter
 
 + (NSArray *)conversion {
-    return @[@10, @50, @100];
+    return @[@10, @10, @10, @10, @10, @10, @10, @10, @10, @10, @10, @10, @10];
 }
 
 + (NSInteger)getCurrentLevelFromPoints:(NSInteger)points {

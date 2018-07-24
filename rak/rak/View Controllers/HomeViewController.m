@@ -19,7 +19,6 @@
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
 
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -31,6 +30,9 @@
 
 // Used in fetchUserActs
 @property (nonatomic, strong) NSArray *userActs;
+
+@property (nonatomic) NSInteger levelForPopup;
+@property (nonatomic) Badge *badgeForPopup;
 
 @end
 
@@ -58,7 +60,7 @@
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self.tableView sendSubviewToBack:self.refreshControl];
     
-    // [self performSegueWithIdentifier:@"popupSegue" sender:nil];
+    CustomUser.currentUser.delegate = self;
 }
 
 - (void)fetchUserActs {
@@ -158,11 +160,15 @@
 
 
 - (void)userDidLevelUpTo:(NSInteger)level {
-    
+    NSLog(@"level up!!!");
+    self.levelForPopup = level;
+    [self performSegueWithIdentifier:@"popupSegue" sender:nil];
 }
 
 - (void)userDidGetNewBadge:(Badge *)badge {
-    
+    self.badgeForPopup = badge;
+    [self performSegueWithIdentifier:@"popupSegue" sender:nil];
+    NSLog(@"new badge!!!");
 }
 
 // There is a bug in your background color cell view. Every time you delete,
@@ -179,7 +185,7 @@
     //  Get the new view controller using [segue destinationViewController].
     //  Pass the selected object to the new view controller.
     
-    if ([segue.identifier  isEqual: @"detailSegue"]) {
+    if ([segue.identifier isEqual: @"detailSegue"]) {
         ActsTableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         Act *act = self.userActs[indexPath.row];
@@ -190,8 +196,12 @@
         PopupViewController *popupVC = (PopupViewController *)[segue destinationViewController];
         popupVC.providesPresentationContextTransitionStyle = YES;
         popupVC.definesPresentationContext = YES;
-        
         [popupVC setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        popupVC.badge = self.badgeForPopup;
+        popupVC.level = self.levelForPopup;
+        
+        self.badgeForPopup = nil;
+        self.levelForPopup = 0;
     }
 }
 

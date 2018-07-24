@@ -12,7 +12,7 @@
 #import "Act.h"
 #import "Badge.h"
 
-@protocol CustomUserDelegate
+@protocol CustomUserDelegate <NSObject>
 
 - (void)userDidGetNewBadge:(Badge *)badge;
 - (void)userDidLevelUpTo:(NSInteger)level;

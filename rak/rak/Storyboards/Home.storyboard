@@ -38,25 +38,25 @@
         <!--Popup View Controller-->
         <scene sceneID="xao-Or-arR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="szU-du-yUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LHm-sh-qOH" customClass="PopupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jvu-mK-4KN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zcq-pd-TFR" customClass="PopupView">
-                                <rect key="frame" x="37" y="183" width="300" height="300"/>
+                                <rect key="frame" x="15" y="183.5" width="345" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="Skp-zA-XXu"/>
-                                    <constraint firstAttribute="width" constant="300" id="pFY-yr-BEs"/>
+                                    <constraint firstAttribute="height" constant="300" id="qFE-R5-Xby"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Zcq-pd-TFR" firstAttribute="centerY" secondItem="jvu-mK-4KN" secondAttribute="centerY" id="loy-pO-Nl6"/>
-                            <constraint firstItem="Zcq-pd-TFR" firstAttribute="centerX" secondItem="jvu-mK-4KN" secondAttribute="centerX" id="xFK-Oh-X7D"/>
+                            <constraint firstItem="Zcq-pd-TFR" firstAttribute="leading" secondItem="CnK-wp-ati" secondAttribute="leading" constant="15" id="9vm-Nu-GcC"/>
+                            <constraint firstItem="Zcq-pd-TFR" firstAttribute="centerY" secondItem="jvu-mK-4KN" secondAttribute="centerY" id="UPw-b4-VMN"/>
+                            <constraint firstItem="CnK-wp-ati" firstAttribute="trailing" secondItem="Zcq-pd-TFR" secondAttribute="trailing" constant="15" id="d2I-1F-eGm"/>
+                            <constraint firstItem="Zcq-pd-TFR" firstAttribute="centerX" secondItem="jvu-mK-4KN" secondAttribute="centerX" id="xeA-9v-x1H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CnK-wp-ati"/>
                     </view>
@@ -64,6 +64,7 @@
                         <outlet property="popupView" destination="Zcq-pd-TFR" id="9rZ-LB-ER2"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szU-du-yUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1133.5999999999999" y="-75.112443778110944"/>
         </scene>

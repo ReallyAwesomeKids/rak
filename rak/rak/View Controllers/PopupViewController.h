@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Badge.h"
 
 @interface PopupViewController : UIViewController
+
+@property (strong, nonatomic) Badge *badge;
+@property (nonatomic) NSInteger level;
 
 @end

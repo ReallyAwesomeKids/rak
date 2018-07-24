@@ -22,7 +22,13 @@
     self.view.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:.6];
     self.popupView.layer.cornerRadius = 5;
     self.popupView.delegate = self;
-    // Do any additional setup after loading the view.
+   
+    if (self.badge != nil){
+        [self.popupView configurePopupWithBadge:self.badge];
+    }
+    else if (self.level != 0){
+        [self.popupView configurePopupWithLevel:self.level];
+    }
 }
 
 - (void)didTapClose {

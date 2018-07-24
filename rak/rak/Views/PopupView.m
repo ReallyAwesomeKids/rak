@@ -38,5 +38,20 @@
     [self.delegate didTapClose];
 }
 
+- (void)configurePopupWithBadge:(Badge *)badge {
+    self.titleLabel.text = @"New Badge Unlocked!";
+    self.descriptionLabel.text = badge.badgeName;
+    self.secondaryDescriptionLabel.text = badge.badgeDescription;
+    self.achievementImageView.file = badge.badgeImage;
+    [self.achievementImageView loadInBackground];
+}
+
+- (void)configurePopupWithLevel:(NSInteger)level {
+    self.titleLabel.text = @"Level Up!";
+    self.descriptionLabel.text = [NSString stringWithFormat:@"You reached Level %ld", level];
+    self.secondaryDescriptionLabel.text = nil;
+    self.achievementImageView.image = [UIImage imageNamed:@"goldStar.png"];
+    [self.achievementImageView loadInBackground];
+}
 
 @end
