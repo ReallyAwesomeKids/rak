@@ -16,10 +16,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapUserProfile:)];
-    
-    [self.timelineProfilePicture addGestureRecognizer:profileTapGestureRecognizer];
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -28,28 +24,27 @@
     // Configure the view for the selected state
 }
 
-- (void) didTapUserProfile:(UITapGestureRecognizer *)sender{
-    // TODO: Call method on delegate
-    
-    NSLog(@"%@", sender);
-//    [self.delegate timelineTableViewCell:self didTap:self.user];
-//    [self performSegueWithIdentifier]
-}
-
 - (void) setPost:(Post *)post {
+    // parse objects setup
     _post = post;
     self.user = CustomUser.currentUser;
     
-    self.timelineText.text = self.post.postText;
+    // setting texts/labels
+    self.timelineText.text = self.post.caption;
     self.timelineProfileName.text = [NSString stringWithFormat: @"%@", self.post.author.displayName];
+    
+    // setting profile picture
     self.timelineProfilePicture.file = self.user.profileImage;
     self.timelineProfilePicture.layer.cornerRadius = self.timelineProfilePicture.frame.size.height/2;
     [self.timelineProfilePicture loadInBackground];
     
+    // setting timeline picture
+    self.timelinePostImage.file = self.post.image;
+    [self.timelinePostImage loadInBackground];
 }
 
 - (IBAction)didTapTweet:(id)sender {
-    [[APIManager shared] postStatusWithText:self.post.postText completion:^(Tweet *tweet, NSError *error) {
+    [[APIManager shared] postStatusWithText:self.post.caption completion:^(Tweet *tweet, NSError *error) {
         if (tweet) {
             NSLog(@"Compose Tweet Success!");
         }

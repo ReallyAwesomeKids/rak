@@ -9,11 +9,10 @@
 #import "LoginViewController.h"
 #import "CustomUser.h"
 #import "APIManager.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface LoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *twitterLoginButton;
 
 - (IBAction)didTapLogin:(id)sender;
 
@@ -50,7 +49,7 @@
 - (IBAction)didTapLogin:(id)sender {
     [[APIManager shared] loginWithCompletion:^(BOOL success, NSError *error) {
         if (success) {
-            [self performSegueWithIdentifier:@"toGustavoSegue" sender:nil];
+            self.twitterLoginButton.alpha = 0;
         } else {
             NSLog(@"%@", error.localizedDescription);
         }

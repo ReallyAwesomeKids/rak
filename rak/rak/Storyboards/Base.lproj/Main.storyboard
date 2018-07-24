@@ -102,6 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="twitterLoginButton" destination="Ebp-rW-i1h" id="Yx3-Ah-g4r"/>
                         <segue destination="svd-l7-Zpf" kind="show" identifier="toGustavoSegue" id="zyf-mB-r69"/>
                     </connections>
                 </viewController>

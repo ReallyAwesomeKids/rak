@@ -10,19 +10,34 @@
 
 @implementation Post
 
-@dynamic author, postText;
+@dynamic author, caption, image;
 
 + (NSString *)parseClassName {
     return @"Post";
 }
 
-+ (void) postText: ( NSString * _Nullable )postText withCompletion: (PFBooleanResultBlock  _Nullable)completion {
-    
++ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     Post *newPost = [Post new];
     newPost.author = (CustomUser *)[PFUser currentUser];
-    newPost.postText = postText;
-    
+    newPost.caption = caption;
+    newPost.image = [self getPFFileFromImage:image];
     [newPost saveInBackgroundWithBlock: completion];
+}
+
++ (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
+    
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    // get image data and check if that is not nil
+    if (!imageData) {
+        return nil;
+    }
+    
+    return [PFFile fileWithName:@"image.png" data:imageData];
 }
 
 @end

@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *timelineProfilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *timelineText;
 @property (weak, nonatomic) IBOutlet UILabel *timelineProfileName;
+@property (weak, nonatomic) IBOutlet PFImageView *timelinePostImage;
 
 // objects
 @property (strong, nonatomic) Post *post;
