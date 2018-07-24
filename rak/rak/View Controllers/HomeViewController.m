@@ -163,38 +163,9 @@
 }
 
 - (void)userDidCompleteAct:(Act *)act {
-    [self presentMessageViewWithText:@"Act of kindness completed. Great work!"];
+    [MessageView presentMessageViewWithText:@"Act of kindness completed. Great work!" onViewController:self];
     [CustomUser.currentUser userDidCompleteAct:act];
 }
-
-- (void)presentMessageViewWithText:(NSString *)text {
-    UIView *messageView = [MessageView createMessageViewWithText:text forParentView:self.view];
-    [self.view addSubview:messageView];
-    
-    CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
-    CGFloat messageViewHeight = messageView.frame.size.height;
-    
-    CGFloat messageViewHiddenOriginY = messageView.frame.origin.y;
-    CGFloat messageViewShownOriginY = messageViewHiddenOriginY - tabBarHeight - messageViewHeight;
-    
-    [UIView animateWithDuration:.5 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-        messageView.frame = CGRectMake(messageView.frame.origin.x,
-                                       messageViewShownOriginY,
-                                       messageView.frame.size.width,
-                                       messageViewHeight);
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:.5 delay:2.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            messageView.frame = CGRectMake(messageView.frame.origin.x,
-                                           messageViewHiddenOriginY,
-                                           messageView.frame.size.width,
-                                           messageViewHeight);
-            
-        } completion:^(BOOL finished) {
-        }];
-    }];
-}
-
-
 
 - (void)userDidLevelUpTo:(NSInteger)level {
     self.levelForPopup = level;

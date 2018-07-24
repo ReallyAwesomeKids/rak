@@ -10,6 +10,34 @@
 
 @implementation MessageView
 
+
++ (void)presentMessageViewWithText:(NSString *)text onViewController:(UIViewController *)vc {
+    UIView *messageView = [MessageView createMessageViewWithText:text forParentView:vc.view];
+    [vc.view addSubview:messageView];
+    
+    CGFloat tabBarHeight = vc.tabBarController.tabBar.frame.size.height;
+    CGFloat messageViewHeight = messageView.frame.size.height;
+    
+    CGFloat messageViewHiddenOriginY = messageView.frame.origin.y;
+    CGFloat messageViewShownOriginY = messageViewHiddenOriginY - tabBarHeight - messageViewHeight;
+    
+    [UIView animateWithDuration:.5 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        messageView.frame = CGRectMake(messageView.frame.origin.x,
+                                       messageViewShownOriginY,
+                                       messageView.frame.size.width,
+                                       messageViewHeight);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:.5 delay:2.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            messageView.frame = CGRectMake(messageView.frame.origin.x,
+                                           messageViewHiddenOriginY,
+                                           messageView.frame.size.width,
+                                           messageViewHeight);
+            
+        } completion:^(BOOL finished) {
+        }];
+    }];
+}
+
 + (UIView *)createMessageViewWithText:(NSString *)text forParentView:(UIView *)view {
     // properties of the whole view
     CGFloat parentViewMinX = CGRectGetMinX(view.frame);

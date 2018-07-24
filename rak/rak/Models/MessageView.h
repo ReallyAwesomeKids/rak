@@ -11,6 +11,6 @@
 
 @interface MessageView : NSObject
 
-+ (UIView *)createMessageViewWithText:(NSString *)text forParentView:(UIView *)view;
++ (void)presentMessageViewWithText:(NSString *)text onViewController:(UIViewController *)vc;
 
 @end
