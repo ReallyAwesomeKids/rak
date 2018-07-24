@@ -9,6 +9,8 @@
 #import "ComposingViewController.h"
 #import "TimelineViewController.h"
 #import "ParseUI.h"
+#import "APIManager.h"
+#import "Tweet.h"
 
 @interface ComposingViewController () <UITextViewDelegate>
 
@@ -73,4 +75,5 @@
         }
     }];
 }
+
 @end

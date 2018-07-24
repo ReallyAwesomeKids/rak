@@ -27,6 +27,9 @@
 // delegate
 @property (nonatomic, weak) id<TimelineCellDelegate> delegate;
 
+// button actions
+- (IBAction)didTapTweet:(id)sender;
+
 @end
 
 @protocol TimelineCellDelegate

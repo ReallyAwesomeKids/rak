@@ -47,18 +47,26 @@
                                                     </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just bought a facebook notebook  to share what I am grateful for!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-k3-Xh3">
-                                                    <rect key="frame" x="72" y="29" width="283" height="31.5"/>
+                                                    <rect key="frame" x="72" y="29" width="243" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-dt-1bc">
+                                                    <rect key="frame" x="317" y="29" width="40" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Share"/>
+                                                    <connections>
+                                                        <action selector="didTapTweet:" destination="UG1-AR-WGT" eventType="touchUpInside" id="Plu-A5-tWl"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="8" id="86N-nF-wce"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="7" id="APd-Eh-g1z"/>
                                                 <constraint firstAttribute="bottom" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="17.5" id="DMN-av-jUg"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="15" id="GIt-I6-QKb"/>
-                                                <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="20" id="ReA-YB-P4p"/>
+                                                <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="60" id="ReA-YB-P4p"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="1jj-bL-dsS" secondAttribute="bottom" constant="2" id="YzT-wL-LQs"/>
                                                 <constraint firstAttribute="trailing" secondItem="1jj-bL-dsS" secondAttribute="trailing" constant="179" id="bD5-o4-FaW"/>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="9" id="iXE-r7-Gkn"/>
