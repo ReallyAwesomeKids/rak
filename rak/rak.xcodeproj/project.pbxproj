@@ -30,6 +30,7 @@
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
 		5D190FC0210001CA002A469B /* DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBF210001CA002A469B /* DateFunctions.m */; };
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
+		5D1E72E62107BBFE00C0FA8E /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72E52107BBFE00C0FA8E /* MessageView.m */; };
 		5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CEA20FD15A200C180C9 /* AppDelegate.m */; };
 		5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CEF20FD15A200C180C9 /* Main.storyboard */; };
 		5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CF220FD15A300C180C9 /* Assets.xcassets */; };
@@ -126,6 +127,8 @@
 		5D190FBF210001CA002A469B /* DateFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateFunctions.m; sourceTree = "<group>"; };
 		5D190FC121000EB3002A469B /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		5D190FC221000EB3002A469B /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		5D1E72E42107BBFE00C0FA8E /* MessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
+		5D1E72E52107BBFE00C0FA8E /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
 		5D329CE620FD15A200C180C9 /* rak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D329CE920FD15A200C180C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D329CEA20FD15A200C180C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 				5D190FBF210001CA002A469B /* DateFunctions.m */,
 				54BE1DAB2106A01000DA4A25 /* Tweet.h */,
 				54BE1DAC2106A01000DA4A25 /* Tweet.m */,
+				5D1E72E42107BBFE00C0FA8E /* MessageView.h */,
+				5D1E72E52107BBFE00C0FA8E /* MessageView.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
 				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
+				5D1E72E62107BBFE00C0FA8E /* MessageView.m in Sources */,
 				5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */,
 				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
 				5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */,
