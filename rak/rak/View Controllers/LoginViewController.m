@@ -8,8 +8,14 @@
 
 #import "LoginViewController.h"
 #import "CustomUser.h"
+#import "APIManager.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface LoginViewController ()
+
+- (IBAction)didTapLogin:(id)sender;
 
 @end
 
@@ -35,10 +41,20 @@
     
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Twitter Login
+- (IBAction)didTapLogin:(id)sender {
+    [[APIManager shared] loginWithCompletion:^(BOOL success, NSError *error) {
+        if (success) {
+            [self performSegueWithIdentifier:@"toGustavoSegue" sender:nil];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 /*

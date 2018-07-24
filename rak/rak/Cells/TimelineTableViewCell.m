@@ -8,6 +8,8 @@
 
 #import "TimelineTableViewCell.h"
 #import "ParseUI.h"
+#import "APIManager.h"
+
 
 @implementation TimelineTableViewCell
 
@@ -46,4 +48,14 @@
     
 }
 
+- (IBAction)didTapTweet:(id)sender {
+    [[APIManager shared] postStatusWithText:self.post.postText completion:^(Tweet *tweet, NSError *error) {
+        if (tweet) {
+            NSLog(@"Compose Tweet Success!");
+        }
+        else {
+            NSLog(@"Error composing Tweet: %@", error.localizedDescription);
+        }
+    }];
+}
 @end
