@@ -14,6 +14,7 @@
 #import "DateFunctions.h"
 #import "PopupView.h"
 #import "PopupViewController.h"
+#import "MessageView.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate>
 
@@ -72,7 +73,7 @@
     [userActQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         if (users != nil) {
             CustomUser *currentUser = users[0];
-           // NSLog(@"acts fetched: %@", currentUser);
+            // NSLog(@"acts fetched: %@", currentUser);
             self.userActs = currentUser.chosenActs;
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
@@ -93,7 +94,7 @@
     // fetch data asynchronously
     [challengeQuery findObjectsInBackgroundWithBlock:^(NSArray *acts, NSError *error) {
         if (acts != nil) {
-           // NSLog(@"daily challenges fetched: %@", acts);
+            // NSLog(@"daily challenges fetched: %@", acts);
             Act *displayedChallenge;
             Act *mostRecentChallenge = acts[0];
             NSDate *today = [DateFunctions getToday];
@@ -115,11 +116,6 @@
         }
     }];
 }
-
-
-//- (IBAction)didTapCheckmarkButton:(id)sender {
-//    
-//}
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -157,6 +153,47 @@
         [self.tableView reloadData];
     }
 }
+
+
+- (IBAction)didTapCheckButton:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview;
+    Act *act = cell.act;
+    [self userDidCompleteAct:act];
+}
+
+- (void)userDidCompleteAct:(Act *)act {
+    [self presentMessageViewWithText:@"Act of kindness completed. Great work!"];
+    [CustomUser.currentUser userDidCompleteAct:act];
+}
+
+- (void)presentMessageViewWithText:(NSString *)text {
+    UIView *messageView = [MessageView createMessageViewWithText:text forParentView:self.view];
+    [self.view addSubview:messageView];
+    
+    CGFloat tabBarHeight = self.tabBarController.tabBar.frame.size.height;
+    CGFloat messageViewHeight = messageView.frame.size.height;
+    
+    CGFloat messageViewHiddenOriginY = messageView.frame.origin.y;
+    CGFloat messageViewShownOriginY = messageViewHiddenOriginY - tabBarHeight - messageViewHeight;
+    
+    [UIView animateWithDuration:.5 delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        messageView.frame = CGRectMake(messageView.frame.origin.x,
+                                       messageViewShownOriginY,
+                                       messageView.frame.size.width,
+                                       messageViewHeight);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:.5 delay:2.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            messageView.frame = CGRectMake(messageView.frame.origin.x,
+                                           messageViewHiddenOriginY,
+                                           messageView.frame.size.width,
+                                           messageViewHeight);
+            
+        } completion:^(BOOL finished) {
+        }];
+    }];
+}
+
 
 
 - (void)userDidLevelUpTo:(NSInteger)level {

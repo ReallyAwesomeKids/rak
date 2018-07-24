@@ -9,9 +9,9 @@
 #import "LoginViewController.h"
 #import "CustomUser.h"
 #import "APIManager.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <FBSDKShareKit/FBSDKShareKit.h>
+//#import <FBSDKCoreKit/FBSDKCoreKit.h>
+//#import <FBSDKLoginKit/FBSDKLoginKit.h>
+//#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface LoginViewController ()
 
