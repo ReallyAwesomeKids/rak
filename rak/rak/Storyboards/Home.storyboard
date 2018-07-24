@@ -259,15 +259,10 @@
                         <viewLayoutGuide key="safeArea" id="6a3-fm-iIK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="hfF-By-Rx7">
-                        <barButtonItem key="leftBarButtonItem" title="Profile" image="icons8-customer-30" id="MGy-UX-nGP">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" image="icons8-customer-30" id="MGy-UX-nGP">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="yPY-Ld-PMU" kind="show" id="vwV-xw-7qF"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="vnb-zZ-g8Z">
-                            <connections>
-                                <action selector="didTapButton:" destination="9DP-4D-YYf" id="CeX-im-BEz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
