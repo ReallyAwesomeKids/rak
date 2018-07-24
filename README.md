@@ -116,7 +116,7 @@ CORE
 - [ ] (Gustavo) Timeline
   - [x] Clicking at Profile picture leads to the User profile
   - [ ] Share to Facebook
-  - [ ] Share to Twitter  
+  - [x] Share to Twitter  
   - [ ] Styling it beautifully
 - [ ] (Halima) Autolayout, animations, transitions
 
