@@ -117,8 +117,7 @@ CORE
   - [x] Clicking at Profile picture leads to the User profile
   - [x] Share to Twitter
    - [ ] Supporting Images
-   - [ ] Styling it beautifully
-- [ ] Share to Instagram
+  - [ ] Share to Instagram
 - [ ] (Halima) Autolayout, animations, transitions
 
 ## Week 3 - 7/30/18 - 8/3/18
