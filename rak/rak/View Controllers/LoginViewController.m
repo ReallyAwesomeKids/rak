@@ -10,11 +10,6 @@
 #import "CustomUser.h"
 #import "APIManager.h"
 
-//#import <FBSDKCoreKit/FBSDKCoreKit.h>
-//#import <FBSDKLoginKit/FBSDKLoginKit.h>
-//#import <FBSDKShareKit/FBSDKShareKit.h>
-
-
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *twitterLoginButton;
@@ -29,7 +24,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
 
 - (IBAction)didTap:(id)sender {
     [CustomUser logInWithUsernameInBackground:@"a"

@@ -43,11 +43,7 @@
     
     // Nests views into subviews
     [self.tableView insertSubview:self.refreshControl atIndex:0];
-    [self.tableView sendSubviewToBack:self.refreshControl];}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.tableView sendSubviewToBack:self.refreshControl];
 }
 
 - (void)fetchPosts {
@@ -104,6 +100,10 @@
 
 - (void)timelineTableViewCell:(TimelineTableViewCell *)timelineTableViewCell didTap:(CustomUser *)user {
     [self performSegueWithIdentifier:@"cellProfile" sender:user];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
  #pragma mark - Navigation

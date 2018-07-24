@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" rowHeight="180" id="UG1-AR-WGT" customClass="TimelineTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" rowHeight="180" id="UG1-AR-WGT" customClass="TimelineTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UG1-AR-WGT" id="rWh-p3-xTo">
@@ -47,7 +47,7 @@
                                                     </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just bought a facebook notebook  to share what I am grateful for!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-k3-Xh3">
-                                                    <rect key="frame" x="72" y="29" width="243" height="41"/>
+                                                    <rect key="frame" x="72" y="29" width="243" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AzZ-3W-gtw" customClass="PFImageView">
-                                                    <rect key="frame" x="73" y="79" width="130" height="100"/>
+                                                    <rect key="frame" x="73" y="64.5" width="130" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="130" id="jDE-xa-NVf"/>
                                                         <constraint firstAttribute="height" constant="100" id="s8x-Hq-Ji7"/>
@@ -76,9 +76,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="60" id="ReA-YB-P4p"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="1jj-bL-dsS" secondAttribute="bottom" constant="2" id="YzT-wL-LQs"/>
                                                 <constraint firstAttribute="trailing" secondItem="1jj-bL-dsS" secondAttribute="trailing" constant="179" id="bD5-o4-FaW"/>
-                                                <constraint firstItem="AzZ-3W-gtw" firstAttribute="top" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="8.5" id="eKf-Hz-Q2W"/>
+                                                <constraint firstItem="AzZ-3W-gtw" firstAttribute="top" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="20" id="eKf-Hz-Q2W"/>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="9" id="iXE-r7-Gkn"/>
-                                                <constraint firstAttribute="bottom" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="1" id="mzK-BB-glb"/>
+                                                <constraint firstAttribute="bottom" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="15" id="mzK-BB-glb"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="11" id="qaT-9D-THf"/>
                                             </constraints>
                                         </tableViewCellContentView>
