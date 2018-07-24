@@ -26,7 +26,6 @@ static NSString * const consumerSecret = @"wFF7wfEsJbiacUcykCVanPv4VwsbIxF4smqcJ
 }
 
 - (instancetype)init {
-    
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     NSString *key = consumerKey;
     NSString *secret = consumerSecret;
@@ -42,6 +41,7 @@ static NSString * const consumerSecret = @"wFF7wfEsJbiacUcykCVanPv4VwsbIxF4smqcJ
     return self;
 }
 
+// Posts at Twitter
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion{
     NSString *urlString = @"1.1/statuses/update.json";
     NSDictionary *parameters = @{@"status": text};
@@ -54,6 +54,7 @@ static NSString * const consumerSecret = @"wFF7wfEsJbiacUcykCVanPv4VwsbIxF4smqcJ
     }];
 }
 
+// Logins in at Twitter
 - (void)loginWithCompletion:(void(^)(BOOL success, NSError * error))completion {
     [self loginWithAuthenticationPath:@"oauth/authenticate?oauth_token="
                      requestTokenPath:@"oauth/request_token"

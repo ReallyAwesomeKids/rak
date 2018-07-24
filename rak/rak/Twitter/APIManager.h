@@ -15,7 +15,7 @@
 + (instancetype)shared;
 
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion;
-- (void)loginWithCompletion:(void(^)(BOOL success, NSError * error))completion;
 
+- (void)loginWithCompletion:(void(^)(BOOL success, NSError * error))completion;
 
 @end
