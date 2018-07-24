@@ -12,8 +12,12 @@
 #import "ActsTableViewCell.h"
 #import "DetailViewController.h"
 #import "DateFunctions.h"
+#import "PopupView.h"
+#import "PopupViewController.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate>
+
+@property (weak, nonatomic) IBOutlet PopupView *popupView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
@@ -26,6 +30,9 @@
 
 // Used in fetchUserActs
 @property (nonatomic, strong) NSArray *userActs;
+
+@property (nonatomic) NSInteger levelForPopup;
+@property (nonatomic) Badge *badgeForPopup;
 
 @end
 
@@ -52,15 +59,11 @@
     // Nests views into subviews
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self.tableView sendSubviewToBack:self.refreshControl];
-
+    
+    CustomUser.currentUser.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) fetchUserActs {
+- (void)fetchUserActs {
     PFQuery *userActQuery = [CustomUser query];
     [userActQuery whereKey:@"objectId" equalTo:CustomUser.currentUser.objectId];
     [userActQuery includeKey:@"chosenActs"];
@@ -157,11 +160,15 @@
 
 
 - (void)userDidLevelUpTo:(NSInteger)level {
-    
+    NSLog(@"level up!!!");
+    self.levelForPopup = level;
+    [self performSegueWithIdentifier:@"popupSegue" sender:nil];
 }
 
 - (void)userDidGetNewBadge:(Badge *)badge {
-    
+    self.badgeForPopup = badge;
+    [self performSegueWithIdentifier:@"popupSegue" sender:nil];
+    NSLog(@"new badge!!!");
 }
 
 // There is a bug in your background color cell view. Every time you delete,
@@ -173,19 +180,35 @@
 }
 
 
- #pragma mark - Navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //  Get the new view controller using [segue destinationViewController].
     //  Pass the selected object to the new view controller.
-     
-     if ([segue.identifier  isEqual: @"detailSegue"]) {
-         UITableView *tappedCell = sender;
-         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-         Act *act = self.userActs[indexPath.row];
-         DetailViewController *detailViewController = [segue destinationViewController];
-         detailViewController.act = act;
-     }
- }
- 
+    
+    if ([segue.identifier isEqual: @"detailSegue"]) {
+        ActsTableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Act *act = self.userActs[indexPath.row];
+        DetailViewController *detailViewController = [segue destinationViewController];
+        detailViewController.act = act;
+    }
+    else if ([segue.identifier isEqualToString:@"popupSegue"]){
+        PopupViewController *popupVC = (PopupViewController *)[segue destinationViewController];
+        popupVC.providesPresentationContextTransitionStyle = YES;
+        popupVC.definesPresentationContext = YES;
+        [popupVC setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        popupVC.badge = self.badgeForPopup;
+        popupVC.level = self.levelForPopup;
+        
+        self.badgeForPopup = nil;
+        self.levelForPopup = 0;
+    }
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end
