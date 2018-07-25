@@ -1,16 +1,9 @@
-//
-//  DetailHeaderView.m
-//  rak
-//
-//  Created by Haley Zeng on 7/18/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "DetailHeaderView.h"
 #import "CustomUser.h"
 
 @implementation DetailHeaderView
 
+// Autolayouting
 - (void)layoutSubviews {
     [super layoutSubviews];
     self.nameLabel.preferredMaxLayoutWidth = self.nameLabel.bounds.size.width;
@@ -31,7 +24,6 @@
     NSArray *completionLog = CustomUser.currentUser.actHistory[actObjectId];
     self.completedCountLabel.text = [NSString stringWithFormat:@"Completed %ld times", completionLog.count];
 }
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

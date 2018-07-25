@@ -66,13 +66,6 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
    return self.locationsResults.count;
 }
 
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"descriptionSegue" sender:self];
-//    NSDictionary *venue = self.locationsResults[indexPath.row];
-//    NSNumber *lat = [venue valueForKeyPath:@"location.lat"];
-//    NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
-//    [self.delegate locationsViewController:self didPickLocationWithLatitude:lat longitude:lng];
-}
 
 -(BOOL) searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     NSString *newText = [searchBar.text stringByReplacingCharactersInRange:range withString:text];

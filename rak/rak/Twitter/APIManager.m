@@ -1,11 +1,3 @@
-//
-//  APIManager.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 7/23/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "APIManager.h"
 #import <objc/message.h>
 @import SafariServices;
@@ -29,6 +21,7 @@ static NSString * const consumerSecret = @"wFF7wfEsJbiacUcykCVanPv4VwsbIxF4smqcJ
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     NSString *key = consumerKey;
     NSString *secret = consumerSecret;
+    
     // Check for launch arguments override
     if ([[NSUserDefaults standardUserDefaults] stringForKey:@"consumer-key"]) {
         key = [[NSUserDefaults standardUserDefaults] stringForKey:@"consumer-key"];

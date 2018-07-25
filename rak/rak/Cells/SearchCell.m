@@ -1,11 +1,3 @@
-//
-//  SearchCell.m
-//  rak
-//
-//  Created by Halima Monds on 7/18/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "SearchCell.h"
 #import "CustomUser.h"
 #import "ParseUI/ParseUI.h"
@@ -19,8 +11,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)configureCell: (CustomUser *) user {

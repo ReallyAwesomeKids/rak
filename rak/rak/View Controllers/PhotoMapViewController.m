@@ -11,11 +11,9 @@
 #import "DescriptionViewController.h"
 #import "PhotoAnnotation.h"
 #import "LocationsViewController.h"
+
 @interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-//@property (weak, nonatomic) IBOutlet UITextView *descriptionInfo;
-//@property (strong, nonatomic) NSString *actDescription;
-//@property (strong, nonatomic)
 - (IBAction)pinLocation:(id)sender;
 
 @end
@@ -59,37 +57,7 @@
     PhotoAnnotation *annotation = [PhotoAnnotation new];
     annotation.coordinate = coordinate;
     [self.mapView addAnnotation:annotation];
-    [self.mapView viewForAnnotation:annotation];
-    //[self presentViewController:descriptionVC animated:YES completion:nil];
-//    [self.navigationController pushViewController:descriptionVC animated:YES];
 }
-
-//--------------------------------------------------
-//Protocol created in order to get decsription from description view controller
-//-(void)descriptionViewController:(DescriptionViewController *)controller didPickDescriptionWithText: (NSString *) descriptionFinal {
-//    [self.navigationController popToViewController:self animated:YES];
-//}
-
-//--------------------------------------------------
-//Tap pin and description annotation will show
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-//
-//    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-//    if (annotationView == nil) {
-//        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-//        annotationView.canShowCallout = true;
-//        annotationView.leftCalloutAccessoryView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
-//
-//
-//    }
-//
-//    UILabel *lbl = (UILabel*)annotationView.leftCalloutAccessoryView;
-//    //-----------------
-//    lbl.text = annotation.title;
-//    //-----------------
-//
-//    return annotationView;
-//}
 
 
 //---------------------------------------------------

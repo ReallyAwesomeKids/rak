@@ -17,15 +17,19 @@
 }
 
 - (void)configureProfileHeader {
+    // Setting Profile Image
     self.profileImageView.file = self.user.profileImage;
     [self.profileImageView loadInBackground];
     
+    // Setting labels
     self.displayNameLabel.text = self.user.displayName;
     self.locationLabel.text = self.user.location;
     
+    // Setting streak
     [self.user updateDailyStreak];
     self.streakLabel.text = [NSString stringWithFormat:@"Streak: %ld", self.user.streak];
     
+    // Setting user level
     NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints];
     self.levelLabel.text = [NSString stringWithFormat:@"Level %ld", levelNumber];
     
