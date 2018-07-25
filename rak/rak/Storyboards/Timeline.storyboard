@@ -131,7 +131,7 @@
         <!--Composing View Controller-->
         <scene sceneID="6jg-v0-Ujj">
             <objects>
-                <viewController id="CcO-Aa-XpY" customClass="ComposingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="composingViewController" id="CcO-Aa-XpY" customClass="ComposingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Sn-CV-qgP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

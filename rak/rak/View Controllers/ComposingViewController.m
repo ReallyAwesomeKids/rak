@@ -39,7 +39,16 @@
     self.user = CustomUser.currentUser;
     self.composingProfilePicture.file = self.user.profileImage;
     self.composingProfilePicture.layer.cornerRadius = self.composingProfilePicture.frame.size.height/2;
-    [self.composingProfilePicture loadInBackground];  
+    [self.composingProfilePicture loadInBackground];
+    
+    if (self.autoFilledText != nil) {
+        [self textViewDidChange:self.composingText];
+        self.composingText.text = self.autoFilledText;
+    }
+    
+    if (self.autoFilledPhoto != nil) {
+        self.composingImage.image = self.autoFilledPhoto;
+    }
 }
 
 - (IBAction)didTapPost:(id)sender { 
@@ -47,6 +56,7 @@
         if (succeeded) {
             NSLog(@"posted succesfully");
             self.composingText.text = @"";
+            [self.delegate didFinishPosting];
             [self.navigationController popViewControllerAnimated:YES];
         } else {
             NSLog(@"not posted");
@@ -58,8 +68,7 @@
     [self getPhotoLibrary];
 }
 
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
+- (void)textViewDidChange:(UITextView *)textView {
     // placeholder disappears and text shows at View
     self.placeholderLabel.alpha = 0;
     self.placeholderLabel2.alpha = 0;
@@ -70,7 +79,7 @@
     [self.composingText resignFirstResponder];
 }
 
-- (void) getPhotoLibrary {
+- (void)getPhotoLibrary {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
