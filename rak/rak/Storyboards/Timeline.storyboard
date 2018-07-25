@@ -105,7 +105,7 @@
                     <navigationItem key="navigationItem" id="0Re-s0-Pds">
                         <barButtonItem key="rightBarButtonItem" title="Compose" id="5rw-k7-HNk">
                             <connections>
-                                <segue destination="CcO-Aa-XpY" kind="show" id="LRn-7q-fr7"/>
+                                <segue destination="CcO-Aa-XpY" kind="show" identifier="composeSegue" id="4lP-8A-MPB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -207,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6G-ud-0uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="-46.326836581709152"/>
+            <point key="canvasLocation" x="3239" y="-46"/>
         </scene>
     </scenes>
     <resources>

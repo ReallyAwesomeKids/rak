@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  //  [self.navigationController setNavigationBarHidden:NO];
     
     // uitext and label setup
     self.composingText.delegate = self;
@@ -57,7 +58,6 @@
             NSLog(@"posted succesfully");
             self.composingText.text = @"";
             [self.delegate didFinishPosting];
-            [self.navigationController popViewControllerAnimated:YES];
         } else {
             NSLog(@"not posted");
         }

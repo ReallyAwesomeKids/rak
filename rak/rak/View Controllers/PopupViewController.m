@@ -8,8 +8,10 @@
 
 #import "PopupViewController.h"
 #import "PopupView.h"
+#import "ComposingViewController.h"
+#import "AppDelegate.h"
 
-@interface PopupViewController () <PopupViewDelegate>
+@interface PopupViewController () <PopupViewDelegate, ComposingViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
 
@@ -31,12 +33,21 @@
     }
 }
 
-- (void)didTapClose {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)closePopup {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegate userDidClosePopup];
+    }];
 }
 
-- (void)didTapShare {
-    
+- (void)sharePopup {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegate userDidTapShareAchievement];
+    }];
+}
+
+- (void)didFinishPosting {
+    [self.navigationController popViewControllerAnimated:YES];
+    [self closePopup];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,14 +55,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"shareSegue"]) {
+        ComposingViewController *composingVC = (ComposingViewController *)[segue destinationViewController];
+        composingVC.delegate = self;
+    }
 }
-*/
+
 
 @end
