@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LocationsViewController.h"
-@interface PhotoMapViewController : UIViewController <LocationsViewControllerDelegate>
+#import "DescriptionViewController.h"
+@interface PhotoMapViewController : UIViewController <UINavigationControllerDelegate , DescriptionViewControllerDelegate>
 
 @end

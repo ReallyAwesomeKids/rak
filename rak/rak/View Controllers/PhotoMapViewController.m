@@ -8,14 +8,15 @@
 
 #import "PhotoMapViewController.h"
 #import <MapKit/MapKit.h>
+#import "DescriptionViewController.h"
+#import "PhotoAnnotation.h"
 #import "LocationsViewController.h"
-
-@interface PhotoMapViewController () <MKMapViewDelegate>
+@interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionInfo;
-- (IBAction)selectLocation:(id)sender;
-- (IBAction)closeDescription:(id)sender;
-@property (strong, nonatomic) NSString *actDescription;
+//@property (weak, nonatomic) IBOutlet UITextView *descriptionInfo;
+//@property (strong, nonatomic) NSString *actDescription;
+//@property (strong, nonatomic)
+- (IBAction)pinLocation:(id)sender;
 
 @end
 
@@ -37,46 +38,63 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+//----------------------------------------------------
+//Segue from the photo map to the locations view controller
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-//    if ([[segue identifier] isEqualToString:@"locationSegue"]){
-//        LocationsViewController *locationsViewController = [segue destinationViewController];
-//        locationsViewController.delegate = self;
-//    }
+    if ([[segue identifier] isEqualToString:@"locationsSegue"]){
+        LocationsViewController *locationsViewController = [segue destinationViewController];
+        locationsViewController.delegate = self;
+       
+    }
 }
 
-
-- (void)locationsViewController:(LocationsViewController *)controller didPickLocationWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude{
+//---------------------------------------------------
+//Creates pin and add's it to the photo map view
+-(void)descriptionViewController: (DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *) latitude longitude:(NSNumber *) longitude text: (NSString *) descriptionFinal; {
+    [self.navigationController popToViewController:self animated:YES];
+    //DescriptionViewController *descriptionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"descriptionID"];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.floatValue, longitude.floatValue);
-    MKPointAnnotation *annotation = [MKPointAnnotation new];
+    PhotoAnnotation *annotation = [PhotoAnnotation new];
     annotation.coordinate = coordinate;
-    annotation.title = @"Picture!";
     [self.mapView addAnnotation:annotation];
     [self.mapView viewForAnnotation:annotation];
-    [self.navigationController popToViewController:self animated:YES];
+    //[self presentViewController:descriptionVC animated:YES completion:nil];
+//    [self.navigationController pushViewController:descriptionVC animated:YES];
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-    if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-        annotationView.canShowCallout = true;
-        annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
-    }
-    
-    UITextView *textView = (UITextView*)annotationView.leftCalloutAccessoryView;
-    textView.text = self.descriptionInfo.text;
-    
-    return annotationView;
-}
-- (IBAction)selectLocation:(id)sender {
-    self.actDescription = self.descriptionInfo.text;
-    [self dismissViewControllerAnimated:YES completion: nil];
-    [self performSegueWithIdentifier:@"locationSegue" sender:nil];
-}
+//--------------------------------------------------
+//Protocol created in order to get decsription from description view controller
+//-(void)descriptionViewController:(DescriptionViewController *)controller didPickDescriptionWithText: (NSString *) descriptionFinal {
+//    [self.navigationController popToViewController:self animated:YES];
+//}
 
-- (IBAction)closeDescription:(id)sender {
-    [self dismissViewControllerAnimated:YES completion: nil];
+//--------------------------------------------------
+//Tap pin and description annotation will show
+//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+//
+//    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+//    if (annotationView == nil) {
+//        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+//        annotationView.canShowCallout = true;
+//        annotationView.leftCalloutAccessoryView = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+//
+//
+//    }
+//
+//    UILabel *lbl = (UILabel*)annotationView.leftCalloutAccessoryView;
+//    //-----------------
+//    lbl.text = annotation.title;
+//    //-----------------
+//
+//    return annotationView;
+//}
+
+
+//---------------------------------------------------
+//Tap pin button on the photo map will perform the segue to the locations view controller
+- (IBAction)pinLocation:(id)sender {
+    [self performSegueWithIdentifier:@"locationsSegue" sender:nil];
 }
 @end

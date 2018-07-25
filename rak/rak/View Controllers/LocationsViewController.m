@@ -8,11 +8,12 @@
 
 #import "LocationsViewController.h"
 #import "LocationCell.h"
-
+#import "DescriptionViewController.h"
+#import "PhotoMapViewController.h"
 static NSString * const clientID = @"QA1L0Z0ZNA2QVEEDHFPQWK0I5F1DE3GPLSNW4BZEBGJXUCFL";
 static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH21ZCPUMCU";
 
-@interface LocationsViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface LocationsViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, DescriptionViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *locationsTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *locationsSearchBar;
 @property (strong, nonatomic) NSArray *locationsResults;
@@ -33,15 +34,27 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"descriptionSegue"]) {
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.locationsTableView indexPathForCell:tappedCell];
+        NSDictionary *venue = self.locationsResults[indexPath.row];
+        DescriptionViewController *describe = [segue destinationViewController];
+        describe.delegate = self.delegate;
+        NSNumber *lat = [venue valueForKeyPath:@"location.lat"];
+        NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
+        describe.latt = lat;
+        describe.lngg = lng;
+    
+    }
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     LocationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationCell" forIndexPath:indexPath];
@@ -54,11 +67,11 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *venue = self.locationsResults[indexPath.row];
-    NSNumber *lat = [venue valueForKeyPath:@"location.lat"];
-    NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
-    [self.delegate locationsViewController:self didPickLocationWithLatitude:lat longitude:lng];
-    
+    [self performSegueWithIdentifier:@"descriptionSegue" sender:self];
+//    NSDictionary *venue = self.locationsResults[indexPath.row];
+//    NSNumber *lat = [venue valueForKeyPath:@"location.lat"];
+//    NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
+//    [self.delegate locationsViewController:self didPickLocationWithLatitude:lat longitude:lng];
 }
 
 -(BOOL) searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
@@ -90,4 +103,11 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
     }];
     [task resume];
 }
+
+- (void)descriptionViewController:(DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *)latitude longitude:(NSNumber *)longitude text:(NSString *)descriptionFinal {
+    NSLog(@"");
+}
+
+
+
 @end

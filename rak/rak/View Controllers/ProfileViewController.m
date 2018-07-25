@@ -11,12 +11,15 @@
 #import "ProfileHeader.h"
 #import "BadgeCell.h"
 #import "Badge.h"
+#import "PopoverViewController.h"
 
-@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIPopoverPresentationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) CustomUser *user;
 @property (strong, nonatomic) NSArray *overallBadges;
 @property (strong, nonatomic) NSArray *streakBadges;
+
+@property (strong, nonatomic) PopoverViewController *popoverVC;
 
 @end
 
@@ -73,14 +76,19 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     BadgeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"badgeCell" forIndexPath:indexPath];
+    Badge *badge;
     if (indexPath.section == 0) {
-        Badge *badge = self.overallBadges[indexPath.row];
-        cell.badge = badge;
+        badge = self.overallBadges[indexPath.row];
     }
     else {
-        Badge *badge = self.streakBadges[indexPath.row];
-        cell.badge = badge;
+        badge = self.streakBadges[indexPath.row];
     }
+    
+    cell.badge = badge;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(didTapBadge:)];
+    [cell addGestureRecognizer:tapGesture];
     return cell;
 }
 
@@ -103,6 +111,34 @@
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
+- (IBAction)didTapBadge:(id)sender {
+    UITapGestureRecognizer *tapGesture = (UITapGestureRecognizer *)sender;
+    BadgeCell *cell = (BadgeCell *) tapGesture.view;
+    Badge *badge = cell.badge;
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.text = badge.badgeDescription;
+    [label sizeToFit];
+    CGRect newLabelFrame = CGRectMake(15, 15, label.frame.size.width, label.frame.size.height);
+    label.frame = newLabelFrame;
+    
+    self.popoverVC = [self.storyboard instantiateViewControllerWithIdentifier:@"popover"];
+
+    [self.popoverVC.view addSubview:label];
+    
+    self.popoverVC.preferredContentSize = CGSizeMake(label.frame.size.width + 30, label.frame.size.height + 30);
+    self.popoverVC.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController *popoverController = self.popoverVC.popoverPresentationController;
+    popoverController.delegate = self;
+    popoverController.sourceView = cell;
+    popoverController.sourceRect = [cell.badgeImageView frame];
+    
+    [self presentViewController:self.popoverVC animated:YES completion:nil];
+}
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    return UIModalPresentationNone;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
