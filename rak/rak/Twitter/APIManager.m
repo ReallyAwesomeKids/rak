@@ -131,6 +131,14 @@ static NSString * const consumerSecret = @"wFF7wfEsJbiacUcykCVanPv4VwsbIxF4smqcJ
     return [self deauthorize];
 }
 
+- (BOOL)checksForAFile: (PFFile * _Nullable)image {
+    // check if image is not nil
+    if (!image) {
+        return NO;
+    }
+    return YES;
+}
+
 static void *BDBOAuth1SessionManagerAuthenticationSessionKey = &BDBOAuth1SessionManagerAuthenticationSessionKey;
 
 - (SFAuthenticationSession *)authenticationSession {

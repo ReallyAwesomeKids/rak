@@ -10,7 +10,6 @@
 #import "ParseUI.h"
 #import "APIManager.h"
 
-
 @implementation TimelineTableViewCell
 
 - (void)awakeFromNib {
@@ -39,8 +38,14 @@
     [self.timelineProfilePicture loadInBackground];
     
     // setting timeline picture
-    self.timelinePostImage.file = self.post.image;
-    [self.timelinePostImage loadInBackground];
+    
+    if ([[APIManager shared] checksForAFile:self.post.image]) {
+        self.timelinePostImage.file = self.post.image;
+        [self.timelinePostImage loadInBackground];
+    } else {
+        self.timelinePostImage.image = nil;
+        NSLog(@" no image");
+    }
 }
 
 - (IBAction)didTapTweet:(id)sender {
