@@ -99,8 +99,8 @@ CORE
 - [ ] Badges on profile page
 - [ ] Map view
   - [ ] See pins from db
-  - [ ] Make pins
-  - [ ] Search for locations with Foursquare API
+  - [X] Make pins
+  - [X] Search for locations with Foursquare API
   - [ ] Select pin to see detail page
 - [x] (Gustavo) Basic timeline
   - [x] See other people's posts
@@ -113,12 +113,12 @@ CORE
   - [ ] After an act is completed, user can click a "share" button that will share to the timeline.
   - [ ] After user achieves a new level or earns new badge, they can share the achievement to the timeline
 - [ ] (Everyone) Determine color scheme
-- [ ] (Gustavo) Timeline
+- [x] (Gustavo) Timeline
   - [x] Clicking at Profile picture leads to the User profile
   - [x] Share to Twitter
    - [x] Supporting Images
-  - [ ] Share to Instagram
-- [ ] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
+- [x] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
+- [ ] (Gustavo) Animations
 - [ ] (Halima) Autolayout, animations, transitions
 
 ## Week 3 - 7/30/18 - 8/3/18

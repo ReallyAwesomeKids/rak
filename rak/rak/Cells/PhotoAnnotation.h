@@ -4,7 +4,6 @@
 
 @interface PhotoAnnotation : NSObject <MKAnnotation>
 
-@property (strong, nonatomic) NSString *descriptionInfo;
 @property (strong, nonatomic) NSString *locationName;
 
 @end

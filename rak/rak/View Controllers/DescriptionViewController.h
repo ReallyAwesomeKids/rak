@@ -15,5 +15,6 @@
 @interface DescriptionViewController : UIViewController
 @property(strong, nonatomic) NSNumber *latt;
 @property(strong, nonatomic) NSNumber *lngg;
+@property(strong, nonatomic) NSString *namee;
 @property(weak, nonatomic) id<DescriptionViewControllerDelegate>delegate;
 @end
