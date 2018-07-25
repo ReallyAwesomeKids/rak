@@ -33,7 +33,7 @@
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
 		5D1E72E62107BBFE00C0FA8E /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72E52107BBFE00C0FA8E /* MessageView.m */; };
 		5D1E72E92107E7BE00C0FA8E /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */; };
-		5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CEA20FD15A200C180C9 /* AppDelegate.m */; };
+		5D1E72EC2109406300C0FA8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72EA2109406300C0FA8E /* AppDelegate.m */; };
 		5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CEF20FD15A200C180C9 /* Main.storyboard */; };
 		5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CF220FD15A300C180C9 /* Assets.xcassets */; };
 		5D329CF620FD15A300C180C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CF420FD15A300C180C9 /* LaunchScreen.storyboard */; };
@@ -135,9 +135,9 @@
 		5D1E72E52107BBFE00C0FA8E /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
 		5D1E72E72107E7BE00C0FA8E /* PopoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
 		5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
+		5D1E72EA2109406300C0FA8E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5D1E72EB2109406300C0FA8E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D329CE620FD15A200C180C9 /* rak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rak.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D329CE920FD15A200C180C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5D329CEA20FD15A200C180C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5D329CF020FD15A200C180C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D329CF220FD15A300C180C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D329CF520FD15A300C180C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -370,8 +370,8 @@
 		5D329D2520FD163C00C180C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
-				5D329CEA20FD15A200C180C9 /* AppDelegate.m */,
+				5D1E72EB2109406300C0FA8E /* AppDelegate.h */,
+				5D1E72EA2109406300C0FA8E /* AppDelegate.m */,
 				5D329D2620FD164700C180C9 /* Parse Objects */,
 				5D329D4E20FD436C00C180C9 /* InitializeDB.h */,
 				5D329D4F20FD436C00C180C9 /* InitializeDB.m */,
@@ -674,7 +674,6 @@
 				5D329CF920FD15A300C180C9 /* main.m in Sources */,
 				2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */,
 				2C23A5D02106A61C00BD228A /* DescriptionViewController.m in Sources */,
-				5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */,
 				2C23A5D32107E0D100BD228A /* PhotoAnnotation.m in Sources */,
 				5451684921010DD200D45FE3 /* TimelineTableViewCell.m in Sources */,
 				2C5C3B9A21010DAA004568EF /* PhotoMapViewController.m in Sources */,
@@ -689,6 +688,7 @@
 				2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */,
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
 				5DB64CC321066545002AE20E /* PopupViewController.m in Sources */,
+				5D1E72EC2109406300C0FA8E /* AppDelegate.m in Sources */,
 				54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */,
 				5DB1009720FE725D0085C785 /* ActCategory.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
