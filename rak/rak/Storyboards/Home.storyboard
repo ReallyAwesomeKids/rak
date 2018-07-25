@@ -38,7 +38,7 @@
         <!--Popup View Controller-->
         <scene sceneID="xao-Or-arR">
             <objects>
-                <viewController id="LHm-sh-qOH" customClass="PopupViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shareSegue" id="LHm-sh-qOH" customClass="PopupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jvu-mK-4KN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,13 +60,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CnK-wp-ati"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Wbp-FE-LAS"/>
                     <connections>
                         <outlet property="popupView" destination="Zcq-pd-TFR" id="9rZ-LB-ER2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="szU-du-yUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133.5999999999999" y="-75.112443778110944"/>
+            <point key="canvasLocation" x="1127" y="-75"/>
+        </scene>
+        <!--composingViewController-->
+        <scene sceneID="OgC-mR-P20">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Timeline" referencedIdentifier="composingViewController" id="Ttv-jD-BIX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z5K-q6-9dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="450"/>
         </scene>
         <!--Profile-->
         <scene sceneID="eAm-lt-85I">
@@ -269,7 +278,8 @@
                     <connections>
                         <outlet property="homeTaskName" destination="GPj-mr-fdr" id="LIZ-Bu-0oT"/>
                         <outlet property="tableView" destination="5Wp-XI-8V7" id="PBE-1h-9Kd"/>
-                        <segue destination="LHm-sh-qOH" kind="presentation" identifier="popupSegue" id="md8-s8-rUI"/>
+                        <segue destination="LHm-sh-qOH" kind="presentation" identifier="popupSegue" id="18N-of-0Z2"/>
+                        <segue destination="Ttv-jD-BIX" kind="show" identifier="shareSegue" id="ZdN-g1-wW1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9a-Mi-zqO" userLabel="First Responder" sceneMemberID="firstResponder"/>

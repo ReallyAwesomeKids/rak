@@ -35,7 +35,11 @@
 }
 
 - (IBAction)didTapClose:(id)sender {
-    [self.delegate didTapClose];
+    [self.delegate closePopup];
+}
+
+- (IBAction)didTapShare:(id)sender {
+    [self.delegate sharePopup];
 }
 
 - (void)configurePopupWithBadge:(Badge *)badge {

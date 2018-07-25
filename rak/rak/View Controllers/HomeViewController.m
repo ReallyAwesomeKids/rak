@@ -15,8 +15,9 @@
 #import "PopupView.h"
 #import "PopupViewController.h"
 #import "MessageView.h"
+#import "ComposingViewController.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate, PopupViewControllerDelegate, ComposingViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
 
@@ -177,6 +178,21 @@
     [self performSegueWithIdentifier:@"popupSegue" sender:nil];
 }
 
+- (void)userDidTapShareAchievement {
+    [self performSegueWithIdentifier:@"shareSegue" sender:nil];
+}
+
+- (void)userDidClosePopup {
+    self.badgeForPopup = nil;
+    self.levelForPopup = 0;
+}
+
+- (void)didFinishPosting {
+    [self.navigationController popViewControllerAnimated:YES];
+    self.badgeForPopup = nil;
+    self.levelForPopup = 0;
+}
+
 // There is a bug in your background color cell view. Every time you delete,
 // the view is still green
 
@@ -199,15 +215,23 @@
         detailViewController.act = act;
     }
     else if ([segue.identifier isEqualToString:@"popupSegue"]){
-        PopupViewController *popupVC = (PopupViewController *)[segue destinationViewController];
+        PopupViewController *popupVC = (PopupViewController *) [segue destinationViewController];
         popupVC.providesPresentationContextTransitionStyle = YES;
         popupVC.definesPresentationContext = YES;
         [popupVC setModalPresentationStyle:UIModalPresentationOverCurrentContext];
         popupVC.badge = self.badgeForPopup;
         popupVC.level = self.levelForPopup;
         
-        self.badgeForPopup = nil;
-        self.levelForPopup = 0;
+        popupVC.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:@"shareSegue"]) {
+        ComposingViewController *composingVC = (ComposingViewController *) [segue destinationViewController];
+        composingVC.delegate = self;
+        if (self.badgeForPopup != nil)
+            composingVC.autoFilledText =[NSString stringWithFormat:@"I just earned a new badge: %@!", self.badgeForPopup.badgeName];
+        else if (self.levelForPopup != 0)
+            composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];
+        composingVC.autoFilledPhoto = [UIImage imageNamed:@"goldStar.png"];
     }
 }
 
