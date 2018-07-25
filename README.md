@@ -99,8 +99,8 @@ CORE
 - [ ] Badges on profile page
 - [ ] Map view
   - [ ] See pins from db
-  - [ ] Make pins
-  - [ ] Search for locations with Foursquare API
+  - [X] Make pins
+  - [X] Search for locations with Foursquare API
   - [ ] Select pin to see detail page
 - [x] (Gustavo) Basic timeline
   - [x] See other people's posts
