@@ -6,13 +6,10 @@ target 'rak' do
   # use_frameworks!
 
   # Pods for rak
-  pod 'Parse'
-  pod 'ParseUI'
-  pod 'AFNetworking'
-  pod 'Bolts'
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
-  pod 'FBSDKShareKit'
+   pod 'Parse'
+   pod 'ParseUI'
+   pod 'AFNetworking'
+   pod 'BDBOAuth1Manager'
 
   target 'rakTests' do
     inherit! :search_paths

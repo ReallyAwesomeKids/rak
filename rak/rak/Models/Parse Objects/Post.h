@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "CustomUser.h"
+#import "ParseUI.h"
 
 @interface Post : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) CustomUser *author;
-@property (strong, nonatomic) NSString *postText;
+@property (strong, nonatomic) NSString *caption;
+@property (strong, nonatomic) PFFile *image;
 
-+ (void) postText: ( NSString * _Nullable )postText withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+
++ (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image;
 
 @end

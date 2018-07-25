@@ -11,7 +11,6 @@
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, TimelineCellDelegate>
 
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *timelinePosts;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -19,35 +18,32 @@
 @end
 
 @implementation TimelineViewController
-- (IBAction)didTapCompose:(id)sender {
-    NSLog(@"tapping");
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // TableView setup
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
-    // initialization
+    // Array Init
     self.timelinePosts = [[NSMutableArray alloc] init];
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self refreshControlSetup];
+    
     [self fetchPosts];
+    [self refreshControlSetup];
+    
 }
 
 - (void) refreshControlSetup {
+    self.refreshControl = [[UIRefreshControl alloc] init];
+
     // Programagtic view of dragging and dropping in code
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     
     // Nests views into subviews
     [self.tableView insertSubview:self.refreshControl atIndex:0];
-    [self.tableView sendSubviewToBack:self.refreshControl];}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.tableView sendSubviewToBack:self.refreshControl];
 }
 
 - (void)fetchPosts {
@@ -90,6 +86,10 @@
     return cell;
 }
 
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.timelinePosts.count;
+}
+
 - (IBAction)didTapProfileIcon:(id)sender {
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *)sender;
     UIImageView *profileIcon = (UIImageView *) gesture.view;
@@ -98,14 +98,13 @@
                               sender:tappedCell];
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.timelinePosts.count;
-}
-
 - (void)timelineTableViewCell:(TimelineTableViewCell *)timelineTableViewCell didTap:(CustomUser *)user {
     [self performSegueWithIdentifier:@"cellProfile" sender:user];
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
 
  #pragma mark - Navigation
 

@@ -13,7 +13,9 @@
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges, delegate;
+@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges;
+
+@synthesize delegate;
 
 - (void)userDidCompleteAct:(Act *)act {
     [self addToDailyStreakIfNeeded];

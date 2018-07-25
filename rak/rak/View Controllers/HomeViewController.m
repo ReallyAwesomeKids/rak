@@ -12,8 +12,13 @@
 #import "ActsTableViewCell.h"
 #import "DetailViewController.h"
 #import "DateFunctions.h"
+#import "PopupView.h"
+#import "PopupViewController.h"
+#import "MessageView.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate>
+
+@property (weak, nonatomic) IBOutlet PopupView *popupView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
@@ -26,6 +31,9 @@
 
 // Used in fetchUserActs
 @property (nonatomic, strong) NSArray *userActs;
+
+@property (nonatomic) NSInteger levelForPopup;
+@property (nonatomic) Badge *badgeForPopup;
 
 @end
 
@@ -52,15 +60,11 @@
     // Nests views into subviews
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self.tableView sendSubviewToBack:self.refreshControl];
-
+    
+    CustomUser.currentUser.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) fetchUserActs {
+- (void)fetchUserActs {
     PFQuery *userActQuery = [CustomUser query];
     [userActQuery whereKey:@"objectId" equalTo:CustomUser.currentUser.objectId];
     [userActQuery includeKey:@"chosenActs"];
@@ -69,7 +73,7 @@
     [userActQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         if (users != nil) {
             CustomUser *currentUser = users[0];
-            NSLog(@"acts fetched: %@", currentUser);
+            // NSLog(@"acts fetched: %@", currentUser);
             self.userActs = currentUser.chosenActs;
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
@@ -90,7 +94,7 @@
     // fetch data asynchronously
     [challengeQuery findObjectsInBackgroundWithBlock:^(NSArray *acts, NSError *error) {
         if (acts != nil) {
-            NSLog(@"daily challenges fetched: %@", acts);
+            // NSLog(@"daily challenges fetched: %@", acts);
             Act *displayedChallenge;
             Act *mostRecentChallenge = acts[0];
             NSDate *today = [DateFunctions getToday];
@@ -112,11 +116,6 @@
         }
     }];
 }
-
-
-//- (IBAction)didTapCheckmarkButton:(id)sender {
-//    
-//}
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -156,12 +155,26 @@
 }
 
 
+- (IBAction)didTapCheckButton:(id)sender {
+    UIButton *button = (UIButton *)sender;
+    ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview;
+    Act *act = cell.act;
+    [self userDidCompleteAct:act];
+}
+
+- (void)userDidCompleteAct:(Act *)act {
+    [MessageView presentMessageViewWithText:@"Act of kindness completed. Great work!" onViewController:self];
+    [CustomUser.currentUser userDidCompleteAct:act];
+}
+
 - (void)userDidLevelUpTo:(NSInteger)level {
-    
+    self.levelForPopup = level;
+    [self performSegueWithIdentifier:@"popupSegue" sender:nil];
 }
 
 - (void)userDidGetNewBadge:(Badge *)badge {
-    
+    self.badgeForPopup = badge;
+    [self performSegueWithIdentifier:@"popupSegue" sender:nil];
 }
 
 // There is a bug in your background color cell view. Every time you delete,
@@ -173,19 +186,35 @@
 }
 
 
- #pragma mark - Navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //  Get the new view controller using [segue destinationViewController].
     //  Pass the selected object to the new view controller.
-     
-     if ([segue.identifier  isEqual: @"detailSegue"]) {
-         UITableView *tappedCell = sender;
-         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-         Act *act = self.userActs[indexPath.row];
-         DetailViewController *detailViewController = [segue destinationViewController];
-         detailViewController.act = act;
-     }
- }
- 
+    
+    if ([segue.identifier isEqual: @"detailSegue"]) {
+        ActsTableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Act *act = self.userActs[indexPath.row];
+        DetailViewController *detailViewController = [segue destinationViewController];
+        detailViewController.act = act;
+    }
+    else if ([segue.identifier isEqualToString:@"popupSegue"]){
+        PopupViewController *popupVC = (PopupViewController *)[segue destinationViewController];
+        popupVC.providesPresentationContextTransitionStyle = YES;
+        popupVC.definesPresentationContext = YES;
+        [popupVC setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        popupVC.badge = self.badgeForPopup;
+        popupVC.level = self.levelForPopup;
+        
+        self.badgeForPopup = nil;
+        self.levelForPopup = 0;
+    }
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 @end

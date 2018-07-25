@@ -22,11 +22,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" rowHeight="100" id="UG1-AR-WGT" customClass="TimelineTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" rowHeight="180" id="UG1-AR-WGT" customClass="TimelineTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UG1-AR-WGT" id="rWh-p3-xTo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="179.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Coutinho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-bL-dsS">
@@ -47,26 +47,43 @@
                                                     </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just bought a facebook notebook  to share what I am grateful for!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-k3-Xh3">
-                                                    <rect key="frame" x="72" y="29" width="283" height="31.5"/>
+                                                    <rect key="frame" x="72" y="29" width="243" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-dt-1bc">
+                                                    <rect key="frame" x="317" y="29" width="40" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Share"/>
+                                                    <connections>
+                                                        <action selector="didTapTweet:" destination="UG1-AR-WGT" eventType="touchUpInside" id="Plu-A5-tWl"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AzZ-3W-gtw" customClass="PFImageView">
+                                                    <rect key="frame" x="73" y="64.5" width="130" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="jDE-xa-NVf"/>
+                                                        <constraint firstAttribute="height" constant="100" id="s8x-Hq-Ji7"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="8" id="86N-nF-wce"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="7" id="APd-Eh-g1z"/>
-                                                <constraint firstAttribute="bottom" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="17.5" id="DMN-av-jUg"/>
+                                                <constraint firstItem="AzZ-3W-gtw" firstAttribute="leading" secondItem="1jj-bL-dsS" secondAttribute="leading" id="AX1-p0-sYO"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="15" id="GIt-I6-QKb"/>
-                                                <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="20" id="ReA-YB-P4p"/>
+                                                <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="60" id="ReA-YB-P4p"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="1jj-bL-dsS" secondAttribute="bottom" constant="2" id="YzT-wL-LQs"/>
                                                 <constraint firstAttribute="trailing" secondItem="1jj-bL-dsS" secondAttribute="trailing" constant="179" id="bD5-o4-FaW"/>
+                                                <constraint firstItem="AzZ-3W-gtw" firstAttribute="top" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="20" id="eKf-Hz-Q2W"/>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="9" id="iXE-r7-Gkn"/>
-                                                <constraint firstAttribute="bottom" secondItem="QMe-2Q-kQf" secondAttribute="bottom" constant="28" id="mnX-Qn-FXb"/>
+                                                <constraint firstAttribute="bottom" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="15" id="mzK-BB-glb"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="11" id="qaT-9D-THf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="timelinePostImage" destination="AzZ-3W-gtw" id="jtO-0a-W2v"/>
                                             <outlet property="timelineProfileName" destination="1jj-bL-dsS" id="lin-gx-pwd"/>
                                             <outlet property="timelineProfilePicture" destination="QMe-2Q-kQf" id="5LQ-nl-CAe"/>
                                             <outlet property="timelineText" destination="AAk-k3-Xh3" id="cFq-lX-xSl"/>
@@ -88,7 +105,6 @@
                     <navigationItem key="navigationItem" id="0Re-s0-Pds">
                         <barButtonItem key="rightBarButtonItem" title="Compose" id="5rw-k7-HNk">
                             <connections>
-                                <action selector="didTapCompose:" destination="iY0-WQ-MqD" id="3f1-LZ-rcy"/>
                                 <segue destination="CcO-Aa-XpY" kind="show" id="LRn-7q-fr7"/>
                             </connections>
                         </barButtonItem>
@@ -128,7 +144,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dY6-Fn-X27">
-                                <rect key="frame" x="85" y="78" width="260" height="150"/>
+                                <rect key="frame" x="85" y="78" width="260" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -148,6 +164,24 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Um5-cX-fWe">
+                                <rect key="frame" x="85" y="125" width="65" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="836-mm-tre">
+                                <rect key="frame" x="30" y="205" width="240" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OME-H5-cCM">
+                                <rect key="frame" x="30" y="214" width="102" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="fb-photo"/>
+                                <connections>
+                                    <action selector="didTapPhotoVideo:" destination="CcO-Aa-XpY" eventType="touchUpInside" id="nqi-ue-awl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -164,6 +198,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="composingImage" destination="Um5-cX-fWe" id="mRN-nO-2VJ"/>
                         <outlet property="composingProfilePicture" destination="N38-Md-dod" id="pLg-v7-BQD"/>
                         <outlet property="composingText" destination="dY6-Fn-X27" id="IqJ-P8-wZx"/>
                         <outlet property="placeholderLabel" destination="kpX-Dx-c0M" id="lix-dk-DN9"/>
@@ -172,10 +207,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6G-ud-0uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="-46"/>
+            <point key="canvasLocation" x="3012" y="-46.326836581709152"/>
         </scene>
     </scenes>
     <resources>
+        <image name="fb-photo" width="124" height="34"/>
         <image name="profile" width="35" height="35"/>
     </resources>
 </document>

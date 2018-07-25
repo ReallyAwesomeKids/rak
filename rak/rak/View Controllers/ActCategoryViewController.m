@@ -13,6 +13,7 @@
 #import "Parse/Parse.h"
 #import "ActsCell.h"
 #import "CustomUser.h"
+#import "MessageView.h"
 
 @interface ActCategoryViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *actCategoryTableView;
@@ -72,6 +73,9 @@
         NSLog(@"Saved in background");
         if (error)
             NSLog(@"error: %@", error.localizedDescription);
+        else {
+            [MessageView presentMessageViewWithText:@"Act added to homepage" onViewController:self];
+        }
     }];
 }
 

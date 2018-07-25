@@ -26,9 +26,14 @@
 		548438AB20FFF7F900592EB1 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438AA20FFF7F900592EB1 /* Timeline.storyboard */; };
 		548438AD20FFF8EB00592EB1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438AC20FFF8EB00592EB1 /* Map.storyboard */; };
 		548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 548B222C20FD508200D667F7 /* ActsTableViewCell.m */; };
+		54BE1DA621069D8200DA4A25 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DA521069D8200DA4A25 /* APIManager.m */; };
+		54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DAC2106A01000DA4A25 /* Tweet.m */; };
+		54BE1DB02106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DAF2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m */; };
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
 		5D190FC0210001CA002A469B /* DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBF210001CA002A469B /* DateFunctions.m */; };
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
+		5D1E72E62107BBFE00C0FA8E /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72E52107BBFE00C0FA8E /* MessageView.m */; };
+		5D1E72E92107E7BE00C0FA8E /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */; };
 		5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CEA20FD15A200C180C9 /* AppDelegate.m */; };
 		5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CEF20FD15A200C180C9 /* Main.storyboard */; };
 		5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CF220FD15A300C180C9 /* Assets.xcassets */; };
@@ -57,6 +62,8 @@
 		5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */; };
 		5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009F20FEE5FF0085C785 /* DetailViewTableViewCell.m */; };
 		5DB64CBD21065055002AE20E /* PopupViewXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB64CBC21065055002AE20E /* PopupViewXIB.xib */; };
+		5DB64CC321066545002AE20E /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB64CC221066545002AE20E /* PopupViewController.m */; };
+		5DB64CC621066658002AE20E /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB64CC521066658002AE20E /* PopupView.m */; };
 		8C1A5F2E1E6BC31C46ECD42B /* libPods-rakUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */; };
 		FBFA6E4C50DF6C67769C0BAA /* libPods-rakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317354D07177A40A39F507D7 /* libPods-rakTests.a */; };
 /* End PBXBuildFile section */
@@ -115,12 +122,22 @@
 		548438AC20FFF8EB00592EB1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		548B222B20FD508200D667F7 /* ActsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActsTableViewCell.h; sourceTree = "<group>"; };
 		548B222C20FD508200D667F7 /* ActsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActsTableViewCell.m; sourceTree = "<group>"; };
+		54BE1DA421069D8200DA4A25 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		54BE1DA521069D8200DA4A25 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		54BE1DAB2106A01000DA4A25 /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		54BE1DAC2106A01000DA4A25 /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		54BE1DAE2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDBOAuth1SessionManager+SFAuthenticationSession.h"; sourceTree = "<group>"; };
+		54BE1DAF2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BDBOAuth1SessionManager+SFAuthenticationSession.m"; sourceTree = "<group>"; };
 		5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
 		5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
 		5D190FBE210001CA002A469B /* DateFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFunctions.h; sourceTree = "<group>"; };
 		5D190FBF210001CA002A469B /* DateFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateFunctions.m; sourceTree = "<group>"; };
 		5D190FC121000EB3002A469B /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		5D190FC221000EB3002A469B /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		5D1E72E42107BBFE00C0FA8E /* MessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
+		5D1E72E52107BBFE00C0FA8E /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
+		5D1E72E72107E7BE00C0FA8E /* PopoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
+		5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
 		5D329CE620FD15A200C180C9 /* rak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D329CE920FD15A200C180C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D329CEA20FD15A200C180C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -172,6 +189,10 @@
 		5DB1009E20FEE5FF0085C785 /* DetailViewTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewTableViewCell.h; sourceTree = "<group>"; };
 		5DB1009F20FEE5FF0085C785 /* DetailViewTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewTableViewCell.m; sourceTree = "<group>"; };
 		5DB64CBC21065055002AE20E /* PopupViewXIB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewXIB.xib; sourceTree = "<group>"; };
+		5DB64CC121066545002AE20E /* PopupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
+		5DB64CC221066545002AE20E /* PopupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
+		5DB64CC421066658002AE20E /* PopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
+		5DB64CC521066658002AE20E /* PopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
 		619B39390757B38624E8FACC /* Pods-rakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakUITests/Pods-rakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BAF82B4EFD8956D071E8D9F /* Pods-rak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rak.release.xcconfig"; path = "Pods/Target Support Files/Pods-rak/Pods-rak.release.xcconfig"; sourceTree = "<group>"; };
 		9F3DB2BA3A4F1BCE6D085B20 /* Pods-rakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakTests/Pods-rakTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +254,19 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		54BE1DB12106A61200DA4A25 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				54BE1DA421069D8200DA4A25 /* APIManager.h */,
+				54BE1DA521069D8200DA4A25 /* APIManager.m */,
+				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
+				5D329CEA20FD15A200C180C9 /* AppDelegate.m */,
+				54BE1DAE2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.h */,
+				54BE1DAF2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
 		5D329CDD20FD15A200C180C9 = {
 			isa = PBXGroup;
 			children = (
@@ -258,8 +292,7 @@
 		5D329CE820FD15A200C180C9 /* rak */ = {
 			isa = PBXGroup;
 			children = (
-				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
-				5D329CEA20FD15A200C180C9 /* AppDelegate.m */,
+				54BE1DB12106A61200DA4A25 /* Twitter */,
 				5D329D2520FD163C00C180C9 /* Models */,
 				5DB64CBB21064AF8002AE20E /* Views */,
 				2C5C3B8520FD3F98004568EF /* Cells */,
@@ -331,8 +364,15 @@
 				2C5C3B9921010DAA004568EF /* PhotoMapViewController.m */,
 				2C5C3B9D2101105C004568EF /* LocationsViewController.h */,
 				2C5C3B9E2101105C004568EF /* LocationsViewController.m */,
+<<<<<<< HEAD
 				2C23A5CE2106A61C00BD228A /* DescriptionViewController.h */,
 				2C23A5CF2106A61C00BD228A /* DescriptionViewController.m */,
+=======
+				5DB64CC121066545002AE20E /* PopupViewController.h */,
+				5DB64CC221066545002AE20E /* PopupViewController.m */,
+				5D1E72E72107E7BE00C0FA8E /* PopoverViewController.h */,
+				5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */,
+>>>>>>> 1ba4b72fc05ba148ec4cb8ca92890e6125f286e4
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -349,6 +389,10 @@
 				5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */,
 				5D190FBE210001CA002A469B /* DateFunctions.h */,
 				5D190FBF210001CA002A469B /* DateFunctions.m */,
+				54BE1DAB2106A01000DA4A25 /* Tweet.h */,
+				54BE1DAC2106A01000DA4A25 /* Tweet.m */,
+				5D1E72E42107BBFE00C0FA8E /* MessageView.h */,
+				5D1E72E52107BBFE00C0FA8E /* MessageView.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,6 +421,8 @@
 				5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */,
 				5D329D5120FD4BB800C180C9 /* ProfileHeader.h */,
 				5D329D5220FD4BB800C180C9 /* ProfileHeader.m */,
+				5DB64CC421066658002AE20E /* PopupView.h */,
+				5DB64CC521066658002AE20E /* PopupView.m */,
 				5DB64CBC21065055002AE20E /* PopupViewXIB.xib */,
 			);
 			path = Views;
@@ -418,7 +464,7 @@
 				5D329CE220FD15A200C180C9 /* Sources */,
 				5D329CE320FD15A200C180C9 /* Frameworks */,
 				5D329CE420FD15A200C180C9 /* Resources */,
-				EB027B0D17260E6970959A0F /* [CP] Copy Pods Resources */,
+				6CCA1475F869D07693311070 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -563,6 +609,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6CCA1475F869D07693311070 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-rak/Pods-rak-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rak/Pods-rak-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		81BBF26F29431F1E3A8A6024 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,32 +669,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB027B0D17260E6970959A0F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-rak/Pods-rak-resources.sh",
-				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
-				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
-				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
-				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-rak/Pods-rak-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -643,14 +687,18 @@
 				5451684921010DD200D45FE3 /* TimelineTableViewCell.m in Sources */,
 				2C5C3B9A21010DAA004568EF /* PhotoMapViewController.m in Sources */,
 				2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */,
+				54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
 				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
+				5D1E72E62107BBFE00C0FA8E /* MessageView.m in Sources */,
 				5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */,
 				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
 				5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */,
 				2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */,
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
+				5DB64CC321066545002AE20E /* PopupViewController.m in Sources */,
 				54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */,
+				54BE1DB02106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				5DB1009720FE725D0085C785 /* ActCategory.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
 				5D190FC321000EB3002A469B /* Post.m in Sources */,
@@ -664,8 +712,11 @@
 				2C5C3B9120FFB902004568EF /* SearchCell.m in Sources */,
 				5D329D2920FD169800C180C9 /* HomeViewController.m in Sources */,
 				5D190FC0210001CA002A469B /* DateFunctions.m in Sources */,
+				5DB64CC621066658002AE20E /* PopupView.m in Sources */,
 				5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */,
+				5D1E72E92107E7BE00C0FA8E /* PopoverViewController.m in Sources */,
 				548438A720FFB65700592EB1 /* SearchViewController.m in Sources */,
+				54BE1DA621069D8200DA4A25 /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,9 +888,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QG5695H4LD;
+<<<<<<< HEAD
 				FRAMEWORK_SEARCH_PATHS = (
 					"~/Documents/FacebookSDK\n\n\"/Users/guscoutinho/Documents/FacebookSDK",
 				);
+=======
+				FRAMEWORK_SEARCH_PATHS = "";
+>>>>>>> 1ba4b72fc05ba148ec4cb8ca92890e6125f286e4
 				INFOPLIST_FILE = rak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -858,9 +913,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QG5695H4LD;
+<<<<<<< HEAD
 				FRAMEWORK_SEARCH_PATHS = (
 					"~/Documents/FacebookSDK\n\n\"/Users/guscoutinho/Documents/FacebookSDK",
 				);
+=======
+				FRAMEWORK_SEARCH_PATHS = "";
+>>>>>>> 1ba4b72fc05ba148ec4cb8ca92890e6125f286e4
 				INFOPLIST_FILE = rak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

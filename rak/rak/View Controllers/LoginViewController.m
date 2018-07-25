@@ -8,8 +8,13 @@
 
 #import "LoginViewController.h"
 #import "CustomUser.h"
+#import "APIManager.h"
 
 @interface LoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *twitterLoginButton;
+
+- (IBAction)didTapLogin:(id)sender;
 
 @end
 
@@ -19,7 +24,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
 
 - (IBAction)didTap:(id)sender {
     [CustomUser logInWithUsernameInBackground:@"a"
@@ -35,10 +39,20 @@
     
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Twitter Login
+- (IBAction)didTapLogin:(id)sender {
+    [[APIManager shared] loginWithCompletion:^(BOOL success, NSError *error) {
+        if (success) {
+            self.twitterLoginButton.alpha = 0;
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 /*
