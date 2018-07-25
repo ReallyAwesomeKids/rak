@@ -14,10 +14,10 @@
 
 @interface ComposingViewController () <UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet PFImageView *composingProfilePicture;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (weak, nonatomic) IBOutlet UILabel *placeholderLabel2;
 @property (weak, nonatomic) IBOutlet UITextView *composingText;
+@property (weak, nonatomic) IBOutlet PFImageView *composingProfilePicture;
 @property (weak, nonatomic) IBOutlet UIImageView *composingImage;
 
 - (IBAction)didTapPost:(id)sender;
@@ -56,11 +56,6 @@
 
 - (IBAction)didTapPhotoVideo:(id)sender {
     [self getPhotoLibrary];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
@@ -105,6 +100,11 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

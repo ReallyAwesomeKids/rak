@@ -115,9 +115,9 @@ CORE
 - [ ] (Everyone) Determine color scheme
 - [ ] (Gustavo) Timeline
   - [x] Clicking at Profile picture leads to the User profile
-  - [ ] Share to Facebook
-  - [x] Share to Twitter  
-  - [ ] Styling it beautifully
+  - [x] Share to Twitter
+   - [ ] Supporting Images
+  - [ ] Share to Instagram
 - [ ] (Halima) Autolayout, animations, transitions
 
 ## Week 3 - 7/30/18 - 8/3/18
