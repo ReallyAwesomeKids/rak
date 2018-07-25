@@ -1,11 +1,3 @@
-//
-//  HomeViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 7/16/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "HomeViewController.h"
 #import "Act.h"
 #import "Parse.h"
@@ -15,8 +7,9 @@
 #import "PopupView.h"
 #import "PopupViewController.h"
 #import "MessageView.h"
+#import "ComposingViewController.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate, PopupViewControllerDelegate, ComposingViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
 
@@ -84,7 +77,7 @@
     }];
 }
 
-- (void) fetchDailyChallenge {
+- (void)fetchDailyChallenge {
     PFQuery *challengeQuery = [Act query];
     [challengeQuery includeKey:@"category"];
     [challengeQuery includeKey:@"dateLastFeatured"];
@@ -117,7 +110,6 @@
     }];
 }
 
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];
     Act *act = self.userActs[indexPath.row];
@@ -130,7 +122,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         // Removes from Parse
@@ -154,7 +145,6 @@
     }
 }
 
-
 - (IBAction)didTapCheckButton:(id)sender {
     UIButton *button = (UIButton *)sender;
     ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview;
@@ -177,20 +167,30 @@
     [self performSegueWithIdentifier:@"popupSegue" sender:nil];
 }
 
-// There is a bug in your background color cell view. Every time you delete,
-// the view is still green
+- (void)userDidTapShareAchievement {
+    [self performSegueWithIdentifier:@"shareSegue" sender:nil];
+}
+
+- (void)userDidClosePopup {
+    self.badgeForPopup = nil;
+    self.levelForPopup = 0;
+}
+
+- (void)didFinishPosting {
+    [self.navigationController popViewControllerAnimated:YES];
+    self.badgeForPopup = nil;
+    self.levelForPopup = 0;
+    [MessageView presentMessageViewWithText:@"Achievement shared to timeline." onViewController:self];
+}
 
 - (NSMutableArray *)createMutableArray:(NSArray *)array
 {
     return [NSMutableArray arrayWithArray:array];
 }
 
-
 #pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //  Get the new view controller using [segue destinationViewController].
-    //  Pass the selected object to the new view controller.
-    
     if ([segue.identifier isEqual: @"detailSegue"]) {
         ActsTableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
@@ -199,18 +199,24 @@
         detailViewController.act = act;
     }
     else if ([segue.identifier isEqualToString:@"popupSegue"]){
-        PopupViewController *popupVC = (PopupViewController *)[segue destinationViewController];
+        PopupViewController *popupVC = (PopupViewController *) [segue destinationViewController];
         popupVC.providesPresentationContextTransitionStyle = YES;
         popupVC.definesPresentationContext = YES;
         [popupVC setModalPresentationStyle:UIModalPresentationOverCurrentContext];
         popupVC.badge = self.badgeForPopup;
         popupVC.level = self.levelForPopup;
-        
-        self.badgeForPopup = nil;
-        self.levelForPopup = 0;
+        popupVC.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:@"shareSegue"]) {
+        ComposingViewController *composingVC = (ComposingViewController *) [segue destinationViewController];
+        composingVC.delegate = self;
+        if (self.badgeForPopup != nil)
+            composingVC.autoFilledText =[NSString stringWithFormat:@"I just earned a new badge: %@!", self.badgeForPopup.badgeName];
+        else if (self.levelForPopup != 0)
+            composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];
+        composingVC.autoFilledPhoto = [UIImage imageNamed:@"goldStar.png"];
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -1,15 +1,8 @@
-//
-//  TimelineViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 7/18/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "TimelineViewController.h"
 #import "TimelineTableViewCell.h"
+#import "ComposingViewController.h"
 
-@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, TimelineCellDelegate>
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, UITabBarDelegate, TimelineCellDelegate, ComposingViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *timelinePosts;
@@ -32,7 +25,6 @@
     
     [self fetchPosts];
     [self refreshControlSetup];
-    
 }
 
 - (void) refreshControlSetup {
@@ -102,6 +94,10 @@
     [self performSegueWithIdentifier:@"cellProfile" sender:user];
 }
 
+- (void)didFinishPosting {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -115,6 +111,10 @@
      if ([segue.identifier  isEqual: @"goToProfileViewSegue"]) {
          ProfileViewController *profileViewController = [segue destinationViewController];
          profileViewController.userProfile = tappedCell.post.author;
+     }
+     if ([segue.identifier isEqualToString:@"composeSegue"]) {
+         ComposingViewController *composingVC = (ComposingViewController *)[segue destinationViewController];
+         composingVC.delegate = self;
      }
  }
 

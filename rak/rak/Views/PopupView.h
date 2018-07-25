@@ -12,8 +12,8 @@
 
 @protocol PopupViewDelegate
 
-- (void)didTapClose;
-- (void) didTapShare;
+- (void)closePopup;
+- (void)sharePopup;
 
 @end
 

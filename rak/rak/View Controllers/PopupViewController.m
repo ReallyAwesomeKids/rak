@@ -1,15 +1,9 @@
-//
-//  PopupViewController.m
-//  rak
-//
-//  Created by Haley Zeng on 7/23/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "PopupViewController.h"
 #import "PopupView.h"
+#import "ComposingViewController.h"
+#import "AppDelegate.h"
 
-@interface PopupViewController () <PopupViewDelegate>
+@interface PopupViewController () <PopupViewDelegate, ComposingViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
 
@@ -19,6 +13,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // PopupView setup
     self.view.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:.6];
     self.popupView.layer.cornerRadius = 5;
     self.popupView.delegate = self;
@@ -31,12 +27,21 @@
     }
 }
 
-- (void)didTapClose {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)closePopup {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegate userDidClosePopup];
+    }];
 }
 
-- (void)didTapShare {
-    
+- (void)sharePopup {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegate userDidTapShareAchievement];
+    }];
+}
+
+- (void)didFinishPosting {
+    [self.navigationController popViewControllerAnimated:YES];
+    [self closePopup];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,14 +49,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"shareSegue"]) {
+        ComposingViewController *composingVC = (ComposingViewController *)[segue destinationViewController];
+        composingVC.delegate = self;
+    }
 }
-*/
 
 @end

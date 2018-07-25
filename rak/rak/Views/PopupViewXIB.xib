@@ -43,6 +43,9 @@
                     <state key="normal" title="Share">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="didTapShare:" destination="-1" eventType="touchUpInside" id="xec-c2-D78"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8Fx-nd-CxC">
                     <rect key="frame" x="15" y="89.5" width="220" height="181.5"/>

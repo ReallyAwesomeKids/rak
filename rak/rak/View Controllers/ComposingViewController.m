@@ -1,11 +1,3 @@
-//
-//  ComposingViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 7/19/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "ComposingViewController.h"
 #import "TimelineViewController.h"
 #import "ParseUI.h"
@@ -29,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  //  [self.navigationController setNavigationBarHidden:NO];
     
     // uitext and label setup
     self.composingText.delegate = self;
@@ -57,7 +50,6 @@
             NSLog(@"posted succesfully");
             self.composingText.text = @"";
             [self.delegate didFinishPosting];
-            [self.navigationController popViewControllerAnimated:YES];
         } else {
             NSLog(@"not posted");
         }
