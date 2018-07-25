@@ -364,15 +364,12 @@
 				2C5C3B9921010DAA004568EF /* PhotoMapViewController.m */,
 				2C5C3B9D2101105C004568EF /* LocationsViewController.h */,
 				2C5C3B9E2101105C004568EF /* LocationsViewController.m */,
-<<<<<<< HEAD
 				2C23A5CE2106A61C00BD228A /* DescriptionViewController.h */,
 				2C23A5CF2106A61C00BD228A /* DescriptionViewController.m */,
-=======
 				5DB64CC121066545002AE20E /* PopupViewController.h */,
 				5DB64CC221066545002AE20E /* PopupViewController.m */,
 				5D1E72E72107E7BE00C0FA8E /* PopoverViewController.h */,
 				5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */,
->>>>>>> 1ba4b72fc05ba148ec4cb8ca92890e6125f286e4
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -888,13 +885,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QG5695H4LD;
-<<<<<<< HEAD
-				FRAMEWORK_SEARCH_PATHS = (
-					"~/Documents/FacebookSDK\n\n\"/Users/guscoutinho/Documents/FacebookSDK",
-				);
-=======
+
 				FRAMEWORK_SEARCH_PATHS = "";
->>>>>>> 1ba4b72fc05ba148ec4cb8ca92890e6125f286e4
 				INFOPLIST_FILE = rak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -913,13 +905,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QG5695H4LD;
-<<<<<<< HEAD
-				FRAMEWORK_SEARCH_PATHS = (
-					"~/Documents/FacebookSDK\n\n\"/Users/guscoutinho/Documents/FacebookSDK",
+
 				);
-=======
 				FRAMEWORK_SEARCH_PATHS = "";
->>>>>>> 1ba4b72fc05ba148ec4cb8ca92890e6125f286e4
 				INFOPLIST_FILE = rak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
