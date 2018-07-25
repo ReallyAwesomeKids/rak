@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DescriptionViewController.h"
+
+
 @interface PhotoMapViewController : UIViewController <UINavigationControllerDelegate , DescriptionViewControllerDelegate>
+@property (strong, nonatomic) NSString *descriptionImport;
 
 @end

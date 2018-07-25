@@ -49,6 +49,8 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
         describe.delegate = self.delegate;
         NSNumber *lat = [venue valueForKeyPath:@"location.lat"];
         NSNumber *lng = [venue valueForKeyPath:@"location.lng"];
+        NSString *name = [venue valueForKeyPath:@"location.name"];
+        describe.namee = name;
         describe.latt = lat;
         describe.lngg = lng;
     
