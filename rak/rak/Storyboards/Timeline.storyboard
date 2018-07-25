@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Timeline View Controller-->
+        <!--Timeline-->
         <scene sceneID="SJx-i9-zkX">
             <objects>
                 <viewController id="iY0-WQ-MqD" customClass="TimelineViewController" sceneMemberID="viewController">
@@ -21,6 +21,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2OY-X6-bVt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.83119032120000003" green="0.40784313729999999" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" rowHeight="180" id="UG1-AR-WGT" customClass="TimelineTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="180"/>
@@ -55,7 +56,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-dt-1bc">
                                                     <rect key="frame" x="317" y="29" width="40" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Share"/>
+                                                    <state key="normal" title="Share">
+                                                        <color key="titleColor" red="0.027450980392156862" green="0.23137254901960785" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="didTapTweet:" destination="UG1-AR-WGT" eventType="touchUpInside" id="Plu-A5-tWl"/>
                                                     </connections>
@@ -102,14 +105,16 @@
                         <viewLayoutGuide key="safeArea" id="8Kf-Jr-2IB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="0Re-s0-Pds">
-                        <barButtonItem key="rightBarButtonItem" title="Compose" id="5rw-k7-HNk">
+                    <navigationItem key="navigationItem" title="Timeline" id="0Re-s0-Pds">
+                        <barButtonItem key="rightBarButtonItem" image="compose" style="plain" id="5rw-k7-HNk">
+                            <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="CcO-Aa-XpY" kind="show" identifier="composeSegue" id="4lP-8A-MPB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2OY-X6-bVt" id="B1s-HX-vJI"/>
                         <segue destination="UYH-EY-Esq" kind="show" identifier="goToProfileViewSegue" id="oEd-MC-OOJ"/>
@@ -118,7 +123,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2U-rw-ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aVP-AX-Z50"/>
             </objects>
-            <point key="canvasLocation" x="2301.5999999999999" y="-46.326836581709152"/>
+            <point key="canvasLocation" x="6997.6000000000004" y="-46.326836581709152"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rsh-3P-gE9">
@@ -192,6 +197,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dtU-f0-aa8">
                         <barButtonItem key="rightBarButtonItem" title="Post" id="DSZ-Wj-Vni">
+                            <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapPost:" destination="CcO-Aa-XpY" id="qF7-15-5KW"/>
                             </connections>
@@ -207,11 +213,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6G-ud-0uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3239" y="-46"/>
+            <point key="canvasLocation" x="7933.6000000000004" y="-46.326836581709152"/>
         </scene>
     </scenes>
     <resources>
+        <image name="compose" width="25" height="25"/>
         <image name="fb-photo" width="124" height="34"/>
         <image name="profile" width="35" height="35"/>
     </resources>
+    <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -256,8 +256,6 @@
 			children = (
 				54BE1DA421069D8200DA4A25 /* APIManager.h */,
 				54BE1DA521069D8200DA4A25 /* APIManager.m */,
-				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
-				5D329CEA20FD15A200C180C9 /* AppDelegate.m */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -287,11 +285,11 @@
 		5D329CE820FD15A200C180C9 /* rak */ = {
 			isa = PBXGroup;
 			children = (
-				54BE1DB12106A61200DA4A25 /* Twitter */,
 				5D329D2520FD163C00C180C9 /* Models */,
 				5DB64CBB21064AF8002AE20E /* Views */,
 				2C5C3B8520FD3F98004568EF /* Cells */,
 				5D329D2420FD163000C180C9 /* View Controllers */,
+				54BE1DB12106A61200DA4A25 /* Twitter */,
 				5D329D2320FD161300C180C9 /* Storyboards */,
 				5D329CF220FD15A300C180C9 /* Assets.xcassets */,
 				5D329CF720FD15A300C180C9 /* Info.plist */,
@@ -372,6 +370,8 @@
 		5D329D2520FD163C00C180C9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
+				5D329CEA20FD15A200C180C9 /* AppDelegate.m */,
 				5D329D2620FD164700C180C9 /* Parse Objects */,
 				5D329D4E20FD436C00C180C9 /* InitializeDB.h */,
 				5D329D4F20FD436C00C180C9 /* InitializeDB.m */,

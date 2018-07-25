@@ -20,6 +20,9 @@
     [Parse initializeWithConfiguration:config];
     [InitializeDB initializeDatabase];
     
+    UIImage *navBackgroundImage = [UIImage imageNamed:@"example"];
+    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTranslucent:NO];
     return YES;
 }
 
