@@ -191,6 +191,7 @@
     [self.navigationController popViewControllerAnimated:YES];
     self.badgeForPopup = nil;
     self.levelForPopup = 0;
+    [MessageView presentMessageViewWithText:@"Achievement shared to timeline." onViewController:self];
 }
 
 // There is a bug in your background color cell view. Every time you delete,
