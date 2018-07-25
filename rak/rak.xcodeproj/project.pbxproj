@@ -31,6 +31,7 @@
 		5D190FC0210001CA002A469B /* DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBF210001CA002A469B /* DateFunctions.m */; };
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
 		5D1E72E62107BBFE00C0FA8E /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72E52107BBFE00C0FA8E /* MessageView.m */; };
+		5D1E72E92107E7BE00C0FA8E /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */; };
 		5D329CEB20FD15A200C180C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CEA20FD15A200C180C9 /* AppDelegate.m */; };
 		5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CEF20FD15A200C180C9 /* Main.storyboard */; };
 		5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CF220FD15A300C180C9 /* Assets.xcassets */; };
@@ -129,6 +130,8 @@
 		5D190FC221000EB3002A469B /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		5D1E72E42107BBFE00C0FA8E /* MessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
 		5D1E72E52107BBFE00C0FA8E /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
+		5D1E72E72107E7BE00C0FA8E /* PopoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
+		5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
 		5D329CE620FD15A200C180C9 /* rak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D329CE920FD15A200C180C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D329CEA20FD15A200C180C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -355,6 +358,8 @@
 				2C5C3B9E2101105C004568EF /* LocationsViewController.m */,
 				5DB64CC121066545002AE20E /* PopupViewController.h */,
 				5DB64CC221066545002AE20E /* PopupViewController.m */,
+				5D1E72E72107E7BE00C0FA8E /* PopoverViewController.h */,
+				5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -694,6 +699,7 @@
 				5D190FC0210001CA002A469B /* DateFunctions.m in Sources */,
 				5DB64CC621066658002AE20E /* PopupView.m in Sources */,
 				5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */,
+				5D1E72E92107E7BE00C0FA8E /* PopoverViewController.m in Sources */,
 				548438A720FFB65700592EB1 /* SearchViewController.m in Sources */,
 				54BE1DA621069D8200DA4A25 /* APIManager.m in Sources */,
 			);
