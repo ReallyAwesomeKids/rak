@@ -1,11 +1,3 @@
-//
-//  CustomUser.h
-//  rak
-//
-//  Created by Haley Zeng on 7/16/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 #import <Parse/Parse.h>
@@ -21,19 +13,23 @@
 
 @interface CustomUser : PFUser <PFSubclassing>
 
+// User information
 @property (strong, nonatomic) PFFile *profileImage;
 @property (strong, nonatomic) NSString *displayName;
 @property (strong, nonatomic) NSString *location;
 
+// Acts
 @property (nonatomic) NSInteger streak;
 @property (nonatomic) NSDate *dateLastDidAct;
 @property (nonatomic) NSInteger experiencePoints;
 @property (nonatomic) NSDictionary *actHistory;
 @property (nonatomic) NSInteger amountActsDone;
 
+// Badges
 @property (strong, nonatomic) NSArray *overallBadges;
 @property (strong, nonatomic) NSArray *streakBadges;
 
+// Array populating homepage
 @property (strong, nonatomic) NSArray *chosenActs;
 
 @property (weak, nonatomic) id<CustomUserDelegate> delegate;
@@ -43,6 +39,5 @@
 - (void)updateDailyStreak;
 
 - (void)saveChangesInUserData;
-
 
 @end

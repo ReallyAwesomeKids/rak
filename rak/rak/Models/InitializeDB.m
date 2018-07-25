@@ -1,11 +1,3 @@
-//
-//  InitializeDB.m
-//  rak
-//
-//  Created by Haley Zeng on 7/16/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "InitializeDB.h"
 #import "Act.h"
 #import "CustomUser.h"
@@ -17,8 +9,7 @@
 
 @implementation InitializeDB
 
-
-+ (void) initializeDatabase {
++ (void)initializeDatabase {
     //[self initializeUser];
     //[self initializeActs];
     //[self initializeActCategories];
@@ -127,7 +118,6 @@
                                  @"Daily Challenges" : dailyChallenges
                                  };
     
-    
     for (NSString *key in categories) {
         NSArray *arr = [categories objectForKey:key];
         for (NSString *name in arr) {
@@ -183,7 +173,6 @@
         badge.badgeImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
         [badge saveInBackground];
     }
-    
     
     for (NSNumber *value in streak) {
         Badge *badge = [Badge new];

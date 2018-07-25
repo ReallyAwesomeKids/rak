@@ -28,7 +28,6 @@
 		548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 548B222C20FD508200D667F7 /* ActsTableViewCell.m */; };
 		54BE1DA621069D8200DA4A25 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DA521069D8200DA4A25 /* APIManager.m */; };
 		54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DAC2106A01000DA4A25 /* Tweet.m */; };
-		54BE1DB02106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DAF2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m */; };
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
 		5D190FC0210001CA002A469B /* DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBF210001CA002A469B /* DateFunctions.m */; };
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
@@ -126,8 +125,6 @@
 		54BE1DA521069D8200DA4A25 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		54BE1DAB2106A01000DA4A25 /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		54BE1DAC2106A01000DA4A25 /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
-		54BE1DAE2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDBOAuth1SessionManager+SFAuthenticationSession.h"; sourceTree = "<group>"; };
-		54BE1DAF2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BDBOAuth1SessionManager+SFAuthenticationSession.m"; sourceTree = "<group>"; };
 		5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
 		5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
 		5D190FBE210001CA002A469B /* DateFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFunctions.h; sourceTree = "<group>"; };
@@ -261,8 +258,6 @@
 				54BE1DA521069D8200DA4A25 /* APIManager.m */,
 				5D329CE920FD15A200C180C9 /* AppDelegate.h */,
 				5D329CEA20FD15A200C180C9 /* AppDelegate.m */,
-				54BE1DAE2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.h */,
-				54BE1DAF2106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -695,7 +690,6 @@
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
 				5DB64CC321066545002AE20E /* PopupViewController.m in Sources */,
 				54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */,
-				54BE1DB02106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				5DB1009720FE725D0085C785 /* ActCategory.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
 				5D190FC321000EB3002A469B /* Post.m in Sources */,

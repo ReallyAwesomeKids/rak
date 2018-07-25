@@ -116,8 +116,9 @@ CORE
 - [ ] (Gustavo) Timeline
   - [x] Clicking at Profile picture leads to the User profile
   - [x] Share to Twitter
-   - [ ] Supporting Images
+   - [x] Supporting Images
   - [ ] Share to Instagram
+- [ ] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
 - [ ] (Halima) Autolayout, animations, transitions
 
 ## Week 3 - 7/30/18 - 8/3/18
