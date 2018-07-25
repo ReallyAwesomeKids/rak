@@ -1,11 +1,3 @@
-//
-//  Tweet.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 7/23/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "Tweet.h"
 #import "CustomUser.h"
 
@@ -18,4 +10,5 @@
     }
     return self;
 }
+
 @end
