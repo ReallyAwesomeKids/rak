@@ -118,6 +118,7 @@ CORE
   - [x] Share to Twitter
    - [x] Supporting Images
 - [x] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
+- [ ] (Gustavo) Animations
 - [ ] (Halima) Autolayout, animations, transitions
 
 ## Week 3 - 7/30/18 - 8/3/18
