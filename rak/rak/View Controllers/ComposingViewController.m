@@ -1,11 +1,3 @@
-//
-//  ComposingViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 7/19/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "ComposingViewController.h"
 #import "TimelineViewController.h"
 #import "ParseUI.h"

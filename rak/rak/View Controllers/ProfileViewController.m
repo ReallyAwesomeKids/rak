@@ -1,25 +1,16 @@
-//
-//  ProfileViewController.m
-//  rak
-//
-//  Created by Haley Zeng on 7/16/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "ProfileViewController.h"
-
 #import "ProfileHeader.h"
 #import "BadgeCell.h"
 #import "Badge.h"
 #import "PopoverViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIPopoverPresentationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @property (strong, nonatomic) CustomUser *user;
 @property (strong, nonatomic) NSArray *overallBadges;
 @property (strong, nonatomic) NSArray *streakBadges;
-
 @property (strong, nonatomic) PopoverViewController *popoverVC;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -64,8 +55,7 @@
     return header;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     if (section == 0) {
         return CGSizeMake(self.collectionView.bounds.size.width, 450);
         
@@ -95,9 +85,11 @@
 - (void)adjustCollectionViewCellSize {
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     
+    // Adjusts spacing between cells
     layout.minimumLineSpacing = 2;
     layout.minimumInteritemSpacing = 2;
     
+    // Setting collection cell
     CGFloat cellsPerRow = 2;
     CGFloat width = self.collectionView.frame.size.width;
     CGFloat itemWidth = (width -
@@ -105,12 +97,11 @@
                           (cellsPerRow - 1)
                           )
                          ) / cellsPerRow;
-    
     CGFloat itemHeight = itemWidth;
-    
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
+// Please comment this following lines of code
 - (IBAction)didTapBadge:(id)sender {
     UITapGestureRecognizer *tapGesture = (UITapGestureRecognizer *)sender;
     BadgeCell *cell = (BadgeCell *) tapGesture.view;

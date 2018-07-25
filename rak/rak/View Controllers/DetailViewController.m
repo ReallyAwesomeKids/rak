@@ -1,11 +1,3 @@
-//
-//  DetailViewController.m
-//  rak
-//
-//  Created by Haley Zeng on 7/16/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "DetailViewController.h"
 #import "CustomUser.h"
 #import "DetailHeaderView.h"
@@ -13,23 +5,30 @@
 
 
 @interface DetailViewController () <UITableViewDelegate, UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet DetailHeaderView *headerView;
 @property (strong, nonatomic) NSArray *completionLog;
+
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // TableView setup
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    // Please comment this following lines of code
     NSString *actObjectId = self.act.objectId;
     NSArray *log = CustomUser.currentUser.actHistory[actObjectId];
     self.completionLog = [[log reverseObjectEnumerator] allObjects];
     if (self.completionLog == nil)
         self.completionLog = [NSArray new];
     self.headerView.act = self.act;
+    
     [self.tableView reloadData];
 }
 

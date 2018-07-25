@@ -1,11 +1,3 @@
-//
-//  TimelineViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 7/18/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "TimelineViewController.h"
 #import "TimelineTableViewCell.h"
 #import "ComposingViewController.h"
@@ -33,7 +25,6 @@
     
     [self fetchPosts];
     [self refreshControlSetup];
-    
 }
 
 - (void) refreshControlSetup {

@@ -1,11 +1,3 @@
-//
-//  PopupViewController.m
-//  rak
-//
-//  Created by Haley Zeng on 7/23/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "PopupViewController.h"
 #import "PopupView.h"
 #import "ComposingViewController.h"
@@ -21,6 +13,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // PopupView setup
     self.view.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:.6];
     self.popupView.layer.cornerRadius = 5;
     self.popupView.delegate = self;
@@ -55,7 +49,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -65,6 +58,5 @@
         composingVC.delegate = self;
     }
 }
-
 
 @end

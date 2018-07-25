@@ -1,11 +1,3 @@
-//
-//  LoginViewController.m
-//  rak
-//
-//  Created by Haley Zeng on 7/16/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "LoginViewController.h"
 #import "CustomUser.h"
 #import "APIManager.h"
@@ -22,7 +14,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (IBAction)didTap:(id)sender {
@@ -36,12 +27,6 @@
                                                 [self performSegueWithIdentifier:@"toGustavoSegue" sender:nil];
                                             }
                                         }];
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 // Twitter Login
@@ -53,6 +38,11 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

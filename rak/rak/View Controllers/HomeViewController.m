@@ -1,11 +1,3 @@
-//
-//  HomeViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 7/16/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "HomeViewController.h"
 #import "Act.h"
 #import "Parse.h"
@@ -85,7 +77,7 @@
     }];
 }
 
-- (void) fetchDailyChallenge {
+- (void)fetchDailyChallenge {
     PFQuery *challengeQuery = [Act query];
     [challengeQuery includeKey:@"category"];
     [challengeQuery includeKey:@"dateLastFeatured"];
@@ -118,7 +110,6 @@
     }];
 }
 
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];
     Act *act = self.userActs[indexPath.row];
@@ -131,7 +122,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         // Removes from Parse
@@ -154,7 +144,6 @@
         [self.tableView reloadData];
     }
 }
-
 
 - (IBAction)didTapCheckButton:(id)sender {
     UIButton *button = (UIButton *)sender;
@@ -194,20 +183,14 @@
     [MessageView presentMessageViewWithText:@"Achievement shared to timeline." onViewController:self];
 }
 
-// There is a bug in your background color cell view. Every time you delete,
-// the view is still green
-
 - (NSMutableArray *)createMutableArray:(NSArray *)array
 {
     return [NSMutableArray arrayWithArray:array];
 }
 
-
 #pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //  Get the new view controller using [segue destinationViewController].
-    //  Pass the selected object to the new view controller.
-    
     if ([segue.identifier isEqual: @"detailSegue"]) {
         ActsTableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
@@ -222,7 +205,6 @@
         [popupVC setModalPresentationStyle:UIModalPresentationOverCurrentContext];
         popupVC.badge = self.badgeForPopup;
         popupVC.level = self.levelForPopup;
-        
         popupVC.delegate = self;
     }
     else if ([segue.identifier isEqualToString:@"shareSegue"]) {
@@ -235,7 +217,6 @@
         composingVC.autoFilledPhoto = [UIImage imageNamed:@"goldStar.png"];
     }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
