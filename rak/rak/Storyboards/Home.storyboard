@@ -295,7 +295,7 @@
                         <viewLayoutGuide key="safeArea" id="6a3-fm-iIK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="hfF-By-Rx7">
-                        <barButtonItem key="rightBarButtonItem" title="Profile" image="icons8-customer-30" id="MGy-UX-nGP">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" image="profile" id="MGy-UX-nGP">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="yPY-Ld-PMU" kind="show" id="vwV-xw-7qF"/>
@@ -414,6 +414,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FVe-YB-Lox" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="wpE-7X-ON9">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -430,8 +431,8 @@
         <image name="Daily Challenges" width="65" height="65"/>
         <image name="category" width="25" height="25"/>
         <image name="home-1" width="25" height="25"/>
-        <image name="icons8-customer-30" width="30" height="30"/>
         <image name="map" width="25" height="25"/>
+        <image name="profile" width="30" height="30"/>
         <image name="search" width="25" height="25"/>
         <image name="timeline" width="25" height="25"/>
         <image name="xx" width="28" height="28"/>
