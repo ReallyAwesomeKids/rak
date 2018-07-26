@@ -17,6 +17,7 @@
 		2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9E2101105C004568EF /* LocationsViewController.m */; };
 		2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3BA4210112AB004568EF /* LocationCell.m */; };
 		2C60F453210A4E120004DFD6 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C60F451210A4E120004DFD6 /* iCarousel.m */; };
+		2C60F454210A573B0004DFD6 /* FullDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE62A921091404000A4592 /* FullDescriptionViewController.m */; };
 		2CE1BB832109599B00F2ACA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE1BB822109599B00F2ACA4 /* QuartzCore.framework */; };
 		48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDF13E0D63C064B2817FBB /* libPods-rak.a */; };
 		54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54516845210018CC00D45FE3 /* TimelineViewController.m */; };
@@ -681,6 +682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C60F454210A573B0004DFD6 /* FullDescriptionViewController.m in Sources */,
 				5D329D3920FD184900C180C9 /* LoginViewController.m in Sources */,
 				5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */,
 				5451684F2101506000D45FE3 /* ComposingViewController.m in Sources */,

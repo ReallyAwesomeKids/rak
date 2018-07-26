@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class DescriptionViewController;
 @protocol DescriptionViewControllerDelegate
--(void)descriptionViewController: (DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *) latitude longitude:(NSNumber *) longitude text: (NSString *) descriptionFinal;
+-(void)descriptionViewController: (DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *) latitude longitude:(NSNumber *) longitude text: (NSString *) descriptionFinal name: (NSString *) currentLocationName;
 @end
 
 @interface DescriptionViewController : UIViewController

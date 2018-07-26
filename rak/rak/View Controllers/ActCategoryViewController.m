@@ -54,7 +54,6 @@
     return self.acts.count;
 }
 - (IBAction)addingPersonalAct:(id)sender {
-    NSLog(@"I tapped on the button");
     UIButton *actAdd = (UIButton*) sender;
     ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
     

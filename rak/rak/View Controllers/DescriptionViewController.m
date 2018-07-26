@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.delegate);
     // Do any additional setup after loading the view.
 }
 
@@ -41,6 +40,6 @@
 
 - (IBAction)postDescription:(id)sender {
     self.descriptionText = self.descriptionTextView.text;
-    [self.delegate descriptionViewController:self didPickLocationWithLatitudeAndDescription:self.latt longitude:self.lngg text:self.descriptionText];
+    [self.delegate descriptionViewController:self didPickLocationWithLatitudeAndDescription:self.latt longitude:self.lngg text:self.descriptionText name:self.namee];
 }
 @end
