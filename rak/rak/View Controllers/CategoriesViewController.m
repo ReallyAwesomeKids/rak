@@ -62,9 +62,6 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *categories, NSError *error) {
         if (categories != nil) {
             self.categories= categories;
-            NSLog(@"===================");
-            NSLog(@"%@", self.categories);
-            NSLog(@"category count: %lu", self.categories.count);
             [self.categoriesCollectionView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -89,7 +86,6 @@
         ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
         
         actViewController.actCategory = actCategory;
-        NSLog(@"Tapping on a post!");
         [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
 }

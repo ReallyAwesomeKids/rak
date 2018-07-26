@@ -66,8 +66,6 @@
         if (users != nil) {
             self.users = users;
             self.filteredUsers = users;
-            NSLog(@"===================");
-            NSLog(@"%@", self.users);
             [self.searchTableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -76,23 +74,16 @@
 }
 
 -(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    
     if (searchText.length != 0) {
-        
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
             return [evaluatedObject[@"displayName"] containsString:searchText];
         }];
         self.filteredUsers = [self.users filteredArrayUsingPredicate:predicate];
-        
-        NSLog(@"%@", self.filteredUsers);
-        
     }
     else {
         self.filteredUsers= self.users;
     }
-    
     [self.searchTableView reloadData];
-    
 }
 
 @end

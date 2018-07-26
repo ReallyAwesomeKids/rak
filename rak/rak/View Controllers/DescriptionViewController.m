@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.delegate);
     // Do any additional setup after loading the view.
 }
 

@@ -100,7 +100,6 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
 }
 
 - (void)descriptionViewController:(DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *)latitude longitude:(NSNumber *)longitude text:(NSString *)descriptionFinal name:(NSString *) currentLocationName{
-    NSLog(@"");
 }
 
 
