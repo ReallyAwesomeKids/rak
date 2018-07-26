@@ -17,6 +17,8 @@
 		2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9E2101105C004568EF /* LocationsViewController.m */; };
 		2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3BA4210112AB004568EF /* LocationCell.m */; };
 		2CBE62AA21091404000A4592 /* FullDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE62A921091404000A4592 /* FullDescriptionViewController.m */; };
+		2CE1BB81210958C800F2ACA4 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE1BB7F210958C800F2ACA4 /* iCarousel.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		2CE1BB832109599B00F2ACA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE1BB822109599B00F2ACA4 /* QuartzCore.framework */; };
 		48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDF13E0D63C064B2817FBB /* libPods-rak.a */; };
 		54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54516845210018CC00D45FE3 /* TimelineViewController.m */; };
 		5451684921010DD200D45FE3 /* TimelineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5451684821010DD200D45FE3 /* TimelineTableViewCell.m */; };
@@ -106,6 +108,9 @@
 		2C5C3BA4210112AB004568EF /* LocationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		2CBE62A821091404000A4592 /* FullDescriptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullDescriptionViewController.h; sourceTree = "<group>"; };
 		2CBE62A921091404000A4592 /* FullDescriptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullDescriptionViewController.m; sourceTree = "<group>"; };
+		2CE1BB7F210958C800F2ACA4 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = ../../../../iCarousel/iCarousel/iCarousel.m; sourceTree = "<group>"; };
+		2CE1BB80210958C800F2ACA4 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = ../../../../iCarousel/iCarousel/iCarousel.h; sourceTree = "<group>"; };
+		2CE1BB822109599B00F2ACA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2ECDF13E0D63C064B2817FBB /* libPods-rak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rakUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		317354D07177A40A39F507D7 /* libPods-rakTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rakTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE1BB832109599B00F2ACA4 /* QuartzCore.framework in Frameworks */,
 				2C5C3B9C21010E4C004568EF /* MapKit.framework in Frameworks */,
 				548438A920FFEB4900592EB1 /* UserNotifications.framework in Frameworks */,
 				48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */,
@@ -235,6 +241,8 @@
 		2C5C3B8520FD3F98004568EF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1BB80210958C800F2ACA4 /* iCarousel.h */,
+				2CE1BB7F210958C800F2ACA4 /* iCarousel.m */,
 				2C5C3B8C20FE672F004568EF /* ActsCell.h */,
 				2C5C3B8D20FE672F004568EF /* ActsCell.m */,
 				2C5C3B8920FD4110004568EF /* CategoriesCell.h */,
@@ -369,12 +377,12 @@
 				2C5C3B9E2101105C004568EF /* LocationsViewController.m */,
 				2C23A5CE2106A61C00BD228A /* DescriptionViewController.h */,
 				2C23A5CF2106A61C00BD228A /* DescriptionViewController.m */,
+				2CBE62A821091404000A4592 /* FullDescriptionViewController.h */,
+				2CBE62A921091404000A4592 /* FullDescriptionViewController.m */,
 				5DB64CC121066545002AE20E /* PopupViewController.h */,
 				5DB64CC221066545002AE20E /* PopupViewController.m */,
 				5D1E72E72107E7BE00C0FA8E /* PopoverViewController.h */,
 				5D1E72E82107E7BE00C0FA8E /* PopoverViewController.m */,
-				2CBE62A821091404000A4592 /* FullDescriptionViewController.h */,
-				2CBE62A921091404000A4592 /* FullDescriptionViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -446,6 +454,7 @@
 		EA718A4FA4E3D76E6A42E741 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CE1BB822109599B00F2ACA4 /* QuartzCore.framework */,
 				2C5C3B9B21010E4C004568EF /* MapKit.framework */,
 				548438A820FFEB4900592EB1 /* UserNotifications.framework */,
 				2ECDF13E0D63C064B2817FBB /* libPods-rak.a */,
@@ -698,6 +707,7 @@
 				5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */,
 				2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */,
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
+				2CE1BB81210958C800F2ACA4 /* iCarousel.m in Sources */,
 				5DB64CC321066545002AE20E /* PopupViewController.m in Sources */,
 				54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */,
 				54BE1DB02106A5F500DA4A25 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,

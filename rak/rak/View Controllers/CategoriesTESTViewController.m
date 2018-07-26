@@ -1,18 +1,18 @@
 //
-//  FullDescriptionViewController.m
+//  CategoriesTESTViewController.m
 //  rak
 //
 //  Created by Halima Monds on 7/25/18.
 //  Copyright © 2018 Really Awesome Kids. All rights reserved.
 //
 
-#import "FullDescriptionViewController.h"
-#import "PhotoMapViewController.h"
-@interface FullDescriptionViewController ()
+#import "CategoriesTESTViewController.h"
+
+@interface CategoriesTESTViewController ()
 
 @end
 
-@implementation FullDescriptionViewController
+@implementation CategoriesTESTViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +23,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 /*
 #pragma mark - Navigation
 

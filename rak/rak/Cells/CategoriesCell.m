@@ -14,7 +14,7 @@
 }
 
 - (void)changeShape {
-    [self.layer setCornerRadius:self.frame.size.width/2];
+    [self.layer setCornerRadius:self.frame.size.width/3];
     [self.categoriesImageView.layer setCornerRadius:self.categoriesImageView.frame.size.width/2];
     self.layer.borderWidth = 1.0f;
     self.layer.borderColor = [UIColor blackColor].CGColor;
