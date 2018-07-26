@@ -132,7 +132,7 @@ CORE
 ## Bugs found that need to be solved
 - [x] (Gustavo) clicking checkmark button at Home [Home VC]
   - [ ] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
-- [ ] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Home VC]
+- [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [ ] user should not be able to add the same act multiple times to db [Category VC]
 
 ## Extended Functionality Ideas
