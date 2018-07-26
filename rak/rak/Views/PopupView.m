@@ -54,8 +54,26 @@
     self.titleLabel.text = @"Level Up!";
     self.descriptionLabel.text = [NSString stringWithFormat:@"You reached Level %ld", level];
     self.secondaryDescriptionLabel.text = nil;
-    self.achievementImageView.image = [UIImage imageNamed:@"levelup.png"];
+    
+    UIImage *levelUpImage = [UIImage imageNamed:@"levelup.png"];
+    [self adjustImageViewSizeToKeepAspectRatioOf:levelUpImage];
+
+    self.achievementImageView.image = levelUpImage;
     [self.achievementImageView loadInBackground];
+}
+
+- (void)adjustImageViewSizeToKeepAspectRatioOf:(UIImage *)image {
+    // adjust size of imageview to keep aspect ratio of image
+    CGFloat imageWidth = image.size.width;
+    CGFloat imageHeight = image.size.height;
+    
+    // proportion with cross multiplication to find newWidthConstraint
+    // imageWidth / imageHeight = newWidthConstraint / heightConstraint
+    // (imageWidth * heightConstraint) = (imageHeight * newWidthConstraint)
+    // newWidthConstraint = (imageWidth * heightConstraint) / imageHeight
+    CGFloat newImageWidthConstraintConstant = (imageWidth * self.imageViewHeightConstraint.constant) / imageHeight;
+    
+    self.imageViewWidthConstraint.constant = newImageWidthConstraintConstant;
 }
 
 @end
