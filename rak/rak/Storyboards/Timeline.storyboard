@@ -271,7 +271,7 @@
         <image name="comment" width="25" height="25"/>
         <image name="compose" width="25" height="25"/>
         <image name="fb-photo" width="124" height="34"/>
-        <image name="profile" width="35" height="35"/>
+        <image name="profile" width="30" height="30"/>
         <image name="smile" width="25" height="25"/>
         <image name="twitter" width="25" height="25"/>
     </resources>

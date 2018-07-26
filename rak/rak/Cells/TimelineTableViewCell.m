@@ -29,10 +29,6 @@
         [self.timelinePostImage loadInBackground];
     } else {
         self.timelinePostImage.image = nil;
-        self.timelinePostImage.frame = CGRectMake(self.timelinePostImage.frame.origin.x,
-                                                  self.timelinePostImage.frame.origin.y,
-                                                  self.timelinePostImage.frame.size.width,
-                                                  0.0);
     }
 }
 
@@ -52,7 +48,30 @@
 }
 
 - (void)toggleSmile {
-    [self.smileButton setImage:[UIImage imageNamed:@"smile-filled"] forState:UIControlStateNormal];
+    PFQuery *postQuery = [Post query];
+    [postQuery includeKey:@"author"];
+    
+    // Fetches data asynchronously
+    [postQuery getObjectInBackgroundWithId:self.post.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (object) {
+            Post *post = (Post *)object;
+            if ([post likedByCurrent]) {
+                [post incrementKey:@"likeCount" byAmount:@(-1)];
+                [post removeObject:CustomUser.currentUser.objectId forKey:@"likedBy"];
+                [self.smileButton setImage:[UIImage imageNamed:@"smile"] forState:UIControlStateNormal];
+            } else {
+                [post incrementKey:@"likeCount" byAmount:@(1)];
+                [post addObject:CustomUser.currentUser.objectId forKey:@"likedBy"];
+                [self.smileButton setImage:[UIImage imageNamed:@"smile-filled"] forState:UIControlStateNormal];
+            }
+            // Uploads to Parse
+            [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    self.post = post;
+                }
+            }];
+        }
+    }];
 }
 
 - (void)awakeFromNib {
