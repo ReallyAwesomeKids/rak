@@ -54,6 +54,9 @@
     self.titleLabel.text = @"Level Up!";
     self.descriptionLabel.text = [NSString stringWithFormat:@"You reached Level %ld", level];
     self.secondaryDescriptionLabel.text = nil;
+    UIImage *levelUpImage = [UIImage imageNamed:@"levelup.png"];
+    CGFloat imageWidth = levelUpImage.size.width;
+    CGFloat imageHeight = levelUpImage.size.height;
     self.achievementImageView.image = [UIImage imageNamed:@"levelup.png"];
     [self.achievementImageView loadInBackground];
 }
