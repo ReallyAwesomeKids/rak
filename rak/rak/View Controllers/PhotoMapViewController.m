@@ -12,7 +12,9 @@
 #import "PhotoAnnotation.h"
 #import "LocationsViewController.h"
 #import "FullDescriptionViewController.h"
+
 @interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)pinLocation:(id)sender;
 
@@ -35,7 +37,6 @@
 
 
 #pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 //----------------------------------------------------
 //Segue from the photo map to the locations view controller
@@ -48,19 +49,19 @@
     }
     if ([[segue identifier] isEqualToString:@"fullDescriptionSegue"]){
         FullDescriptionViewController *fulldescriptionViewController = [segue destinationViewController];
-        fulldescriptionViewController.fulldescriptionLabel.text = self.descriptionImport;
+        fulldescriptionViewController.fulldescriptionText = self.descriptionImport;
     }
 }
 
-//---------------------------------------------------
 //Creates pin and add's it to the photo map view
--(void)descriptionViewController: (DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *) latitude longitude:(NSNumber *) longitude text: (NSString *) descriptionFinal;{
+- (void)descriptionViewController: (DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *) latitude longitude:(NSNumber *) longitude text: (NSString *) descriptionFinal name: (NSString *) currentLocationName;{
     [self.navigationController popToViewController:self animated:YES];
     //DescriptionViewController *descriptionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"descriptionID"];
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.floatValue, longitude.floatValue);
     PhotoAnnotation *annotation = [[PhotoAnnotation alloc] init];
     annotation.coordinate = coordinate;
     self.descriptionImport = descriptionFinal;
+    annotation.locationName = currentLocationName;
     [self.mapView addAnnotation:annotation];
     [self.mapView viewForAnnotation:annotation];
 }

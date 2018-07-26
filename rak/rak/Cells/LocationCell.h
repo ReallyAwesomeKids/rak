@@ -4,6 +4,4 @@
 
 - (void)updateWithLocation:(NSDictionary *)locations;
 
-@property (weak, nonatomic) IBOutlet UITextView *locationDescription;
-
 @end
