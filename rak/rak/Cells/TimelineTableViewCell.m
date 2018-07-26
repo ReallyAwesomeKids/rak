@@ -31,6 +31,10 @@
         [self.timelinePostImage loadInBackground];
     } else {
         self.timelinePostImage.image = nil;
+        self.timelinePostImage.frame = CGRectMake(self.timelinePostImage.frame.origin.x,
+                                                  self.timelinePostImage.frame.origin.y,
+                                                  self.timelinePostImage.frame.size.width,
+                                                  0.0);
     }
 }
 

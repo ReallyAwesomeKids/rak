@@ -173,6 +173,7 @@
         badge.badgeImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
         [badge saveInBackground];
     }
+
     
     for (NSNumber *value in streak) {
         Badge *badge = [Badge new];
