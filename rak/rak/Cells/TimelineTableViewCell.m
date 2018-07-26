@@ -6,8 +6,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)setPost:(Post *)post {
@@ -31,6 +29,10 @@
         [self.timelinePostImage loadInBackground];
     } else {
         self.timelinePostImage.image = nil;
+        self.timelinePostImage.frame = CGRectMake(self.timelinePostImage.frame.origin.x,
+                                                  self.timelinePostImage.frame.origin.y,
+                                                  self.timelinePostImage.frame.size.width,
+                                                  0.0);
     }
 }
 
@@ -45,9 +47,16 @@
     }];
 }
 
+- (IBAction)didTapSmile:(id)sender {
+    [self toggleSmile];
+}
+
+- (void)toggleSmile {
+    [self.smileButton setImage:[UIImage imageNamed:@"smile-filled"] forState:UIControlStateNormal];
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 @end

@@ -2,7 +2,7 @@
 
 @implementation Post
 
-@dynamic author, caption, image;
+@dynamic author, caption, image, likedBy, likeCount;
 
 + (NSString *)parseClassName {
     return @"Post";
@@ -12,6 +12,8 @@
     Post *newPost = [Post new];
     newPost.author = (CustomUser *)[PFUser currentUser];
     newPost.caption = caption;
+    newPost.likeCount = @(0);
+    newPost.likedBy = [[NSMutableArray alloc] init];
     newPost.image = [self getPFFileFromImage:image];
     [newPost saveInBackgroundWithBlock: completion];
 }
@@ -27,6 +29,10 @@
         return nil;
     }
     return [PFFile fileWithName:@"image.png" data:imageData];
+}
+
+- (BOOL) likedByCurrent {
+    return [self.likedBy containsObject: CustomUser.currentUser.objectId];
 }
 
 @end
