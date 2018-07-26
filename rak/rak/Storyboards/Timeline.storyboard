@@ -66,23 +66,32 @@
                                                     </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just bought a facebook notebook  to share what I am grateful for!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-k3-Xh3">
-                                                    <rect key="frame" x="74" y="33.5" width="217" height="25.5"/>
+                                                    <rect key="frame" x="74" y="34" width="217" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AzZ-3W-gtw" customClass="PFImageView">
-                                                    <rect key="frame" x="73" y="71" width="238" height="100"/>
+                                                    <rect key="frame" x="73" y="69" width="238" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="238" id="jDE-xa-NVf"/>
                                                         <constraint firstAttribute="height" constant="100" id="s8x-Hq-Ji7"/>
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cun-SK-CI1">
-                                                    <rect key="frame" x="74" y="179" width="25" height="25"/>
+                                                    <rect key="frame" x="101" y="181" width="23" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="23" id="1F0-9j-jYQ"/>
+                                                        <constraint firstAttribute="height" constant="23" id="f49-tU-hIA"/>
+                                                    </constraints>
                                                     <state key="normal" image="comment"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-dt-1bc">
-                                                    <rect key="frame" x="107" y="179" width="25" height="25"/>
+                                                    <rect key="frame" x="131" y="181" width="23" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="mKM-E7-IkN"/>
+                                                        <constraint firstAttribute="width" constant="23" id="vc5-Se-5z9"/>
+                                                        <constraint firstAttribute="height" constant="23" id="yx8-Lm-Bs3"/>
+                                                    </constraints>
                                                     <state key="normal" image="twitter">
                                                         <color key="titleColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -90,27 +99,44 @@
                                                         <action selector="didTapTweet:" destination="UG1-AR-WGT" eventType="touchUpInside" id="Plu-A5-tWl"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-gF-doN">
+                                                    <rect key="frame" x="72" y="181" width="23" height="23"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="23" id="DCC-Cm-cLK"/>
+                                                        <constraint firstAttribute="width" constant="23" id="e58-iV-Lr9"/>
+                                                    </constraints>
+                                                    <state key="normal" image="smile"/>
+                                                    <connections>
+                                                        <action selector="didTapSmile:" destination="UG1-AR-WGT" eventType="touchUpInside" id="s2w-91-xMG"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="AzZ-3W-gtw" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="73" id="2Db-gY-nfU"/>
-                                                <constraint firstItem="cun-SK-CI1" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="8" id="5yc-Oh-fJM"/>
-                                                <constraint firstAttribute="bottom" secondItem="3hS-dt-1bc" secondAttribute="bottom" constant="18.5" id="7th-he-T86"/>
+                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="bottom" secondItem="Ybe-gF-doN" secondAttribute="bottom" id="9OB-dG-Q11"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="9" id="APd-Eh-g1z"/>
                                                 <constraint firstItem="iR5-KQ-bq0" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="9" id="AkL-7O-yr0"/>
+                                                <constraint firstItem="cun-SK-CI1" firstAttribute="leading" secondItem="Ybe-gF-doN" secondAttribute="trailing" constant="6" id="BPb-P0-Q77"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ybe-gF-doN" secondAttribute="bottom" constant="18.5" id="GCk-xo-zha"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="15" id="GIt-I6-QKb"/>
                                                 <constraint firstItem="iR5-KQ-bq0" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="8" id="IiP-VC-5dt"/>
-                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="8" id="KOW-Cd-9lc"/>
-                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="baseline" secondItem="cun-SK-CI1" secondAttribute="baseline" id="OpD-xe-hjB"/>
+                                                <constraint firstItem="Ybe-gF-doN" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="72" id="J9a-5o-nNE"/>
+                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="top" secondItem="Ybe-gF-doN" secondAttribute="top" id="M5p-rS-AJk"/>
                                                 <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="84" id="ReA-YB-P4p"/>
-                                                <constraint firstAttribute="bottom" secondItem="cun-SK-CI1" secondAttribute="bottom" constant="18.5" id="XnC-jq-wai"/>
-                                                <constraint firstItem="cun-SK-CI1" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="74" id="czo-lm-8Bs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cun-SK-CI1" secondAttribute="bottom" constant="8" id="WQ8-AA-RZm"/>
+                                                <constraint firstItem="cun-SK-CI1" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="c5M-vG-g89"/>
+                                                <constraint firstItem="cun-SK-CI1" firstAttribute="top" secondItem="Ybe-gF-doN" secondAttribute="top" id="cBG-U1-DUL"/>
+                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="cvT-to-MWu"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="topMargin" constant="22.5" id="dNE-aA-ydw"/>
-                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="leading" secondItem="cun-SK-CI1" secondAttribute="trailing" constant="8" id="eHa-d8-qDB"/>
-                                                <constraint firstItem="AzZ-3W-gtw" firstAttribute="top" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="12" id="eKf-Hz-Q2W"/>
+                                                <constraint firstItem="AzZ-3W-gtw" firstAttribute="top" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="15" id="eKf-Hz-Q2W"/>
+                                                <constraint firstItem="cun-SK-CI1" firstAttribute="bottom" secondItem="Ybe-gF-doN" secondAttribute="bottom" id="h3g-ue-bAB"/>
+                                                <constraint firstItem="Ybe-gF-doN" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="hZa-uR-bkN"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="11" id="qaT-9D-THf"/>
+                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="leading" secondItem="cun-SK-CI1" secondAttribute="trailing" constant="7" id="zCU-VJ-DZY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="smileButton" destination="Ybe-gF-doN" id="CFo-Hr-6Vi"/>
                                             <outlet property="timelinePostImage" destination="AzZ-3W-gtw" id="jtO-0a-W2v"/>
                                             <outlet property="timelineProfileName" destination="1jj-bL-dsS" id="lin-gx-pwd"/>
                                             <outlet property="timelineProfilePicture" destination="QMe-2Q-kQf" id="5LQ-nl-CAe"/>
@@ -246,6 +272,7 @@
         <image name="compose" width="25" height="25"/>
         <image name="fb-photo" width="124" height="34"/>
         <image name="profile" width="35" height="35"/>
+        <image name="smile" width="25" height="25"/>
         <image name="twitter" width="25" height="25"/>
     </resources>
     <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

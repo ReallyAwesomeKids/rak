@@ -15,12 +15,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *timelineText;
 @property (weak, nonatomic) IBOutlet UILabel *timelineProfileName;
 @property (weak, nonatomic) IBOutlet PFImageView *timelinePostImage;
+@property (weak, nonatomic) IBOutlet UIButton *smileButton;
 
 // Delegate
 @property (nonatomic, weak) id<TimelineCellDelegate> delegate;
 
 // Button actions
 - (IBAction)didTapTweet:(id)sender;
+- (IBAction)didTapSmile:(id)sender;
 
 @end
 

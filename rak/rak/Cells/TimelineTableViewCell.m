@@ -6,8 +6,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)setPost:(Post *)post {
@@ -49,9 +47,16 @@
     }];
 }
 
+- (IBAction)didTapSmile:(id)sender {
+    [self toggleSmile];
+}
+
+- (void)toggleSmile {
+    [self.smileButton setImage:[UIImage imageNamed:@"smile-filled"] forState:UIControlStateNormal];
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 @end
