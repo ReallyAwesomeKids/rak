@@ -171,6 +171,10 @@
     [self performSegueWithIdentifier:@"shareSegue" sender:nil];
 }
 
+- (void)userDidTapShareAct {
+    [self performSegueWithIdentifier:@"shareSegue" sender:nil];
+}
+
 - (void)userDidClosePopup {
     self.badgeForPopup = nil;
     self.levelForPopup = 0;
@@ -210,11 +214,14 @@
     else if ([segue.identifier isEqualToString:@"shareSegue"]) {
         ComposingViewController *composingVC = (ComposingViewController *) [segue destinationViewController];
         composingVC.delegate = self;
-        if (self.badgeForPopup != nil)
+        if (self.badgeForPopup != nil) {
             composingVC.autoFilledText =[NSString stringWithFormat:@"I just earned a new badge: %@!", self.badgeForPopup.badgeName];
-        else if (self.levelForPopup != 0)
-            composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];
         composingVC.autoFilledPhoto = [UIImage imageNamed:@"goldStar.png"];
+        }
+        else if (self.levelForPopup != 0) {
+            composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];
+            composingVC.autoFilledPhoto = [UIImage imageNamed:@"goldStar.png"];
+        }
     }
 }
 
