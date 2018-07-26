@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Timeline View Controller-->
+        <!--Timeline-->
         <scene sceneID="SJx-i9-zkX">
             <objects>
                 <viewController id="iY0-WQ-MqD" customClass="TimelineViewController" sceneMemberID="viewController">
@@ -21,6 +21,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2OY-X6-bVt">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" red="0.83119032120000003" green="0.40784313729999999" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TimelineTableViewCell" rowHeight="180" id="UG1-AR-WGT" customClass="TimelineTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="180"/>
@@ -30,8 +31,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Coutinho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-bL-dsS">
-                                                    <rect key="frame" x="73" y="9" width="123" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <rect key="frame" x="73" y="9" width="128" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -49,13 +50,15 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Just bought a facebook notebook  to share what I am grateful for!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAk-k3-Xh3">
                                                     <rect key="frame" x="72" y="29" width="243" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-dt-1bc">
                                                     <rect key="frame" x="317" y="29" width="40" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Share"/>
+                                                    <state key="normal" title="Share">
+                                                        <color key="titleColor" red="0.027450980392156862" green="0.23137254901960785" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="didTapTweet:" destination="UG1-AR-WGT" eventType="touchUpInside" id="Plu-A5-tWl"/>
                                                     </connections>
@@ -67,6 +70,20 @@
                                                         <constraint firstAttribute="height" constant="100" id="s8x-Hq-Ji7"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZA-NB-Lhs">
+                                                    <rect key="frame" x="204" y="9" width="55" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="44m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcD-FZ-QSL">
+                                                    <rect key="frame" x="267" y="8" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="8" id="86N-nF-wce"/>
@@ -75,7 +92,6 @@
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="15" id="GIt-I6-QKb"/>
                                                 <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="60" id="ReA-YB-P4p"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="1jj-bL-dsS" secondAttribute="bottom" constant="2" id="YzT-wL-LQs"/>
-                                                <constraint firstAttribute="trailing" secondItem="1jj-bL-dsS" secondAttribute="trailing" constant="179" id="bD5-o4-FaW"/>
                                                 <constraint firstItem="AzZ-3W-gtw" firstAttribute="top" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="20" id="eKf-Hz-Q2W"/>
                                                 <constraint firstItem="1jj-bL-dsS" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="9" id="iXE-r7-Gkn"/>
                                                 <constraint firstAttribute="bottom" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="15" id="mzK-BB-glb"/>
@@ -102,14 +118,16 @@
                         <viewLayoutGuide key="safeArea" id="8Kf-Jr-2IB"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="0Re-s0-Pds">
-                        <barButtonItem key="rightBarButtonItem" title="Compose" id="5rw-k7-HNk">
+                    <navigationItem key="navigationItem" title="Timeline" id="0Re-s0-Pds">
+                        <barButtonItem key="rightBarButtonItem" image="compose" style="plain" id="5rw-k7-HNk">
+                            <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="CcO-Aa-XpY" kind="show" identifier="composeSegue" id="4lP-8A-MPB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="2OY-X6-bVt" id="B1s-HX-vJI"/>
                         <segue destination="UYH-EY-Esq" kind="show" identifier="goToProfileViewSegue" id="oEd-MC-OOJ"/>
@@ -118,7 +136,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2U-rw-ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aVP-AX-Z50"/>
             </objects>
-            <point key="canvasLocation" x="2301.5999999999999" y="-46.326836581709152"/>
+            <point key="canvasLocation" x="6997.6000000000004" y="-46.326836581709152"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rsh-3P-gE9">
@@ -192,6 +210,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dtU-f0-aa8">
                         <barButtonItem key="rightBarButtonItem" title="Post" id="DSZ-Wj-Vni">
+                            <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="didTapPost:" destination="CcO-Aa-XpY" id="qF7-15-5KW"/>
                             </connections>
@@ -207,11 +226,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6G-ud-0uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3239" y="-46"/>
+            <point key="canvasLocation" x="7933.6000000000004" y="-46.326836581709152"/>
         </scene>
     </scenes>
     <resources>
+        <image name="compose" width="25" height="25"/>
         <image name="fb-photo" width="124" height="34"/>
         <image name="profile" width="35" height="35"/>
     </resources>
+    <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

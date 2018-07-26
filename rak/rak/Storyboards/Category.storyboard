@@ -140,4 +140,5 @@
     <resources>
         <image name="xx" width="28" height="28"/>
     </resources>
+    <color key="tintColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
