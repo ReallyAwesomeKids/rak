@@ -1,3 +1,4 @@
+//Imports
 #import "CategoriesViewController.h"
 #import "CategoriesCell.h"
 #import "Parse/Parse.h"
@@ -7,27 +8,26 @@
 #import "ActsCell.h"
 #import "ActCategoryViewController.h"
 
+//Interface
 @interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
-
 @property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
 @property (strong,nonatomic) NSArray *categories;
-
 @end
 
-
+//Implementation
 @implementation CategoriesViewController
 
+//Current Loaded View
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // CollectionView setup
     self.categoriesCollectionView.delegate = self;
     self.categoriesCollectionView.dataSource = self;
-    
     [self changeCategoriesLayout];
     [self fetchCategories];
 }
 
+//Change Categories Method (Changes Layout)
 - (void) changeCategoriesLayout {
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
     [layout setScrollDirection:(UICollectionViewScrollDirectionHorizontal)];
@@ -42,6 +42,7 @@
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
+//Creates Collection View for Categories
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     CategoriesCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoriesCell" forIndexPath:indexPath];
     ActCategory *cat = self.categories[indexPath.row];
@@ -50,10 +51,12 @@
     return cell;
 }
 
+//Populates Collection View for Categories
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.categories.count;
 }
 
+//Fetch Categories Method That Queries Categories From Parse For Future Use
 - (void)fetchCategories {
     PFQuery *query = [PFQuery queryWithClassName:@"ActCategory"];
     [query includeKey:@"categoryName"];
@@ -69,13 +72,14 @@
     }];
 }
 
+//Receive Memory Method
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+//Segue
 #pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"actCategorySegue"])
@@ -84,7 +88,6 @@
         NSIndexPath *indexPath = [self.categoriesCollectionView indexPathForCell:tappedCell];
         ActCategory *actCategory = self.categories[indexPath.row];
         ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
-        
         actViewController.actCategory = actCategory;
         [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
