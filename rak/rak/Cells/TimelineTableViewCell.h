@@ -12,10 +12,12 @@
 
 // Outlets
 @property (weak, nonatomic) IBOutlet PFImageView *timelineProfilePicture;
+@property (weak, nonatomic) IBOutlet PFImageView *timelinePostImage;
+
 @property (weak, nonatomic) IBOutlet UILabel *timelineText;
 @property (weak, nonatomic) IBOutlet UILabel *timelineProfileName;
-@property (weak, nonatomic) IBOutlet PFImageView *timelinePostImage;
 @property (weak, nonatomic) IBOutlet UIButton *smileButton;
+@property (weak, nonatomic) IBOutlet UIButton *tweetButton;
 
 // Delegate
 @property (nonatomic, weak) id<TimelineCellDelegate> delegate;

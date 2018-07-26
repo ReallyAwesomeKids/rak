@@ -10,11 +10,14 @@
 @property (strong, nonatomic) PFFile * _Nullable image;
 @property (nonatomic, strong) NSMutableArray * _Nullable likedBy;
 @property (nonatomic, strong) NSNumber * _Nonnull likeCount;
+@property (nonatomic, strong) NSMutableArray * _Nullable tweetedBy;
+@property (nonatomic, strong) NSNumber * _Nonnull tweetCount;
 
 + (void)postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 + (PFFile *_Nullable)getPFFileFromImage: (UIImage * _Nullable)image;
 
 - (BOOL) likedByCurrent;
+- (BOOL) tweetedByCurrent;
 
 @end

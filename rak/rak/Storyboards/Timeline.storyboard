@@ -141,6 +141,7 @@
                                             <outlet property="timelineProfileName" destination="1jj-bL-dsS" id="lin-gx-pwd"/>
                                             <outlet property="timelineProfilePicture" destination="QMe-2Q-kQf" id="5LQ-nl-CAe"/>
                                             <outlet property="timelineText" destination="AAk-k3-Xh3" id="cFq-lX-xSl"/>
+                                            <outlet property="tweetButton" destination="3hS-dt-1bc" id="4nd-ah-mwK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

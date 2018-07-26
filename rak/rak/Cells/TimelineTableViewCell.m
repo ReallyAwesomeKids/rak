@@ -34,12 +34,7 @@
 
 - (IBAction)didTapTweet:(id)sender {
     [[APIManager shared] postStatusWithText:self.post.caption completion:^(Tweet *tweet, NSError *error) {
-        if (tweet) {
-            NSLog(@"Compose Tweet Success!");
-        }
-        else {
-            NSLog(@"Error composing Tweet: %@", error.localizedDescription);
-        }
+        tweet ? [self toggleTweet] : NSLog(@"%@", error.localizedDescription);
     }];
 }
 
@@ -64,7 +59,34 @@
                 [post addObject:CustomUser.currentUser.objectId forKey:@"likedBy"];
                 [self.smileButton setImage:[UIImage imageNamed:@"smile-filled"] forState:UIControlStateNormal];
             }
-            // Uploads to Parse
+            // Saves to Parse
+            [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    self.post = post;
+                }
+            }];
+        }
+    }];
+}
+
+- (void)toggleTweet {
+    PFQuery *postQuery = [Post query];
+    [postQuery includeKey:@"author"];
+    
+    // Fetches data asynchronously
+    [postQuery getObjectInBackgroundWithId:self.post.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (object) {
+            Post *post = (Post *)object;
+            if ([post tweetedByCurrent]) {
+                [post incrementKey:@"tweetCount" byAmount:@(-1)];
+                [post removeObject:CustomUser.currentUser.objectId forKey:@"tweetCount"];
+                [self.tweetButton setImage:[UIImage imageNamed:@"twitter"] forState:UIControlStateNormal];
+            } else {
+                [post incrementKey:@"likeCount" byAmount:@(1)];
+                [post addObject:CustomUser.currentUser.objectId forKey:@"likedBy"];
+                [self.tweetButton setImage:[UIImage imageNamed:@"twitter-filled"] forState:UIControlStateNormal];
+            }
+            // Saves to Parse
             [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (succeeded) {
                     self.post = post;
