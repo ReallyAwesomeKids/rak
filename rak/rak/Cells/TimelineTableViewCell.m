@@ -16,6 +16,8 @@
     // Setting texts/labels
     self.timelineText.text = self.post.caption;
     self.timelineProfileName.text = [NSString stringWithFormat: @"%@", self.post.author.displayName];
+    self.timelineLevel.text = [NSString stringWithFormat:@"Level %ld", (long)[PointToLevelConverter
+                                                                        getCurrentLevelFromPoints:self.user.experiencePoints]];
     
     // Setting profile picture
     self.timelineProfilePicture.file = self.user.profileImage;

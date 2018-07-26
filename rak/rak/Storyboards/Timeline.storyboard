@@ -139,10 +139,12 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="smileButton" destination="Ybe-gF-doN" id="CFo-Hr-6Vi"/>
+                                            <outlet property="timelineLevel" destination="nZA-NB-Lhs" id="CtI-vR-L8P"/>
                                             <outlet property="timelinePostImage" destination="AzZ-3W-gtw" id="jtO-0a-W2v"/>
                                             <outlet property="timelineProfileName" destination="1jj-bL-dsS" id="lin-gx-pwd"/>
                                             <outlet property="timelineProfilePicture" destination="QMe-2Q-kQf" id="5LQ-nl-CAe"/>
                                             <outlet property="timelineText" destination="AAk-k3-Xh3" id="cFq-lX-xSl"/>
+                                            <outlet property="timelineTimestamp" destination="LcD-FZ-QSL" id="ePW-ly-A0F"/>
                                             <outlet property="tweetButton" destination="3hS-dt-1bc" id="4nd-ah-mwK"/>
                                         </connections>
                                     </tableViewCell>
