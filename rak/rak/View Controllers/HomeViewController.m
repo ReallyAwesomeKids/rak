@@ -220,7 +220,7 @@
         }
         else if (self.levelForPopup != 0) {
             composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];
-            composingVC.autoFilledPhoto = [UIImage imageNamed:@"goldStar.png"];
+            composingVC.autoFilledPhoto = [UIImage imageNamed:@"levelup.png"];
         }
     }
 }
