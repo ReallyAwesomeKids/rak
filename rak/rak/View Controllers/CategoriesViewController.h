@@ -1,6 +1,8 @@
+//Imports
 #import <UIKit/UIKit.h>
 #import "CategoriesCell.h"
 
-@interface CategoriesViewController : UIViewController
 
+//Interface
+@interface CategoriesViewController : UIViewController
 @end

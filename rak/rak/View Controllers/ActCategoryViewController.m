@@ -1,3 +1,4 @@
+//Imports
 #import "ActCategoryViewController.h"
 #import "Act.h"
 #import "ActCategory.h"
@@ -7,14 +8,18 @@
 #import "CustomUser.h"
 #import "MessageView.h"
 
+
+//Interface
 @interface ActCategoryViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *actCategoryTableView;
 @property (strong, nonatomic) NSArray *acts;
 @property (strong, nonatomic) NSMutableArray *personalAct;
 @end
 
+//Implementation
 @implementation ActCategoryViewController
 
+//Current Loaded View
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -24,11 +29,13 @@
     [self.actCategoryTableView reloadData];
 }
 
+//Receive Memory Method
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+//Segue IF NEEDED
 /*
 #pragma mark - Navigation
 
@@ -39,24 +46,23 @@
 }
 */
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath { 
-    
+//Creates Act Category Table View
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsCell *actCell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
-    
    Act *actPiece = self.acts[indexPath.row];
     actCell.selectAct = actPiece;
-    //[self.actcell configureCell:(Act*)cat];
-    
     return actCell;
 }
 
+//Populates Act Category Table View
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
     return self.acts.count;
 }
+
+//Adds Personal Act To Homepage
 - (IBAction)addingPersonalAct:(id)sender {
     UIButton *actAdd = (UIButton*) sender;
     ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
-    
     self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
     [self.personalAct addObject:actCell.selectAct];
     CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:self.personalAct];

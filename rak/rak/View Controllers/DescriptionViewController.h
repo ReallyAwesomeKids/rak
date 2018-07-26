@@ -1,17 +1,13 @@
-//
-//  DescriptionViewController.h
-//  rak
-//
-//  Created by Halima Monds on 7/23/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
+//Imports
 #import <UIKit/UIKit.h>
 @class DescriptionViewController;
+
+//Creation Of Protocol
 @protocol DescriptionViewControllerDelegate
 -(void)descriptionViewController: (DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *) latitude longitude:(NSNumber *) longitude text: (NSString *) descriptionFinal name: (NSString *) currentLocationName;
 @end
 
+//Interface
 @interface DescriptionViewController : UIViewController
 @property(strong, nonatomic) NSNumber *latt;
 @property(strong, nonatomic) NSNumber *lngg;
