@@ -7,6 +7,7 @@
 #import "Act.h"
 #import "ActsCell.h"
 #import "ActCategoryViewController.h"
+#import "iCarousel.h"
 
 //Interface
 @interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
@@ -31,14 +32,13 @@
 - (void) changeCategoriesLayout {
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
     [layout setScrollDirection:(UICollectionViewScrollDirectionHorizontal)];
-    
     // Adjusts spacing between cells
     layout.minimumInteritemSpacing = 10;
     layout.minimumLineSpacing = 10;
     // Cell setup
     CGFloat categoriesPerLine = 1;
     CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - .5))/ categoriesPerLine;
-    CGFloat itemHeight = itemWidth * 1.3;
+    CGFloat itemHeight = itemWidth * 1.5;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
