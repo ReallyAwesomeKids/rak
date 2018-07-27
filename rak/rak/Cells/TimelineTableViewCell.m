@@ -27,10 +27,18 @@
     
     // Checks if post has an image
     if ([[APIManager shared] checksForAFile:self.post.image]) {
-        // Setting profile picture
         self.timelinePostImage.file = self.post.image;
-        [self.timelinePostImage loadInBackground];
-        self.timelinePostImageHeightConstraint.constant = 100;
+        [self.timelinePostImage loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+            CGFloat imageWidth = image.size.width;
+            CGFloat imageHeight = image.size.height;
+            // proportion with cross multiplication to find newHeightConstraint
+            // imageHeight / imageWidth = newHeightConstraint / widthConstraint
+            // (imageHeight * widthConstraint) = (imageWidth * newHeightConstraint)
+            // newHeightConstraint = (imageHeight * widthConstraint) / imageWidth
+            CGFloat newImageHeightConstraintConstant = (imageHeight * self.timelinePostImageWidthConstraint.constant) / imageWidth;
+            
+            self.timelinePostImageHeightConstraint.constant = newImageHeightConstraintConstant;
+        }];
         self.postImageToButtonConstraint.constant = 12;
     } else {
         self.timelinePostImage.image = nil;

@@ -141,6 +141,7 @@
                                             <outlet property="timelineLevel" destination="nZA-NB-Lhs" id="CtI-vR-L8P"/>
                                             <outlet property="timelinePostImage" destination="AzZ-3W-gtw" id="jtO-0a-W2v"/>
                                             <outlet property="timelinePostImageHeightConstraint" destination="s8x-Hq-Ji7" id="Egj-Vh-uYD"/>
+                                            <outlet property="timelinePostImageWidthConstraint" destination="jDE-xa-NVf" id="vCI-Jo-vDW"/>
                                             <outlet property="timelineProfileName" destination="1jj-bL-dsS" id="lin-gx-pwd"/>
                                             <outlet property="timelineProfilePicture" destination="QMe-2Q-kQf" id="5LQ-nl-CAe"/>
                                             <outlet property="timelineText" destination="AAk-k3-Xh3" id="cFq-lX-xSl"/>
