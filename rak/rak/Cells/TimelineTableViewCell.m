@@ -30,8 +30,12 @@
         // Setting profile picture
         self.timelinePostImage.file = self.post.image;
         [self.timelinePostImage loadInBackground];
+        self.timelinePostImageHeightConstraint.constant = 100;
+        self.postImageToButtonConstraint.constant = 12;
     } else {
         self.timelinePostImage.image = nil;
+        self.timelinePostImageHeightConstraint.constant = 0;
+        self.postImageToButtonConstraint.constant = 0;
     }
 }
 

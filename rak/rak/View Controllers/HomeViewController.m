@@ -102,7 +102,7 @@
             [self.tableView reloadData];
         }
         else {
-            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"error fetching daily challenge: %@", error.localizedDescription);
         }
     }];
 }
@@ -134,9 +134,8 @@
         // Updates Parse
         CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:self.deletedActs];
         [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"Act deleted succesfully");
             if (error)
-                NSLog(@"error: %@", error.localizedDescription);
+                NSLog(@"error deleting act: %@", error.localizedDescription);
         }];
         [self.tableView reloadData];
     }

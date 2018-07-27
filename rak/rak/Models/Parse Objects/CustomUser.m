@@ -26,8 +26,6 @@
     [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)
             NSLog(@"error updating user: %@", error.localizedDescription);
-        else
-            NSLog(@"successfully updated user");
     }];
 }
 

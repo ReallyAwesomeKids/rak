@@ -126,21 +126,21 @@
                                                 <constraint firstItem="3hS-dt-1bc" firstAttribute="top" secondItem="Ybe-gF-doN" secondAttribute="top" id="M5p-rS-AJk"/>
                                                 <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="35" id="ReA-YB-P4p"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cun-SK-CI1" secondAttribute="bottom" constant="8" id="WQ8-AA-RZm"/>
-                                                <constraint firstItem="cun-SK-CI1" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="c5M-vG-g89"/>
                                                 <constraint firstItem="cun-SK-CI1" firstAttribute="top" secondItem="Ybe-gF-doN" secondAttribute="top" id="cBG-U1-DUL"/>
                                                 <constraint firstItem="3hS-dt-1bc" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="cvT-to-MWu"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="topMargin" constant="22.5" id="dNE-aA-ydw"/>
                                                 <constraint firstItem="AzZ-3W-gtw" firstAttribute="top" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="15" id="eKf-Hz-Q2W"/>
                                                 <constraint firstItem="cun-SK-CI1" firstAttribute="bottom" secondItem="Ybe-gF-doN" secondAttribute="bottom" id="h3g-ue-bAB"/>
-                                                <constraint firstItem="Ybe-gF-doN" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="hZa-uR-bkN"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="11" id="qaT-9D-THf"/>
                                                 <constraint firstItem="3hS-dt-1bc" firstAttribute="leading" secondItem="cun-SK-CI1" secondAttribute="trailing" constant="7" id="zCU-VJ-DZY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="postImageToButtonConstraint" destination="cvT-to-MWu" id="4Fk-VR-NIc"/>
                                             <outlet property="smileButton" destination="Ybe-gF-doN" id="CFo-Hr-6Vi"/>
                                             <outlet property="timelineLevel" destination="nZA-NB-Lhs" id="CtI-vR-L8P"/>
                                             <outlet property="timelinePostImage" destination="AzZ-3W-gtw" id="jtO-0a-W2v"/>
+                                            <outlet property="timelinePostImageHeightConstraint" destination="s8x-Hq-Ji7" id="Egj-Vh-uYD"/>
                                             <outlet property="timelineProfileName" destination="1jj-bL-dsS" id="lin-gx-pwd"/>
                                             <outlet property="timelineProfilePicture" destination="QMe-2Q-kQf" id="5LQ-nl-CAe"/>
                                             <outlet property="timelineText" destination="AAk-k3-Xh3" id="cFq-lX-xSl"/>
