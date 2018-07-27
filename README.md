@@ -135,6 +135,8 @@ CORE
 - [ ] ( ) When searching for location, pop up keyboard automatically
 - [ ] ( ) Search page redesign
 - [ ] ( ) Act detail view needs a lot of work
+- [ ] ( ) Login page redesign
+- [ ] ( ) Come up with more funny, interesting, quirky acts (not a to-do list)
 
 ## Week 4 - 8/6/18 - 8/10/18
 - [ ] Design launch screen and logo
