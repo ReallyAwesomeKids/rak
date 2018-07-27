@@ -66,7 +66,10 @@
         if (error)
             NSLog(@"error: %@", error.localizedDescription);
         else {
-            [MessageView presentMessageViewWithText:@"Act added to homepage" onViewController:self];
+            [MessageView presentMessageViewWithText:@"Act added to home"
+                                withTapInstructions:nil
+                                   onViewController:self
+                                        forDuration:1.5];
         }
     }];
 }

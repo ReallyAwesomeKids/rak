@@ -9,7 +9,7 @@
 #import "MessageView.h"
 #import "ComposingViewController.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate, PopupViewControllerDelegate, ComposingViewControllerDelegate>
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate, PopupViewControllerDelegate, ComposingViewControllerDelegate, MessageViewDelegate>
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
 
@@ -153,7 +153,10 @@
 }
 
 - (void)userDidCompleteAct:(Act *)act {
-    [MessageView presentMessageViewWithText:@"Act of kindness completed. Great work!" onViewController:self];
+    [MessageView presentMessageViewWithText:@"Act of kindness completed. Great work!"
+                        withTapInstructions:@"Tap to the share the story"
+                           onViewController:self
+                                forDuration:6];
     [CustomUser.currentUser userDidCompleteAct:act];
 }
 
@@ -171,7 +174,7 @@
     [self performSegueWithIdentifier:@"shareSegue" sender:nil];
 }
 
-- (void)userDidTapShareAct {
+- (void)userDidTapMessage {
     [self performSegueWithIdentifier:@"shareSegue" sender:nil];
 }
 
@@ -184,7 +187,10 @@
     [self.navigationController popViewControllerAnimated:YES];
     self.badgeForPopup = nil;
     self.levelForPopup = 0;
-    [MessageView presentMessageViewWithText:@"Achievement shared to timeline." onViewController:self];
+    [MessageView presentMessageViewWithText:@"Achievement shared to timeline"
+                        withTapInstructions:nil
+                           onViewController:self
+                                forDuration:1.5];
 }
 
 - (NSMutableArray *)createMutableArray:(NSArray *)array
