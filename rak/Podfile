@@ -10,6 +10,7 @@ target 'rak' do
    pod 'ParseUI'
    pod 'AFNetworking'
    pod 'BDBOAuth1Manager'
+   pod 'DateTools'
 
   target 'rakTests' do
     inherit! :search_paths

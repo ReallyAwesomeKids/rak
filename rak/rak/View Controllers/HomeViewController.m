@@ -66,7 +66,6 @@
     [userActQuery findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
         if (users != nil) {
             CustomUser *currentUser = users[0];
-            // NSLog(@"acts fetched: %@", currentUser);
             self.userActs = currentUser.chosenActs;
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
@@ -87,7 +86,6 @@
     // fetch data asynchronously
     [challengeQuery findObjectsInBackgroundWithBlock:^(NSArray *acts, NSError *error) {
         if (acts != nil) {
-            // NSLog(@"daily challenges fetched: %@", acts);
             Act *displayedChallenge;
             Act *mostRecentChallenge = acts[0];
             NSDate *today = [DateFunctions getToday];
@@ -101,7 +99,6 @@
             }
             [displayedChallenge updateDateLastFeatured];
             self.homeTaskName.text = displayedChallenge.actName;
-            
             [self.tableView reloadData];
         }
         else {

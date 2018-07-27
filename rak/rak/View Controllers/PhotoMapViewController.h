@@ -1,16 +1,10 @@
-//
-//  PhotoMapViewController.h
-//  rak
-//
-//  Created by Halima Monds on 7/19/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
+//Imports
 #import <UIKit/UIKit.h>
 #import "DescriptionViewController.h"
 
-
+//Interface
 @interface PhotoMapViewController : UIViewController <UINavigationControllerDelegate , DescriptionViewControllerDelegate>
 @property (strong, nonatomic) NSString *descriptionImport;
+@property (strong, nonatomic) NSString *locationNameImport;
 
 @end
