@@ -115,8 +115,10 @@ CORE
 - [x] (Everyone) Determine color scheme
 - [x] (Gustavo) Timeline
   - [x] Clicking at Profile picture leads to the User profile
+  - [x] Supporting Images
   - [x] Share to Twitter
-   - [x] Supporting Images
+  - [x] Toggle button functionality
+  - [x] Designing it beautifully
 - [x] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
 - [ ] (Gustavo) Animations
 - [ ] (Halima) Autolayout, animations, transitions
