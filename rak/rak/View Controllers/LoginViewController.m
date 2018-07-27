@@ -6,6 +6,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *twitterLoginButton;
 
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
 - (IBAction)didTapLogin:(id)sender;
 
 @end
@@ -17,8 +20,10 @@
 }
 
 - (IBAction)didTap:(id)sender {
-    [CustomUser logInWithUsernameInBackground:@"a"
-                                     password:@"a"
+    NSString *username = self.usernameTextField.text;
+    NSString *password = self.passwordTextField.text;
+    [CustomUser logInWithUsernameInBackground:username
+                                     password:password
                                         block:^(PFUser * _Nullable user, NSError * _Nullable error) {
                                             if (error != nil) {
                                                 NSLog(@"error: %@", error.localizedDescription);

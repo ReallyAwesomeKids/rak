@@ -10,7 +10,7 @@
 @implementation InitializeDB
 
 + (void)initializeDatabase {
-    //[self initializeUser];
+    [self initializeUser];
     //[self initializeActs];
     //[self initializeActCategories];
     //[self updateActs];
@@ -38,12 +38,12 @@
 + (void)initializeUser {
     CustomUser *newUser = [CustomUser new];
     
-    newUser.username = @"a";
+    newUser.username = @"haley";
     newUser.password = @"a";
     
     newUser.profileImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:@"default.png"]];
-    newUser.displayName = @"Ayy";
-    newUser.location = @"Menlo Park";
+    newUser.displayName = @"Haley";
+    newUser.location = @"Sunnyvale";
     newUser.streak = 0;
     newUser.dateLastDidAct = nil;
     newUser.experiencePoints = 0;
@@ -51,12 +51,7 @@
     newUser.amountActsDone = 0;
     newUser.overallBadges = @[];
     newUser.streakBadges = @[];
-    Act *act = [Act new];
-    act.actName = @"Testing the database";
-    act.pointsWorth = 1;
-    act.category = @"fake category";
-    
-    newUser.chosenActs = @[act];
+    newUser.chosenActs = @[];
     
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)

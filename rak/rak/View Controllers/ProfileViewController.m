@@ -3,6 +3,8 @@
 #import "BadgeCell.h"
 #import "Badge.h"
 #import "PopoverViewController.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIPopoverPresentationControllerDelegate>
 
@@ -11,15 +13,16 @@
 @property (strong, nonatomic) NSArray *streakBadges;
 @property (strong, nonatomic) PopoverViewController *popoverVC;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
 @end
 
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.user == nil)
-        self.user = CustomUser.currentUser;
+    self.user = (self.userProfile != nil) ? self.userProfile : CustomUser.currentUser;
+  //  NSLog(@"%@", self.userProfile);
+//    if (self.user == nil)
+//        self.user = CustomUser.currentUser;
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -57,7 +60,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return CGSizeMake(self.collectionView.bounds.size.width, 450);
+        return CGSizeMake(self.collectionView.bounds.size.width, 388);
         
     } else {
         return CGSizeZero;
@@ -90,7 +93,7 @@
     layout.minimumInteritemSpacing = 2;
     
     // Setting collection cell
-    CGFloat cellsPerRow = 2;
+    CGFloat cellsPerRow = 3;
     CGFloat width = self.collectionView.frame.size.width;
     CGFloat itemWidth = (width -
                          (layout.minimumInteritemSpacing *
@@ -130,6 +133,19 @@
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
     return UIModalPresentationNone;
 }
+
+- (IBAction)didTapLogout:(id)sender {
+    [CustomUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        appDelegate.window.rootViewController = loginViewController;
+
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

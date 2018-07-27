@@ -5,6 +5,7 @@
 #import "PhotoAnnotation.h"
 #import "LocationsViewController.h"
 #import "FullDescriptionViewController.h"
+#import "MapPin.h"
 
 
 //Interface
@@ -26,9 +27,23 @@
     MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
     [self.mapView setRegion:sfRegion animated:false];
     self.mapView.delegate = self;
-    // Do any additional setup after loading the view.
+    [self fetchPins];
 }
 
+- (void)fetchPins {
+    PFQuery *query = [MapPin query];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *pins, NSError *error) {
+        if (pins != nil) {
+            for (MapPin *pin in pins) {
+                [self placePin:pin];
+            }
+        }
+        else {
+            NSLog(@"error fetching pins: %@", error.localizedDescription);
+        }
+    }];
+}
 
 //Receive Memory Warning
 - (void)didReceiveMemoryWarning {
@@ -36,19 +51,27 @@
 }
 
 
-//Creates pin and pin annotation and adds both to the photo map view
+//Creates pin + annotation, adds to map view, and stores pin in db
 - (void)descriptionViewController: (DescriptionViewController *)controller didPickLocationWithLatitudeAndDescription:(NSNumber *) latitude longitude:(NSNumber *) longitude text: (NSString *) descriptionFinal name: (NSString *) currentLocationName;{
     [self.navigationController popToViewController:self animated:YES];
     //DescriptionViewController *descriptionVC = [self.storyboard instantiateViewControllerWithIdentifier:@"descriptionID"];
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.floatValue, longitude.floatValue);
+    MapPin *pin = [[MapPin alloc] initWithLatitude:latitude
+                                         longitude:longitude
+                                              name:currentLocationName
+                                       description:descriptionFinal];
+    [self placePin:pin];
+    [pin saveInBackground];
+}
+
+- (void)placePin:(MapPin *)pin {
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(pin.latitude.floatValue, pin.longitude.floatValue);
     PhotoAnnotation *annotation = [[PhotoAnnotation alloc] init];
     annotation.coordinate = coordinate;
-    self.descriptionImport = descriptionFinal;
-    annotation.locationName = currentLocationName;
+    self.descriptionImport = pin.locationDescription;
+    annotation.locationName = pin.locationName;
     [self.mapView addAnnotation:annotation];
     [self.mapView viewForAnnotation:annotation];
 }
-
 
 //Changing the view for the annotation will go through this process.
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {

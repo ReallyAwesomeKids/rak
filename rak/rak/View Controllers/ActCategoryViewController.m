@@ -65,7 +65,9 @@
     ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
     self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
     [self.personalAct addObject:actCell.selectAct];
-    CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:self.personalAct];
+    NSOrderedSet *uniqueActsSet = [NSOrderedSet orderedSetWithArray:self.personalAct];
+    NSArray *uniqueActsArray = [uniqueActsSet array];
+    CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:uniqueActsArray];
     [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Saved in background");
         if (error)

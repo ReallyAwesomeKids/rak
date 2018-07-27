@@ -26,6 +26,7 @@
     self.categoriesCollectionView.dataSource = self;
     [self changeCategoriesLayout];
     [self fetchCategories];
+    [self.navigationController popToViewController:self animated:YES];
 }
 
 //Change Categories Method (Changes Layout)

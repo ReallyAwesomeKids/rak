@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +123,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTextField" destination="cMy-Oz-3Kb" id="Wa8-zw-uSl"/>
                         <outlet property="twitterLoginButton" destination="Ebp-rW-i1h" id="Yx3-Ah-g4r"/>
+                        <outlet property="usernameTextField" destination="w3y-6o-cec" id="xsz-1b-RXg"/>
                         <segue destination="svd-l7-Zpf" kind="show" identifier="toGustavoSegue" id="zyf-mB-r69"/>
                     </connections>
                 </viewController>

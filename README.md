@@ -98,7 +98,7 @@ CORE
 - [x] Searching for users tab
 - [x] Badges on profile page
 - [x] Map view
-  - [ ] See pins from db
+  - [x] See pins from db
   - [X] Make pins
   - [X] Search for locations with Foursquare API
   - [x] Select pin to see detail page
@@ -120,11 +120,23 @@ CORE
   - [x] Toggle button functionality
   - [x] Designing it beautifully
 - [x] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
-- [ ] (Gustavo) Animations
-- [ ] (Halima) Autolayout, animations, transitions
 
 ## Week 3 - 7/30/18 - 8/3/18
 - [ ] Invite/challenge friend from the detail page
+- [ ] (Halima) Categories page design
+- [ ] (Haley) Images fade in
+- [ ] (Gustavo) When pressing check button, color changes
+- [ ] ( ) Profile redesign
+- [ ] ( ) Compose VC redesign
+- [ ] ( ) Map view is centered on current/user's location
+- [ ] ( ) Profile location is actually accurate
+- [ ] ( ) Sign up page
+- [ ] ( ) Map: description page design; remove placeholder text
+- [ ] ( ) When searching for location, pop up keyboard automatically
+- [ ] ( ) Search page redesign
+- [ ] ( ) Act detail view needs a lot of work
+- [ ] ( ) Login page redesign
+- [ ] ( ) Come up with more funny, interesting, quirky acts (not a to-do list)
 
 ## Week 4 - 8/6/18 - 8/10/18
 - [ ] Design launch screen and logo
@@ -179,3 +191,8 @@ CORE
   - Liked by who (NSArray of CustomUsers)
   - Like count (NSInteger)
   
+- Map Pin
+  - Latitude (NSNumber)
+  - Longitude (NSNumber)
+  - Location name (NSString)
+  - Description (NSString)

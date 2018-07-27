@@ -59,6 +59,7 @@
 		5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D5220FD4BB800C180C9 /* ProfileHeader.m */; };
 		5D329D5620FD4CBA00C180C9 /* BadgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D5520FD4CBA00C180C9 /* BadgeCell.m */; };
 		5D3F8284210A881800DFF5BE /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F8283210A881700DFF5BE /* MessageView.m */; };
+		5D3F8287210B8DED00DFF5BE /* MapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F8286210B8DED00DFF5BE /* MapPin.m */; };
 		5DB1009120FE64A70085C785 /* PointToLevelConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009020FE64A70085C785 /* PointToLevelConverter.m */; };
 		5DB1009720FE725D0085C785 /* ActCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009620FE725D0085C785 /* ActCategory.m */; };
 		5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1009920FEB7CE0085C785 /* ImageToFileConversion.m */; };
@@ -185,6 +186,8 @@
 		5D329D5520FD4CBA00C180C9 /* BadgeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BadgeCell.m; sourceTree = "<group>"; };
 		5D3F8282210A881700DFF5BE /* MessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
 		5D3F8283210A881700DFF5BE /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
+		5D3F8285210B8DED00DFF5BE /* MapPin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapPin.h; sourceTree = "<group>"; };
+		5D3F8286210B8DED00DFF5BE /* MapPin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPin.m; sourceTree = "<group>"; };
 		5DB1008F20FE64A70085C785 /* PointToLevelConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PointToLevelConverter.h; sourceTree = "<group>"; };
 		5DB1009020FE64A70085C785 /* PointToLevelConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PointToLevelConverter.m; sourceTree = "<group>"; };
 		5DB1009520FE725D0085C785 /* ActCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActCategory.h; sourceTree = "<group>"; };
@@ -385,7 +388,6 @@
 			children = (
 				5D1E72EB2109406300C0FA8E /* AppDelegate.h */,
 				5D1E72EA2109406300C0FA8E /* AppDelegate.m */,
-				5D329D2620FD164700C180C9 /* Parse Objects */,
 				5D329D4E20FD436C00C180C9 /* InitializeDB.h */,
 				5D329D4F20FD436C00C180C9 /* InitializeDB.m */,
 				5DB1008F20FE64A70085C785 /* PointToLevelConverter.h */,
@@ -396,6 +398,7 @@
 				5D190FBF210001CA002A469B /* DateFunctions.m */,
 				54BE1DAB2106A01000DA4A25 /* Tweet.h */,
 				54BE1DAC2106A01000DA4A25 /* Tweet.m */,
+				5D329D2620FD164700C180C9 /* Parse Objects */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -413,6 +416,8 @@
 				5DB1009620FE725D0085C785 /* ActCategory.m */,
 				5D190FC121000EB3002A469B /* Post.h */,
 				5D190FC221000EB3002A469B /* Post.m */,
+				5D3F8285210B8DED00DFF5BE /* MapPin.h */,
+				5D3F8286210B8DED00DFF5BE /* MapPin.m */,
 			);
 			path = "Parse Objects";
 			sourceTree = "<group>";
@@ -702,6 +707,7 @@
 				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
 				5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */,
 				2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */,
+				5D3F8287210B8DED00DFF5BE /* MapPin.m in Sources */,
 				5D3F8284210A881800DFF5BE /* MessageView.m in Sources */,
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
 				5DB64CC321066545002AE20E /* PopupViewController.m in Sources */,

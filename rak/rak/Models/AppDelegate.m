@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "InitializeDB.h"
+#import "CustomUser.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,13 @@
     UIImage *navBackgroundImage = [UIImage imageNamed:@"example"];
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTranslucent:NO];
+    
+    if (CustomUser.currentUser) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+        
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBar"];
+    }
+    
     return YES;
 }
 
