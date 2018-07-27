@@ -4,7 +4,7 @@
 #import "ParseUI/ParseUI.h"
 #import "CustomUser.h"
 #import "SearchCell.h"
-
+#import "ProfileViewController.h"
 //Interface
 @interface SearchViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
@@ -36,15 +36,19 @@
 }
 
 //Segue IF NEEDED
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"profileSegue"]) {
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        SearchCell *cell;
+        profileViewController.userProfile.username = cell.user.username;
+    }
 }
-*/
+
 
 //Creates Search Table View
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -94,6 +98,9 @@
         self.filteredUsers= self.users;
     }
     [self.searchTableView reloadData];
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"profileSegue" sender:nil];
 }
 
 @end

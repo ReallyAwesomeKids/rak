@@ -96,12 +96,12 @@ CORE
 - [x] (Haley) Detail view of each task
   - [x] Shows log of when user completed it
 - [x] Searching for users tab
-- [ ] Badges on profile page
-- [ ] Map view
+- [x] Badges on profile page
+- [x] Map view
   - [ ] See pins from db
   - [X] Make pins
   - [X] Search for locations with Foursquare API
-  - [ ] Select pin to see detail page
+  - [x] Select pin to see detail page
 - [x] (Gustavo) Basic timeline
   - [x] See other people's posts
   - [x] Create Compose VC
@@ -147,19 +147,35 @@ CORE
   - Display name (NSString)
   - Location (NSString)
   - Streak (NSInteger)
-  - Total experience points (EXP) (NSInteger)
+  - Date the user last completed an act (for streak) (NSDate)
+  - Total experience points (NSInteger)
+  - Amount of acts done (NSInteger)
   - History of acts done (NSDictionary: {ActObjectId: [NSDate, NSDate, ...], ...})
-  - Badges/achievements (NSArray)
+  - Streak-type badges (NSArray of Badges)
+  - Overall-acts-done-type badges (NSArray of Badges)
   
 - Act
   - Name (NSString)
   - How many EXP points it's worth (NSInteger)
   - Category it's under (NSString)
+  - (for Daily Challenge Category only) Date last featured (NSDate)
+  
+- Act Category
+  - Name (NSString)
+  - Image (PFFile)
+  - Acts that fall under it (NSArray of Acts)
 
 - Badge
   - Name (NSString)
   - Badge icon (UIImage)
   - Badge description (NSString)
+  - Badge category/type (NSString)
+  - Associated numerical value (ex. 1 week streak badge has value of 7) (NSInteger)
   
-- ExperiencePointsToLevelConverter
-  - Conversion chart between level and points needed to complete level (NSDictionary: {@"1" : 100, ...}
+- Timeline post
+  - Author (CustomUser)
+  - Post text (NSString)
+  - Post image (PFFile)
+  - Liked by who (NSArray of CustomUsers)
+  - Like count (NSInteger)
+  
