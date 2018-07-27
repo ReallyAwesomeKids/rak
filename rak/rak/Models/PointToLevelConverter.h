@@ -4,4 +4,5 @@
 
 + (NSInteger)getCurrentLevelFromPoints:(NSInteger)points;
 + (NSInteger)getPercentToNextLevelFromPoints:(NSInteger)points;
+
 @end

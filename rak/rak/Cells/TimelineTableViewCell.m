@@ -1,6 +1,4 @@
 #import "TimelineTableViewCell.h"
-#import "ParseUI.h"
-#import "APIManager.h"
 
 @implementation TimelineTableViewCell
 
@@ -16,6 +14,11 @@
     // Setting texts/labels
     self.timelineText.text = self.post.caption;
     self.timelineProfileName.text = [NSString stringWithFormat: @"%@", self.post.author.displayName];
+    self.timelineTimestamp.text = [NSString stringWithFormat: @"• %@", [self.post creatingTimestamp]];
+
+    
+    self.timelineLevel.text = [NSString stringWithFormat:@"Level %ld", (long)[PointToLevelConverter
+                                                                              getCurrentLevelFromPoints:self.user.experiencePoints]];
     
     // Setting profile picture
     self.timelineProfilePicture.file = self.user.profileImage;
@@ -27,19 +30,18 @@
         // Setting profile picture
         self.timelinePostImage.file = self.post.image;
         [self.timelinePostImage loadInBackground];
+        self.timelinePostImageHeightConstraint.constant = 100;
+        self.postImageToButtonConstraint.constant = 12;
     } else {
         self.timelinePostImage.image = nil;
+        self.timelinePostImageHeightConstraint.constant = 0;
+        self.postImageToButtonConstraint.constant = 0;
     }
 }
 
 - (IBAction)didTapTweet:(id)sender {
     [[APIManager shared] postStatusWithText:self.post.caption completion:^(Tweet *tweet, NSError *error) {
-        if (tweet) {
-            NSLog(@"Compose Tweet Success!");
-        }
-        else {
-            NSLog(@"Error composing Tweet: %@", error.localizedDescription);
-        }
+        tweet ? [self toggleTweet] : NSLog(@"%@", error.localizedDescription);
     }];
 }
 
@@ -64,7 +66,34 @@
                 [post addObject:CustomUser.currentUser.objectId forKey:@"likedBy"];
                 [self.smileButton setImage:[UIImage imageNamed:@"smile-filled"] forState:UIControlStateNormal];
             }
-            // Uploads to Parse
+            // Saves to Parse
+            [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                if (succeeded) {
+                    self.post = post;
+                }
+            }];
+        }
+    }];
+}
+
+- (void)toggleTweet {
+    PFQuery *postQuery = [Post query];
+    [postQuery includeKey:@"author"];
+    
+    // Fetches data asynchronously
+    [postQuery getObjectInBackgroundWithId:self.post.objectId block:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (object) {
+            Post *post = (Post *)object;
+            if ([post tweetedByCurrent]) {
+                [post incrementKey:@"tweetCount" byAmount:@(-1)];
+                [post removeObject:CustomUser.currentUser.objectId forKey:@"tweetCount"];
+                [self.tweetButton setImage:[UIImage imageNamed:@"twitter"] forState:UIControlStateNormal];
+            } else {
+                [post incrementKey:@"likeCount" byAmount:@(1)];
+                [post addObject:CustomUser.currentUser.objectId forKey:@"likedBy"];
+                [self.tweetButton setImage:[UIImage imageNamed:@"twitter-filled"] forState:UIControlStateNormal];
+            }
+            // Saves to Parse
             [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (succeeded) {
                     self.post = post;

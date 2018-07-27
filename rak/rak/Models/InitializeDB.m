@@ -24,12 +24,12 @@
     [challengeQuery whereKey:@"category" equalTo:@"Daily Challenges"];
     [challengeQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         for (Act *act in objects) {
-            act.dateLastFeatured = nil  ;
+            act.dateLastFeatured = nil;
             [act saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (error)
-                    NSLog(@"error saving....");
+                    NSLog(@"error saving acts");
                 else
-                    NSLog(@"success saving...");
+                    NSLog(@"success saving acts");
             }];
         }
     }];

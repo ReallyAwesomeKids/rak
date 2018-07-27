@@ -1,6 +1,8 @@
 #import <UIKit/UIKit.h>
 #import "ParseUI.h"
 #import "Post.h"
+#import "PointToLevelConverter.h"
+#import "APIManager.h"
 
 @protocol TimelineCellDelegate;
 
@@ -12,10 +14,15 @@
 
 // Outlets
 @property (weak, nonatomic) IBOutlet PFImageView *timelineProfilePicture;
+@property (weak, nonatomic) IBOutlet PFImageView *timelinePostImage;
+@property (weak, nonatomic) IBOutlet UILabel *timelineLevel;
 @property (weak, nonatomic) IBOutlet UILabel *timelineText;
 @property (weak, nonatomic) IBOutlet UILabel *timelineProfileName;
-@property (weak, nonatomic) IBOutlet PFImageView *timelinePostImage;
+@property (weak, nonatomic) IBOutlet UILabel *timelineTimestamp;
 @property (weak, nonatomic) IBOutlet UIButton *smileButton;
+@property (weak, nonatomic) IBOutlet UIButton *tweetButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *timelinePostImageHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *postImageToButtonConstraint;
 
 // Delegate
 @property (nonatomic, weak) id<TimelineCellDelegate> delegate;
