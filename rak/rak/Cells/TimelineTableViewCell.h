@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timelineTimestamp;
 @property (weak, nonatomic) IBOutlet UIButton *smileButton;
 @property (weak, nonatomic) IBOutlet UIButton *tweetButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *timelinePostImageWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *timelinePostImageHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *postImageToButtonConstraint;
 
