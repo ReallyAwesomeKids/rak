@@ -2,6 +2,7 @@
 #import "ParseUI.h"
 #import "Post.h"
 #import "PointToLevelConverter.h"
+#import "APIManager.h"
 
 @protocol TimelineCellDelegate;
 

@@ -2,7 +2,7 @@
 
 @implementation Post
 
-@dynamic author, caption, image, likedBy, likeCount, tweetedBy, tweetCount;
+@dynamic author, caption, createdAt, image, likedBy, likeCount, tweetedBy, tweetCount;
 
 + (NSString *)parseClassName {
     return @"Post";
@@ -33,11 +33,30 @@
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
 
-- (BOOL) likedByCurrent {
+- (NSString *) creatingTimestamp {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    // Configure the input format to parse the date string
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    
+    NSString *createdAtString = @"";
+    NSTimeInterval secondsBetween = [[NSDate date] timeIntervalSinceDate:self.createdAt];
+    
+    if (secondsBetween <= 28800) {
+       createdAtString = self.createdAt.shortTimeAgoSinceNow;
+    }
+    else {
+        // Configure output format
+        formatter.dateStyle = NSDateFormatterShortStyle;
+        formatter.timeStyle = NSDateFormatterNoStyle;
+    }
+    return createdAtString;
+}
+
+- (BOOL)likedByCurrent {
     return [self.likedBy containsObject: CustomUser.currentUser.objectId];
 }
 
-- (BOOL) tweetedByCurrent {
+- (BOOL)tweetedByCurrent {
     return [self.tweetedBy containsObject: CustomUser.currentUser.objectId];
 }
 

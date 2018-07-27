@@ -2,6 +2,7 @@
 #import <Parse/Parse.h>
 #import "CustomUser.h"
 #import "ParseUI.h"
+#import "DateTools.h"
 
 @interface Post : PFObject <PFSubclassing>
 
@@ -17,6 +18,7 @@
 
 + (PFFile *_Nullable)getPFFileFromImage: (UIImage * _Nullable)image;
 
+- (NSString *) creatingTimestamp;
 - (BOOL) likedByCurrent;
 - (BOOL) tweetedByCurrent;
 
