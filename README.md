@@ -138,8 +138,8 @@ CORE
 - [ ] (Halima) Map VC: view is centered on current/user's location
 - [ ] (Halima) Search Page VC: Search page redesign
 - [ ] (Halima) Categories page design
-  - [ ] ( ) Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
-  - [ ] ( ) Category VC: Carousel 
+  - [ ] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
+  - [ ] Category VC: Carousel 
 - [ ] (Halima) Home/Category VC: Each cell in Home/Category VC should follow the collor from its Category. E.g All dating (blue) cells are blue
 
 ## Week 4 - 8/6/18 - 8/10/18
