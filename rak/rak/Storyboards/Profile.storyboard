@@ -142,13 +142,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="o9j-Lq-uPL"/>
                     </view>
+                    <navigationItem key="navigationItem" id="xRz-W8-brF">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="tmV-xw-2Va">
+                            <connections>
+                                <action selector="didTapLogout:" destination="AyC-n9-XyL" id="3eK-nN-Wq2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="X5P-bC-C8z" id="t8n-GV-L6h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUR-ns-zUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-346.39999999999998" y="136.28185907046478"/>
+            <point key="canvasLocation" x="592.79999999999995" y="136.28185907046478"/>
         </scene>
         <!--Popover View Controller-->
         <scene sceneID="OWX-oC-2Jt">
@@ -165,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edU-PN-iZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="469" y="183"/>
+            <point key="canvasLocation" x="1408" y="182.60869565217394"/>
         </scene>
     </scenes>
 </document>
