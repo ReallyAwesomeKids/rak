@@ -3,6 +3,7 @@
 #import "Post.h"
 #import "PointToLevelConverter.h"
 #import "APIManager.h"
+#import "HomeViewController.h"
 
 @protocol TimelineCellDelegate;
 
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timelineTimestamp;
 @property (weak, nonatomic) IBOutlet UIButton *smileButton;
 @property (weak, nonatomic) IBOutlet UIButton *tweetButton;
+@property (weak, nonatomic) IBOutlet UIButton *dotButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *timelinePostImageWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *timelinePostImageHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *postImageToButtonConstraint;
@@ -31,11 +33,13 @@
 // Button actions
 - (IBAction)didTapTweet:(id)sender;
 - (IBAction)didTapSmile:(id)sender;
+- (IBAction)didTapMore:(id)sender;
 
 @end
 
 @protocol TimelineCellDelegate
 
 - (void)timelineTableViewCell:(TimelineTableViewCell *) timelineTableViewCell didTap: (CustomUser *)user;
+- (void)buttonTappedOnCell:(TimelineTableViewCell *)cell;
 
 @end

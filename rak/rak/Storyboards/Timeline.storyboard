@@ -31,27 +31,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iR5-KQ-bq0">
-                                                    <rect key="frame" x="73" y="9" width="254" height="19.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iR5-KQ-bq0">
+                                                    <rect key="frame" x="73" y="9" width="288" height="22"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gustavo Coutinho" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-bL-dsS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="135.5" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="135.5" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• Level 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZA-NB-Lhs">
-                                                            <rect key="frame" x="143.5" y="0.0" width="60" height="19.5"/>
+                                                            <rect key="frame" x="145.5" y="0.0" width="60" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• 44m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcD-FZ-QSL">
-                                                            <rect key="frame" x="211.5" y="0.0" width="42.5" height="19.5"/>
+                                                            <rect key="frame" x="215.5" y="0.0" width="42.5" height="22"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19x-4e-TQQ">
+                                                            <rect key="frame" x="268" y="0.0" width="20" height="22"/>
+                                                            <state key="normal" image="dot"/>
+                                                            <connections>
+                                                                <action selector="didTapMore:" destination="UG1-AR-WGT" eventType="touchUpInside" id="VTk-QL-N08"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-2Q-kQf" customClass="PFImageView">
@@ -136,6 +143,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dotButton" destination="19x-4e-TQQ" id="JXE-1B-ejv"/>
                                             <outlet property="postImageToButtonConstraint" destination="cvT-to-MWu" id="4Fk-VR-NIc"/>
                                             <outlet property="smileButton" destination="Ybe-gF-doN" id="CFo-Hr-6Vi"/>
                                             <outlet property="timelineLevel" destination="nZA-NB-Lhs" id="CtI-vR-L8P"/>
@@ -276,6 +284,7 @@
     <resources>
         <image name="comment" width="25" height="25"/>
         <image name="compose" width="25" height="25"/>
+        <image name="dot" width="20" height="20"/>
         <image name="fb-photo" width="124" height="34"/>
         <image name="profile" width="30" height="30"/>
         <image name="smile" width="25" height="25"/>
