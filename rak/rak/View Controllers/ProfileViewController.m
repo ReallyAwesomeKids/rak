@@ -19,8 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.user == nil)
-        self.user = CustomUser.currentUser;
+    self.user = (self.userProfile != nil) ? self.userProfile : CustomUser.currentUser;
+  //  NSLog(@"%@", self.userProfile);
+//    if (self.user == nil)
+//        self.user = CustomUser.currentUser;
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
