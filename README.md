@@ -130,6 +130,7 @@ CORE
 - [ ] (Gustavo) Sign up VC: sign up page
 - [ ] (Gustavo) Login VC: Login page redesign
 - [ ] (Gus/Haley) Act Detail VC: Act detail view needs a lot of work
+- [ ] (Haley) Researching new location APIs (Places API from Google for instance)
 - [ ] (Haley) Profile VC: Profile location is actually accurate
 - [ ] (Haley) Profile VC: redesign
 - [ ] (Halima) Map VC: description page design; remove placeholder text
@@ -140,7 +141,6 @@ CORE
   - [ ] ( ) Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
   - [ ] ( ) Category VC: Carousel 
 - [ ] (Halima) Home/Category VC: Each cell in Home/Category VC should follow the collor from its Category. E.g All dating (blue) cells are blue
-- [ ] (Haley) Researching new location APIs (Places API from Google for instance)
 
 ## Week 4 - 8/6/18 - 8/10/18
 - [ ] Design launch screen and logo
