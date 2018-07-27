@@ -109,10 +109,10 @@ CORE
   - [x] Refresh Control
 
 ## Week 2 - 7/23/18 - 7/27/18
-- [ ] (Haley) In-app pop up notifications when did act, level up, earned badge, etc...
-  - [ ] After an act is completed, user can click a "share" button that will share to the timeline.
-  - [ ] After user achieves a new level or earns new badge, they can share the achievement to the timeline
-- [ ] (Everyone) Determine color scheme
+- [x] (Haley) In-app pop up notifications when did act, level up, earned badge, etc...
+  - [x] After an act is completed, user can click a "share" button that will share to the timeline.
+  - [x] After user achieves a new level or earns new badge, they can share the achievement to the timeline
+- [x] (Everyone) Determine color scheme
 - [x] (Gustavo) Timeline
   - [x] Clicking at Profile picture leads to the User profile
   - [x] Share to Twitter
