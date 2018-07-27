@@ -98,7 +98,7 @@ CORE
 - [x] Searching for users tab
 - [x] Badges on profile page
 - [x] Map view
-  - [ ] See pins from db
+  - [x] See pins from db
   - [X] Make pins
   - [X] Search for locations with Foursquare API
   - [x] Select pin to see detail page
@@ -179,3 +179,8 @@ CORE
   - Liked by who (NSArray of CustomUsers)
   - Like count (NSInteger)
   
+- Map Pin
+  - Latitude (NSNumber)
+  - Longitude (NSNumber)
+  - Location name (NSString)
+  - Description (NSString)
