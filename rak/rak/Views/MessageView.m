@@ -98,7 +98,9 @@
     
     [messageView moveToYCoordinate:messageView.shownYCor withCompletion:^(BOOL finished) {
         [NSTimer scheduledTimerWithTimeInterval:5 repeats:NO block:^(NSTimer * _Nonnull timer) {
-            [messageView moveToYCoordinate:messageView.hiddenYCor withCompletion:nil];
+            [messageView moveToYCoordinate:messageView.hiddenYCor withCompletion:^(BOOL finished) {
+                [messageView removeFromSuperview];
+            }];
         }];
     }];
     
@@ -118,7 +120,9 @@
 }
 
 - (void)userDidTapMessage {
-    [self moveToYCoordinate:self.hiddenYCor withCompletion:nil];
+    [self moveToYCoordinate:self.hiddenYCor withCompletion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
     [self.delegate userDidTapMessage];
 }
 

@@ -27,7 +27,7 @@
     
     // Setting streak
     [self.user updateDailyStreak];
-    self.streakLabel.text = [NSString stringWithFormat:@"Streak: %ld", self.user.streak];
+    self.streakLabel.text = [NSString stringWithFormat:@"%ld day streak", self.user.streak];
     
     // Setting user level
     NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints];
