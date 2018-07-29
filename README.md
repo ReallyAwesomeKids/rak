@@ -120,11 +120,27 @@ CORE
   - [x] Toggle button functionality
   - [x] Designing it beautifully
 - [x] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
-- [ ] (Gustavo) Animations
-- [ ] (Halima) Autolayout, animations, transitions
 
 ## Week 3 - 7/30/18 - 8/3/18
-- [ ] Invite/challenge friend from the detail page
+- [ ] (Everyone) App VC: Change font/emoji
+- [ ] (Gustavo) Database: Assign points to tasks
+- [ ] (Gustavo) Timeline VC: Images fade in
+- [ ] (Gustavo) Home VC: When pressing check button, color changes
+- [ ] (Gustavo) Compose VC: redesign
+- [ ] (Gustavo) Sign up VC: sign up page
+- [ ] (Gustavo) Login VC: Login page redesign
+- [ ] (Gus/Haley) Act Detail VC: Act detail view needs a lot of work
+- [ ] (Haley) Researching new location APIs (Places API from Google for instance)
+- [ ] (Haley) Profile VC: Profile location is actually accurate
+- [ ] (Haley) Profile VC: redesign
+- [ ] (Halima) Map VC: description page design; remove placeholder text
+- [ ] (Halima) Map VC: When searching for location, pop up keyboard automatically
+- [ ] (Halima) Map VC: view is centered on current/user's location
+- [ ] (Halima) Search Page VC: Search page redesign
+- [ ] (Halima) Categories page design
+  - [ ] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
+  - [ ] Category VC: Carousel 
+- [ ] (Halima) Home/Category VC: Each cell in Home/Category VC should follow the collor from its Category. E.g All dating (blue) cells are blue
 
 ## Week 4 - 8/6/18 - 8/10/18
 - [ ] Design launch screen and logo
@@ -135,7 +151,7 @@ CORE
 - [x] (Gustavo) clicking checkmark button at Home [Home VC]
   - [ ] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
-- [ ] user should not be able to add the same act multiple times to db [Category VC]
+- [x] user should not be able to add the same act multiple times to db [Category VC]
 
 ## Extended Functionality Ideas
 - [ ] User can write their own acts of kindness

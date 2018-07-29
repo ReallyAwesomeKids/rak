@@ -29,6 +29,7 @@
     if ([[APIManager shared] checksForAFile:self.post.image]) {
         self.timelinePostImage.file = self.post.image;
         [self.timelinePostImage loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+            // Programatically adjusts size of the cell if image has text, no text, image, no image
             CGFloat imageWidth = image.size.width;
             CGFloat imageHeight = image.size.height;
             // proportion with cross multiplication to find newHeightConstraint
@@ -36,7 +37,6 @@
             // (imageHeight * widthConstraint) = (imageWidth * newHeightConstraint)
             // newHeightConstraint = (imageHeight * widthConstraint) / imageWidth
             CGFloat newImageHeightConstraintConstant = (imageHeight * self.timelinePostImageWidthConstraint.constant) / imageWidth;
-            
             self.timelinePostImageHeightConstraint.constant = newImageHeightConstraintConstant;
         }];
         self.postImageToButtonConstraint.constant = 12;
@@ -45,6 +45,10 @@
         self.timelinePostImageHeightConstraint.constant = 0;
         self.postImageToButtonConstraint.constant = 0;
     }
+    
+    [self.dotButton addTarget:self
+                       action:@selector(didTapMore:)
+             forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (IBAction)didTapTweet:(id)sender {
@@ -55,6 +59,10 @@
 
 - (IBAction)didTapSmile:(id)sender {
     [self toggleSmile];
+}
+
+- (IBAction)didTapMore:(id)sender {
+    [self.delegate buttonTappedOnCell:self];
 }
 
 - (void)toggleSmile {

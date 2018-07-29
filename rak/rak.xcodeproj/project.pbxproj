@@ -388,7 +388,6 @@
 			children = (
 				5D1E72EB2109406300C0FA8E /* AppDelegate.h */,
 				5D1E72EA2109406300C0FA8E /* AppDelegate.m */,
-				5D329D2620FD164700C180C9 /* Parse Objects */,
 				5D329D4E20FD436C00C180C9 /* InitializeDB.h */,
 				5D329D4F20FD436C00C180C9 /* InitializeDB.m */,
 				5DB1008F20FE64A70085C785 /* PointToLevelConverter.h */,
@@ -399,6 +398,7 @@
 				5D190FBF210001CA002A469B /* DateFunctions.m */,
 				54BE1DAB2106A01000DA4A25 /* Tweet.h */,
 				54BE1DAC2106A01000DA4A25 /* Tweet.m */,
+				5D329D2620FD164700C180C9 /* Parse Objects */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -3,6 +3,8 @@
 #import "BadgeCell.h"
 #import "Badge.h"
 #import "PopoverViewController.h"
+#import "AppDelegate.h"
+#import "LoginViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIPopoverPresentationControllerDelegate>
 
@@ -17,8 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.user == nil)
-        self.user = CustomUser.currentUser;
+    self.user = (self.userProfile != nil) ? self.userProfile : CustomUser.currentUser;
+  //  NSLog(@"%@", self.userProfile);
+//    if (self.user == nil)
+//        self.user = CustomUser.currentUser;
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -129,6 +133,19 @@
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
     return UIModalPresentationNone;
 }
+
+- (IBAction)didTapLogout:(id)sender {
+    [CustomUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        appDelegate.window.rootViewController = loginViewController;
+
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

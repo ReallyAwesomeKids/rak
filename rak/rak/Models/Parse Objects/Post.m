@@ -41,13 +41,14 @@
     NSString *createdAtString = @"";
     NSTimeInterval secondsBetween = [[NSDate date] timeIntervalSinceDate:self.createdAt];
     
-    if (secondsBetween <= 28800) {
+    // If less than one day, use shorTime (1h, 4h)
+    if (secondsBetween <= 86400) {
        createdAtString = self.createdAt.shortTimeAgoSinceNow;
     }
     else {
         // Configure output format
         formatter.dateStyle = NSDateFormatterShortStyle;
-        formatter.timeStyle = NSDateFormatterNoStyle;
+        createdAtString = [formatter stringFromDate:self.createdAt];
     }
     return createdAtString;
 }

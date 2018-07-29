@@ -68,7 +68,8 @@
     TimelineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimelineTableViewCell"];
     Post *post = self.timelinePosts[indexPath.row];
     cell.post = post;
-    
+    cell.delegate = self;
+
     // tap profile picture leads to profile page
     UITapGestureRecognizer *iconGesture = [[UITapGestureRecognizer alloc]
                                            initWithTarget:self
@@ -82,6 +83,36 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.timelinePosts.count;
 }
+
+- (void)buttonTappedOnCell:(TimelineTableViewCell *)cell {
+    // grab an item we want to share
+    UIImage *image = [UIImage imageNamed:@"levelup.png"];
+    NSArray *items = @[image];
+
+    // build an activity view controller
+    UIActivityViewController *controller = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
+    
+    NSArray *excluded = @[UIActivityTypePostToWeibo,
+                         UIActivityTypeMessage,
+                         UIActivityTypeMail,
+                         UIActivityTypePrint,
+                         UIActivityTypeCopyToPasteboard,
+                         UIActivityTypeAssignToContact,
+                         UIActivityTypeSaveToCameraRoll,
+                         UIActivityTypeAddToReadingList,
+                         UIActivityTypePostToFlickr,
+                         UIActivityTypePostToVimeo,
+                         UIActivityTypePostToTencentWeibo,
+                         UIActivityTypeAirDrop,
+                         UIActivityTypeOpenInIBooks];
+    controller.excludedActivityTypes = excluded;
+
+    // and present it
+    [self presentViewController:controller animated:YES completion:^{
+        // executes after the user selects something
+    }];
+}
+
 
 - (IBAction)didTapProfileIcon:(id)sender {
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *)sender;
