@@ -33,14 +33,14 @@
 - (void) changeCategoriesLayout {
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
     [layout setScrollDirection:(UICollectionViewScrollDirectionHorizontal)];
-    // Adjusts spacing between cells
-    layout.minimumInteritemSpacing = 10;
-    layout.minimumLineSpacing = 10;
-    // Cell setup
-    CGFloat categoriesPerLine = 1;
-    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - .5))/ categoriesPerLine;
-    CGFloat itemHeight = itemWidth * 1.5;
-    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+//    // Adjusts spacing between cells
+//    layout.minimumInteritemSpacing = 10;
+//    layout.minimumLineSpacing = 10;
+//    // Cell setup
+//    CGFloat categoriesPerLine = 1;
+//    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - .5))/ categoriesPerLine;
+//    CGFloat itemHeight = itemWidth * 1.5;
+//    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
 //Creates Collection View for Categories
@@ -48,7 +48,7 @@
     CategoriesCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoriesCell" forIndexPath:indexPath];
     ActCategory *cat = self.categories[indexPath.row];
     [cell configureCell:(ActCategory *)cat];
-    [cell changeShape];
+    //[cell changeShape];
     return cell;
 }
 
