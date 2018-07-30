@@ -84,10 +84,9 @@
                         <viewLayoutGuide key="safeArea" id="fHD-1Z-zBx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Photo Map" id="kK3-kc-whv">
-                        <barButtonItem key="rightBarButtonItem" title="Pin" id="3fV-m4-WB5">
+                        <barButtonItem key="rightBarButtonItem" title="Pin" id="cyo-YU-3t6">
                             <connections>
-                                <action selector="pinLocation:" destination="ajj-T5-iWf" id="u6O-6z-FnA"/>
-                                <segue destination="qGw-c4-iML" kind="show" identifier="locationsSegue" id="SVt-yf-Nox"/>
+                                <segue destination="qGw-c4-iML" kind="show" identifier="locationsSegue" id="pmA-H6-E2R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
