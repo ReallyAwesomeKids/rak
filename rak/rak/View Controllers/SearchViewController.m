@@ -25,15 +25,17 @@
     self.searchBar.delegate = self;
     [self fetchUser];
     [self.searchTableView reloadData];
+
     //self.users = @{self.userObject.displayName:@[self.userObject.profileImage, points = [@self.userObject.experiencePoints stringValue]};
     // Do any additional setup after loading the view.
 }
-
 //Receive Memory Method
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 //Segue IF NEEDED
 #pragma mark - Navigation

@@ -4,9 +4,10 @@
 #import "LocationsViewController.h"
 
 //Interface
-@interface DescriptionViewController ()
+@interface DescriptionViewController ()<UITextViewDelegate>
 - (IBAction)postDescription:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionPlaceholder;
 @property (strong, nonatomic) NSString *descriptionText;
 
 @end
@@ -18,6 +19,10 @@
 //Current Loaded View
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.descriptionTextView.delegate = self;
+    self.descriptionPlaceholder.alpha = 1;
+    [self textViewDidChange:self.descriptionTextView];
+
     // Do any additional setup after loading the view.
 }
 
@@ -40,7 +45,15 @@
     }
     */
 
+-(void)textViewDidChange:(UITextView *)textView {
+    // placeholder disappears and text shows at View
+    self.descriptionPlaceholder.alpha = 0;
+    self.descriptionTextView.alpha = 1;
+}
 
+-(void)dismissKeyboard {
+    [self.descriptionTextView resignFirstResponder];
+}
 //Post Description Button Will Call Protocol
 - (IBAction)postDescription:(id)sender {
     self.descriptionText = self.descriptionTextView.text;

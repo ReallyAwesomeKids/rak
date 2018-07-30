@@ -26,6 +26,7 @@
     self.actCategoryTableView.dataSource = self;
     self.actCategoryTableView.delegate = self;
     self.acts = self.actCategory.acts;
+
     [self.actCategoryTableView reloadData];
 }
 
@@ -51,6 +52,18 @@
     ActsCell *actCell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
    Act *actPiece = self.acts[indexPath.row];
     actCell.selectAct = actPiece;
+    if ([CustomUser.currentUser.chosenActs containsObject:actCell.selectAct]) {
+        actCell.tapped = YES;
+    }
+    if (actCell.tapped == YES) {
+        [actCell.addingButton setSelected:YES];
+        [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
+
+    }
+    else {
+        [actCell.addingButton setSelected:NO];
+        [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
+    }
     return actCell;
 }
 
@@ -63,22 +76,51 @@
 - (IBAction)addingPersonalAct:(id)sender {
     UIButton *actAdd = (UIButton*) sender;
     ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
-    self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
-    [self.personalAct addObject:actCell.selectAct];
-    NSOrderedSet *uniqueActsSet = [NSOrderedSet orderedSetWithArray:self.personalAct];
-    NSArray *uniqueActsArray = [uniqueActsSet array];
-    CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:uniqueActsArray];
-    [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"Saved in background");
-        if (error)
-            NSLog(@"error: %@", error.localizedDescription);
-        else {
-            [MessageView presentMessageViewWithText:@"Act added to home"
-                                withTapInstructions:nil
-                                   onViewController:self
-                                        forDuration:1.5];
-        }
+    if (actCell.tapped == YES) {
+        [actCell.addingButton setSelected:NO];
+        [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
+        [self.personalAct removeObject:actCell.selectAct];
+        actCell.tapped = NO;
+        NSOrderedSet *uniqueActsSet = [NSOrderedSet orderedSetWithArray:self.personalAct];
+        NSArray *uniqueActsArray = [uniqueActsSet array];
+        CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:uniqueActsArray];
+        [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Saved in background");
+            if (error)
+                NSLog(@"error: %@", error.localizedDescription);
+            else {
+                [MessageView presentMessageViewWithText:@"Act deleted from home"
+                                    withTapInstructions:nil
+                                       onViewController:self
+                                            forDuration:1.5];
+            }
+        }];
+        
+    }
+    
+ else {
+        [actCell.addingButton setSelected:YES];
+        [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
+        self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
+        [self.personalAct addObject:actCell.selectAct];
+        actCell.tapped = YES;
+        NSOrderedSet *uniqueActsSet = [NSOrderedSet orderedSetWithArray:self.personalAct];
+        NSArray *uniqueActsArray = [uniqueActsSet array];
+        CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:uniqueActsArray];
+        [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Saved in background");
+            if (error)
+                NSLog(@"error: %@", error.localizedDescription);
+            else {
+                [MessageView presentMessageViewWithText:@"Act added to home"
+                                    withTapInstructions:nil
+                                       onViewController:self
+                                            forDuration:1.5];
+            }
     }];
+    }
+
+
 }
 
 @end
