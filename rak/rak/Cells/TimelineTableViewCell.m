@@ -25,6 +25,8 @@
     self.timelineProfilePicture.layer.cornerRadius = self.timelineProfilePicture.frame.size.height/2;
     [self.timelineProfilePicture loadInBackground];
     
+    __weak TimelineTableViewCell *weakSelf = self;
+    
     // Checks if post has an image
     if ([[APIManager shared] checksForAFile:self.post.image]) {
         self.timelinePostImage.file = self.post.image;
@@ -32,12 +34,17 @@
             // Programatically adjusts size of the cell if image has text, no text, image, no image
             CGFloat imageWidth = image.size.width;
             CGFloat imageHeight = image.size.height;
-            // proportion with cross multiplication to find newHeightConstraint
-            // imageHeight / imageWidth = newHeightConstraint / widthConstraint
-            // (imageHeight * widthConstraint) = (imageWidth * newHeightConstraint)
-            // newHeightConstraint = (imageHeight * widthConstraint) / imageWidth
             CGFloat newImageHeightConstraintConstant = (imageHeight * self.timelinePostImageWidthConstraint.constant) / imageWidth;
             self.timelinePostImageHeightConstraint.constant = newImageHeightConstraintConstant;
+            
+            // fade-in image implementation
+            weakSelf.timelinePostImage.alpha = 0.0;
+            weakSelf.timelinePostImage.image = image;
+            
+            //Animate UIImageView back to alpha 1 over 0.3sec
+            [UIView animateWithDuration:0.1 animations:^{
+                weakSelf.timelinePostImage.alpha = 1.0;
+            }];
         }];
         self.postImageToButtonConstraint.constant = 12;
     } else {
