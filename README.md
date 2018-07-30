@@ -130,7 +130,6 @@ CORE
 - [ ] (Gustavo) Sign up VC: sign up page
 - [ ] (Gustavo) Login VC: Login page redesign
 - [ ] (Gus/Haley) Act Detail VC: Act detail view needs a lot of work
-- [ ] (Haley) Researching new location APIs (Places API from Google for instance)
 - [ ] (Haley) Profile VC: Profile location is actually accurate
 - [ ] (Haley) Profile VC: redesign
 - [ ] (Halima) Map VC: description page design; remove placeholder text
