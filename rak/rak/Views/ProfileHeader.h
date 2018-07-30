@@ -13,4 +13,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *percentToNextLevelLabel;
 
+@property (weak, nonatomic) IBOutlet UIImageView *streakImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *levelImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *percentToNextLevelImageView;
+
 @end

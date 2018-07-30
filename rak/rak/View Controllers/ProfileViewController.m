@@ -26,6 +26,8 @@
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+ //   UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    //  layout.estimatedItemSize = CGSizeMake(1.f, 1.f);
 }
 
 - (void)fetchBadges {
@@ -60,7 +62,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return CGSizeMake(self.collectionView.bounds.size.width, 388);
+        return CGSizeMake(self.collectionView.bounds.size.width, 358);
         
     } else {
         return CGSizeZero;
@@ -82,6 +84,7 @@
                                           initWithTarget:self
                                           action:@selector(didTapBadge:)];
     [cell addGestureRecognizer:tapGesture];
+
     return cell;
 }
 
@@ -100,7 +103,7 @@
                           (cellsPerRow - 1)
                           )
                          ) / cellsPerRow;
-    CGFloat itemHeight = itemWidth;
+    CGFloat itemHeight = layout.itemSize.height;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
