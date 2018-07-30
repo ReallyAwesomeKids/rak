@@ -115,7 +115,7 @@
                                                         <constraint firstAttribute="height" constant="23" id="DCC-Cm-cLK"/>
                                                         <constraint firstAttribute="width" constant="23" id="e58-iV-Lr9"/>
                                                     </constraints>
-                                                    <color key="tintColor" red="1" green="0.79215686269999996" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" image="smile"/>
                                                     <connections>
                                                         <action selector="didTapSmile:" destination="UG1-AR-WGT" eventType="touchUpInside" id="s2w-91-xMG"/>

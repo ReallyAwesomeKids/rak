@@ -18,10 +18,10 @@
 
     
     self.timelineLevel.text = [NSString stringWithFormat:@"Level %ld", (long)[PointToLevelConverter
-                                                                              getCurrentLevelFromPoints:self.user.experiencePoints]];
+                                                                              getCurrentLevelFromPoints:post.author.experiencePoints]];
     
     // Setting profile picture
-    self.timelineProfilePicture.file = self.user.profileImage;
+    self.timelineProfilePicture.file = self.post.author.profileImage;
     self.timelineProfilePicture.layer.cornerRadius = self.timelineProfilePicture.frame.size.height/2;
     [self.timelineProfilePicture loadInBackground];
     
