@@ -23,26 +23,19 @@
     self.searchTableView.delegate = self;
     self.searchTableView.dataSource = self;
     self.searchBar.delegate = self;
-    [self redesignSearch];
     [self fetchUser];
     [self.searchTableView reloadData];
 
     //self.users = @{self.userObject.displayName:@[self.userObject.profileImage, points = [@self.userObject.experiencePoints stringValue]};
     // Do any additional setup after loading the view.
 }
-
 //Receive Memory Method
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void) redesignSearch {
-    SearchCell *cell;
-    cell.searchProfileImage.layer.cornerRadius = cell.searchProfileImage.frame.size.height/2;
-    cell.searchProfileImage.layer.masksToBounds = YES;
-    cell.searchProfileImage.layer.borderWidth = 0;
-}
+
 
 //Segue IF NEEDED
 #pragma mark - Navigation

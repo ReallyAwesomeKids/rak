@@ -21,10 +21,7 @@
     [super viewDidLoad];
     self.descriptionTextView.delegate = self;
     self.descriptionPlaceholder.alpha = 1;
-    if (self.initialText != nil) {
-        [self textViewDidChange:self.descriptionTextView];
-        self.descriptionTextView.text = self.initialText;
-    }
+    [self textViewDidChange:self.descriptionTextView];
 
     // Do any additional setup after loading the view.
 }
