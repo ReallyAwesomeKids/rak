@@ -12,5 +12,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *searchProfilePoints;
 
 - (void)configureCell:(CustomUser *)user;
-
 @end
