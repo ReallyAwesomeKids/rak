@@ -11,10 +11,10 @@
 
 + (void)initializeDatabase {
     [self initializeUser];
-    //[self initializeActs];
-    //[self initializeActCategories];
-    //[self updateActs];
-    //[self initializeBadges];
+//    [self initializeActs];
+//    [self initializeActCategories];
+//    [self updateActs];
+//    [self initializeBadges];
 
 }
 

@@ -123,14 +123,13 @@ CORE
 
 ## Week 3 - 7/30/18 - 8/3/18
 - [ ] (Everyone) App VC: Change font/emoji
-- [ ] (Gustavo) Database: Assign points to tasks
+- [x] (Gustavo) Database: Assign points to tasks
 - [ ] (Gustavo) Timeline VC: Images fade in
 - [ ] (Gustavo) Home VC: When pressing check button, color changes
 - [ ] (Gustavo) Compose VC: redesign
 - [ ] (Gustavo) Sign up VC: sign up page
 - [ ] (Gustavo) Login VC: Login page redesign
 - [ ] (Gus/Haley) Act Detail VC: Act detail view needs a lot of work
-- [ ] (Haley) Researching new location APIs (Places API from Google for instance)
 - [ ] (Haley) Profile VC: Profile location is actually accurate
 - [ ] (Haley) Profile VC: redesign
 - [ ] (Halima) Map VC: description page design; remove placeholder text
@@ -152,6 +151,8 @@ CORE
   - [ ] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [x] user should not be able to add the same act multiple times to db [Category VC]
+- [ ] () When timeline loads, images are in the level-up height/width; only get normal size when refreshed [Timeline VC]
+
 
 ## Extended Functionality Ideas
 - [ ] User can write their own acts of kindness
