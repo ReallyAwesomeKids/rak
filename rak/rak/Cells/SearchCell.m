@@ -6,7 +6,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    // Initializaßtion code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,5 +20,6 @@
     self.searchProfileName.text = self.user.displayName;
     self.searchProfilePoints.text = [@(self.user.experiencePoints) stringValue];
 }
+
 
 @end

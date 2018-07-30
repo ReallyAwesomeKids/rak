@@ -9,6 +9,7 @@
 
 //Interface
 @interface DescriptionViewController : UIViewController
+@property (strong, nonatomic) NSString *initialText;
 @property(strong, nonatomic) NSNumber *latt;
 @property(strong, nonatomic) NSNumber *lngg;
 @property(strong, nonatomic) NSString *namee;
