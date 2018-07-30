@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-1684" y="-202"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="uRt-AQ-oOL">
             <objects>
                 <viewController id="VDQ-i1-nYy" customClass="SearchViewController" sceneMemberID="viewController">
@@ -89,6 +89,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="yAE-LL-e60"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Search" id="XvN-uL-qYf"/>
                     <connections>
                         <outlet property="searchBar" destination="CUV-Wp-de6" id="cXo-lM-Vci"/>
                         <outlet property="searchTableView" destination="Nl0-Eb-NV6" id="MyA-gK-Xfg"/>
@@ -97,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAO-S6-Fv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-210.40000000000001" y="-59.820089955022496"/>
+            <point key="canvasLocation" x="728.79999999999995" y="-59.820089955022496"/>
         </scene>
     </scenes>
 </document>

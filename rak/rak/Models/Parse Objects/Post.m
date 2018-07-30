@@ -34,22 +34,8 @@
 }
 
 - (NSString *) creatingTimestamp {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    // Configure the input format to parse the date string
-    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
-    
     NSString *createdAtString = @"";
-    NSTimeInterval secondsBetween = [[NSDate date] timeIntervalSinceDate:self.createdAt];
-    
-    // If less than one day, use shorTime (1h, 4h)
-    if (secondsBetween <= 86400) {
-       createdAtString = self.createdAt.shortTimeAgoSinceNow;
-    }
-    else {
-        // Configure output format
-        formatter.dateStyle = NSDateFormatterShortStyle;
-        createdAtString = [formatter stringFromDate:self.createdAt];
-    }
+    createdAtString = self.createdAt.shortTimeAgoSinceNow;
     return createdAtString;
 }
 

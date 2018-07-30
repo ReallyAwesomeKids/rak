@@ -52,9 +52,11 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19x-4e-TQQ">
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19x-4e-TQQ">
                                                             <rect key="frame" x="268" y="0.0" width="20" height="22"/>
-                                                            <state key="normal" image="dot"/>
+                                                            <state key="normal" image="dot">
+                                                                <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
                                                             <connections>
                                                                 <action selector="didTapMore:" destination="UG1-AR-WGT" eventType="touchUpInside" id="VTk-QL-N08"/>
                                                             </connections>
@@ -171,10 +173,10 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Timeline" id="0Re-s0-Pds">
-                        <barButtonItem key="rightBarButtonItem" image="compose" style="plain" id="5rw-k7-HNk">
-                            <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <barButtonItem key="rightBarButtonItem" image="c" style="plain" id="5rw-k7-HNk">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="CcO-Aa-XpY" kind="show" identifier="composeSegue" id="4lP-8A-MPB"/>
+                                <segue destination="CcO-Aa-XpY" kind="show" id="d7c-fY-5X3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -188,7 +190,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2U-rw-ccj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aVP-AX-Z50"/>
             </objects>
-            <point key="canvasLocation" x="6997.6000000000004" y="-46.326836581709152"/>
+            <point key="canvasLocation" x="7936.8000000000002" y="-46.326836581709152"/>
         </scene>
         <!--Profile-->
         <scene sceneID="rsh-3P-gE9">
@@ -291,7 +293,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dtU-f0-aa8">
                         <barButtonItem key="rightBarButtonItem" title="Post" id="DSZ-Wj-Vni">
-                            <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapPost:" destination="CcO-Aa-XpY" id="qF7-15-5KW"/>
                             </connections>
@@ -307,12 +309,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W6G-ud-0uf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7933.6000000000004" y="-46.326836581709152"/>
+            <point key="canvasLocation" x="8800.7999999999993" y="-46.326836581709152"/>
         </scene>
     </scenes>
     <resources>
+        <image name="c" width="20" height="20"/>
         <image name="comment" width="25" height="25"/>
-        <image name="compose" width="25" height="25"/>
         <image name="dot" width="20" height="20"/>
         <image name="fb-photo" width="124" height="34"/>
         <image name="profile" width="30" height="30"/>
@@ -320,5 +322,5 @@
         <image name="tag" width="488" height="74"/>
         <image name="twitter" width="23" height="23"/>
     </resources>
-    <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
