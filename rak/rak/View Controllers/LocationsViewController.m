@@ -78,7 +78,7 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
 //Search Bar Method
 -(BOOL) searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     NSString *newText = [searchBar.text stringByReplacingCharactersInRange:range withString:text];
-    [self fetchLocationsWithQuery:text nearCity:@"San Francisco"];
+    [self fetchLocationsWithQuery:newText nearCity:@"San Francisco"];
     return true;
 }
 
