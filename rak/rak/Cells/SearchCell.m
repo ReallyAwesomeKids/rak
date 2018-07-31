@@ -21,5 +21,8 @@
     self.searchProfilePoints.text = [@(self.user.experiencePoints) stringValue];
 }
 
-
+-(void) redesignSearch {
+    self.searchProfileImage.layer.cornerRadius = self.searchProfileImage.frame.size.height/2;
+    self.searchProfileImage.layer.masksToBounds = YES;
+}
 @end

@@ -7,4 +7,8 @@
 @property (strong, nonatomic) NSArray *acts;
 @property (strong, nonatomic) PFFile *categoryImage;
 
+@property (nonatomic) CGFloat colorR;
+@property (nonatomic) CGFloat colorG;
+@property (nonatomic) CGFloat colorB;
+
 @end

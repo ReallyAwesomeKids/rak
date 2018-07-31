@@ -26,6 +26,7 @@
     self.actCategoryTableView.dataSource = self;
     self.actCategoryTableView.delegate = self;
     self.acts = self.actCategory.acts;
+
     [self.actCategoryTableView reloadData];
 }
 
@@ -51,8 +52,17 @@
     ActsCell *actCell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
    Act *actPiece = self.acts[indexPath.row];
     actCell.selectAct = actPiece;
-    if (actPiece == (self.acts[indexPath.row])) {
-        actCell.tapped = NO;
+    if ([CustomUser.currentUser.chosenActs containsObject:actCell.selectAct]) {
+        actCell.tapped = YES;
+    }
+    if (actCell.tapped == YES) {
+        [actCell.addingButton setSelected:YES];
+        [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
+
+    }
+    else {
+        [actCell.addingButton setSelected:NO];
+        [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
     }
     return actCell;
 }
@@ -66,7 +76,6 @@
 - (IBAction)addingPersonalAct:(id)sender {
     UIButton *actAdd = (UIButton*) sender;
     ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
-
     if (actCell.tapped == YES) {
         [actCell.addingButton setSelected:NO];
         [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
@@ -89,7 +98,7 @@
         
     }
     
-    if (actCell.tapped == NO) {
+ else {
         [actCell.addingButton setSelected:YES];
         [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
         self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];

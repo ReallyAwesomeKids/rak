@@ -8,6 +8,7 @@
 
 @property (weak, nonatomic) IBOutlet PFImageView *badgeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *badgeNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *badgeImageNumberLabel;
 
 
 @end
