@@ -157,6 +157,9 @@
     if (user.hasCompletedDailyChallenge) {
         [self.dailyChallengeButton setImage:[UIImage imageNamed:@"check-filled"] forState:UIControlStateNormal];
     }
+    else {
+        [self.dailyChallengeButton setImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)didTapCheckButton:(id)sender {
@@ -187,6 +190,12 @@
             // Becomes visible
             [self.dailyChallengeButton setAlpha:1.f];
         } completion:nil];
+        
+        // Notification
+        [MessageView presentMessageViewWithText:@"You have completed your Daily Challenge!"
+                            withTapInstructions:@"Tap to the share the story"
+                               onViewController:self
+                                    forDuration:6];
     }
 }
 
