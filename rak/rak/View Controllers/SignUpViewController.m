@@ -4,6 +4,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *signUpUsername;
 @property (weak, nonatomic) IBOutlet UITextField *signUpPassword;
+@property (weak, nonatomic) IBOutlet UITextField *signUpConfirmPassword;
+
+@property (weak, nonatomic) IBOutlet UILabel *logoLabel;
 
 - (IBAction)didTapSignUp:(id)sender;
 
@@ -14,6 +17,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupLogoLabel];
+}
+
+- (void)setupLogoLabel {
+    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc] initWithString:self.logoLabel.text];
+    
+    NSRange range = NSMakeRange(4, 1);
+    
+    UIColor *color = [[UIColor alloc] initWithRed:255/255.f
+                                            green:209/255.f
+                                             blue:102/255.f
+                                            alpha:1];
+    
+    UIFont *font = [UIFont fontWithName:@"Bradley Hand" size:72];
+    
+    [attributed beginEditing];
+    [attributed addAttribute:NSForegroundColorAttributeName
+                       value:color
+                       range:range];
+    [attributed addAttribute:NSFontAttributeName
+                       value:font
+                       range:range];
+    [attributed endEditing];
+    self.logoLabel.attributedText = attributed;
 }
 
 - (void)didReceiveMemoryWarning {

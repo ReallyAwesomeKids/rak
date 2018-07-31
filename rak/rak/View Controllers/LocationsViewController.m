@@ -29,6 +29,11 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
     self.locationsTableView.dataSource = self;
     self.locationsSearchBar.delegate = self;
     [self.locationsSearchBar becomeFirstResponder];
+  //  self.navigationItem.leftItemsSupplementBackButton = YES;
+    UIBarButtonItem *button = self.navigationItem.backBarButtonItem;
+   [button setTintColor:[UIColor blueColor]];
+//    [button setStyle:UIBarButtonItemStylePlain];
+//    NSLog(@"%@", self.navigationItem.leftBarButtonItem);
     // Do any additional setup after loading the view.
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ajj-T5-iWf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SOm-hr-caW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -37,6 +37,7 @@
                         <viewLayoutGuide key="safeArea" id="nSX-hX-8RQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Description" id="euV-iN-76P">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="p8l-ag-Akp"/>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="1KU-AV-vLl">
                             <connections>
                                 <action selector="postDescription:" destination="cbH-8W-6Am" id="bxs-n2-PaB"/>
@@ -50,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fM-y0-FhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3324" y="240.62968515742131"/>
+            <point key="canvasLocation" x="8606.5" y="240.5"/>
         </scene>
         <!--Photo Map View Controller-->
         <scene sceneID="H3m-I4-IV7">
@@ -78,19 +79,21 @@
                     </view>
                     <navigationItem key="navigationItem" title="Photo Map" id="kK3-kc-whv">
                         <barButtonItem key="rightBarButtonItem" title="Pin" id="cyo-YU-3t6">
+                            <color key="tintColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="qGw-c4-iML" kind="show" identifier="locationsSegue" id="pmA-H6-E2R"/>
+                                <action selector="pinLocation:" destination="ajj-T5-iWf" id="3bx-Wn-Q0Y"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="grj-YG-rot" id="gce-C2-4jg"/>
                         <segue destination="BLt-eZ-aIs" kind="show" identifier="fullDescriptionSegue" id="2E1-HO-m6A"/>
+                        <segue destination="qGw-c4-iML" kind="show" identifier="locationsSegue" id="eDW-j2-f1y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nd-Np-A6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948" y="240.62968515742131"/>
+            <point key="canvasLocation" x="6838.5" y="240.5"/>
         </scene>
         <!--Description-->
         <scene sceneID="QYD-cK-n60">
@@ -122,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fka-5c-bwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.8" y="997.15142428785612"/>
+            <point key="canvasLocation" x="4374" y="1084"/>
         </scene>
         <!--Locations View Controller-->
         <scene sceneID="3Id-Wi-Ra2">
@@ -197,7 +200,7 @@
                         <viewLayoutGuide key="safeArea" id="KbP-6W-VK1"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Locations" id="WRo-GE-efc"/>
+                    <navigationItem key="navigationItem" title="Choose a Location" id="Gfv-1G-TAu"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="locationsSearchBar" destination="wnC-ES-BAl" id="YBD-X9-yD5"/>
@@ -206,25 +209,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Os1-dx-L7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2620" y="240.62968515742131"/>
+            <point key="canvasLocation" x="7902.5" y="240.5"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="GbN-el-mei">
+        <!--Local Needs-->
+        <scene sceneID="Hkn-7L-vD7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OsX-Ws-OjT" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SOm-hr-caW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Local Needs" image="map" id="C9h-F4-lct"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gMz-Lp-ClG">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jNL-Md-k2H">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ajj-T5-iWf" kind="relationship" relationship="rootViewController" id="G7M-Xb-OZo"/>
+                        <segue destination="ajj-T5-iWf" kind="relationship" relationship="rootViewController" id="y0c-eL-bXj"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pb3-Li-DbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VAb-Y6-A9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.8" y="240.62968515742131"/>
+            <point key="canvasLocation" x="5899.5" y="240.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" width="25" height="25"/>
+    </resources>
 </document>
