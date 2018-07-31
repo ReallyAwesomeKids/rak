@@ -13,6 +13,7 @@
 + (Badge *)fetchBadgeOfType:(NSString *)badgeType withValueGreaterThan:(NSInteger)value {
     PFQuery *query = [PFQuery queryWithClassName:@"Badge"];
     [query includeKey:@"badgeImage"];
+    [query includeKey:@"value"];
     [query whereKey:@"badgeType" equalTo:badgeType];
     [query whereKey:@"value" greaterThan:[NSNumber numberWithInteger:value]];
     [query orderByAscending:@"value"];
