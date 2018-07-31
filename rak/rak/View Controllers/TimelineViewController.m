@@ -86,8 +86,8 @@
 
 - (void)buttonTappedOnCell:(TimelineTableViewCell *)cell {
     // grab an item we want to share
-    UIImage *image = [UIImage imageNamed:@"levelup.png"];
-    NSArray *items = @[image];
+    NSString *text= cell.post.caption;
+    NSArray *items = @[text];
 
     // build an activity view controller
     UIActivityViewController *controller = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];

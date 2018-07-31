@@ -5,6 +5,7 @@
 #import "PopoverViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "APIManager.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIPopoverPresentationControllerDelegate>
 
@@ -13,6 +14,9 @@
 @property (strong, nonatomic) NSArray *streakBadges;
 @property (strong, nonatomic) PopoverViewController *popoverVC;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+- (IBAction)didTapTwitter:(id)sender;
+
 @end
 
 @implementation ProfileViewController
@@ -165,4 +169,13 @@
 }
 */
 
+- (IBAction)didTapTwitter:(id)sender {
+    [[APIManager shared] loginWithCompletion:^(BOOL success, NSError *error) {
+        if (success) {
+//            self.twitterLoginButton.alpha = 0;
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
 @end

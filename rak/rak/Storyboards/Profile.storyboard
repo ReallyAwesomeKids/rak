@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,7 +82,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="408"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p0D-er-isk" customClass="PFImageView">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p0D-er-isk" customClass="PFImageView">
                                             <rect key="frame" x="112" y="11" width="150" height="150"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="150" id="C1Q-dn-smj"/>
@@ -201,11 +202,18 @@
                         <viewLayoutGuide key="safeArea" id="o9j-Lq-uPL"/>
                     </view>
                     <navigationItem key="navigationItem" id="xRz-W8-brF">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="tmV-xw-2Va">
-                            <connections>
-                                <action selector="didTapLogout:" destination="AyC-n9-XyL" id="3eK-nN-Wq2"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Logout" id="tmV-xw-2Va">
+                                <connections>
+                                    <action selector="didTapLogout:" destination="AyC-n9-XyL" id="3eK-nN-Wq2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Twitter" id="HUo-IP-5eU">
+                                <connections>
+                                    <action selector="didTapTwitter:" destination="AyC-n9-XyL" id="8Zf-9d-ECE"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="X5P-bC-C8z" id="t8n-GV-L6h"/>
@@ -213,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUR-ns-zUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="592.79999999999995" y="136.28185907046478"/>
+            <point key="canvasLocation" x="1532" y="136.28185907046478"/>
         </scene>
         <!--Popover View Controller-->
         <scene sceneID="OWX-oC-2Jt">
@@ -230,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edU-PN-iZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1408" y="182.60869565217394"/>
+            <point key="canvasLocation" x="2347.1999999999998" y="182.60869565217394"/>
         </scene>
     </scenes>
 </document>

@@ -5,9 +5,6 @@
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *logoLabel;
-
-@property (weak, nonatomic) IBOutlet UIButton *twitterLoginButton;
-
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
@@ -61,16 +58,6 @@
                                         }];
 }
 
-// Twitter Login
-- (IBAction)didTapLogin:(id)sender {
-    [[APIManager shared] loginWithCompletion:^(BOOL success, NSError *error) {
-        if (success) {
-            self.twitterLoginButton.alpha = 0;
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

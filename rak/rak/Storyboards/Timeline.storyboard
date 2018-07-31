@@ -95,20 +95,6 @@
                                                     </constraints>
                                                     <state key="normal" image="comment"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hS-dt-1bc">
-                                                    <rect key="frame" x="131" y="181" width="23" height="23"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="mKM-E7-IkN"/>
-                                                        <constraint firstAttribute="width" constant="23" id="vc5-Se-5z9"/>
-                                                        <constraint firstAttribute="height" constant="23" id="yx8-Lm-Bs3"/>
-                                                    </constraints>
-                                                    <state key="normal" image="twitter">
-                                                        <color key="titleColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="didTapTweet:" destination="UG1-AR-WGT" eventType="touchUpInside" id="Plu-A5-tWl"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-gF-doN">
                                                     <rect key="frame" x="72" y="181" width="23" height="23"/>
                                                     <constraints>
@@ -124,29 +110,26 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="AzZ-3W-gtw" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="73" id="2Db-gY-nfU"/>
-                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="bottom" secondItem="Ybe-gF-doN" secondAttribute="bottom" id="9OB-dG-Q11"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="9" id="APd-Eh-g1z"/>
                                                 <constraint firstItem="iR5-KQ-bq0" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="9" id="AkL-7O-yr0"/>
                                                 <constraint firstItem="cun-SK-CI1" firstAttribute="leading" secondItem="Ybe-gF-doN" secondAttribute="trailing" constant="6" id="BPb-P0-Q77"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ybe-gF-doN" secondAttribute="bottom" constant="18.5" id="GCk-xo-zha"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="15" id="GIt-I6-QKb"/>
+                                                <constraint firstItem="cun-SK-CI1" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="Gl6-eK-Puy"/>
                                                 <constraint firstItem="iR5-KQ-bq0" firstAttribute="leading" secondItem="QMe-2Q-kQf" secondAttribute="trailing" constant="8" id="IiP-VC-5dt"/>
                                                 <constraint firstItem="Ybe-gF-doN" firstAttribute="leading" secondItem="rWh-p3-xTo" secondAttribute="leading" constant="72" id="J9a-5o-nNE"/>
-                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="top" secondItem="Ybe-gF-doN" secondAttribute="top" id="M5p-rS-AJk"/>
+                                                <constraint firstItem="Ybe-gF-doN" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="PUo-lT-9wJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="AAk-k3-Xh3" secondAttribute="trailing" constant="35" id="ReA-YB-P4p"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cun-SK-CI1" secondAttribute="bottom" constant="8" id="WQ8-AA-RZm"/>
                                                 <constraint firstItem="cun-SK-CI1" firstAttribute="top" secondItem="Ybe-gF-doN" secondAttribute="top" id="cBG-U1-DUL"/>
-                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="top" secondItem="AzZ-3W-gtw" secondAttribute="bottom" constant="12" id="cvT-to-MWu"/>
                                                 <constraint firstItem="AAk-k3-Xh3" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="topMargin" constant="22.5" id="dNE-aA-ydw"/>
                                                 <constraint firstItem="AzZ-3W-gtw" firstAttribute="top" secondItem="AAk-k3-Xh3" secondAttribute="bottom" constant="15" id="eKf-Hz-Q2W"/>
                                                 <constraint firstItem="cun-SK-CI1" firstAttribute="bottom" secondItem="Ybe-gF-doN" secondAttribute="bottom" id="h3g-ue-bAB"/>
                                                 <constraint firstItem="QMe-2Q-kQf" firstAttribute="top" secondItem="rWh-p3-xTo" secondAttribute="top" constant="11" id="qaT-9D-THf"/>
-                                                <constraint firstItem="3hS-dt-1bc" firstAttribute="leading" secondItem="cun-SK-CI1" secondAttribute="trailing" constant="7" id="zCU-VJ-DZY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dotButton" destination="19x-4e-TQQ" id="JXE-1B-ejv"/>
-                                            <outlet property="postImageToButtonConstraint" destination="cvT-to-MWu" id="4Fk-VR-NIc"/>
                                             <outlet property="smileButton" destination="Ybe-gF-doN" id="CFo-Hr-6Vi"/>
                                             <outlet property="timelineLevel" destination="nZA-NB-Lhs" id="CtI-vR-L8P"/>
                                             <outlet property="timelinePostImage" destination="AzZ-3W-gtw" id="jtO-0a-W2v"/>
@@ -156,7 +139,6 @@
                                             <outlet property="timelineProfilePicture" destination="QMe-2Q-kQf" id="5LQ-nl-CAe"/>
                                             <outlet property="timelineText" destination="AAk-k3-Xh3" id="cFq-lX-xSl"/>
                                             <outlet property="timelineTimestamp" destination="LcD-FZ-QSL" id="ePW-ly-A0F"/>
-                                            <outlet property="tweetButton" destination="3hS-dt-1bc" id="4nd-ah-mwK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -176,7 +158,7 @@
                         <barButtonItem key="rightBarButtonItem" image="c" style="plain" id="5rw-k7-HNk">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="CcO-Aa-XpY" kind="show" id="d7c-fY-5X3"/>
+                                <segue destination="CcO-Aa-XpY" kind="show" identifier="composeSegue" id="d7c-fY-5X3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -320,7 +302,6 @@
         <image name="profile" width="30" height="30"/>
         <image name="smile" width="25" height="25"/>
         <image name="tag" width="488" height="74"/>
-        <image name="twitter" width="23" height="23"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
