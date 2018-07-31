@@ -127,10 +127,13 @@ CORE
 - [x] (Gustavo) Timeline VC: 
   - [x] (Gustavo) Images fade in
   - [x] (Gustavo) Smiley button 
+  - [x] (Gustavo) UIActivityController for Twitter functionality (replacing tweet button)
 - [x] (Gustavo) Compose VC: redesign
-- [x] (Gustavo) Home VC: When pressing check button, color changes
-- [x] (Gus/Haley) Sign up VC: sign up page
-- [ ] (Gus/Haley) Act Detail VC: Act detail view needs a lot of work
+- [ ] (Gustavo) Home VC: 
+  - [x] (Gustavo) When pressing check button, color changes
+  - [ ] (Gustavo) Daily challenges check button functionality
+- [x] (Gustavo/Haley) Sign up VC: sign up page
+- [ ] (Gustavo/Haley) Act Detail VC: Act detail view needs a lot of work
 - [x] (Haley) Login VC: Login page redesign
 - [ ] (Haley) Profile VC: Profile location is actually accurate
 - [x] (Haley) Profile VC: redesign

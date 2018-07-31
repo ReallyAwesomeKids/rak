@@ -229,7 +229,7 @@
                                         </constraints>
                                         <state key="normal" image="check"/>
                                         <connections>
-                                            <action selector="didTapCheckmarkButton:" destination="9DP-4D-YYf" eventType="touchUpInside" id="p8r-Mh-jHz"/>
+                                            <action selector="didTapDailyChallenge:" destination="9DP-4D-YYf" eventType="touchUpInside" id="gK6-Zn-3gO"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Daily Challenge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-Zo-TKf">
@@ -284,13 +284,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="hfF-By-Rx7">
                         <barButtonItem key="rightBarButtonItem" title="Profile" image="profile" id="MGy-UX-nGP">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="yPY-Ld-PMU" kind="show" id="vwV-xw-7qF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dailyChallengeButton" destination="cHC-r4-Rdd" id="VjM-Cm-9RW"/>
                         <outlet property="homeTaskName" destination="GPj-mr-fdr" id="LIZ-Bu-0oT"/>
                         <outlet property="tableView" destination="5Wp-XI-8V7" id="PBE-1h-9Kd"/>
                         <segue destination="LHm-sh-qOH" kind="presentation" identifier="popupSegue" id="18N-of-0Z2"/>

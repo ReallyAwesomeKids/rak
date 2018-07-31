@@ -5,7 +5,7 @@
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges;
+@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges, hasCompletedDailyChallenge;
 
 @synthesize delegate;
 

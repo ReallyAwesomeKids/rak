@@ -110,11 +110,9 @@
             if ([post tweetedByCurrent]) {
                 [post incrementKey:@"tweetCount" byAmount:@(-1)];
                 [post removeObject:CustomUser.currentUser.objectId forKey:@"tweetCount"];
-                [self.tweetButton setImage:[UIImage imageNamed:@"twitter"] forState:UIControlStateNormal];
             } else {
                 [post incrementKey:@"likeCount" byAmount:@(1)];
                 [post addObject:CustomUser.currentUser.objectId forKey:@"likedBy"];
-                [self.tweetButton setImage:[UIImage imageNamed:@"twitter-filled"] forState:UIControlStateNormal];
             }
             // Saves to Parse
             [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {

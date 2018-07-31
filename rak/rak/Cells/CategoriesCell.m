@@ -9,7 +9,7 @@
 - (void)configureCell: (ActCategory *) cat {
     self.cat = cat;
     self.categoriesLabel.text = self.cat.categoryName;
-    //self.categoriesBackgroundColorView.backgroundColor = self.cat.categoryColor;
+    self.categoriesBackgroundColorView.backgroundColor = [UIColor colorWithRed:self.cat.colorR green:self.cat.colorG blue:self.cat.colorB alpha:.8];
     self.categoriesImageView.image = nil;
     self.categoriesImageView.file = self.cat[@"categoryImage"];
     [self.categoriesImageView loadInBackground];
