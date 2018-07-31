@@ -20,6 +20,7 @@
 
 - (void)configureCell{
     self.actsView.text = self.selectAct.actName;
+    //self.actsView.font = [UIFont fontWithName:@"TheHappyGiraffe" size:20];
 }
 
 @end

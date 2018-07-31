@@ -2,6 +2,7 @@
 #import "CustomUser.h"
 #import "ParseUI/ParseUI.h"
 #import "Parse/Parse.h"
+#import "PointToLevelConverter.h"
 @implementation SearchCell
 
 - (void)awakeFromNib {
@@ -14,15 +15,13 @@
 }
 
 - (void)configureCell: (CustomUser *) user {
+    self.searchProfileImage.layer.cornerRadius = self.searchProfileImage.frame.size.height/2;
+    self.searchProfileImage.layer.masksToBounds = YES;
     self.searchProfileImage.image = nil;
     self.searchProfileImage.file = self.user[@"profileImage"];
     [self.searchProfileImage loadInBackground];
     self.searchProfileName.text = self.user.displayName;
-    self.searchProfilePoints.text = [@(self.user.experiencePoints) stringValue];
+    //self.searchProfilePoints.text = NSString stringWithFormat:(@"@%",[@(PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints)]);
 }
 
--(void) redesignSearch {
-    self.searchProfileImage.layer.cornerRadius = self.searchProfileImage.frame.size.height/2;
-    self.searchProfileImage.layer.masksToBounds = YES;
-}
 @end

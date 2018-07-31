@@ -116,13 +116,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task that directly correlates to this category" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sH9-jY-wXH">
-                                                    <rect key="frame" x="6" y="30" width="310" height="46.5"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="6" y="11" width="310" height="55"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                    <color key="textColor" red="0.027450980392156862" green="0.23137254901960785" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2k7-p0-NJh">
-                                                    <rect key="frame" x="338" y="34" width="30" height="30"/>
+                                                    <rect key="frame" x="338" y="23" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Kaf-tI-xPO"/>
                                                         <constraint firstAttribute="height" constant="30" id="OZx-fz-UcO"/>
@@ -140,9 +140,9 @@
                                                 <constraint firstItem="sH9-jY-wXH" firstAttribute="leading" secondItem="hun-Vt-cKz" secondAttribute="leading" constant="6" id="N7q-sC-iGY"/>
                                                 <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="sH9-jY-wXH" secondAttribute="bottom" constant="34.5" id="Npw-4J-u1u"/>
                                                 <constraint firstItem="2k7-p0-NJh" firstAttribute="leading" secondItem="sH9-jY-wXH" secondAttribute="trailing" constant="22" id="PX0-wH-VJn"/>
-                                                <constraint firstAttribute="bottom" secondItem="2k7-p0-NJh" secondAttribute="bottom" constant="28.5" id="R9p-nj-FWx"/>
-                                                <constraint firstItem="2k7-p0-NJh" firstAttribute="top" secondItem="hun-Vt-cKz" secondAttribute="top" constant="34" id="VU3-ye-ydE"/>
-                                                <constraint firstItem="sH9-jY-wXH" firstAttribute="top" secondItem="hun-Vt-cKz" secondAttribute="top" constant="30" id="sM5-PL-Gfg"/>
+                                                <constraint firstAttribute="bottom" secondItem="2k7-p0-NJh" secondAttribute="bottom" constant="39.5" id="R9p-nj-FWx"/>
+                                                <constraint firstItem="2k7-p0-NJh" firstAttribute="top" secondItem="hun-Vt-cKz" secondAttribute="top" constant="23" id="VU3-ye-ydE"/>
+                                                <constraint firstItem="sH9-jY-wXH" firstAttribute="top" secondItem="hun-Vt-cKz" secondAttribute="top" constant="11" id="sM5-PL-Gfg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

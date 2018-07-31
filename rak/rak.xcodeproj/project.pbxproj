@@ -18,6 +18,7 @@
 		2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3BA4210112AB004568EF /* LocationCell.m */; };
 		2C60F453210A4E120004DFD6 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C60F451210A4E120004DFD6 /* iCarousel.m */; };
 		2C60F454210A573B0004DFD6 /* FullDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE62A921091404000A4592 /* FullDescriptionViewController.m */; };
+		2C77AF2D210FE4AF009FC4F9 /* The Happy Giraffe Demo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C77AF2C210FE42D009FC4F9 /* The Happy Giraffe Demo.ttf */; };
 		2CE1BB832109599B00F2ACA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE1BB822109599B00F2ACA4 /* QuartzCore.framework */; };
 		48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDF13E0D63C064B2817FBB /* libPods-rak.a */; };
 		54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54516845210018CC00D45FE3 /* TimelineViewController.m */; };
@@ -108,6 +109,8 @@
 		2C5C3BA4210112AB004568EF /* LocationCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		2C60F451210A4E120004DFD6 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
 		2C60F452210A4E120004DFD6 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		2C77AF2B210FE42D009FC4F9 /* The Happy Giraffe - Terms Of Use.URL */ = {isa = PBXFileReference; lastKnownFileType = text; path = "The Happy Giraffe - Terms Of Use.URL"; sourceTree = "<group>"; };
+		2C77AF2C210FE42D009FC4F9 /* The Happy Giraffe Demo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Happy Giraffe Demo.ttf"; sourceTree = "<group>"; };
 		2CBE62A821091404000A4592 /* FullDescriptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullDescriptionViewController.h; sourceTree = "<group>"; };
 		2CBE62A921091404000A4592 /* FullDescriptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullDescriptionViewController.m; sourceTree = "<group>"; };
 		2CE1BB822109599B00F2ACA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -265,6 +268,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		2C77AF2A210FE42D009FC4F9 /* the-happy-giraffe */ = {
+			isa = PBXGroup;
+			children = (
+				2C77AF2B210FE42D009FC4F9 /* The Happy Giraffe - Terms Of Use.URL */,
+				2C77AF2C210FE42D009FC4F9 /* The Happy Giraffe Demo.ttf */,
+			);
+			path = "the-happy-giraffe";
+			sourceTree = "<group>";
+		};
 		54BE1DB12106A61200DA4A25 /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				5D329CE820FD15A200C180C9 /* rak */,
+				2C77AF2A210FE42D009FC4F9 /* the-happy-giraffe */,
 				5D329D0120FD15A300C180C9 /* rakTests */,
 				5D329D0C20FD15A300C180C9 /* rakUITests */,
 				5D329CE720FD15A200C180C9 /* Products */,
@@ -571,6 +584,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C77AF2D210FE4AF009FC4F9 /* The Happy Giraffe Demo.ttf in Resources */,
 				5D329D2220FD160C00C180C9 /* Profile.storyboard in Resources */,
 				5DB64CBD21065055002AE20E /* PopupViewXIB.xib in Resources */,
 				5D329D1E20FD15F300C180C9 /* Category.storyboard in Resources */,
