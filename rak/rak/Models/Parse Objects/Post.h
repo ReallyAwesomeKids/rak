@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSMutableArray * _Nullable tweetedBy;
 @property (nonatomic, strong) NSNumber * _Nonnull tweetCount;
 
+
 + (void)postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 + (PFFile *_Nullable)getPFFileFromImage: (UIImage * _Nullable)image;

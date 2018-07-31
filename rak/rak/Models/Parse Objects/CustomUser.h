@@ -24,6 +24,8 @@
 @property (nonatomic) NSInteger experiencePoints;
 @property (nonatomic) NSDictionary *actHistory;
 @property (nonatomic) NSInteger amountActsDone;
+@property (nonatomic, assign) BOOL hasCompletedDailyChallenge;
+
 
 // Badges
 @property (strong, nonatomic) NSArray *overallBadges;
