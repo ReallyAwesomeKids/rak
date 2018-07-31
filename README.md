@@ -130,10 +130,10 @@ CORE
 - [x] (Gustavo) Compose VC: redesign
 - [ ] (Gustavo) Home VC: When pressing check button, color changes
 - [ ] (Gustavo) Sign up VC: sign up page
-- [ ] (Gustavo) Login VC: Login page redesign
 - [ ] (Gus/Haley) Act Detail VC: Act detail view needs a lot of work
+- [x] (Haley) Login VC: Login page redesign
 - [ ] (Haley) Profile VC: Profile location is actually accurate
-- [ ] (Haley) Profile VC: redesign
+- [x] (Haley) Profile VC: redesign
 - [x] (Halima) Map VC: description page design; remove placeholder text
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
 - [ ] (Halima) Map VC: view is centered on current/user's location

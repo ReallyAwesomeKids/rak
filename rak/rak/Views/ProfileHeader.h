@@ -11,10 +11,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *streakLabel;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *percentToNextLevelLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *streakImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *levelImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *percentToNextLevelImageView;
+
+@property (weak, nonatomic) IBOutlet UIView *percentBar;
+@property (weak, nonatomic) IBOutlet UIView *movingPercentBar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *movingPercentBarWidthConstraint;
+
 
 @end

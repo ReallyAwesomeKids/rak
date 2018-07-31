@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
 @property (weak, nonatomic) IBOutlet UIView *cellView;
 
+- (IBAction)didTapCellCheckmark:(id)sender;
+
 @end

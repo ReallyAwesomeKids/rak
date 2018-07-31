@@ -30,6 +30,7 @@
 		548438AB20FFF7F900592EB1 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438AA20FFF7F900592EB1 /* Timeline.storyboard */; };
 		548438AD20FFF8EB00592EB1 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548438AC20FFF8EB00592EB1 /* Map.storyboard */; };
 		548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 548B222C20FD508200D667F7 /* ActsTableViewCell.m */; };
+		54BCCB18210FE290009AD078 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BCCB17210FE290009AD078 /* SignUpViewController.m */; };
 		54BE1DA621069D8200DA4A25 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DA521069D8200DA4A25 /* APIManager.m */; };
 		54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DAC2106A01000DA4A25 /* Tweet.m */; };
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
@@ -133,6 +134,8 @@
 		548438AC20FFF8EB00592EB1 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		548B222B20FD508200D667F7 /* ActsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActsTableViewCell.h; sourceTree = "<group>"; };
 		548B222C20FD508200D667F7 /* ActsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActsTableViewCell.m; sourceTree = "<group>"; };
+		54BCCB16210FE290009AD078 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		54BCCB17210FE290009AD078 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		54BE1DA421069D8200DA4A25 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		54BE1DA521069D8200DA4A25 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		54BE1DAB2106A01000DA4A25 /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
@@ -376,6 +379,8 @@
 				5D329D3220FD170500C180C9 /* CategoriesViewController.m */,
 				5D329D3420FD172000C180C9 /* ActCategoryViewController.h */,
 				5D329D3520FD172000C180C9 /* ActCategoryViewController.m */,
+				54BCCB16210FE290009AD078 /* SignUpViewController.h */,
+				54BCCB17210FE290009AD078 /* SignUpViewController.m */,
 				5D329D3720FD184900C180C9 /* LoginViewController.h */,
 				5D329D3820FD184900C180C9 /* LoginViewController.m */,
 				548438A520FFB65700592EB1 /* SearchViewController.h */,
@@ -745,6 +750,7 @@
 				5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */,
 				5D1E72E92107E7BE00C0FA8E /* PopoverViewController.m in Sources */,
 				548438A720FFB65700592EB1 /* SearchViewController.m in Sources */,
+				54BCCB18210FE290009AD078 /* SignUpViewController.m in Sources */,
 				54BE1DA621069D8200DA4A25 /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
