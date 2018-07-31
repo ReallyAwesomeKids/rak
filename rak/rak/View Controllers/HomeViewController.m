@@ -218,7 +218,7 @@
         composingVC.delegate = self;
         if (self.badgeForPopup != nil) {
             composingVC.autoFilledText =[NSString stringWithFormat:@"I just earned a new badge: %@!", self.badgeForPopup.badgeName];
-        composingVC.autoFilledPhoto = [UIImage imageNamed:@"goldStar.png"];
+        composingVC.autoFilledPhoto = [UIImage imageNamed:@"trophy.png"];
         }
         else if (self.levelForPopup != 0) {
             composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];
