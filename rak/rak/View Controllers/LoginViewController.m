@@ -4,6 +4,8 @@
 
 @interface LoginViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *logoLabel;
+
 @property (weak, nonatomic) IBOutlet UIButton *twitterLoginButton;
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -17,6 +19,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupLogoLabel];
+}
+
+- (void)setupLogoLabel {
+    NSMutableAttributedString *attributed = [[NSMutableAttributedString alloc] initWithString:self.logoLabel.text];
+  
+    NSRange range = NSMakeRange(4, 1);
+    
+    UIColor *color = [[UIColor alloc] initWithRed:255/255.f
+                                            green:209/255.f
+                                             blue:102/255.f
+                                            alpha:1];
+    
+    UIFont *font = [UIFont fontWithName:@"Bradley Hand" size:72];
+    
+    [attributed beginEditing];
+    [attributed addAttribute:NSForegroundColorAttributeName
+                                 value:color
+                                 range:range];
+    [attributed addAttribute:NSFontAttributeName
+                       value:font
+                       range:range];
+    [attributed endEditing];
+  //  self.logoLabel.text = nil;
+    self.logoLabel.attributedText = attributed;
 }
 
 - (IBAction)didTap:(id)sender {
