@@ -23,9 +23,7 @@
     self.profileImageView.file = self.user.profileImage;
     [self.profileImageView loadInBackground];
     
-    self.streakImageView.image = [UIImage imageNamed:@"fire.png"];
     self.levelImageView.image = [UIImage imageNamed:@"level.png"];
-    self.percentToNextLevelImageView.image = [UIImage imageNamed:@"progress.png"];
     
     // Setting labels
     self.displayNameLabel.text = self.user.displayName;
@@ -33,14 +31,21 @@
     
     // Setting streak
     [self.user updateDailyStreak];
-    self.streakLabel.text = [NSString stringWithFormat:@"%ld", self.user.streak];
+    self.streakLabel.text = [NSString stringWithFormat:@"🔥%ld day streak🔥", self.user.streak];
     
     // Setting user level
     NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints];
     self.levelLabel.text = [NSString stringWithFormat:@"%ld", levelNumber];
     
-    NSInteger percentToNextLevel = [PointToLevelConverter getPercentToNextLevelFromPoints:self.user.experiencePoints];
-    self.percentToNextLevelLabel.text = [NSString stringWithFormat:@"%lu%%", percentToNextLevel];
+    // display progress to next level
+    float percentToNextLevel = [PointToLevelConverter getPercentToNextLevelFromPoints:self.user.experiencePoints];
+  
+    self.percentBar.layer.borderColor = [UIColor blackColor].CGColor;
+    self.percentBar.layer.borderWidth = 2.0f;
+    
+    CGFloat newWidth = self.percentBar.frame.size.width * percentToNextLevel;
+    self.movingPercentBarWidthConstraint.constant = newWidth;
+    self.percentToNextLevelLabel.text = [NSString stringWithFormat:@"%d%% to Level %ld", (int)(percentToNextLevel * 100), levelNumber + 1];
 }
 
 @end

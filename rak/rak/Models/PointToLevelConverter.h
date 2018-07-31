@@ -3,6 +3,6 @@
 @interface PointToLevelConverter : NSObject
 
 + (NSInteger)getCurrentLevelFromPoints:(NSInteger)points;
-+ (NSInteger)getPercentToNextLevelFromPoints:(NSInteger)points;
++ (float)getPercentToNextLevelFromPoints:(NSInteger)points;
 
 @end
