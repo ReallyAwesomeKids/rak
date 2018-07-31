@@ -134,12 +134,12 @@ CORE
 - [ ] (Gus/Haley) Act Detail VC: Act detail view needs a lot of work
 - [ ] (Haley) Profile VC: Profile location is actually accurate
 - [ ] (Haley) Profile VC: redesign
-- [ ] (Halima) Map VC: description page design; remove placeholder text
-- [ ] (Halima) Map VC: When searching for location, pop up keyboard automatically
+- [x] (Halima) Map VC: description page design; remove placeholder text
+- [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
 - [ ] (Halima) Map VC: view is centered on current/user's location
 - [ ] (Halima) Search Page VC: Search page redesign
 - [ ] (Halima) Categories page design
-  - [ ] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
+  - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
   - [ ] Category VC: Carousel 
 - [ ] (Halima) Home/Category VC: Each cell in Home/Category VC should follow the collor from its Category. E.g All dating (blue) cells are blue
 
