@@ -382,7 +382,7 @@
     <resources>
         <image name="Daily Challenges" width="65" height="65"/>
         <image name="category" width="25" height="25"/>
-        <image name="check" width="20" height="20"/>
+        <image name="check" width="23" height="23"/>
         <image name="home-1" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
         <image name="profile" width="30" height="30"/>
