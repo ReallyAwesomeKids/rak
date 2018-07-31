@@ -21,7 +21,6 @@
     [super viewDidLoad];
     self.descriptionTextView.delegate = self;
     self.descriptionPlaceholder.alpha = 1;
-    [self textViewDidChange:self.descriptionTextView];
 
     // Do any additional setup after loading the view.
 }
