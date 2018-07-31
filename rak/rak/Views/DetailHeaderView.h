@@ -8,6 +8,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *completedCountLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *historyLabel;
+
 @property (strong, nonatomic) Act *act;
 
 @end

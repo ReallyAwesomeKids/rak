@@ -10,12 +10,14 @@
 @property (weak, nonatomic) IBOutlet DetailHeaderView *headerView;
 @property (strong, nonatomic) NSArray *completionLog;
 
+
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
     // TableView setup
     self.tableView.delegate = self;
