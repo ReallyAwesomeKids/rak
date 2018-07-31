@@ -124,12 +124,12 @@ CORE
 ## Week 3 - 7/30/18 - 8/3/18
 - [ ] (Everyone) App VC: Change font/emoji
 - [x] (Gustavo) Database: Assign points to tasks
-- [ ] (Gustavo) Timeline VC: 
+- [x] (Gustavo) Timeline VC: 
   - [x] (Gustavo) Images fade in
-  - [ ] (Gustavo) Smiley button 
+  - [x] (Gustavo) Smiley button 
 - [x] (Gustavo) Compose VC: redesign
-- [ ] (Gustavo) Home VC: When pressing check button, color changes
-- [ ] (Gustavo) Sign up VC: sign up page
+- [x] (Gustavo) Home VC: When pressing check button, color changes
+- [x] (Gus/Haley) Sign up VC: sign up page
 - [ ] (Gus/Haley) Act Detail VC: Act detail view needs a lot of work
 - [x] (Haley) Login VC: Login page redesign
 - [ ] (Haley) Profile VC: Profile location is actually accurate

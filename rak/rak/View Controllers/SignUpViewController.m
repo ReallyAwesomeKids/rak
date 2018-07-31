@@ -5,6 +5,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *signUpUsername;
 @property (weak, nonatomic) IBOutlet UITextField *signUpPassword;
 @property (weak, nonatomic) IBOutlet UITextField *signUpConfirmPassword;
+@property (weak, nonatomic) IBOutlet UITextField *signUpLocation;
 
 @property (weak, nonatomic) IBOutlet UILabel *logoLabel;
 
@@ -77,19 +78,39 @@
     [alert addAction:passwordAlert];
     [self presentViewController:alert animated:YES completion:nil];
 }
+
+- (void)locationValidation {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                   message:@"No location inserted"
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+    // create an OK action
+    UIAlertAction *passwordAlert = [UIAlertAction actionWithTitle:@"Ok"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                              // handle response here.
+                                                          }];
+    // add the OK action to the alert controller
+    [alert addAction:passwordAlert];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (void)registerUser {
     // initialize a user object
-    PFUser *newUser = [PFUser user];
+    CustomUser *newUser = [CustomUser user];
     
     // set user properties
     newUser.username = self.signUpUsername.text;
     newUser.password = self.signUpPassword.text;
+    newUser.location = self.signUpLocation.text;
     
-    if ([self.signUpUsername.text isEqual:@""]) {
+    if ([self.signUpUsername.text isEqualToString:@""]) {
         [self usernameValidation];
     }
-    else if ([self.signUpPassword.text isEqual:@""]) {
+    else if ([self.signUpPassword.text isEqualToString:@""]) {
         [self passwordValidation];
+    }
+    else if ([self.signUpLocation.text isEqualToString:@""]) {
+        [self locationValidation];
     }
     else {
         // call sign up function on the object
@@ -105,8 +126,6 @@
         }];
     }
 }
-
-
 
 /*
 #pragma mark - Navigation
