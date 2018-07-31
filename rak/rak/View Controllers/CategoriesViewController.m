@@ -33,14 +33,13 @@
 - (void) changeCategoriesLayout {
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
     [layout setScrollDirection:(UICollectionViewScrollDirectionHorizontal)];
-//    // Adjusts spacing between cells
-//    layout.minimumInteritemSpacing = 10;
-//    layout.minimumLineSpacing = 10;
-//    // Cell setup
-//    CGFloat categoriesPerLine = 1;
-//    CGFloat itemWidth = (self.categoriesCollectionView.frame.size.width - layout.minimumInteritemSpacing * (categoriesPerLine - .5))/ categoriesPerLine;
-//    CGFloat itemHeight = itemWidth * 1.5;
-//    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    // Adjusts spacing between cells
+    layout.minimumInteritemSpacing = 10;
+    layout.minimumLineSpacing = 10;
+    // Cell setup
+    CGFloat itemWidth = 300;
+    CGFloat itemHeight = 550;
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
 
 //Creates Collection View for Categories
