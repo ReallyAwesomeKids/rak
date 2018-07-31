@@ -21,7 +21,7 @@
     self.searchProfileImage.file = self.user[@"profileImage"];
     [self.searchProfileImage loadInBackground];
     self.searchProfileName.text = self.user.displayName;
-    //self.searchProfilePoints.text = NSString stringWithFormat:(@"@%",[@(PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints)]);
+    self.searchProfilePoints.text = [NSString stringWithFormat:@"%ld", (long)[PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints]];
 }
 
 @end
