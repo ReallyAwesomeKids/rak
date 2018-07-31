@@ -54,29 +54,6 @@
                                     <constraint firstAttribute="trailing" secondItem="cMy-Oz-3Kb" secondAttribute="trailing" id="nYD-Fp-mb5"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAM-aD-Li7">
-                                <rect key="frame" x="179.5" y="386" width="16" height="13.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="td2-2E-nxW">
-                                <rect key="frame" x="100" y="417" width="175" height="90"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebp-rW-i1h">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="90"/>
-                                        <state key="normal" image="2">
-                                            <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCv-Mq-f42"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="roz-5V-yvs"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do Güd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZO-Hq-U3I">
                                 <rect key="frame" x="61" y="145" width="249" height="83.5"/>
                                 <constraints>
@@ -93,14 +70,8 @@
                             <constraint firstItem="9b5-4K-XtA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0c7-dR-C8R"/>
                             <constraint firstItem="9b5-4K-XtA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="89M-Dd-pxr"/>
                             <constraint firstItem="9b5-4K-XtA" firstAttribute="top" secondItem="KZO-Hq-U3I" secondAttribute="bottom" constant="30" id="FbG-S6-23R"/>
-                            <constraint firstItem="oAM-aD-Li7" firstAttribute="top" secondItem="9b5-4K-XtA" secondAttribute="bottom" constant="18" id="RnX-VR-f3q"/>
                             <constraint firstItem="9b5-4K-XtA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="Wkt-fU-Bw1"/>
-                            <constraint firstItem="oAM-aD-Li7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XFb-tN-p0d"/>
-                            <constraint firstAttribute="trailing" secondItem="td2-2E-nxW" secondAttribute="trailing" constant="100" id="byc-jh-JAH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9b5-4K-XtA" secondAttribute="trailing" constant="45" id="eIT-n6-WgF"/>
-                            <constraint firstItem="td2-2E-nxW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fjH-7V-xKa"/>
-                            <constraint firstItem="td2-2E-nxW" firstAttribute="top" secondItem="oAM-aD-Li7" secondAttribute="bottom" constant="18" id="pc6-N7-Ovk"/>
-                            <constraint firstItem="td2-2E-nxW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="pda-Q2-l77"/>
                             <constraint firstItem="KZO-Hq-U3I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-2" id="uzp-Vy-AVc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -108,7 +79,6 @@
                     <connections>
                         <outlet property="logoLabel" destination="KZO-Hq-U3I" id="pKz-NF-TTJ"/>
                         <outlet property="passwordTextField" destination="cMy-Oz-3Kb" id="Wa8-zw-uSl"/>
-                        <outlet property="twitterLoginButton" destination="Ebp-rW-i1h" id="Yx3-Ah-g4r"/>
                         <outlet property="usernameTextField" destination="w3y-6o-cec" id="xsz-1b-RXg"/>
                         <segue destination="svd-l7-Zpf" kind="show" identifier="toGustavoSegue" id="zyf-mB-r69"/>
                     </connections>
@@ -260,7 +230,4 @@
             <point key="canvasLocation" x="-612" y="25.637181409295355"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="2" width="354" height="64"/>
-    </resources>
 </document>
