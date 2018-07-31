@@ -176,7 +176,7 @@
                         <barButtonItem key="rightBarButtonItem" image="c" style="plain" id="5rw-k7-HNk">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="CcO-Aa-XpY" kind="show" id="d7c-fY-5X3"/>
+                                <segue destination="CcO-Aa-XpY" kind="show" identifier="composeSegue" id="d7c-fY-5X3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
