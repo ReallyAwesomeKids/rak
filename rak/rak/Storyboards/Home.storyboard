@@ -184,9 +184,10 @@
                                                         <constraint firstAttribute="height" constant="25" id="63O-Mq-Thl"/>
                                                         <constraint firstAttribute="width" constant="25" id="mh8-fM-bhd"/>
                                                     </constraints>
-                                                    <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" image="xx"/>
+                                                    <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="check"/>
                                                     <connections>
+                                                        <action selector="didTapCellCheckmark:" destination="zSa-EQ-5fP" eventType="touchUpInside" id="UkY-ch-scO"/>
                                                         <action selector="didTapCheckButton:" destination="9DP-4D-YYf" eventType="touchUpInside" id="ubd-tA-Nkd"/>
                                                     </connections>
                                                 </button>
@@ -226,7 +227,7 @@
                                             <constraint firstAttribute="height" constant="25" id="7vq-5E-kgL"/>
                                             <constraint firstAttribute="width" constant="25" id="MV9-v9-RPf"/>
                                         </constraints>
-                                        <state key="normal" image="xx"/>
+                                        <state key="normal" image="check"/>
                                         <connections>
                                             <action selector="didTapCheckmarkButton:" destination="9DP-4D-YYf" eventType="touchUpInside" id="p8r-Mh-jHz"/>
                                         </connections>
@@ -381,12 +382,12 @@
     <resources>
         <image name="Daily Challenges" width="65" height="65"/>
         <image name="category" width="25" height="25"/>
+        <image name="check" width="20" height="20"/>
         <image name="home-1" width="25" height="25"/>
         <image name="map" width="25" height="25"/>
         <image name="profile" width="30" height="30"/>
         <image name="search" width="25" height="25"/>
         <image name="timeline" width="25" height="25"/>
-        <image name="xx" width="28" height="28"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

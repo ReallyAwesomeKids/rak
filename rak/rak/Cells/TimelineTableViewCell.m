@@ -10,6 +10,8 @@
     // parse objects setup
     _post = post;
     self.user = CustomUser.currentUser;
+    __weak TimelineTableViewCell *weakSelf = self;
+
     
     // Setting texts/labels
     self.timelineText.text = self.post.caption;
@@ -24,8 +26,6 @@
     self.timelineProfilePicture.file = self.post.author.profileImage;
     self.timelineProfilePicture.layer.cornerRadius = self.timelineProfilePicture.frame.size.height/2;
     [self.timelineProfilePicture loadInBackground];
-    
-    __weak TimelineTableViewCell *weakSelf = self;
     
     // Checks if post has an image
     if ([[APIManager shared] checksForAFile:self.post.image]) {

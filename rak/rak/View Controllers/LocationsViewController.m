@@ -28,6 +28,7 @@ static NSString * const clientSecret = @"W2AOE1TYC4MHK5SZYOUGX0J3LVRALMPB4CXT3ZH
     self.locationsTableView.delegate = self;
     self.locationsTableView.dataSource = self;
     self.locationsSearchBar.delegate = self;
+    [self.locationsSearchBar becomeFirstResponder];
     // Do any additional setup after loading the view.
 }
 
