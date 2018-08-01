@@ -48,7 +48,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k57-ba-BZ6">
                                                     <rect key="frame" x="118" y="24" width="249" height="39"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
                                                     <color key="textColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -76,6 +76,7 @@
                                             <outlet property="searchProfileImage" destination="0r6-oV-H3F" id="Fp8-Gn-q8d"/>
                                             <outlet property="searchProfileName" destination="k57-ba-BZ6" id="Q8a-Kt-HGy"/>
                                             <outlet property="searchProfilePoints" destination="wj9-rg-gZF" id="0Eo-JN-nqI"/>
+                                            <segue destination="Kxd-cz-vvU" kind="show" identifier="profileSegue" id="tfk-Py-Zk5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -93,7 +94,6 @@
                     <connections>
                         <outlet property="searchBar" destination="CUV-Wp-de6" id="cXo-lM-Vci"/>
                         <outlet property="searchTableView" destination="Nl0-Eb-NV6" id="MyA-gK-Xfg"/>
-                        <segue destination="Kxd-cz-vvU" kind="show" identifier="profileSegue" id="iYw-bK-iKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAO-S6-Fv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
