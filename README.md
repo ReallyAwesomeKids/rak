@@ -129,13 +129,13 @@ CORE
   - [x] (Gustavo) Smiley button 
   - [x] (Gustavo) UIActivityController for Twitter functionality (replacing tweet button)
 - [x] (Gustavo) Compose VC: redesign
-- [ ] (Gustavo) Home VC: 
+- [x] (Gustavo) Home VC: 
   - [x] (Gustavo) When pressing check button, color changes
-  - [ ] (Gustavo) Daily challenges check button functionality
+  - [x] (Gustavo) Daily challenges check button functionality
 - [x] (Gustavo/Haley) Sign up VC: sign up page
 - [x] (Gustavo/Haley) Act Detail VC: Act detail view needs a lot of work
 - [x] (Haley) Login VC: Login page redesign
-- [ ] (Haley) Profile VC: Profile location is actually accurate
+- [x] (Haley) Profile VC: Profile location is actually accurate
 - [x] (Haley) Profile VC: redesign
 - [x] (Halima) Map VC: description page design; remove placeholder text
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
@@ -144,9 +144,11 @@ CORE
 - [ ] (Halima) Categories page design
   - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
   - [ ] Category VC: Carousel 
+- [ ] (Halima) Add acts from map to homepage; being able to complete them
+- [ ] () User can add their own acts of kindness
+- [ ] () Design launch screen and logo
 
 ## Week 4 - 8/6/18 - 8/10/18
-- [ ] Design launch screen and logo
 
 ## Week 5 - 8/13/18 - 8/17/18
 
