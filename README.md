@@ -133,18 +133,17 @@ CORE
   - [x] (Gustavo) When pressing check button, color changes
   - [ ] (Gustavo) Daily challenges check button functionality
 - [x] (Gustavo/Haley) Sign up VC: sign up page
-- [ ] (Gustavo/Haley) Act Detail VC: Act detail view needs a lot of work
+- [x] (Gustavo/Haley) Act Detail VC: Act detail view needs a lot of work
 - [x] (Haley) Login VC: Login page redesign
 - [ ] (Haley) Profile VC: Profile location is actually accurate
 - [x] (Haley) Profile VC: redesign
 - [x] (Halima) Map VC: description page design; remove placeholder text
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
 - [ ] (Halima) Map VC: view is centered on current/user's location
-- [ ] (Halima) Search Page VC: Search page redesign
+- [x] (Halima) Search Page VC: Search page redesign
 - [ ] (Halima) Categories page design
   - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
   - [ ] Category VC: Carousel 
-- [ ] (Halima) Home/Category VC: Each cell in Home/Category VC should follow the collor from its Category. E.g All dating (blue) cells are blue
 
 ## Week 4 - 8/6/18 - 8/10/18
 - [ ] Design launch screen and logo
