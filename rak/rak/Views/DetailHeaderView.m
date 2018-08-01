@@ -1,5 +1,6 @@
 #import "DetailHeaderView.h"
 #import "CustomUser.h"
+#import "ActCategory.h"
 
 @implementation DetailHeaderView
 
@@ -28,16 +29,26 @@
 }
 
 - (void)addImage {
-    CGFloat stackViewBottomY = self.stackView.frame.origin.y + self.stackView.frame.size.height;
-    CGFloat labelTopY = self.historyLabel.frame.origin.y;
-    CGFloat imageHeight = (stackViewBottomY + labelTopY) / 2;
-    CGRect imageFrame = CGRectMake(0, 0, self.frame.size.width, imageHeight);
-    UIImageView *backgroundImage = [[UIImageView alloc] initWithFrame:imageFrame];
-    [backgroundImage setImage:[UIImage imageNamed:@"darkerbluebg.jpg"]];
-    [backgroundImage setContentMode:UIViewContentModeScaleAspectFill];
-    [backgroundImage setClipsToBounds:YES];
-  
-    [self insertSubview:backgroundImage belowSubview:self.stackView];
+    PFQuery *query = [ActCategory query];
+    [query whereKey:@"categoryName" equalTo:self.act.category];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable categories, NSError * _Nullable error) {
+        if (categories != nil) {
+            ActCategory *category = categories[0];
+            NSString *imageName = category.detailViewImageName;
+            CGFloat stackViewBottomY = self.stackView.frame.origin.y + self.stackView.frame.size.height;
+            CGFloat labelTopY = self.historyLabel.frame.origin.y;
+            CGFloat imageHeight = (stackViewBottomY + labelTopY) / 2;
+            CGRect imageFrame = CGRectMake(0, 0, self.frame.size.width, imageHeight);
+            UIImageView *backgroundImage = [[UIImageView alloc] initWithFrame:imageFrame];
+            [backgroundImage setImage:[UIImage imageNamed:imageName]];
+            [backgroundImage setContentMode:UIViewContentModeScaleAspectFill];
+            [backgroundImage setClipsToBounds:YES];
+            
+            [self insertSubview:backgroundImage belowSubview:self.stackView];
+        }
+    }];
+    
+    
 }
 
 /*
