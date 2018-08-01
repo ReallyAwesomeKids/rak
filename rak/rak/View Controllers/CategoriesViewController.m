@@ -37,7 +37,7 @@
     layout.minimumInteritemSpacing = 10;
     layout.minimumLineSpacing = 10;
     // Cell setup
-    CGFloat itemWidth = 300;
+    CGFloat itemWidth = 330;
     CGFloat itemHeight = 550;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
