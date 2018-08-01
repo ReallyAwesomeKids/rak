@@ -6,6 +6,7 @@
 @property (strong, nonatomic) NSString *categoryName;
 @property (strong, nonatomic) NSArray *acts;
 @property (strong, nonatomic) PFFile *categoryImage;
+@property (strong, nonatomic) NSString *detailViewImageName;
 
 @property (nonatomic) CGFloat colorR;
 @property (nonatomic) CGFloat colorG;

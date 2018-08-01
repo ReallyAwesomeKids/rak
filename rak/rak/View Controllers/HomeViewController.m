@@ -1,5 +1,6 @@
 #import "HomeViewController.h"
 #import "Act.h"
+#import "CustomUser.h"
 #import "Parse.h"
 #import "ActsTableViewCell.h"
 #import "DetailViewController.h"
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @property (nonatomic, strong) NSMutableArray *acts;
+@property (nonatomic) NSInteger levelForPopup;
 
 // Array used when perfoming the swipable option of deleting an act
 @property (nonatomic, strong) NSMutableArray *deletedActs;
@@ -25,8 +27,14 @@
 // Used in fetchUserActs
 @property (nonatomic, strong) NSArray *userActs;
 
-@property (nonatomic) NSInteger levelForPopup;
+// Objects
+@property (nonatomic) Act *dailyChallengeAct;
 @property (nonatomic) Badge *badgeForPopup;
+
+// Buttons
+@property (weak, nonatomic) IBOutlet UIButton *dailyChallengeButton;
+- (IBAction)didTapDailyChallenge:(id)sender;
+
 
 @end
 
@@ -42,6 +50,7 @@
     
     // initialization
     self.refreshControl = [[UIRefreshControl alloc] init];
+    [self initializeCheckmark];
     
     // fetch data from db
     [self fetchUserActs];
@@ -55,6 +64,7 @@
     [self.tableView sendSubviewToBack:self.refreshControl];
     
     CustomUser.currentUser.delegate = self;
+
 }
 
 - (void)fetchUserActs {
@@ -99,6 +109,7 @@
             }
             [displayedChallenge updateDateLastFeatured];
             self.homeTaskName.text = displayedChallenge.actName;
+            self.dailyChallengeAct = displayedChallenge;
             [self.tableView reloadData];
         }
         else {
@@ -141,11 +152,51 @@
     }
 }
 
+- (void)initializeCheckmark {
+    CustomUser *user = CustomUser.currentUser;
+    if (user.hasCompletedDailyChallenge) {
+        [self.dailyChallengeButton setImage:[UIImage imageNamed:@"check-filled"] forState:UIControlStateNormal];
+    }
+    else {
+        [self.dailyChallengeButton setImage:[UIImage imageNamed:@"check"] forState:UIControlStateNormal];
+    }
+}
+
 - (IBAction)didTapCheckButton:(id)sender {
     UIButton *button = (UIButton *)sender;
     ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview;
     Act *act = cell.act;
     [self userDidCompleteAct:act];
+}
+
+- (IBAction)didTapDailyChallenge:(id)sender {
+    if (!self.user.hasCompletedDailyChallenge) {
+        // Parse update
+        Act *act = self.dailyChallengeAct;
+        self.user.hasCompletedDailyChallenge = YES;
+        [self userDidCompleteAct:act];
+        [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (error)
+                NSLog(@"error: %@", error.localizedDescription);
+            else {
+                NSLog(@"Saved in background");
+            }
+        }];
+        
+        // Animates the button
+        [self.dailyChallengeButton setAlpha:0.f];
+        [self.dailyChallengeButton setImage:[UIImage imageNamed:@"check-filled"] forState:UIControlStateNormal];
+        [UIView animateWithDuration:1.f delay:0.f options:UIViewAnimationOptionCurveEaseIn animations:^{
+            // Becomes visible
+            [self.dailyChallengeButton setAlpha:1.f];
+        } completion:nil];
+        
+        // Notification
+        [MessageView presentMessageViewWithText:@"You have completed your Daily Challenge!"
+                            withTapInstructions:@"Tap to the share the story"
+                               onViewController:self
+                                    forDuration:6];
+    }
 }
 
 - (void)userDidCompleteAct:(Act *)act {
@@ -231,5 +282,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
