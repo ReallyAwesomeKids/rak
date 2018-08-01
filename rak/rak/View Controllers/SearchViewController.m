@@ -45,9 +45,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"profileSegue"]) {
+        SearchCell *tappedCell = (SearchCell*)sender;
         ProfileViewController *profileViewController = [segue destinationViewController];
-        SearchCell *cell;
-        profileViewController.userProfile.username = cell.user.username;
+        profileViewController.userProfile = tappedCell.user;
     }
 }
 
@@ -102,7 +102,6 @@
     [self.searchTableView reloadData];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"profileSegue" sender:nil];
 }
 
 @end

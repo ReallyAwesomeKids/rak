@@ -6,7 +6,7 @@
 #import "LocationsViewController.h"
 #import "FullDescriptionViewController.h"
 #import "MapPin.h"
-
+#import "CustomUser.h"
 
 //Interface
 @interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate>
