@@ -10,7 +10,7 @@
 
 @implementation MapPin
 
-@dynamic latitude, longitude, locationName, locationDescription;
+@dynamic latitude, longitude, locationName, locationDescription, act;
 
 + (NSString *)parseClassName {
     return @"MapPin";

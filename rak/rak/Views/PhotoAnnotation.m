@@ -11,8 +11,12 @@
 
 @implementation PhotoAnnotation
 
--(NSString *) title {
+- (NSString *) title {
     return [NSString stringWithFormat:@"%@", self.locationName];
+}
+
+- (NSString *) subtitle {
+    return self.actDescription;
 }
 
 @end

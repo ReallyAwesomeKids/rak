@@ -17,7 +17,6 @@
 		2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9E2101105C004568EF /* LocationsViewController.m */; };
 		2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3BA4210112AB004568EF /* LocationCell.m */; };
 		2C60F453210A4E120004DFD6 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C60F451210A4E120004DFD6 /* iCarousel.m */; };
-		2C60F454210A573B0004DFD6 /* FullDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBE62A921091404000A4592 /* FullDescriptionViewController.m */; };
 		2C77AF2D210FE4AF009FC4F9 /* The Happy Giraffe Demo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C77AF2C210FE42D009FC4F9 /* The Happy Giraffe Demo.ttf */; };
 		2CE1BB832109599B00F2ACA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE1BB822109599B00F2ACA4 /* QuartzCore.framework */; };
 		48C64369F47B34DDACE94B5B /* libPods-rak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECDF13E0D63C064B2817FBB /* libPods-rak.a */; };
@@ -113,8 +112,6 @@
 		2C60F452210A4E120004DFD6 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		2C77AF2B210FE42D009FC4F9 /* The Happy Giraffe - Terms Of Use.URL */ = {isa = PBXFileReference; lastKnownFileType = text; path = "The Happy Giraffe - Terms Of Use.URL"; sourceTree = "<group>"; };
 		2C77AF2C210FE42D009FC4F9 /* The Happy Giraffe Demo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Happy Giraffe Demo.ttf"; sourceTree = "<group>"; };
-		2CBE62A821091404000A4592 /* FullDescriptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullDescriptionViewController.h; sourceTree = "<group>"; };
-		2CBE62A921091404000A4592 /* FullDescriptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullDescriptionViewController.m; sourceTree = "<group>"; };
 		2CE1BB822109599B00F2ACA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2ECDF13E0D63C064B2817FBB /* libPods-rak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rak.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rakUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,8 +261,6 @@
 				2C60F451210A4E120004DFD6 /* iCarousel.m */,
 				2C5C3BA3210112AB004568EF /* LocationCell.h */,
 				2C5C3BA4210112AB004568EF /* LocationCell.m */,
-				2C23A5D12107E0D100BD228A /* PhotoAnnotation.h */,
-				2C23A5D22107E0D100BD228A /* PhotoAnnotation.m */,
 				2C5C3B8F20FFB902004568EF /* SearchCell.h */,
 				2C5C3B9020FFB902004568EF /* SearchCell.m */,
 				5451684721010DD200D45FE3 /* TimelineTableViewCell.h */,
@@ -378,8 +373,6 @@
 				2C23A5CF2106A61C00BD228A /* DescriptionViewController.m */,
 				5D329D2E20FD16DD00C180C9 /* DetailViewController.h */,
 				5D329D2F20FD16DD00C180C9 /* DetailViewController.m */,
-				2CBE62A821091404000A4592 /* FullDescriptionViewController.h */,
-				2CBE62A921091404000A4592 /* FullDescriptionViewController.m */,
 				5D329D2720FD169800C180C9 /* HomeViewController.h */,
 				5D329D2820FD169800C180C9 /* HomeViewController.m */,
 				2C5C3B9D2101105C004568EF /* LocationsViewController.h */,
@@ -452,6 +445,8 @@
 				5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */,
 				5D3F8282210A881700DFF5BE /* MessageView.h */,
 				5D3F8283210A881700DFF5BE /* MessageView.m */,
+				2C23A5D12107E0D100BD228A /* PhotoAnnotation.h */,
+				2C23A5D22107E0D100BD228A /* PhotoAnnotation.m */,
 				5D329D5120FD4BB800C180C9 /* ProfileHeader.h */,
 				5D329D5220FD4BB800C180C9 /* ProfileHeader.m */,
 				5DB64CC421066658002AE20E /* PopupView.h */,
@@ -713,7 +708,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C60F454210A573B0004DFD6 /* FullDescriptionViewController.m in Sources */,
 				5D329D3920FD184900C180C9 /* LoginViewController.m in Sources */,
 				5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */,
 				5451684F2101506000D45FE3 /* ComposingViewController.m in Sources */,

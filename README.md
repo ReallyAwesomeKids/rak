@@ -144,9 +144,11 @@ CORE
 - [ ] (Halima) Categories page design
   - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
   - [ ] Category VC: Carousel 
-- [ ] (Halima) Add acts from map to homepage; being able to complete them
-- [ ] () User can add their own acts of kindness
-- [ ] () Design launch screen and logo
+- [x] (Haley) Move map into categories
+- [x] (Haley) Remove full description view from map and put description on annotations instead
+- [ ] (Haley) Add acts from map to homepage; being able to complete them
+- [ ] (Gustavo) User can add their own acts of kindness
+- [ ] (Gustavo's brother) Design launch screen and logo
 
 ## Week 4 - 8/6/18 - 8/10/18
 
