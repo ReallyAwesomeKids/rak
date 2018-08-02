@@ -15,4 +15,11 @@
     return [NSString stringWithFormat:@"%@", self.locationName];
 }
 
+- (NSString *)actNameWithoutLocation {
+    NSString *fullActName = self.act.actName;
+    NSString *locationName = self.locationName;
+    NSUInteger index = locationName.length + @": ".length;
+    return [fullActName substringFromIndex:index];
+}
+
 @end
