@@ -96,6 +96,7 @@
                        @"Put sticky notes with positive slogans on the mirrors in your work restroom",
                        @"Send anonymous flowers to the receptionist at work",
                        @"Say thank you to your custodial staff"];
+    
     NSArray *dailyChallenges = @[@"Do a favor without asking for anything in return",
                                  @"Buy flowers and hand them out on the street",
                                  @"Say \"I love you\" to someone you love",

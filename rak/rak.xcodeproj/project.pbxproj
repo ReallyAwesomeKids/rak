@@ -33,6 +33,7 @@
 		54BCCB18210FE290009AD078 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BCCB17210FE290009AD078 /* SignUpViewController.m */; };
 		54BE1DA621069D8200DA4A25 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DA521069D8200DA4A25 /* APIManager.m */; };
 		54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DAC2106A01000DA4A25 /* Tweet.m */; };
+		54C9D79C211386E9002AAE00 /* AddActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D79B211386E9002AAE00 /* AddActViewController.m */; };
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
 		5D190FC0210001CA002A469B /* DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBF210001CA002A469B /* DateFunctions.m */; };
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
@@ -140,6 +141,8 @@
 		54BE1DA521069D8200DA4A25 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		54BE1DAB2106A01000DA4A25 /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		54BE1DAC2106A01000DA4A25 /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		54C9D79A211386E9002AAE00 /* AddActViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddActViewController.h; sourceTree = "<group>"; };
+		54C9D79B211386E9002AAE00 /* AddActViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddActViewController.m; sourceTree = "<group>"; };
 		5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
 		5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
 		5D190FBE210001CA002A469B /* DateFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFunctions.h; sourceTree = "<group>"; };
@@ -397,6 +400,8 @@
 				54BCCB17210FE290009AD078 /* SignUpViewController.m */,
 				54516844210018CC00D45FE3 /* TimelineViewController.h */,
 				54516845210018CC00D45FE3 /* TimelineViewController.m */,
+				54C9D79A211386E9002AAE00 /* AddActViewController.h */,
+				54C9D79B211386E9002AAE00 /* AddActViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -740,6 +745,7 @@
 				5D329D4220FD1C9C00C180C9 /* CustomUser.m in Sources */,
 				5DB1009120FE64A70085C785 /* PointToLevelConverter.m in Sources */,
 				5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */,
+				54C9D79C211386E9002AAE00 /* AddActViewController.m in Sources */,
 				5D329D3F20FD1AA900C180C9 /* Act.m in Sources */,
 				5D329D3320FD170500C180C9 /* CategoriesViewController.m in Sources */,
 				2C5C3B9120FFB902004568EF /* SearchCell.m in Sources */,

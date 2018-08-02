@@ -12,4 +12,6 @@
 @property (nonatomic) CGFloat colorG;
 @property (nonatomic) CGFloat colorB;
 
++ (ActCategory *)fetchCategoryOfName:(NSString *)catType;
+
 @end
