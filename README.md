@@ -132,6 +132,7 @@ CORE
 - [x] (Gustavo) Home VC: 
   - [x] (Gustavo) When pressing check button, color changes
   - [x] (Gustavo) Daily challenges check button functionality
+- [x] (Gustavo) User can add their own acts of kindness
 - [x] (Gustavo/Haley) Sign up VC: sign up page
 - [x] (Gustavo/Haley) Act Detail VC: Act detail view needs a lot of work
 - [x] (Haley) Login VC: Login page redesign
@@ -147,7 +148,6 @@ CORE
 - [x] (Haley) Move map into categories
 - [x] (Haley) Remove full description view from map and put description on annotations instead
 - [ ] (Haley) Add acts from map to homepage; being able to complete them
-- [ ] (Gustavo) User can add their own acts of kindness
 - [ ] (Gustavo's brother) Design launch screen and logo
 
 ## Week 4 - 8/6/18 - 8/10/18
