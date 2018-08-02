@@ -10,4 +10,8 @@
 
 @interface AddActViewController : UIViewController
 
+- (void)addActWithName:(NSString *)name
+            withPoints:(NSInteger)points
+    inCategoryWithName:(NSString *)categoryName;
+
 @end

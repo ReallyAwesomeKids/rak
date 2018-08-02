@@ -38,13 +38,19 @@
 }
 
 - (IBAction)didTapDone:(id)sender {
-    // Creating a new act
+    [self addActWithName:self.userActName.text
+              withPoints:1
+      inCategoryWithName:self.categoryName.text];
+}
+
+- (void)addActWithName:(NSString *)name
+            withPoints:(NSInteger)points
+    inCategoryWithName:(NSString *)categoryName {
     Act *actToBeAdded = [Act new];
-    actToBeAdded.actName = self.userActName.text;
-    actToBeAdded.pointsWorth = 1;
-    actToBeAdded.category = self.categoryName.text;
+    actToBeAdded.actName = name;
+    actToBeAdded.pointsWorth = points;
+    actToBeAdded.category = categoryName;
     
-    // Succesfulying adding act to "Act" object on Parse
     [actToBeAdded saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)
             NSLog(@"error saving user act");
@@ -68,6 +74,7 @@
         if (error)
             NSLog(@"error saving user act to category");
     }];
+    
 }
 
 /*
