@@ -19,6 +19,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self menuSetup];
+    
+    
+}
+
+- (void)menuSetup {
     CGRect frame = CGRectMake((CGRectGetWidth(self.view.frame)-240)/2, 80, 240, 37);
     self.menu1 = [[ManaDropDownMenu alloc] initWithFrame:frame title:@"Choose a category"];
     self.menu1.delegate = self;
@@ -28,7 +34,6 @@
     self.menu1.gutter = 5;
     self.menu1.resilient = YES;
     [self.view addSubview:self.menu1];
-    
 }
 
 - (void)didReceiveMemoryWarning {
