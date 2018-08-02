@@ -66,7 +66,7 @@
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(pin.latitude.floatValue, pin.longitude.floatValue);
     PhotoAnnotation *annotation = [[PhotoAnnotation alloc] init];
     annotation.coordinate = coordinate;
-    annotation.actDescription = pin.locationDescription;
+    annotation.actDescription = pin.act.actName;
     annotation.locationName = pin.locationName;
     [self.mapView addAnnotation:annotation];
     [self.mapView viewForAnnotation:annotation];
