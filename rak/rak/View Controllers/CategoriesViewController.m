@@ -78,19 +78,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CategoriesCell *cell = (CategoriesCell *) [self.categoriesCollectionView cellForItemAtIndexPath:indexPath];
+    if ([cell.cat.categoryName isEqualToString:@"Local Needs"]) {
+        [self performSegueWithIdentifier:@"localNeedsSegue" sender:cell];
+    }
+    else {
+        [self performSegueWithIdentifier:@"actCategorySegue" sender:cell];
+    }
+}
+
 //Segue
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    CategoriesCell *tappedCell = (CategoriesCell*) sender;
+    NSIndexPath *indexPath = [self.categoriesCollectionView indexPathForCell:tappedCell];
     if ([segue.identifier isEqualToString:@"actCategorySegue"])
     {
-        CategoriesCell *tappedCell = (CategoriesCell*) sender;
-        NSIndexPath *indexPath = [self.categoriesCollectionView indexPathForCell:tappedCell];
         ActCategory *actCategory = self.categories[indexPath.row];
         ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
         actViewController.actCategory = actCategory;
-        [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
     }
+     [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
 @end

@@ -10,12 +10,12 @@
 @implementation InitializeDB
 
 + (void)initializeDatabase {
-    [self initializeUser];
+  //  [self initializeUser];
 //    [self initializeActs];
-//    [self initializeActCategories];
+    [self initializeActCategories];
 //    [self updateActs];
 //    [self initializeBadges];
-
+ 
 }
 
 + (void)updateActs {
@@ -129,7 +129,8 @@
 }
 
 + (void)initializeActCategories {
-    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Daily Challenges"];
+   // NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Daily Challenges"];
+    NSArray *cats = @[@"Local Needs"];
     for (NSString *cat in cats) {
         
         ActCategory *category = [[ActCategory alloc] init];

@@ -78,7 +78,6 @@
                                             <outlet property="categoriesBackgroundColorView" destination="mgF-Jm-CgH" id="nYI-8b-0To"/>
                                             <outlet property="categoriesImageView" destination="rSS-xm-Bge" id="Rvs-vV-LVh"/>
                                             <outlet property="categoriesLabel" destination="Gvz-sl-Fle" id="bzU-CG-RtY"/>
-                                            <segue destination="rP0-wh-l6X" kind="show" identifier="actCategorySegue" id="HNx-6F-sFF"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -90,11 +89,21 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="Bkn-ZB-CYD" id="k6q-Ka-IPB"/>
+                        <segue destination="rP0-wh-l6X" kind="show" identifier="actCategorySegue" id="sVD-Z1-ELe"/>
+                        <segue destination="iTm-7A-ArD" kind="show" identifier="localNeedsSegue" id="tHq-eq-1u8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdR-jW-Ehk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-578.39999999999998" y="129.98500749625188"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="3cu-Te-CBy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" id="iTm-7A-ArD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5t-b4-nMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-156" y="630"/>
         </scene>
         <!--Act Category View Controller-->
         <scene sceneID="Ed2-Fm-zZS">
