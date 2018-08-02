@@ -25,9 +25,9 @@
     self.latitude = latitude;
     self.longitude = longitude;
     self.locationName = locationName;
-    self.act =  nil;//[AddActViewController addActWithName:actDescription
-                         //                withPoints:5
-                         //        inCategoryWithName:@"Local Needs"];
+    self.act = [AddActViewController addActWithName:actDescription
+                                       withPoints:5
+                                inCategoryWithName:@"Local Needs"];
     return self;
 }
 

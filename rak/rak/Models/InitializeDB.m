@@ -12,7 +12,7 @@
 + (void)initializeDatabase {
   //  [self initializeUser];
     //[self initializeActs];
-    [self initializeActCategories];
+  //  [self initializeActCategories];
 //    [self updateActs];
 //    [self initializeBadges];
  

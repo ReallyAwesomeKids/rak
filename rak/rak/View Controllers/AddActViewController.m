@@ -1,6 +1,5 @@
 #import "AddActViewController.h"
 #import "ActCategory.h"
-#import "Act.h"
 #import <CCDropDownMenus/CCDropDownMenus.h>
 
 @interface AddActViewController () <CCDropDownMenuDelegate>
@@ -43,18 +42,18 @@
 }
 
 - (IBAction)didTapDone:(id)sender {
-    [self addActWithName:self.userActName.text
+    [AddActViewController addActWithName:self.userActName.text
               withPoints:1
       inCategoryWithName:self.name];
 }
 
-- (void)addActWithName:(NSString *)name
++ (Act *)addActWithName:(NSString *)name
             withPoints:(NSInteger)points
     inCategoryWithName:(NSString *)categoryName {
     Act *actToBeAdded = [Act new];
     actToBeAdded.actName = name;
     actToBeAdded.pointsWorth = points;
-    actToBeAdded.category = self.name;
+    actToBeAdded.category = categoryName;
     
     [actToBeAdded saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)
@@ -62,9 +61,8 @@
     }];
     
     // Adds new act to the its Act Category on Parse
-    ActCategory *actCat = [ActCategory fetchCategoryOfName:self.name];
-    [actCat.acts arrayByAddingObject:actToBeAdded];
-    NSMutableArray *actCatMutable = [self createMutableArray:actCat.acts];
+    ActCategory *actCat = [ActCategory fetchCategoryOfName:categoryName];
+    NSMutableArray *actCatMutable = [actCat.acts mutableCopy];
     [actCatMutable addObject:actToBeAdded];
     NSArray *array = [actCatMutable copy];
     actCat.acts = array;
@@ -80,6 +78,7 @@
             NSLog(@"error saving user act to category");
     }];
     
+    return actToBeAdded;
 }
 
 - (void)dropDownMenu:(CCDropDownMenu *)dropDownMenu didSelectRowAtIndex:(NSInteger)index {
