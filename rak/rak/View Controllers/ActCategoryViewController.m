@@ -58,6 +58,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsCell *actCell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
     Act *actPiece = self.acts[indexPath.row];
+    [self.refreshControl endRefreshing];
     actCell.selectAct = actPiece;
     if ([CustomUser.currentUser.chosenActs containsObject:actCell.selectAct]) {
         actCell.isInUserChosenActs = YES;
@@ -71,12 +72,13 @@
         [actCell.addingButton setSelected:NO];
         [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
     }
-    [self.refreshControl endRefreshing];
+    
     return actCell;
 }
 
 //Populates Act Category Table View
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     return self.acts.count;
 }
 
