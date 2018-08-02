@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Act.h"
 
 @interface AddActViewController : UIViewController
 
-- (void)addActWithName:(NSString *)name
++ (Act *)addActWithName:(NSString *)name
             withPoints:(NSInteger)points
     inCategoryWithName:(NSString *)categoryName;
 

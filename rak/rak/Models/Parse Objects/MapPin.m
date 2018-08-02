@@ -26,8 +26,8 @@
     self.longitude = longitude;
     self.locationName = locationName;
     self.act = [AddActViewController addActWithName:actDescription
-                                         withPoints:5
-                                 inCategoryWithName:@"Local Needs"];
+                                       withPoints:5
+                                inCategoryWithName:@"Local Needs"];
     return self;
 }
 
