@@ -26,7 +26,6 @@
     self.actCategoryTableView.dataSource = self;
     self.actCategoryTableView.delegate = self;
     self.acts = self.actCategory.acts;
-
     [self.actCategoryTableView reloadData];
 }
 
