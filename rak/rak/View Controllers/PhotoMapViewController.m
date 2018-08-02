@@ -4,7 +4,6 @@
 #import "DescriptionViewController.h"
 #import "PhotoAnnotation.h"
 #import "LocationsViewController.h"
-#import "FullDescriptionViewController.h"
 #import "MapPin.h"
 #import "CustomUser.h"
 
@@ -67,7 +66,7 @@
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(pin.latitude.floatValue, pin.longitude.floatValue);
     PhotoAnnotation *annotation = [[PhotoAnnotation alloc] init];
     annotation.coordinate = coordinate;
-    self.descriptionImport = pin.locationDescription;
+    annotation.actDescription = pin.locationDescription;
     annotation.locationName = pin.locationName;
     [self.mapView addAnnotation:annotation];
     [self.mapView viewForAnnotation:annotation];
@@ -75,21 +74,34 @@
 
 //Changing the view for the annotation will go through this process.
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    PhotoAnnotation *annot = (PhotoAnnotation *)annotation;
     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
     if (annotationView == nil) {
-        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annot reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
     }
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    UILabel *descLabel = [UILabel new];
+    descLabel.text = annot.actDescription;
+    descLabel.numberOfLines = 0;
+    descLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightLight];
+
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    CGRect frame = btn.frame;
+    frame.size = CGSizeMake(25, 25);
+    btn.frame = frame;
+    UIImage *plus = [UIImage imageNamed:@"plus.png"];
+    [btn setImage:plus forState:UIControlStateNormal];
     annotationView.rightCalloutAccessoryView = btn;
     
+    annotationView.detailCalloutAccessoryView = descLabel;
     return annotationView;
 }
 
 
 //Tap information button on photo map will perform the segue to the full description view controller
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIButton *)button; {
-    [self performSegueWithIdentifier:@"fullDescriptionSegue" sender:nil];
+  //  [self performSegueWithIdentifier:@"fullDescriptionSegue" sender:nil];
 }
 
 
@@ -107,10 +119,6 @@
     if ([[segue identifier] isEqualToString:@"locationsSegue"]){
         LocationsViewController *locationsViewController = [segue destinationViewController];
         locationsViewController.delegate = self;
-    }
-    if ([[segue identifier] isEqualToString:@"fullDescriptionSegue"]){
-        FullDescriptionViewController *fulldescriptionViewController = [segue destinationViewController];
-        fulldescriptionViewController.fulldescriptionText = self.descriptionImport;
     }
 }
 
