@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *actCategoryTableView;
 @property (strong, nonatomic) NSArray *acts;
 @property (strong, nonatomic) NSMutableArray *personalAct;
+
+- (IBAction)didTapPlusNavBar:(id)sender;
+
 @end
 
 //Implementation
@@ -122,4 +125,6 @@
 
 }
 
+- (IBAction)didTapPlusNavBar:(id)sender {
+}
 @end
