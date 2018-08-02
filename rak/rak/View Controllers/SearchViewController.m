@@ -48,6 +48,7 @@
         SearchCell *tappedCell = (SearchCell*)sender;
         ProfileViewController *profileViewController = [segue destinationViewController];
         profileViewController.userProfile = tappedCell.user;
+        [self.searchTableView deselectRowAtIndexPath:[self.searchTableView indexPathForSelectedRow] animated:YES];
     }
 }
 
