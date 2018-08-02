@@ -1,21 +1,15 @@
-//
-//  AddActViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 8/2/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "AddActViewController.h"
 #import "ActCategory.h"
 #import "Act.h"
+#import <CCDropDownMenus/CCDropDownMenus.h>
 
-@interface AddActViewController ()
+@interface AddActViewController () <CCDropDownMenuDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *categoryName;
 @property (weak, nonatomic) IBOutlet UITextField *userActName;
+@property (strong, nonatomic) NSString *name;
 @property (strong,nonatomic) NSArray *categories;
 @property (strong,nonatomic) NSArray *acts;
+@property (nonatomic, strong) ManaDropDownMenu *menu1;
 
 - (IBAction)didTapDone:(id)sender;
 
@@ -25,6 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CGRect frame = CGRectMake((CGRectGetWidth(self.view.frame)-240)/2, 80, 240, 37);
+    self.menu1 = [[ManaDropDownMenu alloc] initWithFrame:frame title:@"Choose a category"];
+    self.menu1.delegate = self;
+    self.menu1.numberOfRows = 6;
+    self.menu1.textOfRows = @[@"Local Needs", @"Dating", @"Friends", @"Work", @"Community", @"Family"];
+    self.menu1.heightOfRows = 50;
+    self.menu1.gutter = 5;
+    self.menu1.resilient = YES;
+    [self.view addSubview:self.menu1];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +45,7 @@
 - (IBAction)didTapDone:(id)sender {
     [self addActWithName:self.userActName.text
               withPoints:1
-      inCategoryWithName:self.categoryName.text];
+      inCategoryWithName:self.name];
 }
 
 - (void)addActWithName:(NSString *)name
@@ -49,7 +54,7 @@
     Act *actToBeAdded = [Act new];
     actToBeAdded.actName = name;
     actToBeAdded.pointsWorth = points;
-    actToBeAdded.category = categoryName;
+    actToBeAdded.category = self.name;
     
     [actToBeAdded saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error)
@@ -57,7 +62,7 @@
     }];
     
     // Adds new act to the its Act Category on Parse
-    ActCategory *actCat = [ActCategory fetchCategoryOfName:self.categoryName.text];
+    ActCategory *actCat = [ActCategory fetchCategoryOfName:self.name];
     [actCat.acts arrayByAddingObject:actToBeAdded];
     NSMutableArray *actCatMutable = [self createMutableArray:actCat.acts];
     [actCatMutable addObject:actToBeAdded];
@@ -75,6 +80,11 @@
             NSLog(@"error saving user act to category");
     }];
     
+}
+
+- (void)dropDownMenu:(CCDropDownMenu *)dropDownMenu didSelectRowAtIndex:(NSInteger)index {
+    NSString *dropdownCategory = ((ManaDropDownMenu *)dropDownMenu).title;
+    self.name = dropdownCategory;
 }
 
 /*

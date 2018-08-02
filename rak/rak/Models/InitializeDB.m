@@ -11,8 +11,8 @@
 
 + (void)initializeDatabase {
   //  [self initializeUser];
-//    [self initializeActs];
- //   [self initializeActCategories];
+    //[self initializeActs];
+    [self initializeActCategories];
 //    [self updateActs];
 //    [self initializeBadges];
  
@@ -130,7 +130,7 @@
 }
 
 + (void)initializeActCategories {
-   // NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Daily Challenges"];
+    //NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Daily Challenges"];
     NSArray *cats = @[@"Local Needs"];
     for (NSString *cat in cats) {
         

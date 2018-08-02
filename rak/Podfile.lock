@@ -17,6 +17,7 @@ PODS:
   - BDBOAuth1Manager (2.0.0):
     - AFNetworking/NSURLSession (~> 3.0.0)
   - Bolts/Tasks (1.9.0)
+  - CCDropDownMenus (0.1.2)
   - DateTools (2.0.0)
   - Parse (1.17.1):
     - Parse/Core (= 1.17.1)
@@ -29,6 +30,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BDBOAuth1Manager
+  - CCDropDownMenus
   - DateTools
   - Parse
   - ParseUI
@@ -38,6 +40,7 @@ SPEC REPOS:
     - AFNetworking
     - BDBOAuth1Manager
     - Bolts
+    - CCDropDownMenus
     - DateTools
     - Parse
     - ParseUI
@@ -46,10 +49,11 @@ SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  CCDropDownMenus: ee65b63286a16354907fdde49c40c1817f463470
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   Parse: d3edaf8c7c722cb33cb83ba7821d015ae32d362d
   ParseUI: 2b37a0bc692a3e7666cf0c37b5521dfddd74a1af
 
-PODFILE CHECKSUM: b5ee6d301f2a1d7e378ec746a420547243087db4
+PODFILE CHECKSUM: b737ddf982c36f882066c439d33bc7e07fdce7ec
 
 COCOAPODS: 1.5.3
