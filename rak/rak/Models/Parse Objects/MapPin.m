@@ -7,10 +7,11 @@
 //
 
 #import "MapPin.h"
+#import "AddActViewController.h"
 
 @implementation MapPin
 
-@dynamic latitude, longitude, locationName, locationDescription, act;
+@dynamic latitude, longitude, locationName, act;
 
 + (NSString *)parseClassName {
     return @"MapPin";
@@ -19,12 +20,14 @@
 - (instancetype)initWithLatitude:(NSNumber *)latitude
                        longitude:(NSNumber *)longitude
                             name:(NSString *)locationName
-                     description:(NSString *)locationDescription {
+                     description:(NSString *)actDescription {
     self = [super init];
     self.latitude = latitude;
     self.longitude = longitude;
     self.locationName = locationName;
-    self.locationDescription = locationDescription;
+    self.act = [AddActViewController addActWithName:actDescription
+                                         withPoints:5
+                                 inCategoryWithName:@"Local Needs"];
     return self;
 }
 

@@ -15,7 +15,6 @@
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) NSString *locationName;
-@property (strong, nonatomic) NSString *locationDescription;
 @property (strong, nonatomic) Act *act;
 
 - (instancetype)initWithLatitude:(NSNumber *)latitude

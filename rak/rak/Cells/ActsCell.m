@@ -1,7 +1,6 @@
 #import "ActsCell.h"
 #import "ActCategory.h"
 #import "Parse/Parse.h"
-
 @implementation ActsCell
 
 - (void)awakeFromNib {
@@ -19,6 +18,7 @@
 }
 
 - (void)configureCell{
+    //ActCategory *cat;
     self.actsView.text = self.selectAct.actName;
     //self.actsView.font = [UIFont fontWithName:@"TheHappyGiraffe" size:20];
 }
