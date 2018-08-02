@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *actCategoryTableView;
 @property (strong, nonatomic) NSArray *acts;
 @property (strong, nonatomic) NSMutableArray *personalAct;
-
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 - (IBAction)didTapPlusNavBar:(id)sender;
 
 @end
@@ -29,6 +29,11 @@
     self.actCategoryTableView.dataSource = self;
     self.actCategoryTableView.delegate = self;
     self.acts = self.actCategory.acts;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(self) forControlEvents:UIControlEventValueChanged];
+    
+    [self.actCategoryTableView insertSubview:self.refreshControl atIndex:0];
+    [self.actCategoryTableView sendSubviewToBack:self.refreshControl];
     [self.actCategoryTableView reloadData];
 }
 
@@ -66,6 +71,7 @@
         [actCell.addingButton setSelected:NO];
         [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
     }
+    [self.refreshControl endRefreshing];
     return actCell;
 }
 
