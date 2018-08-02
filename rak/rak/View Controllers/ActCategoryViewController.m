@@ -29,7 +29,7 @@
     self.actCategoryTableView.dataSource = self;
     self.actCategoryTableView.delegate = self;
     self.acts = self.actCategory.acts;
-
+    
     [self.actCategoryTableView reloadData];
 }
 
@@ -41,27 +41,27 @@
 
 //Segue IF NEEDED
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 //Creates Act Category Table View
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsCell *actCell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
-   Act *actPiece = self.acts[indexPath.row];
+    Act *actPiece = self.acts[indexPath.row];
     actCell.selectAct = actPiece;
     if ([CustomUser.currentUser.chosenActs containsObject:actCell.selectAct]) {
-        actCell.tapped = YES;
+        actCell.isInUserChosenActs = YES;
     }
-    if (actCell.tapped == YES) {
+    if (actCell.isInUserChosenActs == YES) {
         [actCell.addingButton setSelected:YES];
         [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
-
+        
     }
     else {
         [actCell.addingButton setSelected:NO];
@@ -79,11 +79,11 @@
 - (IBAction)addingPersonalAct:(id)sender {
     UIButton *actAdd = (UIButton*) sender;
     ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
-    if (actCell.tapped == YES) {
+    if (actCell.isInUserChosenActs == YES) {
         [actCell.addingButton setSelected:NO];
         [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
         [self.personalAct removeObject:actCell.selectAct];
-        actCell.tapped = NO;
+        actCell.isInUserChosenActs = NO;
         NSOrderedSet *uniqueActsSet = [NSOrderedSet orderedSetWithArray:self.personalAct];
         NSArray *uniqueActsArray = [uniqueActsSet array];
         CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:uniqueActsArray];
@@ -101,12 +101,12 @@
         
     }
     
- else {
+    else {
         [actCell.addingButton setSelected:YES];
         [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
         self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
         [self.personalAct addObject:actCell.selectAct];
-        actCell.tapped = YES;
+        actCell.isInUserChosenActs = YES;
         NSOrderedSet *uniqueActsSet = [NSOrderedSet orderedSetWithArray:self.personalAct];
         NSArray *uniqueActsArray = [uniqueActsSet array];
         CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:uniqueActsArray];
@@ -120,10 +120,10 @@
                                        onViewController:self
                                             forDuration:1.5];
             }
-    }];
+        }];
     }
-
-
+    
+    
 }
 
 - (IBAction)didTapPlusNavBar:(id)sender {

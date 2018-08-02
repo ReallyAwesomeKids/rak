@@ -7,7 +7,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *actsView;
 @property (strong, nonatomic) Act *selectAct;
-@property (nonatomic) BOOL tapped;
+@property (nonatomic) BOOL isInUserChosenActs;
 - (void)configureCell;
 
 @end

@@ -15,8 +15,4 @@
     return [NSString stringWithFormat:@"%@", self.locationName];
 }
 
-- (NSString *) subtitle {
-    return self.actDescription;
-}
-
 @end

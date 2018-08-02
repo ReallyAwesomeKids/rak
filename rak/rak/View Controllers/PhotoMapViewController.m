@@ -66,7 +66,7 @@
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(pin.latitude.floatValue, pin.longitude.floatValue);
     PhotoAnnotation *annotation = [[PhotoAnnotation alloc] init];
     annotation.coordinate = coordinate;
-    annotation.actDescription = pin.act.actName;
+    annotation.act = pin.act;
     annotation.locationName = pin.locationName;
     [self.mapView addAnnotation:annotation];
     [self.mapView viewForAnnotation:annotation];
@@ -82,17 +82,28 @@
     }
     
     UILabel *descLabel = [UILabel new];
-    descLabel.text = annot.actDescription;
+    descLabel.text = annot.act.actName;
     descLabel.numberOfLines = 0;
     descLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightLight];
-
+    
+    
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     CGRect frame = btn.frame;
     frame.size = CGSizeMake(25, 25);
     btn.frame = frame;
     UIImage *plus = [UIImage imageNamed:@"plus.png"];
     [btn setImage:plus forState:UIControlStateNormal];
-    annotationView.rightCalloutAccessoryView = btn;
+    UIImage *minus = [UIImage imageNamed:@"minus.png"];
+    [btn setImage:minus forState:UIControlStateSelected];
+    
+    if ([CustomUser.currentUser.chosenActs containsObject:annot.act]) {
+        [btn setSelected:YES];
+    }
+    else {
+        [btn setSelected:NO];
+    }
+   
+   annotationView.rightCalloutAccessoryView = btn;
     
     annotationView.detailCalloutAccessoryView = descLabel;
     return annotationView;
@@ -101,6 +112,7 @@
 
 //Tap information button on photo map will perform the segue to the full description view controller
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIButton *)button; {
+    [button setSelected:YES];
   //  [self performSegueWithIdentifier:@"fullDescriptionSegue" sender:nil];
 }
 
