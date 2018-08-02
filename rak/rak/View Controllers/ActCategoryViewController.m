@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *actCategoryTableView;
 @property (strong, nonatomic) NSArray *acts;
 @property (strong, nonatomic) NSMutableArray *personalAct;
-
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 - (IBAction)didTapPlusNavBar:(id)sender;
 
 @end
@@ -29,6 +29,11 @@
     self.actCategoryTableView.dataSource = self;
     self.actCategoryTableView.delegate = self;
     self.acts = self.actCategory.acts;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(self) forControlEvents:UIControlEventValueChanged];
+    
+    [self.actCategoryTableView insertSubview:self.refreshControl atIndex:0];
+    [self.actCategoryTableView sendSubviewToBack:self.refreshControl];
     [self.actCategoryTableView reloadData];
 }
 
@@ -53,6 +58,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsCell *actCell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
     Act *actPiece = self.acts[indexPath.row];
+    [self.refreshControl endRefreshing];
     actCell.selectAct = actPiece;
     if ([CustomUser.currentUser.chosenActs containsObject:actCell.selectAct]) {
         actCell.isInUserChosenActs = YES;
@@ -66,11 +72,13 @@
         [actCell.addingButton setSelected:NO];
         [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
     }
+    
     return actCell;
 }
 
 //Populates Act Category Table View
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
     return self.acts.count;
 }
 
