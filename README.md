@@ -147,8 +147,16 @@ CORE
   - [ ] Category VC: Carousel 
 - [x] (Haley) Move map into categories
 - [x] (Haley) Remove full description view from map and put description on annotations instead
-- [ ] (Haley) Add acts from map to homepage; being able to complete them
+- [x] (Haley) Add acts from map to homepage; being able to complete them
 - [ ] (Gustavo's brother) Design launch screen and logo
+- [ ] Homepage redesign:
+  - [ ] Add image/icon to acts
+  - [ ] Add points and/or amount of times done act to home
+  - [ ] If no acts present, show a button that takes you to the category page
+  - [ ] Header over the chosen acts
+- [ ] User can hide daily challenge
+- [ ] Level progress in the notification after completing an act
+- [ ] (?) get rid of act detail view
 
 ## Week 4 - 8/6/18 - 8/10/18
 
