@@ -25,7 +25,8 @@
     self.latitude = latitude;
     self.longitude = longitude;
     self.locationName = locationName;
-    self.act = [AddActViewController addActWithName:actDescription
+    NSString *actName = [NSString stringWithFormat:@"%@: %@", locationName, actDescription];
+    self.act = [AddActViewController addActWithName:actName
                                        withPoints:5
                                 inCategoryWithName:@"Local Needs"];
     return self;

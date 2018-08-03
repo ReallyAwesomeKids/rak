@@ -6,6 +6,7 @@
 #import "LocationsViewController.h"
 #import "MapPin.h"
 #import "CustomUser.h"
+#import "MessageView.h"
 
 //Interface
 @interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate>
@@ -31,7 +32,7 @@
 
 - (void)fetchPins {
     PFQuery *query = [MapPin query];
-    
+    [query includeKey:@"act"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *pins, NSError *error) {
         if (pins != nil) {
             for (MapPin *pin in pins) {
@@ -82,10 +83,9 @@
     }
     
     UILabel *descLabel = [UILabel new];
-    descLabel.text = annot.act.actName;
+    descLabel.text = [annot actNameWithoutLocation];
     descLabel.numberOfLines = 0;
     descLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightLight];
-    
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     CGRect frame = btn.frame;
@@ -103,7 +103,7 @@
         [btn setSelected:NO];
     }
    
-   annotationView.rightCalloutAccessoryView = btn;
+    annotationView.rightCalloutAccessoryView = btn;
     
     annotationView.detailCalloutAccessoryView = descLabel;
     return annotationView;
@@ -112,7 +112,25 @@
 
 //Tap information button on photo map will perform the segue to the full description view controller
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIButton *)button; {
-    [button setSelected:YES];
+    PhotoAnnotation *annotation = (PhotoAnnotation *)view.annotation;
+    if (!button.selected) {
+        NSMutableArray *acts = [CustomUser.currentUser.chosenActs mutableCopy];
+        [acts addObject:annotation.act];
+        CustomUser.currentUser.chosenActs = [acts copy];
+        [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Saved in background");
+            if (error)
+                NSLog(@"error: %@", error.localizedDescription);
+            else {
+                [MessageView presentMessageViewWithText:@"Act added to home"
+                                    withTapInstructions:nil
+                                       onViewController:self
+                                            forDuration:1.5];
+            }
+        }];
+    }
+    button.selected = !button.selected;
+    
   //  [self performSegueWithIdentifier:@"fullDescriptionSegue" sender:nil];
 }
 

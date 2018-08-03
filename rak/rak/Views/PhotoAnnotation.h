@@ -8,4 +8,6 @@
 @property (strong, nonatomic) NSString *locationName;
 @property (strong, nonatomic) Act *act;
 
+- (NSString *)actNameWithoutLocation;
+
 @end
