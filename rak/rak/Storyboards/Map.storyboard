@@ -13,7 +13,6 @@
         <!--Description-->
         <scene sceneID="ifJ-zm-hrS">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4fM-y0-FhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="descriptionID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbH-8W-6Am" customClass="DescriptionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nNe-vF-3YK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -50,6 +49,7 @@
                         <outlet property="descriptionTextView" destination="81k-2S-RSa" id="umw-G3-dtT"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fM-y0-FhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8606.5" y="240.5"/>
         </scene>
@@ -61,7 +61,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="grj-YG-rot">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="grj-YG-rot">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <connections>
                                     <outlet property="delegate" destination="kK3-kc-whv" id="IVR-lN-KJb"/>

@@ -133,6 +133,9 @@ CORE
   - [x] (Gustavo) When pressing check button, color changes
   - [x] (Gustavo) Daily challenges check button functionality
 - [x] (Gustavo) User can add their own acts of kindness
+- [ ] (Gustavo) Settings VC:
+  - [ ] (Gustavo) Migrate functionality from twitter & log-out there
+  - [ ] (Gustavo) Edit profile picture, city, etc
 - [x] (Gustavo/Haley) Sign up VC: sign up page
 - [x] (Gustavo/Haley) Act Detail VC: Act detail view needs a lot of work
 - [x] (Haley) Login VC: Login page redesign
@@ -140,7 +143,7 @@ CORE
 - [x] (Haley) Profile VC: redesign
 - [x] (Halima) Map VC: description page design; remove placeholder text
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
-- [ ] (Halima) Map VC: view is centered on current/user's location
+- [x] (Haley) Map VC: view is centered on current/user's location
 - [x] (Halima) Search Page VC: Search page redesign
 - [ ] (Halima) Categories page design
   - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
@@ -148,30 +151,33 @@ CORE
 - [x] (Haley) Move map into categories
 - [x] (Haley) Remove full description view from map and put description on annotations instead
 - [x] (Haley) Add acts from map to homepage; being able to complete them
-- [ ] (Gustavo's brother) Design launch screen and logo
 - [ ] Homepage redesign:
   - [ ] Add image/icon to acts
   - [ ] Add points and/or amount of times done act to home
   - [ ] If no acts present, show a button that takes you to the category page
   - [ ] Header over the chosen acts
-- [ ] User can hide daily challenge
 - [ ] Level progress in the notification after completing an act
 - [ ] (?) get rid of act detail view
+- [ ] User can hide daily challenge
+- [ ] On homepage if there are no acts then theres a button to take you to the categories
+- [ ] Settings page
+- [ ] Walkthrough
 
 ## Week 4 - 8/6/18 - 8/10/18
+- [ ] (Gustavo's brother) Design launch screen and logo
 
 ## Week 5 - 8/13/18 - 8/17/18
 
 ## Bugs found that need to be solved
 - [x] (Gustavo) clicking checkmark button at Home [Home VC]
-  - [ ] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
+  - [x] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [x] user should not be able to add the same act multiple times to db [Category VC]
-- [ ] () When timeline loads, images are in the level-up height/width; only get normal size when refreshed [Timeline VC]
-
 
 ## Extended Functionality Ideas
-- [ ] User can write their own acts of kindness
+- [x] (Gustavo) User can write their own acts of kindness
+- [ ] Leadership board
+- [ ] Search for acts
 
 ## Database Schema
 - User

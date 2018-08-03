@@ -1,5 +1,6 @@
 #import "ActsTableViewCell.h"
-
+#import "ActCategory.h"
+#import "ParseUI/ParseUI.h"
 @implementation ActsTableViewCell
 
 - (void)awakeFromNib {
@@ -13,6 +14,7 @@
 - (void)setAct:(Act *)act {
     _act = act;
     self.homeCellActName.text = self.act.actName;
+
 }
 
 - (IBAction)didTapCellCheckmark:(id)sender {

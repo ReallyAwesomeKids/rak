@@ -8,6 +8,10 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Need library access to upload images</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Can this app access your location?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Can this app access your location?</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

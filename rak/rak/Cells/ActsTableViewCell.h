@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "Act.h"
 #import "CustomUser.h"
-
+#import "ParseUI/ParseUI.h"
 @interface ActsTableViewCell : UITableViewCell
 
 // Objects
@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *homeCellActName;
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
 @property (weak, nonatomic) IBOutlet UIView *cellView;
+@property (weak, nonatomic) IBOutlet PFImageView *homeCellActImage;
 
 - (IBAction)didTapCellCheckmark:(id)sender;
 
