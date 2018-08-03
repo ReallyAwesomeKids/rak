@@ -2,7 +2,7 @@
 
 @implementation ActCategory
 
-@dynamic categoryName, acts, categoryImage, detailViewImageName, colorR, colorB, colorG;
+@dynamic categoryName, acts, categoryImage, detailViewImageName, Emoji, colorR, colorB, colorG;
 
 + (NSString *)parseClassName {
     return @"ActCategory";

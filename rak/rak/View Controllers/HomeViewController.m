@@ -1,5 +1,6 @@
 #import "HomeViewController.h"
 #import "Act.h"
+#import "ActCategory.h"
 #import "CustomUser.h"
 #import "Parse.h"
 #import "ActsTableViewCell.h"
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UIImageView *homeTaskImage;
 
 @property (nonatomic, strong) NSMutableArray *acts;
 @property (nonatomic) NSInteger levelForPopup;
@@ -66,7 +68,11 @@
     CustomUser.currentUser.delegate = self;
 
 }
-
+//- (void)fetchCategoryImages {
+//    PFQuery *categoryImageQuery = [ActCategory query];
+//    [categoryImageQuery whereKey:<#(nonnull NSString *)#> equalTo:<#(nonnull id)#>];
+//    []
+//}
 - (void)fetchUserActs {
     PFQuery *userActQuery = [CustomUser query];
     [userActQuery whereKey:@"objectId" equalTo:CustomUser.currentUser.objectId];
