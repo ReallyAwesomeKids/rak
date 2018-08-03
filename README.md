@@ -143,7 +143,7 @@ CORE
 - [x] (Haley) Profile VC: redesign
 - [x] (Halima) Map VC: description page design; remove placeholder text
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
-- [ ] (Halima) Map VC: view is centered on current/user's location
+- [x] (Haley) Map VC: view is centered on current/user's location
 - [x] (Halima) Search Page VC: Search page redesign
 - [ ] (Halima) Categories page design
   - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
