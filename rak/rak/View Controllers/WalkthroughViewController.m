@@ -33,7 +33,7 @@
     [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     
     // Change the size of page view controller
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 50);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 60);
     
     [self addChildViewController: self.pageViewController];
     [self.view addSubview: self.pageViewController.view];
@@ -94,6 +94,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)didTapGotIt:(id)sender {
+    [self performSegueWithIdentifier:@"homeSegue" sender:nil];
+}
+
 
 /*
 #pragma mark - Navigation

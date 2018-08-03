@@ -91,14 +91,6 @@
                                     <constraint firstAttribute="bottom" secondItem="0LW-rI-Bal" secondAttribute="bottom" id="twn-aH-eJQ"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9W-7i-sl3">
-                                <rect key="frame" x="86" y="450" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="80O-yM-n7a" kind="presentation" id="TfK-xV-Fo0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -146,7 +138,7 @@
                 <viewControllerPlaceholder storyboardName="Walkthrough" id="80O-yM-n7a" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PGg-BI-AKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1509" y="857"/>
+            <point key="canvasLocation" x="-744" y="545"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="8Qx-cu-Yfr">
@@ -281,6 +273,7 @@
                         <outlet property="signUpPassword" destination="GGJ-14-TYG" id="t5q-3w-Czd"/>
                         <outlet property="signUpUsername" destination="6aI-49-Z6x" id="M4x-OT-WoE"/>
                         <segue destination="8Vs-ps-EGZ" kind="show" identifier="signedSegue" id="hlk-0Y-o9M"/>
+                        <segue destination="80O-yM-n7a" kind="presentation" identifier="instructionsSegue" id="MgJ-7T-UGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2b-KY-oNK" userLabel="First Responder" sceneMemberID="firstResponder"/>

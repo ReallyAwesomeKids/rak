@@ -18,15 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Usd-k4-gjb">
-                                <rect key="frame" x="16" y="617" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhy-Gp-Ony">
+                                <rect key="frame" x="166" y="622" width="42" height="30"/>
+                                <state key="normal" title="Got it!">
+                                    <color key="titleColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapGotIt:" destination="4KO-5W-vc2" eventType="touchUpInside" id="8aR-P6-58K"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lhy-Gp-Ony" firstAttribute="centerX" secondItem="wqZ-dX-DJj" secondAttribute="centerX" id="0xU-oy-rIG"/>
+                            <constraint firstItem="TGI-FC-AQB" firstAttribute="bottom" secondItem="lhy-Gp-Ony" secondAttribute="bottom" constant="15" id="36N-E0-N6Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TGI-FC-AQB"/>
                     </view>
+                    <connections>
+                        <segue destination="7Pa-1L-Ftd" kind="show" identifier="homeSegue" id="KcE-jC-cQN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0W-32-dEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iL7-3C-jwQ">
-                                <rect key="frame" x="87.5" y="163.5" width="200" height="400"/>
+                                <rect key="frame" x="87.5" y="183.5" width="200" height="400"/>
                                 <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="4MN-Xo-piL"/>
@@ -65,7 +76,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="bgU-Lt-Rtt" firstAttribute="centerX" secondItem="o0y-99-7yy" secondAttribute="centerX" id="BP7-8y-xoM"/>
-                            <constraint firstItem="iL7-3C-jwQ" firstAttribute="centerY" secondItem="o0y-99-7yy" secondAttribute="centerY" constant="30" id="WUu-E8-9fA"/>
+                            <constraint firstItem="iL7-3C-jwQ" firstAttribute="centerY" secondItem="o0y-99-7yy" secondAttribute="centerY" constant="50" id="WUu-E8-9fA"/>
                             <constraint firstItem="iL7-3C-jwQ" firstAttribute="centerX" secondItem="o0y-99-7yy" secondAttribute="centerX" id="czN-xK-XbS"/>
                             <constraint firstItem="ENI-v5-bci" firstAttribute="trailing" secondItem="bgU-Lt-Rtt" secondAttribute="trailing" constant="30" id="pNv-Xa-MtK"/>
                             <constraint firstItem="bgU-Lt-Rtt" firstAttribute="leading" secondItem="ENI-v5-bci" secondAttribute="leading" constant="30" id="wrh-az-o86"/>
@@ -81,6 +92,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0J-Rj-gT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="512.79999999999995" y="-552.77361319340332"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="b5w-xk-Ayq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="7Pa-1L-Ftd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfe-zq-1rr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="-97"/>
         </scene>
     </scenes>
 </document>
