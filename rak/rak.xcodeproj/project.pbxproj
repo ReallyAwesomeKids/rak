@@ -35,6 +35,9 @@
 		54C9D79C211386E9002AAE00 /* AddActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D79B211386E9002AAE00 /* AddActViewController.m */; };
 		54C9D79E2114CA9E002AAE00 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D79D2114CA9E002AAE00 /* Settings.storyboard */; };
 		54C9D7A12114D6A8002AAE00 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7A02114D6A8002AAE00 /* SettingsViewController.m */; };
+		5D0F04EE2114F2DF0022DB2F /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */; };
+		5D0F04F12114F32D0022DB2F /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */; };
+		5D0F04F42114F33E0022DB2F /* WalkthroughContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */; };
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
 		5D190FC0210001CA002A469B /* DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBF210001CA002A469B /* DateFunctions.m */; };
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
@@ -145,6 +148,11 @@
 		54C9D79D2114CA9E002AAE00 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		54C9D79F2114D6A8002AAE00 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		54C9D7A02114D6A8002AAE00 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
+		5D0F04EF2114F32D0022DB2F /* WalkthroughViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
+		5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
+		5D0F04F22114F33E0022DB2F /* WalkthroughContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkthroughContentViewController.h; sourceTree = "<group>"; };
+		5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkthroughContentViewController.m; sourceTree = "<group>"; };
 		5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
 		5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
 		5D190FBE210001CA002A469B /* DateFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFunctions.h; sourceTree = "<group>"; };
@@ -362,6 +370,7 @@
 				548438AA20FFF7F900592EB1 /* Timeline.storyboard */,
 				548438AC20FFF8EB00592EB1 /* Map.storyboard */,
 				54C9D79D2114CA9E002AAE00 /* Settings.storyboard */,
+				5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -403,6 +412,10 @@
 				54C9D79B211386E9002AAE00 /* AddActViewController.m */,
 				54C9D79F2114D6A8002AAE00 /* SettingsViewController.h */,
 				54C9D7A02114D6A8002AAE00 /* SettingsViewController.m */,
+				5D0F04F22114F33E0022DB2F /* WalkthroughContentViewController.h */,
+				5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */,
+				5D0F04EF2114F32D0022DB2F /* WalkthroughViewController.h */,
+				5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -606,6 +619,7 @@
 				5D329D2020FD15FE00C180C9 /* Home.storyboard in Resources */,
 				5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */,
 				548438A420FFAD8B00592EB1 /* Search.storyboard in Resources */,
+				5D0F04EE2114F2DF0022DB2F /* Walkthrough.storyboard in Resources */,
 				548438AD20FFF8EB00592EB1 /* Map.storyboard in Resources */,
 				548438AB20FFF7F900592EB1 /* Timeline.storyboard in Resources */,
 				54C9D79E2114CA9E002AAE00 /* Settings.storyboard in Resources */,
@@ -724,9 +738,11 @@
 				5451684F2101506000D45FE3 /* ComposingViewController.m in Sources */,
 				5D329CF920FD15A300C180C9 /* main.m in Sources */,
 				2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */,
+				5D0F04F12114F32D0022DB2F /* WalkthroughViewController.m in Sources */,
 				2C23A5D02106A61C00BD228A /* DescriptionViewController.m in Sources */,
 				2C23A5D32107E0D100BD228A /* PhotoAnnotation.m in Sources */,
 				5451684921010DD200D45FE3 /* TimelineTableViewCell.m in Sources */,
+				5D0F04F42114F33E0022DB2F /* WalkthroughContentViewController.m in Sources */,
 				2C5C3B9A21010DAA004568EF /* PhotoMapViewController.m in Sources */,
 				2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */,
 				54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */,

@@ -91,6 +91,14 @@
                                     <constraint firstAttribute="bottom" secondItem="0LW-rI-Bal" secondAttribute="bottom" id="twn-aH-eJQ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9W-7i-sl3">
+                                <rect key="frame" x="86" y="450" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="80O-yM-n7a" kind="presentation" id="TfK-xV-Fo0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -131,6 +139,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBE-yU-KJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1480" y="528"/>
+        </scene>
+        <!--Walkthrough-->
+        <scene sceneID="heA-1F-Kiv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Walkthrough" id="80O-yM-n7a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGg-BI-AKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1509" y="857"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="8Qx-cu-Yfr">
