@@ -115,6 +115,7 @@
     newUser.displayName = self.signUpUsername.text;
     newUser.experiencePoints = 0;
     newUser.amountActsDone = 0;
+    newUser.streak = 0;
     newUser.chosenActs = @[];
     newUser.streakBadges = @[];
     newUser.overallBadges = @[];
