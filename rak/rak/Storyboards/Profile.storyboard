@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -202,18 +201,11 @@
                         <viewLayoutGuide key="safeArea" id="o9j-Lq-uPL"/>
                     </view>
                     <navigationItem key="navigationItem" id="xRz-W8-brF">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Logout" id="tmV-xw-2Va">
-                                <connections>
-                                    <action selector="didTapLogout:" destination="AyC-n9-XyL" id="3eK-nN-Wq2"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="Twitter" id="HUo-IP-5eU">
-                                <connections>
-                                    <action selector="didTapTwitter:" destination="AyC-n9-XyL" id="8Zf-9d-ECE"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="4rQ-ru-rSI">
+                            <connections>
+                                <segue destination="rhl-tj-pQG" kind="show" id="Cyg-Rd-hcb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="X5P-bC-C8z" id="t8n-GV-L6h"/>
@@ -221,7 +213,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUR-ns-zUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1532" y="136.28185907046478"/>
+            <point key="canvasLocation" x="3410.4000000000001" y="136.28185907046478"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="JK2-YR-Jtj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="rhl-tj-pQG" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Q4-CV-67t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4112.8000000000002" y="-85.457271364317847"/>
         </scene>
         <!--Popover View Controller-->
         <scene sceneID="OWX-oC-2Jt">
@@ -238,7 +238,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edU-PN-iZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2347.1999999999998" y="182.60869565217394"/>
+            <point key="canvasLocation" x="2470" y="667"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="20" height="20"/>
+    </resources>
 </document>

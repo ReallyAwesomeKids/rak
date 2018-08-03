@@ -15,8 +15,6 @@
 @property (strong, nonatomic) PopoverViewController *popoverVC;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-- (IBAction)didTapTwitter:(id)sender;
-
 @end
 
 @implementation ProfileViewController
@@ -141,19 +139,6 @@
     return UIModalPresentationNone;
 }
 
-- (IBAction)didTapLogout:(id)sender {
-    [CustomUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
-        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        appDelegate.window.rootViewController = loginViewController;
-
-    }];
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -169,13 +154,4 @@
 }
 */
 
-- (IBAction)didTapTwitter:(id)sender {
-    [[APIManager shared] loginWithCompletion:^(BOOL success, NSError *error) {
-        if (success) {
-//            self.twitterLoginButton.alpha = 0;
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-}
 @end

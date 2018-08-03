@@ -33,6 +33,8 @@
 		54BE1DA621069D8200DA4A25 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DA521069D8200DA4A25 /* APIManager.m */; };
 		54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE1DAC2106A01000DA4A25 /* Tweet.m */; };
 		54C9D79C211386E9002AAE00 /* AddActViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D79B211386E9002AAE00 /* AddActViewController.m */; };
+		54C9D79E2114CA9E002AAE00 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C9D79D2114CA9E002AAE00 /* Settings.storyboard */; };
+		54C9D7A12114D6A8002AAE00 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7A02114D6A8002AAE00 /* SettingsViewController.m */; };
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
 		5D190FC0210001CA002A469B /* DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBF210001CA002A469B /* DateFunctions.m */; };
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
@@ -140,6 +142,9 @@
 		54BE1DAC2106A01000DA4A25 /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		54C9D79A211386E9002AAE00 /* AddActViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddActViewController.h; sourceTree = "<group>"; };
 		54C9D79B211386E9002AAE00 /* AddActViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddActViewController.m; sourceTree = "<group>"; };
+		54C9D79D2114CA9E002AAE00 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		54C9D79F2114D6A8002AAE00 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		54C9D7A02114D6A8002AAE00 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
 		5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
 		5D190FBE210001CA002A469B /* DateFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFunctions.h; sourceTree = "<group>"; };
@@ -356,6 +361,7 @@
 				548438A320FFAD8B00592EB1 /* Search.storyboard */,
 				548438AA20FFF7F900592EB1 /* Timeline.storyboard */,
 				548438AC20FFF8EB00592EB1 /* Map.storyboard */,
+				54C9D79D2114CA9E002AAE00 /* Settings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -395,6 +401,8 @@
 				54516845210018CC00D45FE3 /* TimelineViewController.m */,
 				54C9D79A211386E9002AAE00 /* AddActViewController.h */,
 				54C9D79B211386E9002AAE00 /* AddActViewController.m */,
+				54C9D79F2114D6A8002AAE00 /* SettingsViewController.h */,
+				54C9D7A02114D6A8002AAE00 /* SettingsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -600,6 +608,7 @@
 				548438A420FFAD8B00592EB1 /* Search.storyboard in Resources */,
 				548438AD20FFF8EB00592EB1 /* Map.storyboard in Resources */,
 				548438AB20FFF7F900592EB1 /* Timeline.storyboard in Resources */,
+				54C9D79E2114CA9E002AAE00 /* Settings.storyboard in Resources */,
 				5D329D4720FD208200C180C9 /* ActDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,6 +731,7 @@
 				2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */,
 				54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */,
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
+				54C9D7A12114D6A8002AAE00 /* SettingsViewController.m in Sources */,
 				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
 				5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */,
 				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
