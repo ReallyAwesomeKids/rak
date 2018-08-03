@@ -38,6 +38,7 @@
 		5D0F04EE2114F2DF0022DB2F /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */; };
 		5D0F04F12114F32D0022DB2F /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */; };
 		5D0F04F42114F33E0022DB2F /* WalkthroughContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */; };
+		54C9D7A42114E08A002AAE00 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7A32114E08A002AAE00 /* AccountViewController.m */; };
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
 		5D190FC0210001CA002A469B /* DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBF210001CA002A469B /* DateFunctions.m */; };
 		5D190FC321000EB3002A469B /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FC221000EB3002A469B /* Post.m */; };
@@ -148,11 +149,16 @@
 		54C9D79D2114CA9E002AAE00 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		54C9D79F2114D6A8002AAE00 /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		54C9D7A02114D6A8002AAE00 /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		5D0F04EF2114F32D0022DB2F /* WalkthroughViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
 		5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
 		5D0F04F22114F33E0022DB2F /* WalkthroughContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkthroughContentViewController.h; sourceTree = "<group>"; };
 		5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkthroughContentViewController.m; sourceTree = "<group>"; };
+=======
+		54C9D7A22114E08A002AAE00 /* AccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		54C9D7A32114E08A002AAE00 /* AccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+>>>>>>> a7b7838a37824d651ffbdb07bc25d86f53547e46
 		5D190FBB20FFEEA4002A469B /* DetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailHeaderView.h; sourceTree = "<group>"; };
 		5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailHeaderView.m; sourceTree = "<group>"; };
 		5D190FBE210001CA002A469B /* DateFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFunctions.h; sourceTree = "<group>"; };
@@ -412,10 +418,15 @@
 				54C9D79B211386E9002AAE00 /* AddActViewController.m */,
 				54C9D79F2114D6A8002AAE00 /* SettingsViewController.h */,
 				54C9D7A02114D6A8002AAE00 /* SettingsViewController.m */,
+<<<<<<< HEAD
 				5D0F04F22114F33E0022DB2F /* WalkthroughContentViewController.h */,
 				5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */,
 				5D0F04EF2114F32D0022DB2F /* WalkthroughViewController.h */,
 				5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */,
+=======
+				54C9D7A22114E08A002AAE00 /* AccountViewController.h */,
+				54C9D7A32114E08A002AAE00 /* AccountViewController.m */,
+>>>>>>> a7b7838a37824d651ffbdb07bc25d86f53547e46
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -761,6 +772,7 @@
 				54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */,
 				5DB1009720FE725D0085C785 /* ActCategory.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
+				54C9D7A42114E08A002AAE00 /* AccountViewController.m in Sources */,
 				5D190FC321000EB3002A469B /* Post.m in Sources */,
 				5D329D5020FD436C00C180C9 /* InitializeDB.m in Sources */,
 				5D329D5620FD4CBA00C180C9 /* BadgeCell.m in Sources */,

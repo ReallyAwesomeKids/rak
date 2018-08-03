@@ -22,15 +22,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.user = (self.userProfile != nil) ? self.userProfile : CustomUser.currentUser;
-  //  NSLog(@"%@", self.userProfile);
-//    if (self.user == nil)
-//        self.user = CustomUser.currentUser;
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
- //   UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    //  layout.estimatedItemSize = CGSizeMake(1.f, 1.f);
+    
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.collectionView reloadData];
+}
+//
+//- (void)refreshData {
+//    self.userProfile.file = self.user.profileImage;
+//    [self.userProfile loadInBackground];
+//}
 
 - (void)fetchBadges {
     PFQuery *query = [CustomUser query];

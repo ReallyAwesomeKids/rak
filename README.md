@@ -143,7 +143,7 @@ CORE
 - [x] (Haley) Profile VC: redesign
 - [x] (Halima) Map VC: description page design; remove placeholder text
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
-- [ ] (Halima) Map VC: view is centered on current/user's location
+- [x] (Haley) Map VC: view is centered on current/user's location
 - [x] (Halima) Search Page VC: Search page redesign
 - [ ] (Halima) Categories page design
   - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
@@ -159,6 +159,9 @@ CORE
 - [ ] Level progress in the notification after completing an act
 - [ ] (?) get rid of act detail view
 - [ ] User can hide daily challenge
+- [ ] On homepage if there are no acts then theres a button to take you to the categories
+- [ ] Settings page
+- [ ] Walkthrough
 
 ## Week 4 - 8/6/18 - 8/10/18
 - [ ] (Gustavo's brother) Design launch screen and logo
@@ -173,6 +176,8 @@ CORE
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
+- [ ] Leadership board
+- [ ] Search for acts
 
 ## Database Schema
 - User
