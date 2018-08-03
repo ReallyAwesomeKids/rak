@@ -102,6 +102,9 @@
     newUser.username = self.signUpUsername.text;
     newUser.password = self.signUpPassword.text;
     newUser.location = self.signUpLocation.text;
+    newUser.streakBadges = @[];
+    newUser.overallBadges = @[];
+    newUser.actHistory = @{};
     
     if ([self.signUpUsername.text isEqualToString:@""]) {
         [self usernameValidation];
