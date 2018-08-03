@@ -176,6 +176,8 @@ CORE
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
+- [ ] Leadership board
+- [ ] Search for acts
 
 ## Database Schema
 - User
