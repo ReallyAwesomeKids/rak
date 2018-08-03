@@ -50,6 +50,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)didTapSignUp:(id)sender {
+    [self registerUser];
+}
+
+- (IBAction)didTapOut:(id)sender {
+    [self.view endEditing:YES];
+}
+
 - (void)usernameValidation {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                    message:@"No username inserted"
@@ -151,7 +160,4 @@
 }
 */
 
-- (IBAction)didTapSignUp:(id)sender {
-    [self registerUser];
-}
 @end
