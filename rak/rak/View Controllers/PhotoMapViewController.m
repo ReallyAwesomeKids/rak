@@ -7,11 +7,14 @@
 #import "MapPin.h"
 #import "CustomUser.h"
 #import "MessageView.h"
+#import <CoreLocation/CoreLocation.h>
 
 //Interface
-@interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate>
+@interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate, CLLocationManagerDelegate>
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 - (IBAction)pinLocation:(id)sender;
 
 @end
@@ -20,14 +23,42 @@
 //Implementation
 @implementation PhotoMapViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+}
 
 //Loading current view
 - (void)viewDidLoad {
     [super viewDidLoad];
-    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
-    [self.mapView setRegion:sfRegion animated:false];
+    
     self.mapView.delegate = self;
+    
+    MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.785834, -122.406417), MKCoordinateSpanMake(0.1, 0.1));
+    [self.mapView setRegion:region animated:NO];
+    
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager requestLocation];
+    
     [self fetchPins];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    if (locations.count != 0) {
+        CLLocation *currentLocation = locations[0];
+        MKCoordinateRegion region = MKCoordinateRegionMake(currentLocation.coordinate, MKCoordinateSpanMake(0.1, 0.1));
+        
+        [self.mapView setRegion:region animated:YES];
+        
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
+    NSLog(@"error finding current location.");
 }
 
 - (void)fetchPins {
@@ -42,7 +73,10 @@
         else {
             NSLog(@"error fetching pins: %@", error.localizedDescription);
         }
+        
     }];
+
+    
 }
 
 //Receive Memory Warning
@@ -75,8 +109,13 @@
 
 //Changing the view for the annotation will go through this process.
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKPinAnnotationView *annotationView;
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        NSLog(@"F");
+    }
+    else {
     PhotoAnnotation *annot = (PhotoAnnotation *)annotation;
-    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+   annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annot reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
@@ -106,12 +145,14 @@
     annotationView.rightCalloutAccessoryView = btn;
     
     annotationView.detailCalloutAccessoryView = descLabel;
+    }
     return annotationView;
 }
 
 
 //Tap information button on photo map will perform the segue to the full description view controller
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIButton *)button; {
+    
     PhotoAnnotation *annotation = (PhotoAnnotation *)view.annotation;
     if (!button.selected) {
         NSMutableArray *acts = [CustomUser.currentUser.chosenActs mutableCopy];
