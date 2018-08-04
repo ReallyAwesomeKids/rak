@@ -173,6 +173,7 @@ CORE
   - [x] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [x] user should not be able to add the same act multiple times to db [Category VC]
+- [ ] If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
