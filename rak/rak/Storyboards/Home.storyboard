@@ -303,6 +303,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dailyChallengeButton" destination="cHC-r4-Rdd" id="VjM-Cm-9RW"/>
+                        <outlet property="dailyChallengeView" destination="HvJ-sv-jpY" id="yuy-M7-rKI"/>
                         <outlet property="homeTaskName" destination="GPj-mr-fdr" id="LIZ-Bu-0oT"/>
                         <outlet property="tableView" destination="5Wp-XI-8V7" id="PBE-1h-9Kd"/>
                         <segue destination="LHm-sh-qOH" kind="presentation" identifier="popupSegue" id="18N-of-0Z2"/>
