@@ -1,4 +1,5 @@
 #import "SignUpViewController.h"
+#import "Post.h"
 
 @interface SignUpViewController ()
 
@@ -47,6 +48,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)didTapSignUp:(id)sender {
+    [self registerUser];
+}
+
+- (IBAction)didTapOut:(id)sender {
+    [self.view endEditing:YES];
 }
 
 - (void)usernameValidation {
@@ -102,9 +112,15 @@
     newUser.username = self.signUpUsername.text;
     newUser.password = self.signUpPassword.text;
     newUser.location = self.signUpLocation.text;
+    newUser.displayName = self.signUpUsername.text;
+    newUser.experiencePoints = 0;
+    newUser.amountActsDone = 0;
+    newUser.streak = 0;
+    newUser.chosenActs = @[];
     newUser.streakBadges = @[];
     newUser.overallBadges = @[];
     newUser.actHistory = @{};
+    newUser.profileImage = [Post getPFFileFromImage:[UIImage imageNamed:@"default"]];
     
     if ([self.signUpUsername.text isEqualToString:@""]) {
         [self usernameValidation];
@@ -124,7 +140,7 @@
                 NSLog(@"User registered successfully");
                 
                 // manually segue to logged in view
-                [self performSegueWithIdentifier:@"signedSegue" sender:nil];
+                [self performSegueWithIdentifier:@"instructionsSegue" sender:nil];
             }
         }];
     }
@@ -145,7 +161,4 @@
 }
 */
 
-- (IBAction)didTapSignUp:(id)sender {
-    [self registerUser];
-}
 @end

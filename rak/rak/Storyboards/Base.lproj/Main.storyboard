@@ -40,9 +40,6 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                        <connections>
-                                            <action selector="didTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rGJ-oj-aPA"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -93,6 +90,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="9b5-4K-XtA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0c7-dR-C8R"/>
                             <constraint firstItem="9b5-4K-XtA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="89M-Dd-pxr"/>
@@ -104,6 +102,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kA6-hB-v49" secondAttribute="bottom" constant="11" id="ydp-df-RaQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="YSx-BW-3OJ" appends="YES" id="gVA-9G-Vs7"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="logoLabel" destination="KZO-Hq-U3I" id="pKz-NF-TTJ"/>
@@ -113,6 +114,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YSx-BW-3OJ">
+                    <connections>
+                        <action selector="didTapOut:" destination="BYZ-38-t0r" id="Bfu-dO-Xr1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1503" y="25"/>
         </scene>
@@ -131,6 +137,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBE-yU-KJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1480" y="528"/>
+        </scene>
+        <!--Walkthrough-->
+        <scene sceneID="heA-1F-Kiv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Walkthrough" id="80O-yM-n7a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGg-BI-AKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-744" y="545"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="8Qx-cu-Yfr">
@@ -246,6 +260,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="x4d-FP-y1m" firstAttribute="centerX" secondItem="PNe-9D-qMP" secondAttribute="centerX" id="BKE-YJ-c2a"/>
                             <constraint firstItem="emm-Cv-dJM" firstAttribute="centerX" secondItem="PNe-9D-qMP" secondAttribute="centerX" id="N7r-oJ-r5p"/>
@@ -257,6 +272,9 @@
                             <constraint firstItem="dBV-jb-Asr" firstAttribute="centerY" secondItem="PNe-9D-qMP" secondAttribute="centerY" id="y5g-td-LHY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nwb-1U-e6j"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="oOl-Gb-zyg" appends="YES" id="p2A-3t-pIp"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="logoLabel" destination="emm-Cv-dJM" id="Rk6-ee-Mq4"/>
@@ -265,9 +283,15 @@
                         <outlet property="signUpPassword" destination="GGJ-14-TYG" id="t5q-3w-Czd"/>
                         <outlet property="signUpUsername" destination="6aI-49-Z6x" id="M4x-OT-WoE"/>
                         <segue destination="8Vs-ps-EGZ" kind="show" identifier="signedSegue" id="hlk-0Y-o9M"/>
+                        <segue destination="80O-yM-n7a" kind="presentation" identifier="instructionsSegue" id="MgJ-7T-UGw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r2b-KY-oNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="oOl-Gb-zyg">
+                    <connections>
+                        <action selector="didTapOut:" destination="dnI-a8-pic" id="bQY-eQ-Vwg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-612" y="25.637181409295355"/>
         </scene>

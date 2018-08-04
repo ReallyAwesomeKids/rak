@@ -43,7 +43,7 @@
     self.logoLabel.attributedText = attributed;
 }
 
-- (IBAction)didTap:(id)sender {
+- (IBAction)didTapLogin:(id)sender {
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
     [CustomUser logInWithUsernameInBackground:username
@@ -57,6 +57,11 @@
                                             }
                                         }];
 }
+
+- (IBAction)didTapOut:(id)sender {
+    [self.view endEditing:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
