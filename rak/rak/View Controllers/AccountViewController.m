@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *originalCity;
 @property (weak, nonatomic) IBOutlet UILabel *originalUsername;
 @property (weak, nonatomic) IBOutlet UILabel *originalPassword;
+@property (weak, nonatomic) IBOutlet UILabel *shownPassword;
 @property (weak, nonatomic) IBOutlet PFImageView *userImage;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @property (weak, nonatomic) IBOutlet UIButton *changeProfileButton;
@@ -140,6 +141,7 @@
     self.originalName.alpha = 1;
     self.originalUsername.alpha = 1;
     self.originalPassword.alpha = 1;
+    self.shownPassword.alpha = 1;
     self.changedName.alpha = 0;
     self.changedCity.alpha = 0;
     self.changedUsername.alpha = 0;
@@ -158,6 +160,7 @@
     self.changedUsername.alpha = 1;
     self.doneButton.alpha = 1;
     self.changeProfileButton.alpha = 0;
+    self.shownPassword.alpha = 0;
 }
 
 @end
