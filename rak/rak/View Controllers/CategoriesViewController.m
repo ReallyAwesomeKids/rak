@@ -9,13 +9,18 @@
 #import "ActCategoryViewController.h"
 #import "iCarousel.h"
 #import "AddActViewController.h"
+#import "CarouselView.h"
 
 //Interface
-@interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, iCarouselDelegate, iCarouselDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong,nonatomic) NSArray *categories;
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
+
 @end
+
+
 
 //Implementation
 @implementation CategoriesViewController
@@ -24,11 +29,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // CollectionView setup
-    self.categoriesCollectionView.delegate = self;
-    self.categoriesCollectionView.dataSource = self;
-    [self changeCategoriesLayout];
+//    self.categoriesCollectionView.delegate = self;
+//    self.categoriesCollectionView.dataSource = self;
+//
+//    [self changeCategoriesLayout];
+  
+    
+    self.carousel.delegate = self;
+    self.carousel.dataSource = self;
+    self.carousel.type = iCarouselTypeCoverFlow;
     [self fetchCategories];
-    [self.navigationController popToViewController:self animated:YES];
+//
+//    [self.navigationController popToViewController:self animated:YES];
 }
 
 //Change Categories Method (Changes Layout)
@@ -66,7 +78,8 @@
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *categories, NSError *error) {
         if (categories != nil) {
-            self.categories= categories;
+            self.categories = categories;
+            [self.carousel reloadData];
             [self.categoriesCollectionView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -111,5 +124,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (nonnull UIView *)carousel:(nonnull iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
+    ActCategory *cat = self.categories[index];
+    
+    CarouselView *cview = [[CarouselView alloc] initWithFrame:CGRectMake(0, 0, 330, 500)];
+    cview.cat = cat;
+    PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    cview.backgroundColor = [UIColor greenColor];
+    imageView.image = [UIImage imageNamed:@"community2"];
+  //  [imageView loadInBackground];
+//    self.categoriesLabel.text = self.cat.categoryName;
+//    self.categoriesBackgroundColorView.backgroundColor = [UIColor colorWithRed:self.cat.colorR green:self.cat.colorG blue:self.cat.colorB alpha:1];
+    [cview addSubview:imageView];
+    return cview;
+}
+
+- (NSInteger)numberOfItemsInCarousel:(nonnull iCarousel *)carousel {
+    return self.categories.count;
+}
+
+
+
 
 @end

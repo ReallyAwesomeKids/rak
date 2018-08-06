@@ -79,6 +79,7 @@
 		5DB64CBD21065055002AE20E /* PopupViewXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB64CBC21065055002AE20E /* PopupViewXIB.xib */; };
 		5DB64CC321066545002AE20E /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB64CC221066545002AE20E /* PopupViewController.m */; };
 		5DB64CC621066658002AE20E /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB64CC521066658002AE20E /* PopupView.m */; };
+		5DE113A92118F5EF00635EE3 /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE113A82118F5EF00635EE3 /* CarouselView.m */; };
 		8C1A5F2E1E6BC31C46ECD42B /* libPods-rakUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */; };
 		FBFA6E4C50DF6C67769C0BAA /* libPods-rakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317354D07177A40A39F507D7 /* libPods-rakTests.a */; };
 /* End PBXBuildFile section */
@@ -235,6 +236,8 @@
 		5DB64CC221066545002AE20E /* PopupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		5DB64CC421066658002AE20E /* PopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
 		5DB64CC521066658002AE20E /* PopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
+		5DE113A72118F5EF00635EE3 /* CarouselView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselView.h; sourceTree = "<group>"; };
+		5DE113A82118F5EF00635EE3 /* CarouselView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselView.m; sourceTree = "<group>"; };
 		619B39390757B38624E8FACC /* Pods-rakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakUITests/Pods-rakUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BAF82B4EFD8956D071E8D9F /* Pods-rak.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rak.release.xcconfig"; path = "Pods/Target Support Files/Pods-rak/Pods-rak.release.xcconfig"; sourceTree = "<group>"; };
 		9F3DB2BA3A4F1BCE6D085B20 /* Pods-rakTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakTests/Pods-rakTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -498,6 +501,8 @@
 				5DB64CC421066658002AE20E /* PopupView.h */,
 				5DB64CC521066658002AE20E /* PopupView.m */,
 				5DB64CBC21065055002AE20E /* PopupViewXIB.xib */,
+				5DE113A72118F5EF00635EE3 /* CarouselView.h */,
+				5DE113A82118F5EF00635EE3 /* CarouselView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -775,6 +780,7 @@
 				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
 				54C9D7A12114D6A8002AAE00 /* SettingsViewController.m in Sources */,
 				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
+				5DE113A92118F5EF00635EE3 /* CarouselView.m in Sources */,
 				5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */,
 				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
 				5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */,

@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstraint;
 
 
+
 @property (nonatomic, strong) NSMutableArray *acts;
 @property (nonatomic) NSInteger levelForPopup;
 
