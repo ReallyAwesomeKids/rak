@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2C23A5D02106A61C00BD228A /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23A5CF2106A61C00BD228A /* DescriptionViewController.m */; };
 		2C23A5D32107E0D100BD228A /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C23A5D22107E0D100BD228A /* PhotoAnnotation.m */; };
-		2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B8A20FD4110004568EF /* CategoriesCell.m */; };
 		2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B8D20FE672F004568EF /* ActsCell.m */; };
 		2C5C3B9120FFB902004568EF /* SearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9020FFB902004568EF /* SearchCell.m */; };
 		2C5C3B9A21010DAA004568EF /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5C3B9921010DAA004568EF /* PhotoMapViewController.m */; };
@@ -106,8 +105,6 @@
 		2C23A5CF2106A61C00BD228A /* DescriptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DescriptionViewController.m; sourceTree = "<group>"; };
 		2C23A5D12107E0D100BD228A /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
 		2C23A5D22107E0D100BD228A /* PhotoAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoAnnotation.m; sourceTree = "<group>"; };
-		2C5C3B8920FD4110004568EF /* CategoriesCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesCell.h; sourceTree = "<group>"; };
-		2C5C3B8A20FD4110004568EF /* CategoriesCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesCell.m; sourceTree = "<group>"; };
 		2C5C3B8C20FE672F004568EF /* ActsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActsCell.h; sourceTree = "<group>"; };
 		2C5C3B8D20FE672F004568EF /* ActsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActsCell.m; sourceTree = "<group>"; };
 		2C5C3B8F20FFB902004568EF /* SearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchCell.h; sourceTree = "<group>"; };
@@ -284,8 +281,6 @@
 				548B222C20FD508200D667F7 /* ActsTableViewCell.m */,
 				5D329D5420FD4CBA00C180C9 /* BadgeCell.h */,
 				5D329D5520FD4CBA00C180C9 /* BadgeCell.m */,
-				2C5C3B8920FD4110004568EF /* CategoriesCell.h */,
-				2C5C3B8A20FD4110004568EF /* CategoriesCell.m */,
 				5DB1009E20FEE5FF0085C785 /* DetailViewTableViewCell.h */,
 				5DB1009F20FEE5FF0085C785 /* DetailViewTableViewCell.m */,
 				2C60F452210A4E120004DFD6 /* iCarousel.h */,
@@ -782,7 +777,6 @@
 				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
 				5DE113A92118F5EF00635EE3 /* CarouselView.m in Sources */,
 				5D329D5320FD4BB800C180C9 /* ProfileHeader.m in Sources */,
-				2C5C3B8B20FD4110004568EF /* CategoriesCell.m in Sources */,
 				5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */,
 				2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */,
 				5D3F8287210B8DED00DFF5BE /* MapPin.m in Sources */,

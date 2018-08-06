@@ -48,7 +48,7 @@
                     <connections>
                         <outlet property="carousel" destination="sIg-QV-AYU" id="xrN-Vd-WWY"/>
                         <segue destination="iTm-7A-ArD" kind="show" identifier="localNeedsSegue" id="tHq-eq-1u8"/>
-                        <segue destination="rP0-wh-l6X" kind="show" identifier="actCategorySegue" id="ZCV-FA-XQ1"/>
+                        <segue destination="rP0-wh-l6X" kind="show" identifier="actCategorySegue" id="emF-VV-HQN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdR-jW-Ehk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,7 +191,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wcr-by-OIB"/>
-        <segue reference="opE-Ub-aws"/>
+        <segue reference="emF-VV-HQN"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
