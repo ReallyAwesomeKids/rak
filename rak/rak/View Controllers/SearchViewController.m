@@ -93,7 +93,7 @@
 -(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length != 0) {
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSDictionary *evaluatedObject, NSDictionary *bindings) {
-            return [evaluatedObject[@"displayName"] containsString:searchText];
+            return [[evaluatedObject[@"displayName"] lowercaseString] containsString:[searchText lowercaseString]];
         }];
         self.filteredUsers = [self.users filteredArrayUsingPredicate:predicate];
     }

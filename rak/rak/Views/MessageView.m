@@ -97,7 +97,7 @@
     [vc.view addSubview:messageView];
     
     [messageView moveToYCoordinate:messageView.shownYCor withCompletion:^(BOOL finished) {
-        [NSTimer scheduledTimerWithTimeInterval:5 repeats:NO block:^(NSTimer * _Nonnull timer) {
+        [NSTimer scheduledTimerWithTimeInterval:duration repeats:NO block:^(NSTimer * _Nonnull timer) {
             [messageView moveToYCoordinate:messageView.hiddenYCor withCompletion:^(BOOL finished) {
                 [messageView removeFromSuperview];
             }];

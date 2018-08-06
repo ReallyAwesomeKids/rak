@@ -88,6 +88,11 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="4Jo-WP-XIW">
+                        <barButtonItem key="leftBarButtonItem" title="View All" id="URM-m9-OrL">
+                            <connections>
+                                <segue destination="rP0-wh-l6X" kind="show" identifier="viewAllSegue" id="opE-Ub-aws"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus-white" id="Bqb-g0-tgJ">
                             <connections>
                                 <segue destination="QD0-nW-eD2" kind="show" identifier="addActSegue" id="wcr-by-OIB"/>
@@ -124,9 +129,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="564"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="OBQ-tH-ATt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActCategoryCell" rowHeight="93" id="fH8-f8-v0c" customClass="ActsCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="93"/>
+                                        <rect key="frame" x="0.0" y="72" width="375" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fH8-f8-v0c" id="hun-Vt-cKz">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
@@ -183,6 +193,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="actCategoryTableView" destination="e97-FS-vXF" id="BzP-fX-Itz"/>
+                        <outlet property="searchBar" destination="OBQ-tH-ATt" id="DS9-df-Aie"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MI-Ef-e1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -234,7 +245,8 @@
         <image name="plus-white" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wcr-by-OIB"/>
+        <segue reference="d4d-qB-26r"/>
+        <segue reference="opE-Ub-aws"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

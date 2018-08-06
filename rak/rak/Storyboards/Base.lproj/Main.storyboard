@@ -40,6 +40,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hf3-vq-6bc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

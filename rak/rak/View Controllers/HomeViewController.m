@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *dailyChallengeView;
+@property (strong, nonatomic) UIView *noActsChosenView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIImageView *homeTaskImage;
@@ -42,9 +44,13 @@
 
 @implementation HomeViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [self fetchUserActs];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // TableView setup
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -83,7 +89,8 @@
         if (users != nil) {
             CustomUser *currentUser = users[0];
             self.userActs = currentUser.chosenActs;
-            [self.tableView reloadData];
+            [self checkForNoActsChosen];
+            
             [self.refreshControl endRefreshing];
         }
         else {
@@ -147,6 +154,7 @@
         [userActsMutable removeObjectAtIndex:indexPath.row];
         NSArray *array = [userActsMutable copy];
         self.userActs = array;
+        [self checkForNoActsChosen];
         
         // Updates Parse
         CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:self.deletedActs];
@@ -249,6 +257,138 @@
 - (NSMutableArray *)createMutableArray:(NSArray *)array
 {
     return [NSMutableArray arrayWithArray:array];
+}
+
+- (void)checkForNoActsChosen {
+    if (self.userActs.count == 0) {
+        self.tableView.hidden = YES;
+        if (self.noActsChosenView == nil) {
+            [self addNoActsChosenView];
+        }
+    }
+    else {
+        [self.tableView reloadData];
+        self.tableView.hidden = NO;
+        if (self.noActsChosenView != nil) {
+            [self.noActsChosenView removeFromSuperview];
+            self.noActsChosenView = nil;
+        }
+    }
+}
+
+- (void)addNoActsChosenView {
+    CGRect frame = CGRectMake(0,
+                              self.dailyChallengeView.frame.size.height,
+                              self.view.frame.size.width,
+                              self.tableView.frame.size.height);
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    UILabel *label = [UILabel new];
+    label.text = @"You haven't chosen any acts";
+    label.font = [UIFont systemFontOfSize:36.0];
+    label.textColor = [UIColor colorWithRed:7.0f/255.0f
+                                      green:59.0f/255.0f
+                                       blue:76.0f/255.0f
+                                      alpha:1];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.numberOfLines = 0;
+    [label sizeToFit];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"CHOOSE ACTS" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:20.0];
+    button.titleLabel.numberOfLines = 0;
+    [button setBackgroundColor:[UIColor colorWithRed:7.0f/255.0f
+                                               green:59.0f/255.0f
+                                                blue:76.0f/255.0f
+                                               alpha:1]];
+    [button sizeToFit];
+
+    [button addTarget:self
+               action:@selector(didTapCatalogueButton:)
+     forControlEvents:UIControlEventTouchUpInside];
+    
+    [view addSubview:label];
+    [view addSubview:button];
+    
+    UIStackView *stackView = [[UIStackView alloc] init];
+    stackView.axis = UILayoutConstraintAxisVertical;
+    stackView.distribution = UIStackViewDistributionEqualSpacing;
+    stackView.alignment = UIStackViewAlignmentCenter;
+    stackView.spacing = 20;
+    [stackView addArrangedSubview:label];
+    [stackView addArrangedSubview:button];
+
+    stackView.frame = CGRectMake(0, 0, 375, 200);
+    NSLog(@"frame: %@", NSStringFromCGRect(label.frame));
+    NSLog(@"frame: %@", NSStringFromCGRect(button.frame));
+    NSLog(@"frame: %@", NSStringFromCGRect(stackView.frame));
+    
+    stackView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    //Width
+    NSLayoutConstraint *buttonWidth = [NSLayoutConstraint
+                                   constraintWithItem:button
+                                   attribute:NSLayoutAttributeWidth
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:nil
+                                   attribute:NSLayoutAttributeNotAnAttribute
+                                   multiplier:1
+                                   constant:button.frame.size.width + 22];
+
+    [stackView addConstraint:buttonWidth];
+    [view addSubview:stackView];
+    
+    //CenterX
+    NSLayoutConstraint *centerX = [NSLayoutConstraint
+                                   constraintWithItem:stackView
+                                   attribute:NSLayoutAttributeCenterX
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:view
+                                   attribute:NSLayoutAttributeCenterX
+                                   multiplier:1
+                                   constant:0];
+    
+    //CenterY
+    
+    NSLayoutConstraint *centerY = [NSLayoutConstraint
+                                   constraintWithItem:stackView
+                                   attribute:NSLayoutAttributeCenterY
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:view
+                                   attribute:NSLayoutAttributeCenterY
+                                   multiplier:1
+                                   constant:-15];
+    
+    //Leading
+    NSLayoutConstraint *leading = [NSLayoutConstraint
+                                 constraintWithItem:stackView
+                                 attribute:NSLayoutAttributeLeading
+                                 relatedBy:NSLayoutRelationEqual
+                                 toItem:view
+                                 attribute:NSLayoutAttributeLeading
+                                 multiplier:1.0f
+                                 constant:15];
+    
+    //Trailing
+    NSLayoutConstraint *trailing = [NSLayoutConstraint
+                                   constraintWithItem:stackView
+                                   attribute:NSLayoutAttributeTrailing
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:view
+                                   attribute:NSLayoutAttributeTrailing
+                                   multiplier:1.0f
+                                   constant:-15];
+    
+    //Add constraints to the Parent
+    [view addConstraints:@[centerX, centerY, leading, trailing]];
+
+    self.noActsChosenView = view;
+
+    [self.view addSubview:self.noActsChosenView];
+}
+
+- (IBAction)didTapCatalogueButton:(id)sender {
+    self.tabBarController.selectedIndex = 1;
 }
 
 #pragma mark - Navigation

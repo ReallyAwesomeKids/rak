@@ -154,14 +154,13 @@ CORE
 - [ ] Homepage redesign:
   - [ ] Add image/icon to acts
   - [ ] Add points and/or amount of times done act to home
-  - [ ] If no acts present, show a button that takes you to the category page
   - [ ] Header over the chosen acts
 - [ ] Level progress in the notification after completing an act
 - [ ] (?) get rid of act detail view
 - [ ] User can hide daily challenge
-- [ ] On homepage if there are no acts then theres a button to take you to the categories
+- [x] (Haley) On homepage if there are no acts then theres a button to take you to the categories
 - [ ] Settings page
-- [ ] Walkthrough
+- [x] (Haley) Walkthrough
 
 ## Week 4 - 8/6/18 - 8/10/18
 - [ ] (Gustavo's brother) Design launch screen and logo
@@ -173,11 +172,13 @@ CORE
   - [x] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [x] user should not be able to add the same act multiple times to db [Category VC]
+- [x] If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
 - [ ] Leadership board
-- [ ] Search for acts
+- [x] (Haley) Search for acts
+- [x] (Haley) View all acts page
 
 ## Database Schema
 - User
