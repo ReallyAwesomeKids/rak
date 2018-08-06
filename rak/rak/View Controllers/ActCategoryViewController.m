@@ -30,10 +30,19 @@
     self.actCategoryTableView.delegate = self;
     self.acts = self.actCategory.acts;
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(self) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     
     [self.actCategoryTableView insertSubview:self.refreshControl atIndex:0];
     [self.actCategoryTableView sendSubviewToBack:self.refreshControl];
+    [self.actCategoryTableView reloadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [self refresh];
+}
+
+- (void)refresh {
     [self.actCategoryTableView reloadData];
 }
 
@@ -60,13 +69,11 @@
     Act *actPiece = self.acts[indexPath.row];
     [self.refreshControl endRefreshing];
     actCell.selectAct = actPiece;
-    if ([CustomUser.currentUser.chosenActs containsObject:actCell.selectAct]) {
-        actCell.isInUserChosenActs = YES;
-    }
-    if (actCell.isInUserChosenActs == YES) {
+    actCell.isInUserChosenActs = [CustomUser.currentUser.chosenActs containsObject:actCell.selectAct];
+    
+    if (actCell.isInUserChosenActs) {
         [actCell.addingButton setSelected:YES];
         [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
-        
     }
     else {
         [actCell.addingButton setSelected:NO];
