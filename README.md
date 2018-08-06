@@ -154,14 +154,13 @@ CORE
 - [ ] Homepage redesign:
   - [ ] Add image/icon to acts
   - [ ] Add points and/or amount of times done act to home
-  - [ ] If no acts present, show a button that takes you to the category page
   - [ ] Header over the chosen acts
 - [ ] Level progress in the notification after completing an act
 - [ ] (?) get rid of act detail view
 - [ ] User can hide daily challenge
-- [ ] On homepage if there are no acts then theres a button to take you to the categories
+- [x] (Haley) On homepage if there are no acts then theres a button to take you to the categories
 - [ ] Settings page
-- [ ] Walkthrough
+- [x] (Haley) Walkthrough
 
 ## Week 4 - 8/6/18 - 8/10/18
 - [ ] (Gustavo's brother) Design launch screen and logo
