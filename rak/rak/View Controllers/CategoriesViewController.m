@@ -88,26 +88,6 @@
     [self performSegueWithIdentifier:@"actCategorySegue" sender:view];
 }
 
-//Segue
-#pragma mark - Navigation
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    if ([segue.identifier isEqualToString:@"actCategorySegue"])
-    {
-        CarouselView *tappedView = (CarouselView *)sender;
-        ActCategory *actCategory = tappedView.cat;
-        ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
-        actViewController.actCategory = actCategory;
-        actViewController.fetchAll = NO;
-    }
-    else if ([segue.identifier isEqualToString:@"viewAllSegue"]) {
-        ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
-        actViewController.fetchAll = YES;
-    }
-
-}
-
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
     if (option == iCarouselOptionWrap) {
         return 1;
@@ -123,6 +103,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Segue
+#pragma mark - Navigation
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"actCategorySegue"])
+    {
+        CarouselView *tappedView = (CarouselView *)sender;
+        ActCategory *actCategory = tappedView.cat;
+        ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
+        actViewController.actCategory = actCategory;
+        actViewController.fetchAll = NO;
+    }
+    else if ([segue.identifier isEqualToString:@"viewAllSegue"]) {
+        ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
+        actViewController.fetchAll = YES;
+    }
+    
+}
 
 
 
