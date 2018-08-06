@@ -11,6 +11,10 @@
 @interface AboutViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *logoLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *gustavoPic;
+@property (weak, nonatomic) IBOutlet UIImageView *halimaPic;
+@property (weak, nonatomic) IBOutlet UIImageView *haleyPic;
+@property (weak, nonatomic) IBOutlet UIImageView *bofanPic;
 
 @end
 
@@ -19,6 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupLogoLabel];
+    
+    self.gustavoPic.layer.cornerRadius = self.gustavoPic.frame.size.height/2;
+    self.haleyPic.layer.cornerRadius = self.haleyPic.frame.size.height/2;
+    self.halimaPic.layer.cornerRadius = self.halimaPic.frame.size.height/2;
+    self.bofanPic.layer.cornerRadius = self.bofanPic.frame.size.height/2;
+
+
 }
 
 - (void)setupLogoLabel {
