@@ -357,8 +357,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gS5-PS-bAV">
-                                <rect key="frame" x="35" y="80" width="306" height="186"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gS5-PS-bAV">
+                                <rect key="frame" x="35" y="80" width="321" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Our app was created with the ambition of inspiring people to perform more acts of kindness on a day-to-day basis. Users have access to an extensive database of acts of kindness divided into five categories––Work, Community, Local Needs, Dating and Friends. As users carry out their chosen acts, they gradually level up and receive badges according to their achievements. By applying gamification, we hope to turn the experience of doing acts of kindness more fun and enjoyable. </string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -380,15 +380,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gus1" translatesAutoresizingMaskIntoConstraints="NO" id="hBi-o8-xXX">
-                                <rect key="frame" x="73" y="330" width="66" height="66"/>
+                                <rect key="frame" x="35" y="330" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="haley2" translatesAutoresizingMaskIntoConstraints="NO" id="c4V-Yi-8Qf">
-                                <rect key="frame" x="235" y="330" width="66" height="66"/>
+                                <rect key="frame" x="197" y="330" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="halima2" translatesAutoresizingMaskIntoConstraints="NO" id="F2z-Qg-Iyl">
-                                <rect key="frame" x="153" y="330" width="66" height="66"/>
+                                <rect key="frame" x="115" y="330" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Why Do Güd?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN1-bR-4zB">
@@ -398,18 +398,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="United by the belief that small acts can cause big changes, Gustavo, Halima and Haley developed Do Güd" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-Na-4za">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="United by the belief that small acts can cause big changes, Gustavo, Halima and Haley developed Do Güd under Bofan's guidance" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-Na-4za">
                                 <rect key="frame" x="35" y="404" width="321" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                 <color key="textColor" red="0.066666666666666666" green="0.54117647058823526" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bofan" translatesAutoresizingMaskIntoConstraints="NO" id="NVi-NC-LGz">
+                                <rect key="frame" x="279" y="330" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vf3-OL-qj0"/>
                     </view>
                     <connections>
+                        <outlet property="bofanPic" destination="NVi-NC-LGz" id="HEo-uX-FeQ"/>
                         <outlet property="gustavoPic" destination="hBi-o8-xXX" id="U46-Fl-kMt"/>
                         <outlet property="haleyPic" destination="c4V-Yi-8Qf" id="5Wi-3c-fjf"/>
                         <outlet property="halimaPic" destination="F2z-Qg-Iyl" id="BYV-Ns-GRB"/>
@@ -491,6 +496,7 @@
         <image name="account" width="20" height="20"/>
         <image name="activity" width="20" height="20"/>
         <image name="arrow-settings" width="20" height="20"/>
+        <image name="bofan" width="524" height="514"/>
         <image name="gus1" width="878" height="988"/>
         <image name="haley2" width="1036" height="1126"/>
         <image name="halima2" width="918" height="1002"/>
