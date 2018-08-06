@@ -104,16 +104,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 - (IBAction)didTapChangeProfilePicture:(id)sender {
     [self getPhotoRoll];
     
@@ -140,27 +130,37 @@
     self.originalCity.alpha = 1;
     self.originalName.alpha = 1;
     self.originalUsername.alpha = 1;
-    self.originalPassword.alpha = 1;
+    self.originalPassword.alpha = 0;
     self.shownPassword.alpha = 1;
     self.changedName.alpha = 0;
     self.changedCity.alpha = 0;
     self.changedUsername.alpha = 0;
     self.changedPassword.alpha = 0;
-
 }
 
 - (void)showChangedAlpha {
+    self.doneButton.alpha = 1;
+    self.changeProfileButton.alpha = 0;
     self.originalCity.alpha = 0;
     self.originalName.alpha = 0;
     self.originalUsername.alpha = 0;
     self.originalPassword.alpha = 0;
+    self.shownPassword.alpha = 0;
     self.changedName.alpha = 1;
     self.changedCity.alpha = 1;
     self.changedPassword.alpha = 1;
     self.changedUsername.alpha = 1;
-    self.doneButton.alpha = 1;
-    self.changeProfileButton.alpha = 0;
-    self.shownPassword.alpha = 0;
 }
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
 
 @end
