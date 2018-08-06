@@ -173,7 +173,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ3-ZR-dSE">
-                                                    <rect key="frame" x="48" y="4" width="284" height="46.5"/>
+                                                    <rect key="frame" x="48" y="4" width="270" height="46.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                     <color key="textColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -202,7 +202,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="n1k-5F-Kki" secondAttribute="trailing" constant="16" id="DcE-Rh-jZi"/>
                                                 <constraint firstItem="SQ3-ZR-dSE" firstAttribute="top" secondItem="OJ5-FV-LSE" secondAttribute="top" constant="4" id="Drm-gp-I1T"/>
-                                                <constraint firstAttribute="trailing" secondItem="SQ3-ZR-dSE" secondAttribute="trailing" constant="43" id="EaC-Zv-7he"/>
+                                                <constraint firstItem="n1k-5F-Kki" firstAttribute="leading" secondItem="SQ3-ZR-dSE" secondAttribute="trailing" constant="16" id="Gwz-eu-fbo"/>
                                                 <constraint firstItem="n1k-5F-Kki" firstAttribute="top" secondItem="OJ5-FV-LSE" secondAttribute="top" constant="15" id="XIj-eb-D7d"/>
                                                 <constraint firstItem="Fjn-hY-ehq" firstAttribute="top" secondItem="OJ5-FV-LSE" secondAttribute="top" constant="11" id="bZZ-BS-ufB"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fjn-hY-ehq" secondAttribute="bottom" constant="18.5" id="d0a-ZD-tao"/>
@@ -232,17 +232,6 @@
                                             <constraint firstAttribute="width" constant="65" id="pRv-HO-9Fl"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-r4-Rdd">
-                                        <rect key="frame" x="334" y="40" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="7vq-5E-kgL"/>
-                                            <constraint firstAttribute="width" constant="25" id="MV9-v9-RPf"/>
-                                        </constraints>
-                                        <state key="normal" image="check"/>
-                                        <connections>
-                                            <action selector="didTapDailyChallenge:" destination="9DP-4D-YYf" eventType="touchUpInside" id="gK6-Zn-3gO"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Daily Challenge:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7O-Zo-TKf">
                                         <rect key="frame" x="83" y="12" width="144.5" height="26"/>
                                         <constraints>
@@ -253,6 +242,17 @@
                                         <color key="textColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-r4-Rdd">
+                                        <rect key="frame" x="342" y="40" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="6yf-5T-w9Z"/>
+                                            <constraint firstAttribute="width" constant="25" id="jTp-yl-HLQ"/>
+                                        </constraints>
+                                        <state key="normal" image="check"/>
+                                        <connections>
+                                            <action selector="didTapDailyChallenge:" destination="9DP-4D-YYf" eventType="touchUpInside" id="gK6-Zn-3gO"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
                                         <rect key="frame" x="83" y="31" width="243" height="70"/>
                                         <constraints>
@@ -266,17 +266,16 @@
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="cHC-r4-Rdd" secondAttribute="trailing" constant="16" id="1Ms-5C-PUX"/>
                                     <constraint firstItem="10G-vc-XkH" firstAttribute="leading" secondItem="HvJ-sv-jpY" secondAttribute="leading" constant="8" id="2P2-vP-oFF"/>
                                     <constraint firstItem="GPj-mr-fdr" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="31" id="AqY-Uk-Cg8"/>
                                     <constraint firstAttribute="bottom" secondItem="A7O-Zo-TKf" secondAttribute="bottom" constant="67" id="Eca-Dy-ezf"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHC-r4-Rdd" secondAttribute="trailing" constant="8" id="Ppo-wE-Df2"/>
+                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="GPj-mr-fdr" secondAttribute="trailing" constant="16" id="Qa6-aO-090"/>
                                     <constraint firstItem="A7O-Zo-TKf" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="12" id="TEm-SD-XPY"/>
                                     <constraint firstItem="A7O-Zo-TKf" firstAttribute="leading" secondItem="10G-vc-XkH" secondAttribute="trailing" constant="10" id="X3i-71-xP1"/>
-                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="40" id="eom-wb-iGk"/>
+                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="centerY" secondItem="HvJ-sv-jpY" secondAttribute="centerY" id="cmq-K6-3PZ"/>
                                     <constraint firstAttribute="bottom" secondItem="GPj-mr-fdr" secondAttribute="bottom" constant="4" id="isl-8W-skk"/>
-                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="GPj-mr-fdr" secondAttribute="trailing" constant="8" id="kgT-n9-uSu"/>
                                     <constraint firstItem="GPj-mr-fdr" firstAttribute="leading" secondItem="10G-vc-XkH" secondAttribute="trailing" constant="10" id="oAN-Ub-SsM"/>
-                                    <constraint firstAttribute="bottom" secondItem="cHC-r4-Rdd" secondAttribute="bottom" constant="40" id="oVf-rS-RHR"/>
                                     <constraint firstItem="10G-vc-XkH" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="20" id="yMA-7G-SPW"/>
                                 </constraints>
                             </view>
@@ -306,6 +305,7 @@
                         <outlet property="dailyChallengeView" destination="HvJ-sv-jpY" id="yuy-M7-rKI"/>
                         <outlet property="homeTaskName" destination="GPj-mr-fdr" id="LIZ-Bu-0oT"/>
                         <outlet property="tableView" destination="5Wp-XI-8V7" id="PBE-1h-9Kd"/>
+                        <outlet property="tableViewTopConstraint" destination="aDK-4M-MJq" id="ATA-oh-baJ"/>
                         <segue destination="LHm-sh-qOH" kind="presentation" identifier="popupSegue" id="18N-of-0Z2"/>
                         <segue destination="Ttv-jD-BIX" kind="show" identifier="shareSegue" id="ZdN-g1-wW1"/>
                     </connections>
