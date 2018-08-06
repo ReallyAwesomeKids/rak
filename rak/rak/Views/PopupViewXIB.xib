@@ -34,6 +34,7 @@
                         <constraint firstAttribute="width" constant="30" id="CrP-Mt-fsd"/>
                         <constraint firstAttribute="height" constant="30" id="mGV-yS-Pzu"/>
                     </constraints>
+                    <color key="tintColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                     <state key="normal" title="X"/>
                     <connections>
                         <action selector="didTapClose:" destination="-1" eventType="touchUpInside" id="IYe-BR-gcB"/>
