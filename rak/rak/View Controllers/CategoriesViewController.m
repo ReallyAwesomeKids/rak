@@ -132,7 +132,9 @@
     cview.cat = cat;
     PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
     cview.backgroundColor = [UIColor greenColor];
-    imageView.image = [UIImage imageNamed:@"community2"];
+    imageView.file = cat.categoryImage;
+    [imageView loadInBackground];
+   // imageView.image = [UIImage imageNamed:@"community2"];
   //  [imageView loadInBackground];
 //    self.categoriesLabel.text = self.cat.categoryName;
 //    self.categoriesBackgroundColorView.backgroundColor = [UIColor colorWithRed:self.cat.colorR green:self.cat.colorG blue:self.cat.colorB alpha:1];
