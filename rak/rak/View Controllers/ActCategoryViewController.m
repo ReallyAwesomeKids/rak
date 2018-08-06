@@ -50,6 +50,16 @@
     [self refresh];
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:YES];
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:[MessageView class]]) {
+            [view removeFromSuperview];
+        }
+    }
+}
+
 - (void)refresh {
     [self.actCategoryTableView reloadData];
 }
@@ -157,7 +167,7 @@
     [self refresh];
 }
 
-@end
+
 
 //Segue IF NEEDED
 /*
@@ -169,3 +179,7 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+
+@end
+

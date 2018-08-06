@@ -27,6 +27,16 @@
     [super viewWillAppear:YES];
 }
 
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:YES];
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:[MessageView class]]) {
+            [view removeFromSuperview];
+        }
+    }
+}
+
 //Loading current view
 - (void)viewDidLoad {
     [super viewDidLoad];

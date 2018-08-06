@@ -25,4 +25,6 @@
                   onViewController:(UIViewController *)vc
                        forDuration:(CGFloat)duration;
 
+- (void)hide;
+
 @end
