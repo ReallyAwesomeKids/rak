@@ -13,6 +13,7 @@
 //Interface
 @interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong,nonatomic) NSArray *categories;
 @end
 
@@ -73,12 +74,6 @@
     }];
 }
 
-//Receive Memory Method
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     CategoriesCell *cell = (CategoriesCell *) [self.categoriesCollectionView cellForItemAtIndexPath:indexPath];
     if ([cell.cat.categoryName isEqualToString:@"Local Needs"]) {
@@ -101,8 +96,20 @@
         ActCategory *actCategory = self.categories[indexPath.row];
         ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
         actViewController.actCategory = actCategory;
+        actViewController.fetchAll = NO;
+    }
+    else if ([segue.identifier isEqualToString:@"viewAllSegue"]) {
+        ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
+        actViewController.fetchAll = YES;
     }
 //     [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
+}
+
+
+//Receive Memory Method
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

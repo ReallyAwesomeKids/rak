@@ -6,4 +6,5 @@
 //Interface
 @interface ActCategoryViewController : UIViewController
 @property (strong, nonatomic) ActCategory *actCategory;
+@property (nonatomic) BOOL fetchAll;
 @end
