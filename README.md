@@ -145,9 +145,8 @@ CORE
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
 - [x] (Haley) Map VC: view is centered on current/user's location
 - [x] (Halima) Search Page VC: Search page redesign
-- [x] (Halima/Haley) Categories page design
+- [x] (Haley) Categories page design
   - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
-  - [x] (Haley) Category VC: Carousel 
 - [x] (Haley) Move map into categories
 - [x] (Haley) Remove full description view from map and put description on annotations instead
 - [x] (Haley) Add acts from map to homepage; being able to complete them
@@ -168,7 +167,11 @@ CORE
   - [ ] Header over the chosen acts
 - [ ] Level progress in the notification after completing an act
 - [ ] (?) get rid of act detail view
-- [ ] User can hide daily challenge
+- [x] (Haley) Daily challenge hides after completion
+- [x] (Haley) Category VC: Carousel 
+- [x] (Haley) Search for acts
+- [x] (Haley) View all acts page
+- [x] (Haley) Fixed daily challenge bug so that it will change daily
 
 ## Week 5 - 8/13/18 - 8/17/18
 
@@ -182,8 +185,6 @@ CORE
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
 - [ ] Leadership board
-- [x] (Haley) Search for acts
-- [x] (Haley) View all acts page
 
 ## Database Schema
 - User
