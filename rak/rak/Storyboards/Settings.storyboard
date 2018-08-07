@@ -340,31 +340,48 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Denver Johnson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StQ-t3-Mve">
-                                                    <rect key="frame" x="21" y="11" width="125" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Denver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StQ-t3-Mve">
+                                                    <rect key="frame" x="6" y="0.0" width="55" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="526 932 0431" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq6-YW-jfE">
-                                                    <rect key="frame" x="21" y="58" width="109" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="denver@outlook.com.br" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoV-s9-ENw">
+                                                    <rect key="frame" x="6" y="23" width="183" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="denver@outlook.com.br" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoV-s9-ENw">
-                                                    <rect key="frame" x="21" y="34" width="183" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Li" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg9-OP-zQJ">
+                                                    <rect key="frame" x="64" y="0.0" width="14" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="526 932 0431" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq6-YW-jfE">
+                                                    <rect key="frame" x="6" y="52" width="109" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="StQ-t3-Mve" firstAttribute="top" secondItem="NwO-cp-j2z" secondAttribute="top" id="4Bx-1c-h2B"/>
+                                                <constraint firstItem="eg9-OP-zQJ" firstAttribute="leading" secondItem="StQ-t3-Mve" secondAttribute="trailing" constant="3" id="5XK-6G-1cY"/>
+                                                <constraint firstItem="StQ-t3-Mve" firstAttribute="leading" secondItem="NwO-cp-j2z" secondAttribute="leading" constant="6" id="9Iz-9M-Krv"/>
+                                                <constraint firstItem="eg9-OP-zQJ" firstAttribute="leading" secondItem="StQ-t3-Mve" secondAttribute="trailing" constant="3" id="DaB-VF-U5P"/>
+                                                <constraint firstItem="hoV-s9-ENw" firstAttribute="top" secondItem="StQ-t3-Mve" secondAttribute="bottom" constant="2" id="E5n-KT-6J3"/>
+                                                <constraint firstItem="wq6-YW-jfE" firstAttribute="top" secondItem="hoV-s9-ENw" secondAttribute="bottom" constant="8" id="FmA-wO-qgS"/>
+                                                <constraint firstAttribute="bottom" secondItem="wq6-YW-jfE" secondAttribute="bottom" constant="16.5" id="SW7-1T-kme"/>
+                                                <constraint firstItem="hoV-s9-ENw" firstAttribute="top" secondItem="StQ-t3-Mve" secondAttribute="bottom" constant="2" id="kMF-9u-2ee"/>
+                                                <constraint firstItem="hoV-s9-ENw" firstAttribute="leading" secondItem="NwO-cp-j2z" secondAttribute="leading" constant="6" id="oWB-A0-V7H"/>
+                                                <constraint firstItem="eg9-OP-zQJ" firstAttribute="top" secondItem="NwO-cp-j2z" secondAttribute="top" id="t5K-ax-6r5"/>
+                                                <constraint firstItem="wq6-YW-jfE" firstAttribute="leading" secondItem="NwO-cp-j2z" secondAttribute="leading" constant="6" id="u1M-u9-P3B"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="email" destination="hoV-s9-ENw" id="VGM-29-KGv"/>
+                                            <outlet property="familyName" destination="eg9-OP-zQJ" id="9vP-PL-siP"/>
                                             <outlet property="name" destination="StQ-t3-Mve" id="g9Z-tW-KmA"/>
                                             <outlet property="number" destination="wq6-YW-jfE" id="nvH-uF-KEz"/>
                                         </connections>

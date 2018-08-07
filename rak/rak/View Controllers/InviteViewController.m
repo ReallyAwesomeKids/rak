@@ -1,13 +1,14 @@
 #import "InviteViewController.h"
 #import <Contacts/Contacts.h>
+#import "InviteTableViewCell.h"
+#import "Contact.h"
 
-@interface InviteViewController ()
+@interface InviteViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *groupOfContacts;
 @property (strong, nonatomic) NSMutableArray *phoneNumberArray;
 @property (strong, nonatomic) NSMutableArray *emailArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 
 @end
 
@@ -21,6 +22,26 @@
     self.groupOfContacts = [@[] mutableCopy];
     [self getAllContact];
     [self getPhoneAndEmail];
+    [self tableViewSetup];
+}
+
+- (void)tableViewSetup {
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    InviteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InviteTableViewCell" forIndexPath:indexPath];
+    Contact *contact = self.groupOfContacts[indexPath.row];
+    cell.contact = contact;
+//    cell.phoneNumber = contact.phoneNumbers[0];
+//    cell.email = contact.emailAddresses[0];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.groupOfContacts.count;
 }
 
 - (void)getAllContact {
