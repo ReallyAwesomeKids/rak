@@ -130,14 +130,13 @@
 }
 
 + (void)initializeActCategories {
-    //NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Daily Challenges"];
-    NSArray *cats = @[@"Local Needs"];
+    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Local Needs"];
     for (NSString *cat in cats) {
         
         ActCategory *category = [[ActCategory alloc] init];
         category.categoryName = cat;
         category.categoryImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:cat]];
-        category.emoji = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:cat]];
+        category.emoji = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:[cat stringByAppendingString:@" Emoji"]]];
         category.colorG = 1;
         category.colorB = 1;
         category.colorR = 1;
