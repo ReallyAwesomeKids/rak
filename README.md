@@ -133,9 +133,9 @@ CORE
   - [x] (Gustavo) When pressing check button, color changes
   - [x] (Gustavo) Daily challenges check button functionality
 - [x] (Gustavo) User can add their own acts of kindness
-- [ ] (Gustavo) Settings VC:
-  - [ ] (Gustavo) Migrate functionality from twitter & log-out there
-  - [ ] (Gustavo) Edit profile picture, city, etc
+- [x] (Gustavo) Settings VC initial work:
+  - [x] (Gustavo) Migrate functionality from twitter & log-out there
+  - [x] (Gustavo) Edit profile picture, city, etc
 - [x] (Gustavo/Haley) Sign up VC: sign up page
 - [x] (Gustavo/Haley) Act Detail VC: Act detail view needs a lot of work
 - [x] (Haley) Login VC: Login page redesign
@@ -151,6 +151,17 @@ CORE
 - [x] (Haley) Move map into categories
 - [x] (Haley) Remove full description view from map and put description on annotations instead
 - [x] (Haley) Add acts from map to homepage; being able to complete them
+- [x] (Haley) On homepage if there are no acts then theres a button to take you to the categories
+- [x] (Haley) Walkthrough
+
+## Week 4 - 8/6/18 - 8/10/18
+- [ ] (Gustavo) Settings page:
+  - [x] (Gustavo) Account page
+  - [x] (Gustavo) About page
+  - [ ] (Gustavo) Help page
+  - [ ] (Gustavo) Activity page
+  - [ ] (Gustavo) Friends page
+- [ ] (Gustavo's brother) Design launch screen and logo
 - [ ] Homepage redesign:
   - [ ] Add image/icon to acts
   - [ ] Add points and/or amount of times done act to home
@@ -158,12 +169,6 @@ CORE
 - [ ] Level progress in the notification after completing an act
 - [ ] (?) get rid of act detail view
 - [ ] User can hide daily challenge
-- [x] (Haley) On homepage if there are no acts then theres a button to take you to the categories
-- [ ] Settings page
-- [x] (Haley) Walkthrough
-
-## Week 4 - 8/6/18 - 8/10/18
-- [ ] (Gustavo's brother) Design launch screen and logo
 
 ## Week 5 - 8/13/18 - 8/17/18
 
