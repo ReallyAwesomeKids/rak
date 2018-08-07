@@ -21,13 +21,13 @@
     [Parse initializeWithConfiguration:config];
     [InitializeDB initializeDatabase];
     
+    // Nav bar appearence
     UIImage *navBackgroundImage = [UIImage imageNamed:@"example"];
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTranslucent:NO];
     
     if (CustomUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
-        
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabBar"];
     }
     
