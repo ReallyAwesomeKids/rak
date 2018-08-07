@@ -167,10 +167,11 @@ CORE
   - [ ] Header over the chosen acts
 - [ ] Level progress in the notification after completing an act
 - [ ] (?) get rid of act detail view
-- [x] Daily challenge hides after completion
+- [x] (Haley) Daily challenge hides after completion
 - [x] (Haley) Category VC: Carousel 
 - [x] (Haley) Search for acts
 - [x] (Haley) View all acts page
+- [x] (Haley) Fixed daily challenge bug so that it will change daily
 
 ## Week 5 - 8/13/18 - 8/17/18
 
