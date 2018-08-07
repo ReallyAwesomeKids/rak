@@ -19,7 +19,14 @@
     self.familyName.text = contact.familyName;
     self.email.text = [contact.emailAddresses[0] valueForKey:@"value"];
     self.number.text = [[contact.phoneNumbers[0] valueForKey:@"value"] valueForKey:@"digits"];
+    
+    [self.contactButton addTarget:self
+                       action:@selector(didTapContact:)
+             forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (IBAction)didTapContact:(id)sender {
+    [self.delegate buttonTappedOnCell:self];
+}
 
 @end

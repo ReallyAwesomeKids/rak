@@ -39,41 +39,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow-settings"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yf-9Q-qav">
-                                <rect key="frame" x="21" y="42" width="25" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="activity"/>
-                                <connections>
-                                    <segue destination="zoo-fP-wpt" kind="show" id="8OW-5s-3og"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DA-77-xKM">
-                                <rect key="frame" x="21" y="132" width="25" height="25"/>
+                                <rect key="frame" x="21" y="99" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="about"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrS-LH-uvL">
-                                <rect key="frame" x="21" y="72" width="25" height="25"/>
+                                <rect key="frame" x="21" y="39" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="account"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoc-2d-q5N">
-                                <rect key="frame" x="21" y="102" width="25" height="25"/>
+                                <rect key="frame" x="21" y="69" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="help"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iag-5f-weg">
-                                <rect key="frame" x="54" y="39" width="277" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Your Activity">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zoo-fP-wpt" kind="show" id="8i3-Mi-o4V"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUz-rp-nU1">
-                                <rect key="frame" x="54" y="69" width="277" height="30"/>
+                                <rect key="frame" x="54" y="36" width="277" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Account">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qu0-6h-efb">
-                                <rect key="frame" x="54" y="99" width="277" height="30"/>
+                                <rect key="frame" x="54" y="66" width="277" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Help">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGE-nP-zse">
-                                <rect key="frame" x="54" y="129" width="277" height="30"/>
+                                <rect key="frame" x="54" y="96" width="277" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="About">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,16 +84,8 @@
                                     <segue destination="2y6-7H-TKO" kind="show" id="IwG-UB-jFV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="np0-EX-ycG">
-                                <rect key="frame" x="339" y="43" width="20" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="arrow-settings"/>
-                                <connections>
-                                    <segue destination="zoo-fP-wpt" kind="show" id="is2-SZ-abP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrE-yz-Upo">
-                                <rect key="frame" x="339" y="73" width="20" height="22"/>
+                                <rect key="frame" x="339" y="40" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow-settings"/>
                                 <connections>
@@ -119,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvI-Dm-J0R">
-                                <rect key="frame" x="339" y="103" width="20" height="22"/>
+                                <rect key="frame" x="339" y="70" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow-settings"/>
                                 <connections>
@@ -127,7 +101,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XL-Hh-BZa">
-                                <rect key="frame" x="339" y="133" width="20" height="22"/>
+                                <rect key="frame" x="339" y="100" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow-settings"/>
                                 <connections>
@@ -135,14 +109,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYo-Fh-FGa">
-                                <rect key="frame" x="21" y="181" width="53" height="21"/>
+                                <rect key="frame" x="21" y="148" width="53" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK2-OU-xqI">
-                                <rect key="frame" x="21" y="218" width="111" height="30"/>
+                                <rect key="frame" x="21" y="185" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log In to Twitter"/>
                                 <connections>
@@ -150,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAo-AC-3n2">
-                                <rect key="frame" x="21" y="256" width="133" height="30"/>
+                                <rect key="frame" x="21" y="223" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log Out of Account"/>
                                 <connections>
@@ -358,6 +332,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bso-fP-diE">
+                                                    <rect key="frame" x="310" y="29" width="55" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Contact"/>
+                                                    <connections>
+                                                        <action selector="didTapContact:" destination="cx8-E8-MAB" eventType="touchUpInside" id="9M8-dX-zSa"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="526 932 0431" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wq6-YW-jfE">
                                                     <rect key="frame" x="6" y="52" width="109" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -380,6 +362,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="contactButton" destination="Bso-fP-diE" id="dHc-oO-RWL"/>
                                             <outlet property="email" destination="hoV-s9-ENw" id="VGM-29-KGv"/>
                                             <outlet property="familyName" destination="eg9-OP-zQJ" id="9vP-PL-siP"/>
                                             <outlet property="name" destination="StQ-t3-Mve" id="g9Z-tW-KmA"/>
@@ -564,19 +547,10 @@
             </objects>
             <point key="canvasLocation" x="1277.5999999999999" y="547.37631184407803"/>
         </scene>
-        <!--Activity-->
-        <scene sceneID="YH8-8I-s0i">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Activity" id="zoo-fP-wpt" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AH4-UI-pHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1943" y="175"/>
-        </scene>
     </scenes>
     <resources>
         <image name="about" width="20" height="20"/>
         <image name="account" width="20" height="20"/>
-        <image name="activity" width="20" height="20"/>
         <image name="arrow-settings" width="20" height="20"/>
         <image name="bofan" width="524" height="514"/>
         <image name="gus1" width="878" height="988"/>
@@ -586,7 +560,6 @@
         <image name="invite" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8i3-Mi-o4V"/>
         <segue reference="Wnv-q9-70I"/>
         <segue reference="IwG-UB-jFV"/>
         <segue reference="fz3-g1-w0a"/>
