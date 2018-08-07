@@ -11,6 +11,7 @@
 
 //Interface
 @interface ActCategoryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *actCategoryTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSArray *acts;

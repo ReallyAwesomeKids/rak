@@ -39,6 +39,8 @@
 		54C9D7AA21152FB4002AAE00 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7A921152FB4002AAE00 /* AboutViewController.m */; };
 		54C9D7AD2115306C002AAE00 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7AC2115306C002AAE00 /* ActivityViewController.m */; };
 		54C9D7B02115307E002AAE00 /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7AF2115307E002AAE00 /* InviteViewController.m */; };
+		54C9D7B321190817002AAE00 /* FAQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7B221190817002AAE00 /* FAQTableViewCell.m */; };
+		54C9D7B621190866002AAE00 /* FAQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7B521190866002AAE00 /* FAQ.m */; };
 		5D0F04EE2114F2DF0022DB2F /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */; };
 		5D0F04F12114F32D0022DB2F /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */; };
 		5D0F04F42114F33E0022DB2F /* WalkthroughContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */; };
@@ -161,6 +163,10 @@
 		54C9D7AC2115306C002AAE00 /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		54C9D7AE2115307E002AAE00 /* InviteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteViewController.h; sourceTree = "<group>"; };
 		54C9D7AF2115307E002AAE00 /* InviteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteViewController.m; sourceTree = "<group>"; };
+		54C9D7B121190817002AAE00 /* FAQTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQTableViewCell.h; sourceTree = "<group>"; };
+		54C9D7B221190817002AAE00 /* FAQTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQTableViewCell.m; sourceTree = "<group>"; };
+		54C9D7B421190866002AAE00 /* FAQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQ.h; sourceTree = "<group>"; };
+		54C9D7B521190866002AAE00 /* FAQ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQ.m; sourceTree = "<group>"; };
 		5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		5D0F04EF2114F32D0022DB2F /* WalkthroughViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
 		5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
@@ -291,6 +297,8 @@
 				2C5C3B9020FFB902004568EF /* SearchCell.m */,
 				5451684721010DD200D45FE3 /* TimelineTableViewCell.h */,
 				5451684821010DD200D45FE3 /* TimelineTableViewCell.m */,
+				54C9D7B121190817002AAE00 /* FAQTableViewCell.h */,
+				54C9D7B221190817002AAE00 /* FAQTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -478,6 +486,8 @@
 				5D3F8286210B8DED00DFF5BE /* MapPin.m */,
 				5D190FC121000EB3002A469B /* Post.h */,
 				5D190FC221000EB3002A469B /* Post.m */,
+				54C9D7B421190866002AAE00 /* FAQ.h */,
+				54C9D7B521190866002AAE00 /* FAQ.m */,
 			);
 			path = "Parse Objects";
 			sourceTree = "<group>";
@@ -780,6 +790,7 @@
 				5DB100A020FEE5FF0085C785 /* DetailViewTableViewCell.m in Sources */,
 				2C5C3BA5210112AB004568EF /* LocationCell.m in Sources */,
 				5D3F8287210B8DED00DFF5BE /* MapPin.m in Sources */,
+				54C9D7B321190817002AAE00 /* FAQTableViewCell.m in Sources */,
 				5D3F8284210A881800DFF5BE /* MessageView.m in Sources */,
 				548B222D20FD508200D667F7 /* ActsTableViewCell.m in Sources */,
 				5DB64CC321066545002AE20E /* PopupViewController.m in Sources */,
@@ -787,6 +798,7 @@
 				54C9D7AD2115306C002AAE00 /* ActivityViewController.m in Sources */,
 				54516846210018CC00D45FE3 /* TimelineViewController.m in Sources */,
 				5DB1009720FE725D0085C785 /* ActCategory.m in Sources */,
+				54C9D7B621190866002AAE00 /* FAQ.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
 				54C9D7A42114E08A002AAE00 /* AccountViewController.m in Sources */,
 				5D190FC321000EB3002A469B /* Post.m in Sources */,
