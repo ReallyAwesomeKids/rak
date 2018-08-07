@@ -157,9 +157,11 @@ CORE
 - [ ] (Gustavo) Settings page:
   - [x] (Gustavo) Account page
   - [x] (Gustavo) About page
-  - [ ] (Gustavo) Help page
-  - [ ] (Gustavo) Activity page
+  - [x] (Gustavo) Help page
   - [ ] (Gustavo) Friends page
+   - [x] (Gustavo) Fetch all contacts from the user and display them
+   - [ ] (Gustavo) Allow the user to invite the contacts displayed through text
+   - [ ] (Gustavo) Allow the user to invite the contacts displayed through email
 - [ ] (Gustavo's brother) Design launch screen and logo
 - [ ] Homepage redesign:
   - [ ] Add image/icon to acts
@@ -181,6 +183,7 @@ CORE
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [x] user should not be able to add the same act multiple times to db [Category VC]
 - [x] If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
+- [ ] The list of acts in categories doesn't scroll smoothly
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
