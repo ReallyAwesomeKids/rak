@@ -84,8 +84,13 @@
 
 - (IBAction)didTapCategory:(id)sender {
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *)sender;
-    UIView *view = gesture.view;
-    [self performSegueWithIdentifier:@"actCategorySegue" sender:view];
+    CarouselView *view = (CarouselView *) gesture.view;
+    if ([view.cat.categoryName isEqualToString:@"Local Needs"]) {
+        [self performSegueWithIdentifier:@"localNeedsSegue" sender:view];
+    }
+    else {
+        [self performSegueWithIdentifier:@"actCategorySegue" sender:view];
+    }
 }
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
@@ -120,10 +125,7 @@
         ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
         actViewController.fetchAll = YES;
     }
-    
 }
-
-
 
 
 @end

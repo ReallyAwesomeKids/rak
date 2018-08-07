@@ -3,11 +3,9 @@
 #import "ParseUI/ParseUI.h"
 
 @implementation ActsTableViewCell
-
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
@@ -17,6 +15,7 @@
     self.homeCellActName.text = self.act.actName;
 
 }
+
 
 - (IBAction)didTapCellCheckmark:(id)sender {
     [self.checkButton setAlpha:0.f];

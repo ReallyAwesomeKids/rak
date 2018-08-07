@@ -20,8 +20,6 @@
 @property (strong, nonatomic) UIView *noActsChosenView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (weak, nonatomic) IBOutlet UIImageView *homeTaskImage;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstraint;
 
 
@@ -64,9 +62,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // TableView setup
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // initialization
@@ -145,9 +145,17 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];
     Act *act = self.userActs[indexPath.row];
     cell.act = act;
+    cell.detailViewBool = YES;
+    cell.detailHeight.constant = 0;
+//    CGRect temp = cell.detailView.frame;
+//    temp.size.height = 0;
+//    cell.detailView.frame = temp;
+    UITapGestureRecognizer *didTapCellDetailView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapCell:)];
+    [cell addGestureRecognizer:didTapCellDetailView];
     return cell;
 }
 
@@ -418,7 +426,7 @@
     [view addConstraints:@[centerX, centerY, leading, trailing]];
 
     self.noActsChosenView = view;
-
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background2"]];
     [self.view addSubview:self.noActsChosenView];
 }
 
@@ -456,6 +464,30 @@
             composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];
             composingVC.autoFilledPhoto = [UIImage imageNamed:@"levelup.png"];
         }
+    }
+}
+-(IBAction)didTapCell:(id)sender {
+    ActsTableViewCell *cell;
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
+    cell = (ActsTableViewCell*) gesture.view;
+    if (cell.detailViewBool == YES) {
+        NSLog(@"Did tap cell to expand");
+        cell.detailViewBool = NO;
+        cell.detailHeight.constant = 46;
+        [cell.detailView updateConstraints];
+        NSLog(@"%@", [NSString stringWithFormat:@"%f", cell.detailHeight.constant]);
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+    }
+    else {
+        NSLog(@"Did tap cell to unexpand");
+        cell.detailViewBool = YES;
+        cell.detailHeight.constant = 0;
+        [cell.detailView updateConstraints];
+        NSLog(@"%@", [NSString stringWithFormat:@"%f", cell.detailHeight.constant]);
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+
     }
 }
 

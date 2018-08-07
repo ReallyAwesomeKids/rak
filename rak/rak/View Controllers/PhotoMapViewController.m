@@ -23,17 +23,15 @@
 //Implementation
 @implementation PhotoMapViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-}
-
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:YES];
     for (UIView *view in self.view.subviews) {
         if ([view isKindOfClass:[MessageView class]]) {
             [view removeFromSuperview];
         }
+    }
+    for (id<MKAnnotation> ann in self.mapView.selectedAnnotations) {
+        [self.mapView deselectAnnotation:ann animated:NO];
     }
 }
 
@@ -53,14 +51,14 @@
     [self.locationManager requestAlwaysAuthorization];
     [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager requestLocation];
-    
+
     [self fetchPins];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     if (locations.count != 0) {
         CLLocation *currentLocation = locations[0];
-        MKCoordinateRegion region = MKCoordinateRegionMake(currentLocation.coordinate, MKCoordinateSpanMake(0.1, 0.1));
+        MKCoordinateRegion region = MKCoordinateRegionMake(currentLocation.coordinate, MKCoordinateSpanMake(0.115, 0.115));
         
         [self.mapView setRegion:region animated:YES];
         
