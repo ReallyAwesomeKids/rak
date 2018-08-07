@@ -1,6 +1,7 @@
 #import "ActsTableViewCell.h"
 #import "ActCategory.h"
 #import "ParseUI/ParseUI.h"
+
 @implementation ActsTableViewCell
 - (void)awakeFromNib {
     [super awakeFromNib];
