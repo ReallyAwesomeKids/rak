@@ -78,6 +78,7 @@
     // fetch data from db
     [self fetchUserActs];
     [self fetchDailyChallenge];
+
     
     NSDate *dateLastDidDailyChallenge = CustomUser.currentUser.dateLastDidDailyChallenge;
     if (dateLastDidDailyChallenge == nil || ![CustomUser.currentUser userDidDailyChallengeToday]) {
