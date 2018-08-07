@@ -10,11 +10,10 @@
 #import "PopupViewController.h"
 #import "MessageView.h"
 #import "ComposingViewController.h"
-
+#import "PointToLevelConverter.h"
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate, PopupViewControllerDelegate, ComposingViewControllerDelegate, MessageViewDelegate>
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *dailyChallengeView;
 @property (strong, nonatomic) UIView *noActsChosenView;
@@ -23,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstraint;
 
 
-
+@property (nonatomic, strong) NSString *percentUntilNextLevelText;
 @property (nonatomic, strong) NSMutableArray *acts;
 @property (nonatomic) NSInteger levelForPopup;
 
@@ -79,6 +78,7 @@
     // fetch data from db
     [self fetchUserActs];
     [self fetchDailyChallenge];
+
     
     NSDate *dateLastDidDailyChallenge = CustomUser.currentUser.dateLastDidDailyChallenge;
     if (dateLastDidDailyChallenge == nil || ![CustomUser.currentUser userDidDailyChallengeToday]) {
@@ -243,7 +243,7 @@
     } completion:^(BOOL finished) {
         [self hideDailyChallengeAnimated:YES];
     }];
-    
+
     // Notification
     [MessageView presentMessageViewWithText:@"You have completed your Daily Challenge!"
                         withTapInstructions:@"Tap to the share the story"
@@ -290,11 +290,15 @@
 }
 
 - (void)userDidCompleteAct:(Act *)act {
-    [MessageView presentMessageViewWithText:@"Act of kindness completed. Great work!"
+    [CustomUser.currentUser userDidCompleteAct:act];
+    NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:CustomUser.currentUser.experiencePoints];
+    float percentUntilNextLevel = [PointToLevelConverter getPercentToNextLevelFromPoints: CustomUser.currentUser.experiencePoints];
+    self.percentUntilNextLevelText = [NSString stringWithFormat:@"%d%% to Level %ld", (int) (percentUntilNextLevel *100), levelNumber];
+    NSString *messageString = [NSString stringWithFormat:@"Act of kindness completed. %@", self.percentUntilNextLevelText ];
+    [MessageView presentMessageViewWithText: messageString
                         withTapInstructions:@"Tap to the share the story"
                            onViewController:self
                                 forDuration:6];
-    [CustomUser.currentUser userDidCompleteAct:act];
 }
 
 - (void)userDidLevelUpTo:(NSInteger)level {
