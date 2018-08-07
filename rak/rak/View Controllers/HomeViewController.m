@@ -10,11 +10,10 @@
 #import "PopupViewController.h"
 #import "MessageView.h"
 #import "ComposingViewController.h"
-
+#import "PointToLevelConverter.h"
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate, PopupViewControllerDelegate, ComposingViewControllerDelegate, MessageViewDelegate>
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *dailyChallengeView;
 @property (strong, nonatomic) UIView *noActsChosenView;
@@ -23,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstraint;
 
 
-
+@property (nonatomic, strong) NSString *percentUntilNextLevelText;
 @property (nonatomic, strong) NSMutableArray *acts;
 @property (nonatomic) NSInteger levelForPopup;
 
@@ -243,7 +242,7 @@
     } completion:^(BOOL finished) {
         [self hideDailyChallengeAnimated:YES];
     }];
-    
+
     // Notification
     [MessageView presentMessageViewWithText:@"You have completed your Daily Challenge!"
                         withTapInstructions:@"Tap to the share the story"
@@ -286,6 +285,11 @@
 }
 
 - (void)userDidCompleteAct:(Act *)act {
+    CustomUser *user;
+    NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints];
+    float percentUntilNextLevel = [PointToLevelConverter getPercentToNextLevelFromPoints: user.experiencePoints];
+    
+    self.percentUntilNextLevelText = [NSString stringWithFormat:@"%d%% to Level %ld", (int) (percentUntilNextLevel *100), levelNumber];
     [MessageView presentMessageViewWithText:@"Act of kindness completed. Great work!"
                         withTapInstructions:@"Tap to the share the story"
                            onViewController:self
