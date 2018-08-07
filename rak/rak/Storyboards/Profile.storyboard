@@ -209,6 +209,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="X5P-bC-C8z" id="t8n-GV-L6h"/>
+                        <outlet property="settingsButton" destination="4rQ-ru-rSI" id="vgM-2v-32I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUR-ns-zUz" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -251,6 +251,8 @@
 }
 
 - (void)hideDailyChallengeAnimated:(BOOL)animated {
+    if (self.dailyChallengeView == nil)
+        return;
     if (!animated) {
         self.dailyChallengeView.frame = CGRectMake(self.dailyChallengeView.frame.origin.x,
                                                    -105,
@@ -262,6 +264,7 @@
                                           self.tableView.frame.size.height);
         self.tableViewTopConstraint.constant = 0;
         [self.dailyChallengeView removeFromSuperview];
+        self.dailyChallengeView = nil;
     }
     else {
     [UIView animateWithDuration:.5
@@ -280,6 +283,7 @@
                      completion:^(BOOL finished) {
                          self.tableViewTopConstraint.constant = 0;
                          [self.dailyChallengeView removeFromSuperview];
+                         self.dailyChallengeView = nil;
                      }];
     }
 }

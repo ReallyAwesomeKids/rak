@@ -155,7 +155,8 @@
 }
 
 - (BOOL)userDidDailyChallengeToday {
-    return [self.dateLastDidDailyChallenge compare:[DateFunctions getToday]] == NSOrderedSame;
+    
+    return self.dateLastDidDailyChallenge != nil && [self.dateLastDidDailyChallenge compare:[DateFunctions getToday]] == NSOrderedSame;
 }
 
 @end
