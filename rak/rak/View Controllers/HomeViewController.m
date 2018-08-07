@@ -285,12 +285,12 @@
 }
 
 - (void)userDidCompleteAct:(Act *)act {
-    CustomUser *user;
-    NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints];
-    float percentUntilNextLevel = [PointToLevelConverter getPercentToNextLevelFromPoints: user.experiencePoints];
+    NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:CustomUser.currentUser.experiencePoints];
+    float percentUntilNextLevel = [PointToLevelConverter getPercentToNextLevelFromPoints: CustomUser.currentUser.experiencePoints];
     
     self.percentUntilNextLevelText = [NSString stringWithFormat:@"%d%% to Level %ld", (int) (percentUntilNextLevel *100), levelNumber];
-    [MessageView presentMessageViewWithText:@"Act of kindness completed. Great work!"
+    NSString *messageString = [NSString stringWithFormat:@"Act of kindness completed. %@", self.percentUntilNextLevelText ];
+    [MessageView presentMessageViewWithText: messageString
                         withTapInstructions:@"Tap to the share the story"
                            onViewController:self
                                 forDuration:6];
