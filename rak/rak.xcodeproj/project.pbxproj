@@ -41,6 +41,9 @@
 		54C9D7B02115307E002AAE00 /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7AF2115307E002AAE00 /* InviteViewController.m */; };
 		54C9D7B321190817002AAE00 /* FAQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7B221190817002AAE00 /* FAQTableViewCell.m */; };
 		54C9D7B621190866002AAE00 /* FAQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7B521190866002AAE00 /* FAQ.m */; };
+		54FF7E70211A41420060C24E /* InviteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF7E6F211A41420060C24E /* InviteTableViewCell.m */; };
+		54FF7E73211A43250060C24E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF7E72211A43250060C24E /* Contact.m */; };
+		54FF7E75211A45520060C24E /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54FF7E74211A45520060C24E /* Activity.storyboard */; };
 		5D0F04EE2114F2DF0022DB2F /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */; };
 		5D0F04F12114F32D0022DB2F /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */; };
 		5D0F04F42114F33E0022DB2F /* WalkthroughContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */; };
@@ -167,6 +170,11 @@
 		54C9D7B221190817002AAE00 /* FAQTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQTableViewCell.m; sourceTree = "<group>"; };
 		54C9D7B421190866002AAE00 /* FAQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FAQ.h; sourceTree = "<group>"; };
 		54C9D7B521190866002AAE00 /* FAQ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FAQ.m; sourceTree = "<group>"; };
+		54FF7E6E211A41420060C24E /* InviteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteTableViewCell.h; sourceTree = "<group>"; };
+		54FF7E6F211A41420060C24E /* InviteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteTableViewCell.m; sourceTree = "<group>"; };
+		54FF7E71211A43250060C24E /* Contact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		54FF7E72211A43250060C24E /* Contact.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		54FF7E74211A45520060C24E /* Activity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		5D0F04EF2114F32D0022DB2F /* WalkthroughViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
 		5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
@@ -299,6 +307,8 @@
 				5451684821010DD200D45FE3 /* TimelineTableViewCell.m */,
 				54C9D7B121190817002AAE00 /* FAQTableViewCell.h */,
 				54C9D7B221190817002AAE00 /* FAQTableViewCell.m */,
+				54FF7E6E211A41420060C24E /* InviteTableViewCell.h */,
+				54FF7E6F211A41420060C24E /* InviteTableViewCell.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -392,6 +402,7 @@
 				548438AC20FFF8EB00592EB1 /* Map.storyboard */,
 				54C9D79D2114CA9E002AAE00 /* Settings.storyboard */,
 				5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */,
+				54FF7E74211A45520060C24E /* Activity.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -466,6 +477,8 @@
 				5DB1009020FE64A70085C785 /* PointToLevelConverter.m */,
 				54BE1DAB2106A01000DA4A25 /* Tweet.h */,
 				54BE1DAC2106A01000DA4A25 /* Tweet.m */,
+				54FF7E71211A43250060C24E /* Contact.h */,
+				54FF7E72211A43250060C24E /* Contact.m */,
 				5D329D2620FD164700C180C9 /* Parse Objects */,
 			);
 			path = Models;
@@ -652,6 +665,7 @@
 				5D329CF620FD15A300C180C9 /* LaunchScreen.storyboard in Resources */,
 				5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */,
 				5D329D2020FD15FE00C180C9 /* Home.storyboard in Resources */,
+				54FF7E75211A45520060C24E /* Activity.storyboard in Resources */,
 				5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */,
 				548438A420FFAD8B00592EB1 /* Search.storyboard in Resources */,
 				5D0F04EE2114F2DF0022DB2F /* Walkthrough.storyboard in Resources */,
@@ -800,6 +814,7 @@
 				5DB1009720FE725D0085C785 /* ActCategory.m in Sources */,
 				54C9D7B621190866002AAE00 /* FAQ.m in Sources */,
 				5D329D4520FD1F4200C180C9 /* Badge.m in Sources */,
+				54FF7E73211A43250060C24E /* Contact.m in Sources */,
 				54C9D7A42114E08A002AAE00 /* AccountViewController.m in Sources */,
 				5D190FC321000EB3002A469B /* Post.m in Sources */,
 				5D329D5020FD436C00C180C9 /* InitializeDB.m in Sources */,
@@ -809,6 +824,7 @@
 				5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */,
 				54C9D79C211386E9002AAE00 /* AddActViewController.m in Sources */,
 				54C9D7AA21152FB4002AAE00 /* AboutViewController.m in Sources */,
+				54FF7E70211A41420060C24E /* InviteTableViewCell.m in Sources */,
 				5D329D3F20FD1AA900C180C9 /* Act.m in Sources */,
 				5D329D3320FD170500C180C9 /* CategoriesViewController.m in Sources */,
 				2C5C3B9120FFB902004568EF /* SearchCell.m in Sources */,

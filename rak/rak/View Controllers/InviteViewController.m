@@ -6,6 +6,7 @@
 @property (strong, nonatomic) NSMutableArray *groupOfContacts;
 @property (strong, nonatomic) NSMutableArray *phoneNumberArray;
 @property (strong, nonatomic) NSMutableArray *emailArray;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end
@@ -19,20 +20,7 @@
     // Contact
     self.groupOfContacts = [@[] mutableCopy];
     [self getAllContact];
-    
-    self.phoneNumberArray = [@[] mutableCopy];
-    self.emailArray = [@[] mutableCopy];
-
-    for (CNContact *contact in self.groupOfContacts) {
-        NSArray *thisOne = [[contact.phoneNumbers valueForKey:@"value"] valueForKey:@"digits"];
-        NSArray  *email = [contact.emailAddresses valueForKey:@"value"];
-        [self.phoneNumberArray addObjectsFromArray:thisOne];
-        [self.emailArray addObjectsFromArray:email];
-    }
-    NSLog(@"%@", self.phoneNumberArray);
-    NSLog(@"%@", self.emailArray);
-
-    
+    [self getPhoneAndEmail];
 }
 
 - (void)getAllContact {
@@ -48,6 +36,20 @@
     [addressBook enumerateContactsWithFetchRequest:fetchRequest error:nil usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
         [self.groupOfContacts addObject:contact];
     }];
+}
+
+- (void)getPhoneAndEmail {
+    self.phoneNumberArray = [@[] mutableCopy];
+    self.emailArray = [@[] mutableCopy];
+    
+    for (CNContact *contact in self.groupOfContacts) {
+        NSArray *thisOne = [[contact.phoneNumbers valueForKey:@"value"] valueForKey:@"digits"];
+        NSArray  *email = [contact.emailAddresses valueForKey:@"value"];
+        [self.phoneNumberArray addObjectsFromArray:thisOne];
+        [self.emailArray addObjectsFromArray:email];
+    }
+    NSLog(@"%@", self.phoneNumberArray);
+    NSLog(@"%@", self.emailArray);
 }
 
 - (void)didReceiveMemoryWarning {
