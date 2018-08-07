@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSArray *streakBadges;
 @property (strong, nonatomic) PopoverViewController *popoverVC;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsButton;
 
 @end
 
@@ -25,7 +26,14 @@
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    
+    if (self.user != CustomUser.currentUser) {
+        self.settingsButton.enabled = NO;
+        self.settingsButton.tintColor = [UIColor clearColor];
+    }
+    else {
+        self.settingsButton.enabled = YES;
+        self.settingsButton.tintColor = nil;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
