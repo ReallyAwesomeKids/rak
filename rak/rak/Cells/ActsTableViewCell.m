@@ -13,7 +13,18 @@
 - (void)setAct:(Act *)act {
     _act = act;
     self.homeCellActName.text = self.act.actName;
+    [self configureCategoryImage];
+}
 
+- (void)configureCategoryImage {
+    NSString *categoryName = self.act.category;
+    PFQuery *query = [ActCategory query];
+    [query whereKey:@"categoryName" equalTo:categoryName];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        ActCategory *category = (ActCategory *)objects[0];
+        self.homeCellActImage.file = category.emoji;
+        [self.homeCellActImage loadInBackground];
+    }];
 }
 - (void)customLayout {
     self.homeBackgroundView.backgroundColor = UIColor.whiteColor;

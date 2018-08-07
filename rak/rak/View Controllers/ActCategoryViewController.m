@@ -77,17 +77,11 @@
     Act *actPiece = self.filteredActs[indexPath.row];
     [self.refreshControl endRefreshing];
     actCell.selectAct = actPiece;
+    
     actCell.isInUserChosenActs = [CustomUser.currentUser.chosenActs containsObject:actCell.selectAct];
-    
-    if (actCell.isInUserChosenActs) {
-        [actCell.addingButton setSelected:YES];
-        [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
-    }
-    else {
-        [actCell.addingButton setSelected:NO];
-        [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
-    }
-    
+   
+   [actCell.addingButton setSelected:actCell.isInUserChosenActs];
+  
     return actCell;
 }
 
@@ -99,55 +93,40 @@
 
 //Adds Personal Act To Homepage
 - (IBAction)addingPersonalAct:(id)sender {
-    UIButton *actAdd = (UIButton*) sender;
-    ActsCell *actCell = (ActsCell *)actAdd.superview.superview;
-    if (actCell.isInUserChosenActs == YES) {
-        [actCell.addingButton setSelected:NO];
-        [actCell.addingButton setImage:[UIImage imageNamed:@"plus"] forState:UIControlStateNormal];
-        [self.personalAct removeObject:actCell.selectAct];
-        actCell.isInUserChosenActs = NO;
-        NSOrderedSet *uniqueActsSet = [NSOrderedSet orderedSetWithArray:self.personalAct];
-        NSArray *uniqueActsArray = [uniqueActsSet array];
-        CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:uniqueActsArray];
-        [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"Saved in background");
-            if (error)
-                NSLog(@"error: %@", error.localizedDescription);
-            else {
-                [MessageView presentMessageViewWithText:@"Act deleted from home"
-                                    withTapInstructions:nil
-                                       onViewController:self
-                                            forDuration:1.5];
-            }
-        }];
-        
+    UIButton *addButton = (UIButton*) sender;
+    ActsCell *actCell = (ActsCell *)addButton.superview.superview;
+    
+    NSMutableArray *chosenActs = [CustomUser.currentUser.chosenActs mutableCopy];
+    
+    if (actCell.isInUserChosenActs) {
+        [chosenActs removeObject:actCell.selectAct];
+        [MessageView presentMessageViewWithText:@"Act deleted from home"
+                            withTapInstructions:nil
+                               onViewController:self
+                                    forDuration:1.5];
     }
     
     else {
-        [actCell.addingButton setSelected:YES];
-        [actCell.addingButton setImage:[UIImage imageNamed:@"minus"] forState:UIControlStateSelected];
-        self.personalAct = [NSMutableArray arrayWithArray:CustomUser.currentUser.chosenActs];
-        [self.personalAct addObject:actCell.selectAct];
-        actCell.isInUserChosenActs = YES;
-        NSOrderedSet *uniqueActsSet = [NSOrderedSet orderedSetWithArray:self.personalAct];
-        NSArray *uniqueActsArray = [uniqueActsSet array];
-        CustomUser.currentUser.chosenActs = [NSArray arrayWithArray:uniqueActsArray];
-        [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"Saved in background");
-            if (error)
-                NSLog(@"error: %@", error.localizedDescription);
-            else {
-                [MessageView presentMessageViewWithText:@"Act added to home"
-                                    withTapInstructions:nil
-                                       onViewController:self
-                                            forDuration:1.5];
-            }
-        }];
+        [chosenActs addObject:actCell.selectAct];
+        [MessageView presentMessageViewWithText:@"Act added to home"
+                            withTapInstructions:nil
+                               onViewController:self
+                                    forDuration:1.5];
     }
+    
+    [addButton setSelected:!addButton.selected];
+    CustomUser.currentUser.chosenActs = [chosenActs copy];
+    actCell.isInUserChosenActs = !actCell.isInUserChosenActs;
+    [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saved in background");
+        if (error)
+            NSLog(@"error: %@", error.localizedDescription);
+    }];
 }
 
 - (void)fetchAllActs {
     PFQuery *query = [Act query];
+    [query orderByAscending:@"actName"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         self.acts = objects;
         self.filteredActs = self.acts;

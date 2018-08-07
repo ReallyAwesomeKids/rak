@@ -7,7 +7,7 @@
 @property (strong, nonatomic) NSArray *acts;
 @property (strong, nonatomic) PFFile *categoryImage;
 @property (strong, nonatomic) NSString *detailViewImageName;
-@property (strong,nonatomic) PFFile *Emoji;
+@property (strong,nonatomic) PFFile *emoji;
 
 @property (nonatomic) CGFloat colorR;
 @property (nonatomic) CGFloat colorG;

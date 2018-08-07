@@ -30,6 +30,7 @@
     self.carousel.delegate = self;
     self.carousel.dataSource = self;
     self.carousel.type = iCarouselTypeCoverFlow;
+    self.carousel.pagingEnabled = YES;
     [self fetchCategories];
 }
 
