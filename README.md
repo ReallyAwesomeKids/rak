@@ -157,9 +157,11 @@ CORE
 - [ ] (Gustavo) Settings page:
   - [x] (Gustavo) Account page
   - [x] (Gustavo) About page
-  - [ ] (Gustavo) Help page
-  - [ ] (Gustavo) Activity page
+  - [x] (Gustavo) Help page
   - [ ] (Gustavo) Friends page
+   - [x] (Gustavo) Fetch all contacts from the user and display them
+   - [ ] (Gustavo) Allow the user to invite the contacts displayed through text
+   - [ ] (Gustavo) Allow the user to invite the contacts displayed through email
 - [ ] (Gustavo's brother) Design launch screen and logo
 - [ ] Homepage redesign:
   - [ ] Add image/icon to acts
