@@ -20,12 +20,12 @@
 
 // Acts
 @property (nonatomic) NSInteger streak;
-@property (nonatomic) NSDate *dateLastDidAct;
+@property (strong, nonatomic) NSDate *dateLastDidAct;
 @property (nonatomic) NSInteger experiencePoints;
-@property (nonatomic) NSDictionary *actHistory;
+@property (strong, nonatomic) NSDictionary *actHistory;
 @property (nonatomic) NSInteger amountActsDone;
 @property (nonatomic, assign) BOOL hasCompletedDailyChallenge;
-
+@property (strong, nonatomic) NSDate *dateLastDidDailyChallenge;
 
 // Badges
 @property (strong, nonatomic) NSArray *overallBadges;
@@ -41,5 +41,7 @@
 - (void)updateDailyStreak;
 
 - (void)saveChangesInUserData;
+
+- (BOOL)userDidDailyChallengeToday;
 
 @end

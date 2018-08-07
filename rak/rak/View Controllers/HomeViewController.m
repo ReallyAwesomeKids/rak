@@ -51,6 +51,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [self fetchUserActs];
+    if ([CustomUser.currentUser userDidDailyChallengeToday])
+        [self hideDailyChallengeAnimated:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -77,6 +79,10 @@
     [self fetchUserActs];
     [self fetchDailyChallenge];
     
+    NSDate *dateLastDidDailyChallenge = CustomUser.currentUser.dateLastDidDailyChallenge;
+    if (dateLastDidDailyChallenge == nil || ![CustomUser.currentUser userDidDailyChallengeToday]) {
+        [self fetchDailyChallenge];
+    }
     // Programagtic view of dragging and dropping in code
     [self.refreshControl addTarget:self action:@selector(fetchUserActs) forControlEvents:UIControlEventValueChanged];
     
@@ -85,7 +91,7 @@
     [self.tableView sendSubviewToBack:self.refreshControl];
     
     CustomUser.currentUser.delegate = self;
-
+    
 }
 //- (void)fetchCategoryImages {
 //    PFQuery *categoryImageQuery = [ActCategory query];
@@ -117,7 +123,7 @@
     [challengeQuery includeKey:@"category"];
     [challengeQuery includeKey:@"dateLastFeatured"];
     [challengeQuery whereKey:@"category" equalTo:@"Daily Challenges"];
-    [challengeQuery orderByAscending:@"dateLastFeatured"];
+    [challengeQuery orderByDescending:@"dateLastFeatured"];
     
     // fetch data asynchronously
     [challengeQuery findObjectsInBackgroundWithBlock:^(NSArray *acts, NSError *error) {
@@ -181,7 +187,7 @@
 
 - (void)initializeCheckmark {
     CustomUser *user = CustomUser.currentUser;
-    if (user.hasCompletedDailyChallenge) {
+    if ([user userDidDailyChallengeToday]) {
         [self.dailyChallengeButton setImage:[UIImage imageNamed:@"check-filled"] forState:UIControlStateNormal];
     }
     else {
@@ -197,38 +203,49 @@
 }
 
 - (IBAction)didTapDailyChallenge:(id)sender {
-    if (!self.user.hasCompletedDailyChallenge) {
-        // Parse update
-        Act *act = self.dailyChallengeAct;
-        self.user.hasCompletedDailyChallenge = YES;
-        [self userDidCompleteAct:act];
-        [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (error)
-                NSLog(@"error: %@", error.localizedDescription);
-            else {
-                NSLog(@"Saved in background");
-            }
-        }];
-        
-        // Animates the button
-        [self.dailyChallengeButton setAlpha:0.f];
-        [self.dailyChallengeButton setImage:[UIImage imageNamed:@"check-filled"] forState:UIControlStateNormal];
-        [UIView animateWithDuration:1.f delay:0.f options:UIViewAnimationOptionCurveEaseIn animations:^{
-            // Becomes visible
-            [self.dailyChallengeButton setAlpha:1.f];
-        } completion:^(BOOL finished) {
-            [self hideDailyChallenge];
-        }];
-        
-        // Notification
-        [MessageView presentMessageViewWithText:@"You have completed your Daily Challenge!"
-                            withTapInstructions:@"Tap to the share the story"
-                               onViewController:self
-                                    forDuration:6];
-    }
+    // Parse update
+    Act *act = self.dailyChallengeAct;
+    CustomUser.currentUser.dateLastDidDailyChallenge = [DateFunctions getToday];
+    [self userDidCompleteAct:act];
+    [CustomUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error)
+            NSLog(@"error: %@", error.localizedDescription);
+        else {
+            NSLog(@"Saved in background");
+        }
+    }];
+    
+    // Animates the button
+    [self.dailyChallengeButton setAlpha:0.f];
+    [self.dailyChallengeButton setImage:[UIImage imageNamed:@"check-filled"] forState:UIControlStateNormal];
+    [UIView animateWithDuration:1.f delay:0.f options:UIViewAnimationOptionCurveEaseIn animations:^{
+        // Becomes visible
+        [self.dailyChallengeButton setAlpha:1.f];
+    } completion:^(BOOL finished) {
+        [self hideDailyChallengeAnimated:YES];
+    }];
+    
+    // Notification
+    [MessageView presentMessageViewWithText:@"You have completed your Daily Challenge!"
+                        withTapInstructions:@"Tap to the share the story"
+                           onViewController:self
+                                forDuration:6];
 }
 
-- (void)hideDailyChallenge {
+- (void)hideDailyChallengeAnimated:(BOOL)animated {
+    if (!animated) {
+        self.dailyChallengeView.frame = CGRectMake(self.dailyChallengeView.frame.origin.x,
+                                                   -105,
+                                                   self.dailyChallengeView.frame.size.width,
+                                                   self.dailyChallengeView.frame.size.height);
+        self.tableView.frame = CGRectMake(self.tableView.frame.origin.x,
+                                          0,
+                                          self.tableView.frame.size.width,
+                                          self.tableView.frame.size.height);
+        self.tableViewTopConstraint.constant = 0;
+        [self.dailyChallengeView removeFromSuperview];
+    }
+    else {
     [UIView animateWithDuration:.5
                           delay:0
                         options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAllowUserInteraction
@@ -246,6 +263,7 @@
                          self.tableViewTopConstraint.constant = 0;
                          [self.dailyChallengeView removeFromSuperview];
                      }];
+    }
 }
 
 - (void)userDidCompleteAct:(Act *)act {
@@ -337,7 +355,7 @@
                                                 blue:76.0f/255.0f
                                                alpha:1]];
     [button sizeToFit];
-
+    
     [button addTarget:self
                action:@selector(didTapCatalogueButton:)
      forControlEvents:UIControlEventTouchUpInside];
@@ -352,7 +370,7 @@
     stackView.spacing = 20;
     [stackView addArrangedSubview:label];
     [stackView addArrangedSubview:button];
-
+    
     stackView.frame = CGRectMake(0, 0, 375, 200);
     NSLog(@"frame: %@", NSStringFromCGRect(label.frame));
     NSLog(@"frame: %@", NSStringFromCGRect(button.frame));
@@ -362,14 +380,14 @@
     
     //Width
     NSLayoutConstraint *buttonWidth = [NSLayoutConstraint
-                                   constraintWithItem:button
-                                   attribute:NSLayoutAttributeWidth
-                                   relatedBy:NSLayoutRelationEqual
-                                   toItem:nil
-                                   attribute:NSLayoutAttributeNotAnAttribute
-                                   multiplier:1
-                                   constant:button.frame.size.width + 22];
-
+                                       constraintWithItem:button
+                                       attribute:NSLayoutAttributeWidth
+                                       relatedBy:NSLayoutRelationEqual
+                                       toItem:nil
+                                       attribute:NSLayoutAttributeNotAnAttribute
+                                       multiplier:1
+                                       constant:button.frame.size.width + 22];
+    
     [stackView addConstraint:buttonWidth];
     [view addSubview:stackView];
     
@@ -396,29 +414,29 @@
     
     //Leading
     NSLayoutConstraint *leading = [NSLayoutConstraint
-                                 constraintWithItem:stackView
-                                 attribute:NSLayoutAttributeLeading
-                                 relatedBy:NSLayoutRelationEqual
-                                 toItem:view
-                                 attribute:NSLayoutAttributeLeading
-                                 multiplier:1.0f
-                                 constant:15];
+                                   constraintWithItem:stackView
+                                   attribute:NSLayoutAttributeLeading
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:view
+                                   attribute:NSLayoutAttributeLeading
+                                   multiplier:1.0f
+                                   constant:15];
     
     //Trailing
     NSLayoutConstraint *trailing = [NSLayoutConstraint
-                                   constraintWithItem:stackView
-                                   attribute:NSLayoutAttributeTrailing
-                                   relatedBy:NSLayoutRelationEqual
-                                   toItem:view
-                                   attribute:NSLayoutAttributeTrailing
-                                   multiplier:1.0f
-                                   constant:-15];
+                                    constraintWithItem:stackView
+                                    attribute:NSLayoutAttributeTrailing
+                                    relatedBy:NSLayoutRelationEqual
+                                    toItem:view
+                                    attribute:NSLayoutAttributeTrailing
+                                    multiplier:1.0f
+                                    constant:-15];
     
     //Add constraints to the Parent
     [view addConstraints:@[centerX, centerY, leading, trailing]];
-
+    
     self.noActsChosenView = view;
-
+    
     [self.view addSubview:self.noActsChosenView];
 }
 
@@ -450,7 +468,7 @@
         composingVC.delegate = self;
         if (self.badgeForPopup != nil) {
             composingVC.autoFilledText =[NSString stringWithFormat:@"I just earned a new badge: %@!", self.badgeForPopup.badgeName];
-        composingVC.autoFilledPhoto = [UIImage imageNamed:@"trophy.png"];
+            composingVC.autoFilledPhoto = [UIImage imageNamed:@"trophy.png"];
         }
         else if (self.levelForPopup != 0) {
             composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];

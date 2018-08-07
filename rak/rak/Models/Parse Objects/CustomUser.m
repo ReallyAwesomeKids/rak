@@ -5,7 +5,7 @@
 
 @implementation CustomUser
 
-@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges, hasCompletedDailyChallenge;
+@dynamic username, password, profileImage, displayName, location, streak, dateLastDidAct, experiencePoints, actHistory, amountActsDone, chosenActs,overallBadges, streakBadges, hasCompletedDailyChallenge, dateLastDidDailyChallenge;
 
 @synthesize delegate;
 
@@ -152,6 +152,10 @@
     [self saveChangesInUserData];
     
     [self.delegate userDidGetNewBadge:badge];
+}
+
+- (BOOL)userDidDailyChallengeToday {
+    return [self.dateLastDidDailyChallenge compare:[DateFunctions getToday]] == NSOrderedSame;
 }
 
 @end

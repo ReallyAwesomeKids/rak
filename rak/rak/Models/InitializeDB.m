@@ -137,7 +137,7 @@
         ActCategory *category = [[ActCategory alloc] init];
         category.categoryName = cat;
         category.categoryImage = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:cat]];
-        category.Emoji = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:cat]];
+        category.emoji = [ImageToFileConversion getPFFileFromImage:[UIImage imageNamed:cat]];
         category.colorG = 1;
         category.colorB = 1;
         category.colorR = 1;
