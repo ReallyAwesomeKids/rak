@@ -6,6 +6,7 @@
 #import "DateFunctions.h"
 #import "Post.h"
 #import "Badge.h"
+#import "FAQ.h"
 
 @implementation InitializeDB
 
@@ -15,7 +16,6 @@
   //  [self initializeActCategories];
 //    [self updateActs];
 //    [self initializeBadges];
- 
 }
 
 + (void)updateActs {
@@ -189,5 +189,6 @@
         [badge saveInBackground];
     }
 }
+
 
 @end
