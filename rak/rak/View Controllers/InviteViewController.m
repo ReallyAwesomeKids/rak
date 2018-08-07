@@ -1,14 +1,12 @@
-//
-//  InviteViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 8/3/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "InviteViewController.h"
+#import <Contacts/Contacts.h>
 
 @interface InviteViewController ()
+
+@property (strong, nonatomic) NSMutableArray *groupOfContacts;
+@property (strong, nonatomic) NSMutableArray *phoneNumberArray;
+@property (strong, nonatomic) NSMutableArray *emailArray;
+
 
 @end
 
@@ -17,6 +15,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // Contact
+    self.groupOfContacts = [@[] mutableCopy];
+    [self getAllContact];
+    
+    self.phoneNumberArray = [@[] mutableCopy];
+    self.emailArray = [@[] mutableCopy];
+
+    for (CNContact *contact in self.groupOfContacts) {
+        NSArray *thisOne = [[contact.phoneNumbers valueForKey:@"value"] valueForKey:@"digits"];
+        NSArray  *email = [contact.emailAddresses valueForKey:@"value"];
+        [self.phoneNumberArray addObjectsFromArray:thisOne];
+        [self.emailArray addObjectsFromArray:email];
+    }
+    NSLog(@"%@", self.phoneNumberArray);
+    NSLog(@"%@", self.emailArray);
+
+    
+}
+
+- (void)getAllContact {
+    CNContactStore *addressBook = [[CNContactStore alloc] init];
+    NSArray *keysToFetch = @[CNContactEmailAddressesKey,
+                             CNContactFamilyNameKey,
+                             CNContactGivenNameKey,
+                             CNContactPhoneNumbersKey,
+                             CNContactPostalAddressesKey];
+
+    CNContactFetchRequest *fetchRequest = [[CNContactFetchRequest alloc] initWithKeysToFetch:keysToFetch];
+
+    [addressBook enumerateContactsWithFetchRequest:fetchRequest error:nil usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
+        [self.groupOfContacts addObject:contact];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

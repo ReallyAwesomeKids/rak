@@ -14,17 +14,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // TableView setup
+    self.timelinePosts = [[NSMutableArray alloc] init];
+    [self tableViewSetup];
+    [self refreshControlSetup];
+    [self fetchPosts];
+}
+
+- (void)tableViewSetup {
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    // Array Init
-    self.timelinePosts = [[NSMutableArray alloc] init];
-    
-    [self fetchPosts];
-    [self refreshControlSetup];
 }
 
 - (void) refreshControlSetup {
@@ -94,7 +93,6 @@
     
     NSArray *excluded = @[UIActivityTypePostToWeibo,
                          UIActivityTypeMessage,
-                         UIActivityTypeMail,
                          UIActivityTypePrint,
                          UIActivityTypeCopyToPasteboard,
                          UIActivityTypeAssignToContact,

@@ -23,9 +23,6 @@
                                 <rect key="frame" x="21" y="10" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="invite"/>
-                                <connections>
-                                    <segue destination="isy-78-9Zp" kind="show" id="lyy-Ob-k7K"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9NM-eU-sMJ">
                                 <rect key="frame" x="54" y="7" width="264" height="30"/>
@@ -34,16 +31,13 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="isy-78-9Zp" kind="show" id="uhR-bw-bBj"/>
+                                    <segue destination="isy-78-9Zp" kind="show" id="mLK-ZP-QDR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQd-FG-C1d">
                                 <rect key="frame" x="339" y="11" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="arrow-settings"/>
-                                <connections>
-                                    <segue destination="isy-78-9Zp" kind="show" id="USY-o7-ujo"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yf-9Q-qav">
                                 <rect key="frame" x="21" y="42" width="25" height="25"/>
@@ -326,7 +320,7 @@
             </objects>
             <point key="canvasLocation" x="1277.5999999999999" y="-236.13193403298354"/>
         </scene>
-        <!--Invite View Controller-->
+        <!--Invite-->
         <scene sceneID="A3T-LT-TtR">
             <objects>
                 <viewController id="isy-78-9Zp" customClass="InviteViewController" sceneMemberID="viewController">
@@ -345,10 +339,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="snb-7O-dXz"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Invite" id="DCB-7H-bab"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ouo-No-NY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2136.8000000000002" y="-557.27136431784118"/>
+            <point key="canvasLocation" x="3076" y="-558.17091454272872"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="YGl-fE-L4q">
@@ -554,7 +549,6 @@
         <segue reference="wcc-Kq-Q47"/>
         <segue reference="Wnv-q9-70I"/>
         <segue reference="IwG-UB-jFV"/>
-        <segue reference="USY-o7-ujo"/>
         <segue reference="fz3-g1-w0a"/>
     </inferredMetricsTieBreakers>
 </document>
