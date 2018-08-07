@@ -119,10 +119,14 @@
                      completion:completion];
 }
 
-- (void)userDidTapMessage {
+- (void)hide {
     [self moveToYCoordinate:self.hiddenYCor withCompletion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
+}
+
+- (void)userDidTapMessage {
+    [self hide];
     [self.delegate userDidTapMessage];
 }
 

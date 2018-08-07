@@ -27,6 +27,10 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [self closePopup];
+}
+
 - (void)closePopup {
     [self dismissViewControllerAnimated:YES completion:^{
         [self.delegate userDidClosePopup];

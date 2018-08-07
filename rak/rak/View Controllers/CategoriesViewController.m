@@ -1,7 +1,7 @@
 //Imports
 #import "CategoriesViewController.h"
-#import "CategoriesCell.h"
 #import "Parse/Parse.h"
+#import "ParseUI/ParseUI.h"
 #import "InitializeDB.h"
 #import "ActCategory.h"
 #import "Act.h"
@@ -9,13 +9,16 @@
 #import "ActCategoryViewController.h"
 #import "iCarousel.h"
 #import "AddActViewController.h"
+#import "CarouselView.h"
 
 //Interface
-@interface CategoriesViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
-@property (weak, nonatomic) IBOutlet UICollectionView *categoriesCollectionView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@interface CategoriesViewController ()<iCarouselDelegate, iCarouselDataSource>
 @property (strong,nonatomic) NSArray *categories;
+@property (weak, nonatomic) IBOutlet iCarousel *carousel;
+
 @end
+
+
 
 //Implementation
 @implementation CategoriesViewController
@@ -23,40 +26,13 @@
 //Current Loaded View
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // CollectionView setup
-    self.categoriesCollectionView.delegate = self;
-    self.categoriesCollectionView.dataSource = self;
-    [self changeCategoriesLayout];
+
+    self.carousel.delegate = self;
+    self.carousel.dataSource = self;
+    self.carousel.type = iCarouselTypeCoverFlow;
     [self fetchCategories];
-    [self.navigationController popToViewController:self animated:YES];
 }
 
-//Change Categories Method (Changes Layout)
-- (void) changeCategoriesLayout {
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.categoriesCollectionView.collectionViewLayout;
-    [layout setScrollDirection:(UICollectionViewScrollDirectionHorizontal)];
-    // Adjusts spacing between cells
-    layout.minimumInteritemSpacing = 10;
-    layout.minimumLineSpacing = 10;
-    // Cell setup
-    CGFloat itemWidth = 330;
-    CGFloat itemHeight = 550;
-    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
-}
-
-//Creates Collection View for Categories
-- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    CategoriesCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CategoriesCell" forIndexPath:indexPath];
-    ActCategory *cat = self.categories[indexPath.row];
-    [cell configureCell:(ActCategory *)cat];
-    //[cell changeShape];
-    return cell;
-}
-
-//Populates Collection View for Categories
-- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.categories.count;
-}
 
 //Fetch Categories Method That Queries Categories From Parse For Future Use
 - (void)fetchCategories {
@@ -66,34 +42,76 @@
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *categories, NSError *error) {
         if (categories != nil) {
-            self.categories= categories;
-            [self.categoriesCollectionView reloadData];
+            self.categories = categories;
+            [self.carousel reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    CategoriesCell *cell = (CategoriesCell *) [self.categoriesCollectionView cellForItemAtIndexPath:indexPath];
-    if ([cell.cat.categoryName isEqualToString:@"Local Needs"]) {
-        [self performSegueWithIdentifier:@"localNeedsSegue" sender:cell];
+- (nonnull UIView *)carousel:(nonnull iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(nullable UIView *)view {
+    ActCategory *cat = self.categories[index];
+    
+    CarouselView *cview = [[CarouselView alloc] initWithFrame:CGRectMake(0, 0, 330, 540)];
+    cview.cat = cat;
+    PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 330, 540)];
+    [imageView setContentMode:UIViewContentModeScaleAspectFill];
+    [imageView setClipsToBounds:YES];
+    imageView.file = cat.categoryImage;
+    [imageView loadInBackground];
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 490, 330, 50)];
+    label.text = cat.categoryName;
+    label.backgroundColor = [UIColor colorWithRed:cat.colorR green:cat.colorG blue:cat.colorB alpha:1];
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    UIFont *font = [UIFont fontWithName:@"Avenir Book" size:36];
+    UIFontDescriptor * fontDesc = [font.fontDescriptor
+                                   fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold];
+    label.font = [UIFont fontWithDescriptor:fontDesc size:36];
+    
+    [cview addSubview:imageView];
+    [cview addSubview:label];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapCategory:)];
+    [cview addGestureRecognizer:tapGesture];
+    return cview;
+}
+
+- (NSInteger)numberOfItemsInCarousel:(nonnull iCarousel *)carousel {
+    return self.categories.count;
+}
+
+- (IBAction)didTapCategory:(id)sender {
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *)sender;
+    UIView *view = gesture.view;
+    [self performSegueWithIdentifier:@"actCategorySegue" sender:view];
+}
+
+- (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
+    if (option == iCarouselOptionWrap) {
+        return 1;
     }
     else {
-        [self performSegueWithIdentifier:@"actCategorySegue" sender:cell];
+        return value;
     }
+}
+
+//Receive Memory Method
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 //Segue
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
+    
     if ([segue.identifier isEqualToString:@"actCategorySegue"])
     {
-        CategoriesCell *tappedCell = (CategoriesCell*) sender;
-        NSIndexPath *indexPath = [self.categoriesCollectionView indexPathForCell:tappedCell];
-        ActCategory *actCategory = self.categories[indexPath.row];
+        CarouselView *tappedView = (CarouselView *)sender;
+        ActCategory *actCategory = tappedView.cat;
         ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
         actViewController.actCategory = actCategory;
         actViewController.fetchAll = NO;
@@ -102,14 +120,10 @@
         ActCategoryViewController *actViewController = (ActCategoryViewController *)[segue destinationViewController];
         actViewController.fetchAll = YES;
     }
-//     [self.categoriesCollectionView deselectItemAtIndexPath:indexPath animated:YES];
+    
 }
 
 
-//Receive Memory Method
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 @end

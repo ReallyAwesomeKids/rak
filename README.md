@@ -145,9 +145,9 @@ CORE
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
 - [x] (Haley) Map VC: view is centered on current/user's location
 - [x] (Halima) Search Page VC: Search page redesign
-- [ ] (Halima) Categories page design
+- [x] (Halima/Haley) Categories page design
   - [x] Category VC: If the task is already on the homepage you wanna have a Minus (-) instead of the checkmark
-  - [ ] Category VC: Carousel 
+  - [x] (Haley) Category VC: Carousel 
 - [x] (Haley) Move map into categories
 - [x] (Haley) Remove full description view from map and put description on annotations instead
 - [x] (Haley) Add acts from map to homepage; being able to complete them

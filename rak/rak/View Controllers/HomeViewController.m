@@ -22,6 +22,10 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIImageView *homeTaskImage;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstraint;
+
+
+
 @property (nonatomic, strong) NSMutableArray *acts;
 @property (nonatomic) NSInteger levelForPopup;
 
@@ -47,6 +51,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     [self fetchUserActs];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:YES];
+    for (UIView *view in self.view.subviews) {
+        if ([view isKindOfClass:[MessageView class]]) {
+            [view removeFromSuperview];
+        }
+    }
 }
 
 - (void)viewDidLoad {
@@ -203,7 +216,9 @@
         [UIView animateWithDuration:1.f delay:0.f options:UIViewAnimationOptionCurveEaseIn animations:^{
             // Becomes visible
             [self.dailyChallengeButton setAlpha:1.f];
-        } completion:nil];
+        } completion:^(BOOL finished) {
+            [self hideDailyChallenge];
+        }];
         
         // Notification
         [MessageView presentMessageViewWithText:@"You have completed your Daily Challenge!"
@@ -211,6 +226,26 @@
                                onViewController:self
                                     forDuration:6];
     }
+}
+
+- (void)hideDailyChallenge {
+    [UIView animateWithDuration:.5
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         self.dailyChallengeView.frame = CGRectMake(self.dailyChallengeView.frame.origin.x,
+                                                                    -105,
+                                                                    self.dailyChallengeView.frame.size.width,
+                                                                    self.dailyChallengeView.frame.size.height);
+                         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x,
+                                                           0,
+                                                           self.tableView.frame.size.width,
+                                                           self.tableView.frame.size.height);
+                     }
+                     completion:^(BOOL finished) {
+                         self.tableViewTopConstraint.constant = 0;
+                         [self.dailyChallengeView removeFromSuperview];
+                     }];
 }
 
 - (void)userDidCompleteAct:(Act *)act {
