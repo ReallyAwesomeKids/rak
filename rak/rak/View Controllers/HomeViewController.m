@@ -20,8 +20,6 @@
 @property (strong, nonatomic) UIView *noActsChosenView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (weak, nonatomic) IBOutlet UIImageView *homeTaskImage;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstraint;
 
 
@@ -66,15 +64,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1.0];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // TableView setup
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     // initialization
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self initializeCheckmark];
-    
+    ActsTableViewCell *cell;
+    [cell customLayout];
     // fetch data from db
     [self fetchUserActs];
     [self fetchDailyChallenge];
@@ -98,6 +99,7 @@
 //    [categoryImageQuery whereKey:<#(nonnull NSString *)#> equalTo:<#(nonnull id)#>];
 //    []
 //}
+
 - (void)fetchUserActs {
     PFQuery *userActQuery = [CustomUser query];
     [userActQuery whereKey:@"objectId" equalTo:CustomUser.currentUser.objectId];
@@ -151,9 +153,18 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];
     Act *act = self.userActs[indexPath.row];
     cell.act = act;
+    [cell customLayout];
+    cell.detailViewBool = YES;
+    cell.detailHeight.constant = 0;
+//    CGRect temp = cell.detailView.frame;
+//    temp.size.height = 0;
+//    cell.detailView.frame = temp;
+    UITapGestureRecognizer *didTapCellDetailView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapCell:)];
+    [cell addGestureRecognizer:didTapCellDetailView];
     return cell;
 }
 
@@ -201,7 +212,15 @@
     Act *act = cell.act;
     [self userDidCompleteAct:act];
 }
-
+- (void) customLayout {
+    ActsTableViewCell *cell;
+    UIView *viewTemp= (UIView *)cell.cellView;
+    viewTemp.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    viewTemp.layer.shadowOffset = CGSizeMake(0, 2);
+    viewTemp.layer.shadowOpacity = 0.8;
+    viewTemp.layer.shadowRadius = 3;
+    viewTemp.layer.masksToBounds = NO;
+}
 - (IBAction)didTapDailyChallenge:(id)sender {
     // Parse update
     Act *act = self.dailyChallengeAct;
@@ -436,7 +455,7 @@
     [view addConstraints:@[centerX, centerY, leading, trailing]];
     
     self.noActsChosenView = view;
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background2"]];
     [self.view addSubview:self.noActsChosenView];
 }
 
@@ -474,6 +493,30 @@
             composingVC.autoFilledText = [NSString stringWithFormat:@"I just reached Level %ld!", self.levelForPopup];
             composingVC.autoFilledPhoto = [UIImage imageNamed:@"levelup.png"];
         }
+    }
+}
+-(IBAction)didTapCell:(id)sender {
+    ActsTableViewCell *cell;
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
+    cell = (ActsTableViewCell*) gesture.view;
+    if (cell.detailViewBool == YES) {
+        NSLog(@"Did tap cell to expand");
+        cell.detailViewBool = NO;
+        cell.detailHeight.constant = 46;
+        [cell.detailView updateConstraints];
+        NSLog(@"%@", [NSString stringWithFormat:@"%f", cell.detailHeight.constant]);
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+    }
+    else {
+        NSLog(@"Did tap cell to unexpand");
+        cell.detailViewBool = YES;
+        cell.detailHeight.constant = 0;
+        [cell.detailView updateConstraints];
+        NSLog(@"%@", [NSString stringWithFormat:@"%f", cell.detailHeight.constant]);
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+
     }
 }
 
