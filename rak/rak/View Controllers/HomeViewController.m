@@ -62,17 +62,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1.0];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // TableView setup
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
     // initialization
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self initializeCheckmark];
-    
+    ActsTableViewCell *cell;
+    [cell customLayout];
     // fetch data from db
     [self fetchUserActs];
     [self fetchDailyChallenge];
@@ -92,6 +93,7 @@
 //    [categoryImageQuery whereKey:<#(nonnull NSString *)#> equalTo:<#(nonnull id)#>];
 //    []
 //}
+
 - (void)fetchUserActs {
     PFQuery *userActQuery = [CustomUser query];
     [userActQuery whereKey:@"objectId" equalTo:CustomUser.currentUser.objectId];
@@ -149,6 +151,7 @@
     ActsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ActsTableViewCell"];
     Act *act = self.userActs[indexPath.row];
     cell.act = act;
+    [cell customLayout];
     cell.detailViewBool = YES;
     cell.detailHeight.constant = 0;
 //    CGRect temp = cell.detailView.frame;
@@ -203,7 +206,15 @@
     Act *act = cell.act;
     [self userDidCompleteAct:act];
 }
-
+- (void) customLayout {
+    ActsTableViewCell *cell;
+    UIView *viewTemp= (UIView *)cell.cellView;
+    viewTemp.layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    viewTemp.layer.shadowOffset = CGSizeMake(0, 2);
+    viewTemp.layer.shadowOpacity = 0.8;
+    viewTemp.layer.shadowRadius = 3;
+    viewTemp.layer.masksToBounds = NO;
+}
 - (IBAction)didTapDailyChallenge:(id)sender {
     if (!self.user.hasCompletedDailyChallenge) {
         // Parse update

@@ -15,7 +15,8 @@
 @property (weak, nonatomic) IBOutlet PFImageView *homeCellActImage;
 @property (weak, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *detailHeight;
+@property (weak, nonatomic) IBOutlet UIView *homeBackgroundView;
 @property (nonatomic) BOOL detailViewBool;
 - (IBAction)didTapCellCheckmark:(id)sender;
-
+- (void)customLayout;
 @end
