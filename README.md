@@ -162,12 +162,12 @@ CORE
    - [x] (Gustavo) Fetch all contacts from the user and display them
    - [x] (Gustavo) Allow the user to invite the contacts displayed through email
 - [ ] (Gustavo's brother) Design launch screen and logo
-- [ ] Homepage redesign:
-  - [x] Add image/icon to acts
-  - [ ] Add points and/or amount of times done act to home
-  - [ ] Header over the chosen acts
-- [ ] Level progress in the notification after completing an act
-- [ ] (?) get rid of act detail view
+- [ ] (Halima) Homepage redesign:
+  - [x] (Haley) Add image/icon to acts
+  - [ ] (Halima) Add points and/or amount of times done act to home
+  - [ ] (Halima) Header over the chosen acts
+- [x] (Halima) Level progress in the notification after completing an act
+- [x] (Haley) get rid of act detail view
 - [x] (Haley) Daily challenge hides after completion
 - [x] (Haley) Category VC: Carousel 
 - [x] (Haley) Search for acts
@@ -183,7 +183,7 @@ CORE
 - [x] user should not be able to add the same act multiple times to db [Category VC]
 - [x] If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
 - [ ] The list of acts in categories doesn't scroll smoothly
-- [ ] Map annotations are cut off
+- [x] Map annotations are cut off
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
