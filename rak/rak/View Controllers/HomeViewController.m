@@ -160,6 +160,7 @@
     [cell customLayout];
     cell.detailViewBool = YES;
     cell.detailHeight.constant = 0;
+    // cell.textToTopConstraint.active = NO;
 //    CGRect temp = cell.detailView.frame;
 //    temp.size.height = 0;
 //    cell.detailView.frame = temp;
