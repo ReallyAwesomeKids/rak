@@ -20,11 +20,11 @@
     
     // Setting labels
     self.displayNameLabel.text = self.user.displayName;
-    self.locationLabel.text = self.user.location;
     
     // Setting streak
     [self.user updateDailyStreak];
-    self.streakLabel.text = [NSString stringWithFormat:@"🔥%ld day streak🔥", self.user.streak];
+    self.streakLabel.text = [NSString stringWithFormat:@"🔥%ld days", self.user.streak];
+    self.streakNumberLabel.text = [NSString stringWithFormat:@"%ld", self.user.streak];
     
     // Setting user level
     NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:self.user.experiencePoints];

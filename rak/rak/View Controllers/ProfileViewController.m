@@ -80,7 +80,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return CGSizeMake(self.collectionView.bounds.size.width, 424);
+        return CGSizeMake(self.collectionView.bounds.size.width, 205);
         
     } else {
         return CGSizeZero;
