@@ -18,22 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="81k-2S-RSa">
-                                <rect key="frame" x="32" y="107" width="310" height="307"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="81k-2S-RSa">
+                                <rect key="frame" x="15" y="40" width="345" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type a detailed description about the random act of kindness for this location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGw-yt-NXB">
-                                <rect key="frame" x="32" y="107" width="327" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type a detailed description about the random act of kindness for this location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGw-yt-NXB">
+                                <rect key="frame" x="15" y="40" width="345" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="81k-2S-RSa" firstAttribute="top" secondItem="nSX-hX-8RQ" secondAttribute="top" constant="20" id="Fsl-gk-8lH"/>
+                            <constraint firstItem="sGw-yt-NXB" firstAttribute="top" secondItem="nSX-hX-8RQ" secondAttribute="top" constant="20" id="Ghz-n7-aVW"/>
+                            <constraint firstItem="nSX-hX-8RQ" firstAttribute="bottom" secondItem="81k-2S-RSa" secondAttribute="bottom" constant="20" id="JbU-e7-DHx"/>
+                            <constraint firstItem="nSX-hX-8RQ" firstAttribute="trailing" secondItem="sGw-yt-NXB" secondAttribute="trailing" constant="15" id="R5M-pa-w0a"/>
+                            <constraint firstItem="81k-2S-RSa" firstAttribute="leading" secondItem="nSX-hX-8RQ" secondAttribute="leading" constant="15" id="Sb5-Nn-Kba"/>
+                            <constraint firstItem="nSX-hX-8RQ" firstAttribute="trailing" secondItem="81k-2S-RSa" secondAttribute="trailing" constant="15" id="lmu-26-MN7"/>
+                            <constraint firstItem="sGw-yt-NXB" firstAttribute="leading" secondItem="nSX-hX-8RQ" secondAttribute="leading" constant="15" id="lon-Bo-gs8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nSX-hX-8RQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Description" id="euV-iN-76P">
@@ -51,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fM-y0-FhD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8606.5" y="240.5"/>
+            <point key="canvasLocation" x="8605.6000000000004" y="239.73013493253376"/>
         </scene>
         <!--Photo Map View Controller-->
         <scene sceneID="H3m-I4-IV7">

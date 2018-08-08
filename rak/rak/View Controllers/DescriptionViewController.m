@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.descriptionTextView.delegate = self;
+    [self.descriptionTextView becomeFirstResponder];
     self.descriptionPlaceholder.alpha = 1;
 
     // Do any additional setup after loading the view.
