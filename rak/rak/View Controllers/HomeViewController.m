@@ -209,7 +209,7 @@
 
 - (IBAction)didTapCheckButton:(id)sender {
     UIButton *button = (UIButton *)sender;
-    ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview;
+    ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview.superview;
     Act *act = cell.act;
     [self userDidCompleteAct:act];
 }

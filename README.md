@@ -163,7 +163,7 @@ CORE
    - [x] (Gustavo) Allow the user to invite the contacts displayed through email
 - [ ] (Gustavo's brother) Design launch screen and logo
 - [ ] Homepage redesign:
-  - [ ] Add image/icon to acts
+  - [x] Add image/icon to acts
   - [ ] Add points and/or amount of times done act to home
   - [ ] Header over the chosen acts
 - [ ] Level progress in the notification after completing an act
@@ -183,6 +183,7 @@ CORE
 - [x] user should not be able to add the same act multiple times to db [Category VC]
 - [x] If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
 - [ ] The list of acts in categories doesn't scroll smoothly
+- [ ] Map annotations are cut off
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
