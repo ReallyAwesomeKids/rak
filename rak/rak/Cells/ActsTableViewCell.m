@@ -1,7 +1,6 @@
 #import "ActsTableViewCell.h"
 #import "ActCategory.h"
 #import "ParseUI/ParseUI.h"
-
 @implementation ActsTableViewCell
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -14,6 +13,8 @@
     _act = act;
     self.homeCellActName.text = self.act.actName;
     [self configureCategoryImage];
+    self.detailViewPoints.text = [NSString stringWithFormat:@"%@ %ld", @"Points:", (long)self.act.pointsWorth];
+    self.detailViewTimesDone.text = [NSString stringWithFormat:@"%@  %ld",@"Done:",  (long)self.timesDone];
 }
 
 - (void)configureCategoryImage {
@@ -37,6 +38,7 @@
     
 }
 - (IBAction)didTapCellCheckmark:(id)sender {
+    self.timesDone = self.timesDone +1;
     [self.checkButton setAlpha:0.f];
     [self.checkButton setImage:[UIImage imageNamed:@"check-filled"] forState:UIControlStateNormal];
     
