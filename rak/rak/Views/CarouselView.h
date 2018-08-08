@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
 #import "ActCategory.h"
+#import "CategoryTableView.h"
 
 @interface CarouselView : UIView
 
-@property (strong, nonatomic) ActCategory *cat;
+@property (strong, nonatomic) ActCategory *category;
+
+@property (strong, nonatomic) CategoryTableView *tableView;
+@property (strong, nonatomic) UIView *contentView;
 
 @end
