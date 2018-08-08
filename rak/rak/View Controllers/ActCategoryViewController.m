@@ -98,7 +98,7 @@
 //Adds Personal Act To Homepage
 - (IBAction)addingPersonalAct:(id)sender {
     UIButton *addButton = (UIButton*) sender;
-    ActsCell *actCell = (ActsCell *)addButton.superview.superview;
+    ActsCell *actCell = (ActsCell *)addButton.superview.superview.superview;
     
     NSMutableArray *chosenActs = [CustomUser.currentUser.chosenActs mutableCopy];
     
