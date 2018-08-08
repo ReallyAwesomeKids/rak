@@ -98,11 +98,6 @@ CORE
   - [x] Shows log of when user completed it
 - [x] (Halima) Searching for users tab
 - [x] (Haley) Badges on profile page
-- [x] (Halima) Map view
-  - [x] See pins from db
-  - [X] Make pins
-  - [X] Search for locations with Foursquare API
-  - [x] Select pin to see detail page
 - [x] (Gustavo) Basic timeline
   - [x] See other people's posts
   - [x] Create Compose VC
@@ -113,6 +108,7 @@ CORE
 - [x] (Haley) In-app pop up notifications when did act, level up, earned badge, etc...
   - [x] After an act is completed, user can click a "share" button that will share to the timeline.
   - [x] After user achieves a new level or earns new badge, they can share the achievement to the timeline
+- [x] (Haley) Badges show description when tapped
 - [x] (Everyone) Determine color scheme
 - [x] (Gustavo) Timeline
   - [x] Clicking at Profile picture leads to the User profile
@@ -121,6 +117,12 @@ CORE
   - [x] Toggle button functionality
   - [x] Designing it beautifully
 - [x] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
+- [x] (Halima) Map view
+  - [x] See pins from db
+  - [X] Make pins
+  - [X] Search for locations with Foursquare API
+  - [x] Select pin to see detail page
+- [x] (Halima) Categories page redesign
 
 ## Week 3 - 7/30/18 - 8/3/18
 - [x] (Everyone) App VC: Change font/emoji
@@ -140,7 +142,6 @@ CORE
 - [x] (Gustavo/Haley) Sign up VC: sign up page
 - [x] (Gustavo/Haley) Act Detail VC: Act detail view needs a lot of work
 - [x] (Haley) Login VC: Login page redesign
-- [x] (Haley) Profile VC: Profile location is actually accurate
 - [x] (Haley) Profile VC: redesign
 - [x] (Halima) Map VC: description page design; remove placeholder text
 - [x] (Halima) Map VC: When searching for location, pop up keyboard automatically
@@ -181,10 +182,10 @@ CORE
 - [x] (Gustavo) clicking checkmark button at Home [Home VC]
   - [x] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
-- [x] user should not be able to add the same act multiple times to db [Category VC]
-- [x] If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
+- [x] (Halima) user should not be able to add the same act multiple times to db [Category VC]
+- [x] (Haley) If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
 - [ ] The list of acts in categories doesn't scroll smoothly
-- [x] Map annotations are cut off
+- [x] (Haley) Map annotations are cut off
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
