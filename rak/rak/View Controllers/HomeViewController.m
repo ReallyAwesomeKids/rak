@@ -94,6 +94,11 @@
     CustomUser.currentUser.delegate = self;
     
 }
+//- (void)fetchCategoryImages {
+//    PFQuery *categoryImageQuery = [ActCategory query];
+//    [categoryImageQuery whereKey:<#(nonnull NSString *)#> equalTo:<#(nonnull id)#>];
+//    []
+//}
 
 - (void)fetchUserActs {
     PFQuery *userActQuery = [CustomUser query];
@@ -114,13 +119,7 @@
         }
     }];
 }
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"%@ %@ %ld %@", @"Personal Acts", @"(",[CustomUser.currentUser.chosenActs count], @")"];
-}
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    header.textLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-}
+
 - (void)fetchDailyChallenge {
     PFQuery *challengeQuery = [Act query];
     [challengeQuery includeKey:@"category"];
