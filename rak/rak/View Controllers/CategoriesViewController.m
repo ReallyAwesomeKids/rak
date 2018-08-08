@@ -76,20 +76,17 @@
     cview.clipsToBounds = YES;
     cview.category = cat;
     
-//    NSInteger currenViewIndex = carousel.currentItemIndex;
-//    NSInteger difference = ABS(currenViewIndex - index);
-//    if (difference == 0) {
-//        backgroundView.alpha = 1;
-//        cview.alpha = 1;
-//    }
-//    else {
-//        backgroundView.alpha = 0;
-//
-//        if (difference == 1)
-//        cview.alpha = 0.4;
-//        else
-//        cview.alpha = 0;
-//    }
+    NSInteger currenViewIndex = carousel.currentItemIndex;
+    NSInteger difference = ABS(currenViewIndex - index);
+    if (difference == 0) {
+        backgroundView.alpha = 1;
+    }
+    else {
+        if (difference == 1)
+            backgroundView.alpha = 0.4;
+        else
+            backgroundView.alpha = 0;
+    }
     
     PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 330, 200)];
     [imageView setContentMode:UIViewContentModeScaleAspectFill];
@@ -204,47 +201,47 @@
         [self performSegueWithIdentifier:@"actCategorySegue" sender:view];
     }
 }
-//
-//- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel {
-//    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
-//        NSInteger index = self.carousel.currentItemIndex - 2;
-//        if (index < 0)
-//            index += self.carousel.numberOfItems;
-//        [carousel itemViewAtIndex:index].alpha = 0;
-//    } completion:^(BOOL finished) {
-//    }];
-//
-//    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
-//        NSInteger index = self.carousel.currentItemIndex - 1;
-//        if (index < 0)
-//            index += self.carousel.numberOfItems;
-//        [carousel itemViewAtIndex:index].alpha = 0.4f;
-//    } completion:^(BOOL finished) {
-//    }];
-//
-//    [UIView animateWithDuration:0.1 delay:0.0 options:0 animations:^{
-//        self.carousel.currentItemView.alpha = 1.0f;
-//    } completion:^(BOOL finished) {
-//    }];
-//
-//    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
-//
-//        NSInteger index = self.carousel.currentItemIndex + 1;
-//        if (index >= self.carousel.numberOfItems)
-//            index -= self.carousel.numberOfItems;
-//        [carousel itemViewAtIndex:index].alpha = 0.4f;
-//    } completion:^(BOOL finished) {
-//    }];
-//
-//    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
-//        NSInteger index = self.carousel.currentItemIndex + 2;
-//        if (index >= self.carousel.numberOfItems)
-//            index -= self.carousel.numberOfItems;
-//        [carousel itemViewAtIndex:index].alpha = 0;
-//    } completion:^(BOOL finished) {
-//    }];
-//
-//}
+
+- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel {
+    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
+        NSInteger index = self.carousel.currentItemIndex - 2;
+        if (index < 0)
+            index += self.carousel.numberOfItems;
+        [carousel itemViewAtIndex:index].alpha = 0;
+    } completion:^(BOOL finished) {
+    }];
+
+    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
+        NSInteger index = self.carousel.currentItemIndex - 1;
+        if (index < 0)
+            index += self.carousel.numberOfItems;
+        [carousel itemViewAtIndex:index].alpha = 0.4f;
+    } completion:^(BOOL finished) {
+    }];
+
+    [UIView animateWithDuration:0.1 delay:0.0 options:0 animations:^{
+        self.carousel.currentItemView.alpha = 1.0f;
+    } completion:^(BOOL finished) {
+    }];
+
+    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
+
+        NSInteger index = self.carousel.currentItemIndex + 1;
+        if (index >= self.carousel.numberOfItems)
+            index -= self.carousel.numberOfItems;
+        [carousel itemViewAtIndex:index].alpha = 0.4f;
+    } completion:^(BOOL finished) {
+    }];
+
+    [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
+        NSInteger index = self.carousel.currentItemIndex + 2;
+        if (index >= self.carousel.numberOfItems)
+            index -= self.carousel.numberOfItems;
+        [carousel itemViewAtIndex:index].alpha = 0;
+    } completion:^(BOOL finished) {
+    }];
+
+}
 
 
 - (CGFloat)carousel:(iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value {
