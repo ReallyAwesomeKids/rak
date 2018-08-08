@@ -94,11 +94,6 @@
     CustomUser.currentUser.delegate = self;
     
 }
-//- (void)fetchCategoryImages {
-//    PFQuery *categoryImageQuery = [ActCategory query];
-//    [categoryImageQuery whereKey:<#(nonnull NSString *)#> equalTo:<#(nonnull id)#>];
-//    []
-//}
 
 - (void)fetchUserActs {
     PFQuery *userActQuery = [CustomUser query];
