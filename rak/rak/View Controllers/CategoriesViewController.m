@@ -94,15 +94,15 @@
     imageView.file = cat.categoryImage;
     [imageView loadInBackground];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 330, 50)];
-    label.text = cat.categoryName;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 160, 330, 40)];
+    label.text = [cat.categoryName uppercaseString];
     label.backgroundColor = [UIColor colorWithRed:cat.colorR green:cat.colorG blue:cat.colorB alpha:1];
     label.textColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;
     UIFont *font = [UIFont fontWithName:@"Avenir Book" size:36];
     UIFontDescriptor * fontDesc = [font.fontDescriptor
                                    fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold];
-    label.font = [UIFont fontWithDescriptor:fontDesc size:36];
+    label.font = [UIFont fontWithDescriptor:fontDesc size:20];
     
     CategoryTableView *tableView = [[CategoryTableView alloc] initWithFrame:CGRectMake(0, 200, 330, 340)];
     tableView.delegate = self;
@@ -116,10 +116,9 @@
     [cview addSubview:label];
     [cview addSubview:tableView];
     if ([cat.categoryName isEqualToString:@"Local Needs"]) {
-        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 510, 330, 40)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 500, 330, 40)];
         [button setTitle:@"View Map" forState:UIControlStateNormal];
-     //   [button setTintColor:[UIColor colorWithRed:0.4 green:0.3 blue:0.5 alpha:1]];
-        [button setTitleColor:[UIColor colorWithRed:0.4 green:0.3 blue:0.5 alpha:1] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor colorWithRed:cat.colorR green:cat.colorG blue:cat.colorB alpha:1] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(didTapCategory:) forControlEvents:UIControlEventTouchUpInside];
         [cview addSubview:button];
     }
