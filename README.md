@@ -163,7 +163,7 @@ CORE
    - [x] (Gustavo) Allow the user to invite the contacts displayed through email
 - [ ] (Gustavo's brother) Design launch screen and logo
 - [ ] Homepage redesign:
-  - [ ] Add image/icon to acts
+  - [x] Add image/icon to acts
   - [ ] Add points and/or amount of times done act to home
   - [ ] Header over the chosen acts
 - [ ] Level progress in the notification after completing an act
