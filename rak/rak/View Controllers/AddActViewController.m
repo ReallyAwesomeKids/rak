@@ -36,11 +36,6 @@
     [self.view addSubview:self.menu1];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (NSMutableArray *)createMutableArray:(NSArray *)array
 {
     return [NSMutableArray arrayWithArray:array];
@@ -50,6 +45,8 @@
     [AddActViewController addActWithName:self.userActName.text
               withPoints:1
       inCategoryWithName:self.name];
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 
 + (Act *)addActWithName:(NSString *)name
@@ -89,6 +86,11 @@
 - (void)dropDownMenu:(CCDropDownMenu *)dropDownMenu didSelectRowAtIndex:(NSInteger)index {
     NSString *dropdownCategory = ((ManaDropDownMenu *)dropDownMenu).title;
     self.name = dropdownCategory;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*
