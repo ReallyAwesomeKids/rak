@@ -39,7 +39,6 @@
                        value:font
                        range:range];
     [attributed endEditing];
-  //  self.logoLabel.text = nil;
     self.logoLabel.attributedText = attributed;
 }
 

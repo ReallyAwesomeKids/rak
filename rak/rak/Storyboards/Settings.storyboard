@@ -273,7 +273,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="WVI-0S-qnB"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="UNM-ru-ygg" appends="YES" id="44d-D0-FTr"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="changeProfileButton" destination="57T-cW-lFK" id="Q9s-6D-ie1"/>
@@ -291,6 +295,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lg-Xc-kU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UNM-ru-ygg">
+                    <connections>
+                        <action selector="didTapOut:" destination="lKN-8A-1Kk" id="mNW-oA-LZL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1277.5999999999999" y="-236.13193403298354"/>
         </scene>
