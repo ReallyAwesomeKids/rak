@@ -154,14 +154,13 @@ CORE
 - [x] (Haley) Walkthrough
 
 ## Week 4 - 8/6/18 - 8/10/18
-- [ ] (Gustavo) Settings page:
+- [x] (Gustavo) Settings page:
   - [x] (Gustavo) Account page
   - [x] (Gustavo) About page
   - [x] (Gustavo) Help page
-  - [ ] (Gustavo) Friends page
+  - [x] (Gustavo) Friends page
    - [x] (Gustavo) Fetch all contacts from the user and display them
-   - [ ] (Gustavo) Allow the user to invite the contacts displayed through text
-   - [ ] (Gustavo) Allow the user to invite the contacts displayed through email
+   - [x] (Gustavo) Allow the user to invite the contacts displayed through email
 - [ ] (Gustavo's brother) Design launch screen and logo
 - [ ] Homepage redesign:
   - [ ] Add image/icon to acts

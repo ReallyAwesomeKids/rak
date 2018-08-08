@@ -17,9 +17,24 @@
     _contact = contact;
     self.name.text = contact.givenName;
     self.familyName.text = contact.familyName;
-    self.email.text = [contact.emailAddresses[0] valueForKey:@"value"];
-    self.number.text = [[contact.phoneNumbers[0] valueForKey:@"value"] valueForKey:@"digits"];
+    
+    if (contact.phoneNumbers != nil && contact.emailAddresses != nil) {
+        self.email.text = [contact.emailAddresses[0] valueForKey:@"value"];
+    } else {
+        self.email.text = @"no e-mail";
+    }
+    if (contact.emailAddresses != nil) {
+        self.number.text = [[contact.phoneNumbers[0] valueForKey:@"value"] valueForKey:@"digits"];
+    } else {
+        self.number.text = @"no phone number";
+    }
+    [self.contactButton addTarget:self
+                       action:@selector(didTapContact:)
+             forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (IBAction)didTapContact:(id)sender {
+    [self.delegate buttonTappedOnCell:self];
+}
 
 @end
