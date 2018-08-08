@@ -111,6 +111,9 @@
 
 - (IBAction)didTapChangeProfileInfomartion:(id)sender {
     [self showChangedAlpha];
+    self.changedName.text = self.originalName.text;
+    self.changedCity.text = self.originalCity.text;
+    self.changedUsername.text = self.originalUsername.text;
 }
 
 - (IBAction)didTapDone:(id)sender {

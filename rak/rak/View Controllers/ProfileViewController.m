@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.user = (self.userProfile != nil) ? self.userProfile : CustomUser.currentUser;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -37,6 +39,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.user = (self.userProfile != nil) ? self.userProfile : CustomUser.currentUser;
     [self.collectionView reloadData];
 }
 //
