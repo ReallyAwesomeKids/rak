@@ -88,6 +88,7 @@ CORE
 - [x] (Gustavo) Swipable cells instead of the close button
 - [X] (Halima) Having task categories and lists of tasks in each category
 - [X] (Halima) Adding tasks to your homepage via the categorized task lists ^
+- [x] (Haley) Setting up database objects
 - [x] (Haley) User profile page
   - [x] Name label
   - [x] Static profile picture and location label temporarily
@@ -95,9 +96,9 @@ CORE
   - [x] Level and level progress labels update correctly
 - [x] (Haley) Detail view of each task
   - [x] Shows log of when user completed it
-- [x] Searching for users tab
-- [x] Badges on profile page
-- [x] Map view
+- [x] (Halima) Searching for users tab
+- [x] (Haley) Badges on profile page
+- [x] (Halima) Map view
   - [x] See pins from db
   - [X] Make pins
   - [X] Search for locations with Foursquare API
@@ -122,7 +123,7 @@ CORE
 - [x] (Gustavo) Cleaning everyone's code (spaces at function declation, adding comments, deleting irregular newlines, etc)
 
 ## Week 3 - 7/30/18 - 8/3/18
-- [ ] (Everyone) App VC: Change font/emoji
+- [x] (Everyone) App VC: Change font/emoji
 - [x] (Gustavo) Database: Assign points to tasks
 - [x] (Gustavo) Timeline VC: 
   - [x] (Gustavo) Images fade in
