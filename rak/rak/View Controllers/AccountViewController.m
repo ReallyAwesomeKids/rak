@@ -155,6 +155,10 @@
     self.changedUsername.alpha = 1;
 }
 
+- (IBAction)didTapOut:(id)sender {
+    [self.view endEditing:YES];
+}
+
 /*
  #pragma mark - Navigation
  
