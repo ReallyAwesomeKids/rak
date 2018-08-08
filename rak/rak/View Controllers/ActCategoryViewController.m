@@ -39,6 +39,7 @@
         self.filteredActs = self.acts;
         [self refresh];
     }
+    self.actCategoryTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     
@@ -74,6 +75,7 @@
 //Creates Act Category Table View
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ActsCell *actCell = [tableView dequeueReusableCellWithIdentifier:@"ActCategoryCell" forIndexPath:indexPath];
+    [actCell customLayout];
     Act *actPiece = self.filteredActs[indexPath.row];
     [self.refreshControl endRefreshing];
     actCell.selectAct = actPiece;
@@ -90,7 +92,9 @@
 
     return self.filteredActs.count;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.actCategoryTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 //Adds Personal Act To Homepage
 - (IBAction)addingPersonalAct:(id)sender {
     UIButton *addButton = (UIButton*) sender;
