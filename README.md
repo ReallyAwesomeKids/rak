@@ -178,18 +178,18 @@ CORE
 
 ## Week 5 - 8/13/18 - 8/17/18
 
-## Bugs found that need to be solved
+## Bugs/Design changes that need to be solved
 - [x] (Gustavo) clicking checkmark button at Home [Home VC]
   - [x] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [x] (Halima) user should not be able to add the same act multiple times to db [Category VC]
 - [x] (Haley) If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
 - [x] (Haley) Map annotations are cut off
-- [ ] Delete View All
+- [x] (Gustavo) Delete View All
+- [x] (Gustavo) Take off select property of tableview in category
 - [ ] Once you post in the timeline it automatically refreshes
 - [ ] Daily challenges when it is done should have a header view saying it is done
 - [ ] When user adds own act should be refreshed at category automatically
-- [ ] Take off select property of tableview in category
 - [ ] Add act view to category as in Home as well
 - [ ] Make search bar color in all VCs match the top bar
 - [ ] Change trophy at at Profile, change "badges" font and color, change progress bar thickness and border color, center name of the user
