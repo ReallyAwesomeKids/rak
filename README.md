@@ -163,7 +163,7 @@ CORE
   - [x] (Gustavo) Friends page
    - [x] (Gustavo) Fetch all contacts from the user and display them
    - [x] (Gustavo) Allow the user to invite the contacts displayed through email
-- [ ] (Gustavo's brother) Design launch screen and logo
+- [x] (Gustavo's brother) Design launch screen and logo
 - [x] (Halima) Homepage redesign:
   - [x] (Haley) Add image/icon to acts
   - [x] (Halima) Add points and/or amount of times done act to home
