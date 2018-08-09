@@ -17,6 +17,9 @@
     self.timelinePosts = [[NSMutableArray alloc] init];
     [self tableViewSetup];
     [self refreshControlSetup];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
     [self fetchPosts];
 }
 
