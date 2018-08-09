@@ -140,14 +140,15 @@
                 NSLog(@"User registered successfully");
                 
                 // manually segue to logged in view
-                [self performSegueWithIdentifier:@"instructionsSegue" sender:nil];
+                [self performSegueWithIdentifier:@"home" sender:nil];
             }
         }];
     }
 }
 
 - (IBAction)didTapLoginButton:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self performSegueWithIdentifier:@"login" sender:nil];
+    
 }
 
 

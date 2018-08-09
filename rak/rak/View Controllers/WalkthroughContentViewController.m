@@ -23,8 +23,6 @@
     // Do any additional setup after loading the view.
     self.infoLabel.text = self.infoString;
     self.infoImage.image = [UIImage imageNamed:self.imageName];
-    self.infoImage.layer.cornerRadius = 30;
-    self.infoImage.layer.masksToBounds = YES;
     
 }
 
