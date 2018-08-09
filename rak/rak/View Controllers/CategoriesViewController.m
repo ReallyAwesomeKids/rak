@@ -76,17 +76,15 @@
     cview.clipsToBounds = YES;
     cview.category = cat;
     
-    NSInteger currenViewIndex = carousel.currentItemIndex;
-    NSInteger difference = ABS(currenViewIndex - index);
-    if (difference == 0) {
+    NSInteger currentViewIndex = carousel.currentItemIndex;
+    NSInteger difference = ABS(currentViewIndex - index);
+    if (difference == 0)
         backgroundView.alpha = 1;
-    }
-    else {
-        if (difference == 1)
-            backgroundView.alpha = 0.4;
-        else
-            backgroundView.alpha = 0;
-    }
+    else if (difference == 1 || difference == 5)
+        backgroundView.alpha = 0.4;
+    else
+        backgroundView.alpha = 0;
+    
     
     PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 330, 200)];
     [imageView setContentMode:UIViewContentModeScaleAspectFill];
