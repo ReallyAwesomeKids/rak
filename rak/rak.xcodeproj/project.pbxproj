@@ -65,7 +65,6 @@
 		5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2C20FD16C500C180C9 /* ProfileViewController.m */; };
 		5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2F20FD16DD00C180C9 /* DetailViewController.m */; };
 		5D329D3320FD170500C180C9 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3220FD170500C180C9 /* CategoriesViewController.m */; };
-		5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3520FD172000C180C9 /* ActCategoryViewController.m */; };
 		5D329D3920FD184900C180C9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3820FD184900C180C9 /* LoginViewController.m */; };
 		5D329D3F20FD1AA900C180C9 /* Act.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3E20FD1AA900C180C9 /* Act.m */; };
 		5D329D4220FD1C9C00C180C9 /* CustomUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D4120FD1C9C00C180C9 /* CustomUser.m */; };
@@ -214,8 +213,6 @@
 		5D329D2F20FD16DD00C180C9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5D329D3120FD170500C180C9 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		5D329D3220FD170500C180C9 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
-		5D329D3420FD172000C180C9 /* ActCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActCategoryViewController.h; sourceTree = "<group>"; };
-		5D329D3520FD172000C180C9 /* ActCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActCategoryViewController.m; sourceTree = "<group>"; };
 		5D329D3720FD184900C180C9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5D329D3820FD184900C180C9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5D329D3D20FD1AA900C180C9 /* Act.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Act.h; sourceTree = "<group>"; };
@@ -410,8 +407,6 @@
 		5D329D2420FD163000C180C9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5D329D3420FD172000C180C9 /* ActCategoryViewController.h */,
-				5D329D3520FD172000C180C9 /* ActCategoryViewController.m */,
 				5D329D3120FD170500C180C9 /* CategoriesViewController.h */,
 				5D329D3220FD170500C180C9 /* CategoriesViewController.m */,
 				5451684D2101506000D45FE3 /* ComposingViewController.h */,
@@ -797,7 +792,6 @@
 				54C9D7B02115307E002AAE00 /* InviteViewController.m in Sources */,
 				2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */,
 				54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */,
-				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
 				54C9D7A12114D6A8002AAE00 /* SettingsViewController.m in Sources */,
 				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
 				5DE113A92118F5EF00635EE3 /* CarouselView.m in Sources */,
