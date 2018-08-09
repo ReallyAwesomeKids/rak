@@ -170,4 +170,12 @@
     return result;
 }
 
+//- (void)removeActsFromChosenActs:(Act *)act {
+//    for (Act *chosenAct in self.chosenActs) {
+//        if ([chosenAct.objectId isEqualToString:act.objectId]){
+//            
+//        }
+//    }
+//}
+
 @end
