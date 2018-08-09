@@ -3,6 +3,7 @@
 #import "AppDelegate.h"
 #import "CustomUser.h"
 #import "LoginViewController.h"
+#import "WalkthroughViewController.h"
 
 @interface SettingsViewController ()
 
@@ -49,8 +50,8 @@
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-        appDelegate.window.rootViewController = loginViewController;
+        WalkthroughViewController *initialVC = [storyboard instantiateViewControllerWithIdentifier:@"WalkthroughViewController"];
+        appDelegate.window.rootViewController = initialVC;
         
     }];
 }

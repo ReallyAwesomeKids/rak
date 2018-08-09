@@ -82,6 +82,7 @@
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CUV-Wp-de6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.2784313725" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>

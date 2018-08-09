@@ -89,6 +89,19 @@
     }];
 }
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
+    [self.searchBar setTintColor:[UIColor whiteColor]];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
+    self.filteredUsers = self.users;
+    [self.searchTableView reloadData];
+}
+
 //Search Bar Method That Edits As You Type
 -(void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if (searchText.length != 0) {

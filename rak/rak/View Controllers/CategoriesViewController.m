@@ -29,7 +29,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    [self.carousel reloadData];
+    [self fetchCategories];
 }
 
 //Current Loaded View
@@ -76,17 +76,15 @@
     cview.clipsToBounds = YES;
     cview.category = cat;
     
-    NSInteger currenViewIndex = carousel.currentItemIndex;
-    NSInteger difference = ABS(currenViewIndex - index);
-    if (difference == 0) {
+    NSInteger currentViewIndex = carousel.currentItemIndex;
+    NSInteger difference = ABS(currentViewIndex - index);
+    if (difference == 0)
         backgroundView.alpha = 1;
-    }
-    else {
-        if (difference == 1)
-            backgroundView.alpha = 0.4;
-        else
-            backgroundView.alpha = 0;
-    }
+    else if (difference == 1 || difference == 5)
+        backgroundView.alpha = 0.4;
+    else
+        backgroundView.alpha = 0;
+    
     
     PFImageView *imageView = [[PFImageView alloc] initWithFrame:CGRectMake(0, 0, 330, 200)];
     [imageView setContentMode:UIViewContentModeScaleAspectFill];
@@ -109,6 +107,7 @@
     tableView.dataSource = self;
     tableView.category = cat;
     tableView.acts = cat.acts;
+    tableView.allowsSelection = NO;
     [tableView registerClass:[ActsCell class] forCellReuseIdentifier:@"ActCategoryCell"];
       [tableView reloadData];
 
@@ -117,6 +116,10 @@
     [cview addSubview:tableView];
     if ([cat.categoryName isEqualToString:@"Local Needs"]) {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 500, 330, 40)];
+        CGRect tableFrame = tableView.frame;
+        tableFrame.size.height = tableFrame.size.height -= 40;
+        tableView.frame = tableFrame;
+        button.backgroundColor = [UIColor whiteColor];
         [button setTitle:@"View Map" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor colorWithRed:cat.colorR green:cat.colorG blue:cat.colorB alpha:1] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(didTapCategory:) forControlEvents:UIControlEventTouchUpInside];

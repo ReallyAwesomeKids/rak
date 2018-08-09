@@ -43,7 +43,6 @@
 		54C9D7B621190866002AAE00 /* FAQ.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C9D7B521190866002AAE00 /* FAQ.m */; };
 		54FF7E70211A41420060C24E /* InviteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF7E6F211A41420060C24E /* InviteTableViewCell.m */; };
 		54FF7E73211A43250060C24E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF7E72211A43250060C24E /* Contact.m */; };
-		5D0F04EE2114F2DF0022DB2F /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */; };
 		5D0F04F12114F32D0022DB2F /* WalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */; };
 		5D0F04F42114F33E0022DB2F /* WalkthroughContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F04F32114F33E0022DB2F /* WalkthroughContentViewController.m */; };
 		5D190FBD20FFEEA4002A469B /* DetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D190FBC20FFEEA4002A469B /* DetailHeaderView.m */; };
@@ -65,7 +64,6 @@
 		5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2C20FD16C500C180C9 /* ProfileViewController.m */; };
 		5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2F20FD16DD00C180C9 /* DetailViewController.m */; };
 		5D329D3320FD170500C180C9 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3220FD170500C180C9 /* CategoriesViewController.m */; };
-		5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3520FD172000C180C9 /* ActCategoryViewController.m */; };
 		5D329D3920FD184900C180C9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3820FD184900C180C9 /* LoginViewController.m */; };
 		5D329D3F20FD1AA900C180C9 /* Act.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3E20FD1AA900C180C9 /* Act.m */; };
 		5D329D4220FD1C9C00C180C9 /* CustomUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D4120FD1C9C00C180C9 /* CustomUser.m */; };
@@ -174,7 +172,6 @@
 		54FF7E6F211A41420060C24E /* InviteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteTableViewCell.m; sourceTree = "<group>"; };
 		54FF7E71211A43250060C24E /* Contact.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		54FF7E72211A43250060C24E /* Contact.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
-		5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		5D0F04EF2114F32D0022DB2F /* WalkthroughViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkthroughViewController.h; sourceTree = "<group>"; };
 		5D0F04F02114F32D0022DB2F /* WalkthroughViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalkthroughViewController.m; sourceTree = "<group>"; };
 		5D0F04F22114F33E0022DB2F /* WalkthroughContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalkthroughContentViewController.h; sourceTree = "<group>"; };
@@ -214,8 +211,6 @@
 		5D329D2F20FD16DD00C180C9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5D329D3120FD170500C180C9 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		5D329D3220FD170500C180C9 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
-		5D329D3420FD172000C180C9 /* ActCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActCategoryViewController.h; sourceTree = "<group>"; };
-		5D329D3520FD172000C180C9 /* ActCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActCategoryViewController.m; sourceTree = "<group>"; };
 		5D329D3720FD184900C180C9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5D329D3820FD184900C180C9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5D329D3D20FD1AA900C180C9 /* Act.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Act.h; sourceTree = "<group>"; };
@@ -402,7 +397,6 @@
 				548438AA20FFF7F900592EB1 /* Timeline.storyboard */,
 				548438AC20FFF8EB00592EB1 /* Map.storyboard */,
 				54C9D79D2114CA9E002AAE00 /* Settings.storyboard */,
-				5D0F04ED2114F2DF0022DB2F /* Walkthrough.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -410,8 +404,6 @@
 		5D329D2420FD163000C180C9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5D329D3420FD172000C180C9 /* ActCategoryViewController.h */,
-				5D329D3520FD172000C180C9 /* ActCategoryViewController.m */,
 				5D329D3120FD170500C180C9 /* CategoriesViewController.h */,
 				5D329D3220FD170500C180C9 /* CategoriesViewController.m */,
 				5451684D2101506000D45FE3 /* ComposingViewController.h */,
@@ -669,7 +661,6 @@
 				5D329D2020FD15FE00C180C9 /* Home.storyboard in Resources */,
 				5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */,
 				548438A420FFAD8B00592EB1 /* Search.storyboard in Resources */,
-				5D0F04EE2114F2DF0022DB2F /* Walkthrough.storyboard in Resources */,
 				548438AD20FFF8EB00592EB1 /* Map.storyboard in Resources */,
 				548438AB20FFF7F900592EB1 /* Timeline.storyboard in Resources */,
 				54C9D79E2114CA9E002AAE00 /* Settings.storyboard in Resources */,
@@ -797,7 +788,6 @@
 				54C9D7B02115307E002AAE00 /* InviteViewController.m in Sources */,
 				2C5C3B8E20FE672F004568EF /* ActsCell.m in Sources */,
 				54BE1DAD2106A01000DA4A25 /* Tweet.m in Sources */,
-				5D329D3620FD172000C180C9 /* ActCategoryViewController.m in Sources */,
 				54C9D7A12114D6A8002AAE00 /* SettingsViewController.m in Sources */,
 				5DB1009A20FEB7CE0085C785 /* ImageToFileConversion.m in Sources */,
 				5DE113A92118F5EF00635EE3 /* CarouselView.m in Sources */,
@@ -1010,14 +1000,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JPP9MMXTGL;
+				DEVELOPMENT_TEAM = QG5695H4LD;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = rak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = .rak;
+				PRODUCT_BUNDLE_IDENTIFIER = dogud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1029,14 +1019,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JPP9MMXTGL;
+				DEVELOPMENT_TEAM = QG5695H4LD;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = rak/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = .rak;
+				PRODUCT_BUNDLE_IDENTIFIER = dogud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

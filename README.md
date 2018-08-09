@@ -178,18 +178,41 @@ CORE
 
 ## Week 5 - 8/13/18 - 8/17/18
 
-## Bugs found that need to be solved
+## Bugs/Design changes that need to be solved
 - [x] (Gustavo) clicking checkmark button at Home [Home VC]
   - [x] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [x] (Halima) user should not be able to add the same act multiple times to db [Category VC]
 - [x] (Haley) If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
-- [ ] The list of acts in categories doesn't scroll smoothly
 - [x] (Haley) Map annotations are cut off
+- [x] (Gustavo) Delete View All
+- [x] (Gustavo) Take off select property of tableview in category
+- [x] (Gustavo) Once you post in the timeline it automatically refreshes
+- [x] (Halima) Daily challenges when it is done should have a header view saying it is done
+- [x] (Haley) When user adds own act should be refreshed at category automatically
+- [x] (Gustavo) Add act view to category as in Home as well
+- [x] (Gustavo) Make search bar color in all VCs match the top bar
+- [ ] (Gustavo) Change trophy at at Profile, change "badges" font and color, change progress bar thickness and border color, center name of the user
+- [x] (Haley) Search should be able to exit keyboard
+- [x] (Haley) move walkthrough to the first page
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
 - [ ] Leadership board
+
+## Video Walkthrough for Thursday
+
+1. Open app -> click sign-up -> make account
+2. Show walkthrough -> go through walkthrough -> click got it
+3. At homepage, click at choose acts -> flip through categories -> add some acts
+4. Stop at map one, click view map -> click on pin -> add one -> Make own pin -> add description -> find your own pin and add home -> go back home
+5. Add your own act >but don't show them<
+6. Do one of the acts -> unlock innaugural badge -> click share -> add "I'm so excited" -> post -> scroll down timeline
+7. Say "if i had my phone I could share to twitter, facebook, whatsapp, etc"
+8. Make your own post -> see post
+9. Check someone's profile (pls do Gustavo)
+10. "I wonder who else is there" -> go to search
+
 
 ## Database Schema
 - User
