@@ -193,6 +193,7 @@ CORE
 - [ ] Add act view to category as in Home as well
 - [ ] Make search bar color in all VCs match the top bar
 - [ ] Change trophy at at Profile, change "badges" font and color, change progress bar thickness and border color, center name of the user
+- [ ] Search can't exit keyboard
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
