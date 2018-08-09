@@ -193,7 +193,7 @@ CORE
 - [x] (Gustavo) Add act view to category as in Home as well
 - [x] (Gustavo) Make search bar color in all VCs match the top bar
 - [ ] (Gustavo) Change trophy at at Profile, change "badges" font and color, change progress bar thickness and border color, center name of the user
-- [ ] (Haley) Search can't exit keyboard
+- [x] (Haley) Search should be able to exit keyboard
 - [x] (Haley) move walkthrough to the first page
 
 ## Extended Functionality Ideas
