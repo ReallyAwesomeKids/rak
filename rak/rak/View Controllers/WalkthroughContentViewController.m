@@ -22,7 +22,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.infoLabel.text = self.infoString;
-    self.infoImage.image = [UIImage imageNamed:self.imageName];
+    if ([self.imageName isEqualToString:@"catalogueSS"]) {
+        NSMutableArray *frames = [NSMutableArray new];
+        int i = 1;
+        while (i < 91) {
+            NSString *imgName = [NSString stringWithFormat:@"catalogue%d", i];
+            [frames addObject:[UIImage imageNamed:imgName]];
+            i += 1;
+        }
+        self.infoImage.animationImages = frames;
+        self.infoImage.animationDuration = 7.0f;
+        self.infoImage.animationRepeatCount = 0;
+        [self.infoImage startAnimating];
+    }
+    else {
+        self.infoImage.image = [UIImage imageNamed:self.imageName];
+    }
     
 }
 

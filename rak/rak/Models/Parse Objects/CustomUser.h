@@ -44,4 +44,6 @@
 
 - (BOOL)userDidDailyChallengeToday;
 
+- (BOOL)actIsInChosenActs:(Act *)act;
+
 @end

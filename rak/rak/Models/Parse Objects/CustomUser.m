@@ -159,4 +159,15 @@
     return self.dateLastDidDailyChallenge != nil && [self.dateLastDidDailyChallenge compare:[DateFunctions getToday]] == NSOrderedSame;
 }
 
+- (BOOL)actIsInChosenActs:(Act *)act {
+    BOOL result = NO;
+    for (Act *chosenAct in self.chosenActs) {
+        if ([chosenAct.objectId isEqualToString:act.objectId]){
+            result = YES;
+            break;
+        }
+    }
+    return result;
+}
+
 @end

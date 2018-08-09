@@ -146,7 +146,7 @@
     Act *actPiece = catTableView.acts[indexPath.row];
     actCell.selectAct = actPiece;
     
-    actCell.isInUserChosenActs = [CustomUser.currentUser.chosenActs containsObject:actCell.selectAct];
+    actCell.isInUserChosenActs = [CustomUser.currentUser actIsInChosenActs:actCell.selectAct];
     [actCell.addingButton addTarget:self action:@selector(addingPersonalAct:) forControlEvents:UIControlEventTouchUpInside];
     [actCell.addingButton setSelected:actCell.isInUserChosenActs];
     
