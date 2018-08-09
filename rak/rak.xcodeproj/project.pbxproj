@@ -52,6 +52,7 @@
 		5D1E72EC2109406300C0FA8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E72EA2109406300C0FA8E /* AppDelegate.m */; };
 		5D1FA231211B6F0B004D0B91 /* CategoryTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1FA230211B6F0B004D0B91 /* CategoryTableView.m */; };
 		5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CEF20FD15A200C180C9 /* Main.storyboard */; };
+		5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CF220FD15A300C180C9 /* Assets.xcassets */; };
 		5D329CF620FD15A300C180C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329CF420FD15A300C180C9 /* LaunchScreen.storyboard */; };
 		5D329CF920FD15A300C180C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329CF820FD15A300C180C9 /* main.m */; };
 		5D329D0320FD15A300C180C9 /* rakTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D0220FD15A300C180C9 /* rakTests.m */; };
@@ -61,6 +62,7 @@
 		5D329D2220FD160C00C180C9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329D2120FD160C00C180C9 /* Profile.storyboard */; };
 		5D329D2920FD169800C180C9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2820FD169800C180C9 /* HomeViewController.m */; };
 		5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2C20FD16C500C180C9 /* ProfileViewController.m */; };
+		5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2F20FD16DD00C180C9 /* DetailViewController.m */; };
 		5D329D3320FD170500C180C9 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3220FD170500C180C9 /* CategoriesViewController.m */; };
 		5D329D3920FD184900C180C9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3820FD184900C180C9 /* LoginViewController.m */; };
 		5D329D3F20FD1AA900C180C9 /* Act.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3E20FD1AA900C180C9 /* Act.m */; };
@@ -79,7 +81,6 @@
 		5DB64CBD21065055002AE20E /* PopupViewXIB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DB64CBC21065055002AE20E /* PopupViewXIB.xib */; };
 		5DB64CC321066545002AE20E /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB64CC221066545002AE20E /* PopupViewController.m */; };
 		5DB64CC621066658002AE20E /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB64CC521066658002AE20E /* PopupView.m */; };
-		5DC6321F211CFB52008A60AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC6321E211CFB52008A60AA /* Assets.xcassets */; };
 		5DE113A92118F5EF00635EE3 /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE113A82118F5EF00635EE3 /* CarouselView.m */; };
 		8C1A5F2E1E6BC31C46ECD42B /* libPods-rakUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BBCAE358F1561EE6BE6516 /* libPods-rakUITests.a */; };
 		FBFA6E4C50DF6C67769C0BAA /* libPods-rakTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317354D07177A40A39F507D7 /* libPods-rakTests.a */; };
@@ -189,6 +190,7 @@
 		5D1FA230211B6F0B004D0B91 /* CategoryTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryTableView.m; sourceTree = "<group>"; };
 		5D329CE620FD15A200C180C9 /* rak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D329CF020FD15A200C180C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D329CF220FD15A300C180C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D329CF520FD15A300C180C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D329CF720FD15A300C180C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D329CF820FD15A300C180C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -205,6 +207,8 @@
 		5D329D2820FD169800C180C9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		5D329D2B20FD16C500C180C9 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		5D329D2C20FD16C500C180C9 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5D329D2E20FD16DD00C180C9 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5D329D2F20FD16DD00C180C9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5D329D3120FD170500C180C9 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		5D329D3220FD170500C180C9 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		5D329D3720FD184900C180C9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -239,7 +243,6 @@
 		5DB64CC221066545002AE20E /* PopupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		5DB64CC421066658002AE20E /* PopupView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupView.h; sourceTree = "<group>"; };
 		5DB64CC521066658002AE20E /* PopupView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupView.m; sourceTree = "<group>"; };
-		5DC6321E211CFB52008A60AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		5DE113A72118F5EF00635EE3 /* CarouselView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouselView.h; sourceTree = "<group>"; };
 		5DE113A82118F5EF00635EE3 /* CarouselView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouselView.m; sourceTree = "<group>"; };
 		619B39390757B38624E8FACC /* Pods-rakUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rakUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-rakUITests/Pods-rakUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -356,7 +359,7 @@
 				5D329D2420FD163000C180C9 /* View Controllers */,
 				54BE1DB12106A61200DA4A25 /* Twitter */,
 				5D329D2320FD161300C180C9 /* Storyboards */,
-				5DC6321E211CFB52008A60AA /* Assets.xcassets */,
+				5D329CF220FD15A300C180C9 /* Assets.xcassets */,
 				5D329CF720FD15A300C180C9 /* Info.plist */,
 				5D329CF820FD15A300C180C9 /* main.m */,
 			);
@@ -407,6 +410,8 @@
 				5451684E2101506000D45FE3 /* ComposingViewController.m */,
 				2C23A5CE2106A61C00BD228A /* DescriptionViewController.h */,
 				2C23A5CF2106A61C00BD228A /* DescriptionViewController.m */,
+				5D329D2E20FD16DD00C180C9 /* DetailViewController.h */,
+				5D329D2F20FD16DD00C180C9 /* DetailViewController.m */,
 				5D329D2720FD169800C180C9 /* HomeViewController.h */,
 				5D329D2820FD169800C180C9 /* HomeViewController.m */,
 				2C5C3B9D2101105C004568EF /* LocationsViewController.h */,
@@ -651,8 +656,8 @@
 				5D329D2220FD160C00C180C9 /* Profile.storyboard in Resources */,
 				5DB64CBD21065055002AE20E /* PopupViewXIB.xib in Resources */,
 				5D329D1E20FD15F300C180C9 /* Category.storyboard in Resources */,
-				5DC6321F211CFB52008A60AA /* Assets.xcassets in Resources */,
 				5D329CF620FD15A300C180C9 /* LaunchScreen.storyboard in Resources */,
+				5D329CF320FD15A300C180C9 /* Assets.xcassets in Resources */,
 				5D329D2020FD15FE00C180C9 /* Home.storyboard in Resources */,
 				5D329CF120FD15A200C180C9 /* Main.storyboard in Resources */,
 				548438A420FFAD8B00592EB1 /* Search.storyboard in Resources */,
@@ -770,6 +775,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D329D3920FD184900C180C9 /* LoginViewController.m in Sources */,
+				5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */,
 				5451684F2101506000D45FE3 /* ComposingViewController.m in Sources */,
 				5D329CF920FD15A300C180C9 /* main.m in Sources */,
 				2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */,
