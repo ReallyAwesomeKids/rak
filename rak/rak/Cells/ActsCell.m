@@ -1,7 +1,6 @@
 #import "ActsCell.h"
 #import "ActCategory.h"
 #import "Parse/Parse.h"
-#import "ActCategoryViewController.h"
 
 @implementation ActsCell
 
