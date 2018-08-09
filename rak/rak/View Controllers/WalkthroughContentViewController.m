@@ -27,8 +27,31 @@
         self.infoImage.animationRepeatCount = 0;
         [self.infoImage startAnimating];
     }
+    else if ([self.imageName isEqualToString:@"profileSS"]) {
+        NSMutableArray *frames = [NSMutableArray new];
+        int i = 1;
+        while (i < 67) {
+            NSString *imgName = [NSString stringWithFormat:@"badge%d", i];
+            [frames addObject:[UIImage imageNamed:imgName]];
+            i += 1;
+        }
+        self.infoImage.animationImages = frames;
+        self.infoImage.animationDuration = 6.0f;
+        self.infoImage.animationRepeatCount = 0;
+        [self.infoImage startAnimating];
+    }
     else {
-        self.infoImage.image = [UIImage imageNamed:self.imageName];
+        NSMutableArray *frames = [NSMutableArray new];
+        int i = 1;
+        while (i < 100) {
+            NSString *imgName = [NSString stringWithFormat:@"timeline%d", i];
+            [frames addObject:[UIImage imageNamed:imgName]];
+            i += 1;
+        }
+        self.infoImage.animationImages = frames;
+        self.infoImage.animationDuration = 5.0f;
+        self.infoImage.animationRepeatCount = 0;
+        [self.infoImage startAnimating];
     }
     
 }
