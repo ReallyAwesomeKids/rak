@@ -1,4 +1,3 @@
-//Imports
 #import "CategoriesViewController.h"
 #import "Parse/Parse.h"
 #import "ParseUI/ParseUI.h"
@@ -15,16 +14,13 @@
 #import "CustomUser.h"
 #import "MessageView.h"
 
-//Interface
 @interface CategoriesViewController ()<iCarouselDelegate, iCarouselDataSource, UITableViewDelegate, UITableViewDataSource>
+
 @property (strong,nonatomic) NSArray *categories;
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
 
 @end
 
-
-
-//Implementation
 @implementation CategoriesViewController
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -32,7 +28,6 @@
     [self fetchCategories];
 }
 
-//Current Loaded View
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -125,9 +120,6 @@
         [button addTarget:self action:@selector(didTapCategory:) forControlEvents:UIControlEventTouchUpInside];
         [cview addSubview:button];
     }
-    //   UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapCategory:)];
-//    [cview addGestureRecognizer:tapGesture];
-
     return backgroundView;
 }
 
@@ -156,7 +148,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     CategoryTableView *catTableView = (CategoryTableView *)tableView;
-  //  NSInteger i = catTableView.acts.count;
     return catTableView.acts.count;
 }
 
@@ -258,13 +249,10 @@
     }
 }
 
-//Receive Memory Method
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-//Segue
 #pragma mark - Navigation
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -282,6 +270,5 @@
         actViewController.fetchAll = YES;
     }
 }
-
 
 @end

@@ -1,11 +1,3 @@
-//
-//  WalkthroughViewController.m
-//  rak
-//
-//  Created by Haley Zeng on 8/3/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "WalkthroughViewController.h"
 #import "WalkthroughContentViewController.h"
 
