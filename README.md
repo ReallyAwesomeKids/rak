@@ -1,8 +1,8 @@
 parse-dashboard --appId rak_id --masterKey rak_key --serverURL https://random-acts-of-kindness.herokuapp.com/parse
 
-# Team Project - *RAK*
+# Team Project - *Do Güd*
 
-**RAK** is an app where users can do random acts of kindness and build kind habits.
+**Do Güd** is an app where users can do random acts of kindness and build kind habits.
 
 ## Considerations
 
@@ -43,9 +43,9 @@ What are your technical concerns?
   - Shows user's progress
   - Difficulty level
 - Database to store user information
-  - account info
-  - personal info (name, image)
-  - progress on the random acts of kindness challenges
+  - Account info
+  - Personal info (name, image)
+  - Progress on the random acts of kindness challenges
 - Profile page showing the user's info and acts of kindness history
   - Profile image
   - Progress report showing how many tasks they've done, daily streak record, etc.
@@ -163,13 +163,13 @@ CORE
   - [x] (Gustavo) Friends page
    - [x] (Gustavo) Fetch all contacts from the user and display them
    - [x] (Gustavo) Allow the user to invite the contacts displayed through email
-- [ ] (Gustavo's brother) Design launch screen and logo
+- [x] (Gustavo's brother) Design launch screen and logo
 - [x] (Halima) Homepage redesign:
   - [x] (Haley) Add image/icon to acts
   - [x] (Halima) Add points and/or amount of times done act to home
   - [x] (Halima) Header over the chosen acts
 - [x] (Halima) Level progress in the notification after completing an act
-- [x] (Haley) get rid of act detail view
+- [x] (Haley) Get rid of act detail view
 - [x] (Haley) Daily challenge hides after completion
 - [x] (Haley) Category VC: Carousel 
 - [x] (Haley) Search for acts
@@ -179,8 +179,8 @@ CORE
 ## Week 5 - 8/13/18 - 8/17/18
 
 ## Bugs/Design changes that need to be solved
-- [x] (Gustavo) clicking checkmark button at Home [Home VC]
-  - [x] Gustavo) clicking checkmark button at Daily Challenge [Home VC]
+- [x] (Gustavo) Clicking checkmark button at Home [Home VC]
+- [x] (Gustavo) Clicking checkmark button at Daily Challenge [Home VC]
 - [x] (Gustavo) Refresh control breaks when user tries to load page when number of posts is 0 [Timeline VC]
 - [x] (Halima) user should not be able to add the same act multiple times to db [Category VC]
 - [x] (Haley) If you add an act, go to home, delete it, and go back to categories, the button is still -, not +
@@ -194,7 +194,8 @@ CORE
 - [x] (Gustavo) Make search bar color in all VCs match the top bar
 - [ ] (Gustavo) Change trophy at at Profile, change "badges" font and color, change progress bar thickness and border color, center name of the user
 - [x] (Haley) Search should be able to exit keyboard
-- [x] (Haley) move walkthrough to the first page
+- [x] (Haley) Move walkthrough to the first page
+- [ ] (Halima) The same act can be added multiple times to homepage and the Plus and Minus no longer working properly
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness

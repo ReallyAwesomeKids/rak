@@ -1,11 +1,3 @@
-//
-//  AboutViewController.m
-//  rak
-//
-//  Created by Gustavo Coutinho on 8/3/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import "AboutViewController.h"
 
 @interface AboutViewController ()
@@ -23,13 +15,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupLogoLabel];
-    
+    [self pictureSetup];
+}
+
+- (void)pictureSetup {
     self.gustavoPic.layer.cornerRadius = self.gustavoPic.frame.size.height/2;
     self.haleyPic.layer.cornerRadius = self.haleyPic.frame.size.height/2;
     self.halimaPic.layer.cornerRadius = self.halimaPic.frame.size.height/2;
     self.bofanPic.layer.cornerRadius = self.bofanPic.frame.size.height/2;
-
-
 }
 
 - (void)setupLogoLabel {
@@ -52,23 +45,11 @@
                        value:font
                        range:range];
     [attributed endEditing];
-    //  self.logoLabel.text = nil;
     self.logoLabel.attributedText = attributed;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -1,4 +1,3 @@
-//Imports
 #import "PhotoMapViewController.h"
 #import <MapKit/MapKit.h>
 #import "DescriptionViewController.h"
@@ -9,7 +8,6 @@
 #import "MessageView.h"
 #import <CoreLocation/CoreLocation.h>
 
-//Interface
 @interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
@@ -20,7 +18,6 @@
 @end
 
 
-//Implementation
 @implementation PhotoMapViewController
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -35,7 +32,6 @@
     }
 }
 
-//Loading current view
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -88,7 +84,6 @@
     
 }
 
-//Receive Memory Warning
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -180,22 +175,15 @@
         }];
     }
     button.selected = !button.selected;
-    
-  //  [self performSegueWithIdentifier:@"fullDescriptionSegue" sender:nil];
 }
 
 
-//Tap pin button on the photo map will perform the segue to the locations view controller
 - (IBAction)pinLocation:(id)sender {
     [self performSegueWithIdentifier:@"locationsSegue" sender:nil];
 }
 
-//Segue
 #pragma mark - Navigation
-//Segue from the photo map to the locations view controller
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString:@"locationsSegue"]){
         LocationsViewController *locationsViewController = [segue destinationViewController];
         locationsViewController.delegate = self;

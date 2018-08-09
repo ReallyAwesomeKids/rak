@@ -4,14 +4,15 @@
 #import "CustomUser.h"
 #import "Parse.h"
 #import "ActsTableViewCell.h"
-#import "DetailViewController.h"
 #import "DateFunctions.h"
 #import "PopupView.h"
 #import "PopupViewController.h"
 #import "MessageView.h"
 #import "ComposingViewController.h"
 #import "PointToLevelConverter.h"
+
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate, PopupViewControllerDelegate, ComposingViewControllerDelegate, MessageViewDelegate>
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dailyChallengeTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *dailyChallengeBottomConstraint;
 
@@ -19,15 +20,13 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *dailyChallengeView;
 @property (weak, nonatomic) IBOutlet UILabel *dailyChallengeTitle;
-@property (strong, nonatomic) UIView *noActsChosenView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstraint;
-
-
+@property (strong, nonatomic) UIView *noActsChosenView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSString *percentUntilNextLevelText;
-@property (nonatomic, strong) NSMutableArray *acts;
 @property (nonatomic) NSInteger levelForPopup;
+@property (nonatomic, strong) NSMutableArray *acts;
 
 // Array used when perfoming the swipable option of deleting an act
 @property (nonatomic, strong) NSMutableArray *deletedActs;
@@ -42,7 +41,6 @@
 // Buttons
 @property (weak, nonatomic) IBOutlet UIButton *dailyChallengeButton;
 - (IBAction)didTapDailyChallenge:(id)sender;
-
 
 @end
 
@@ -66,35 +64,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1.0];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    // TableView setup
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
     
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    // initialization
-    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self tableViewSetup];
+    [self challengeSetup];
+    [self refreshControlSetup];
     [self initializeCheckmark];
+    [self fetchUserActs];
+    
     ActsTableViewCell *cell;
     [cell customLayout];
-    // fetch data from db
-    [self fetchUserActs];
-
+    CustomUser.currentUser.delegate = self;
     
+}
+
+- (void)tableViewSetup {
+    self.tableView.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1.0];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
+
+- (void)challengeSetup {
     NSDate *dateLastDidDailyChallenge = CustomUser.currentUser.dateLastDidDailyChallenge;
     if (dateLastDidDailyChallenge == nil || ![CustomUser.currentUser userDidDailyChallengeToday]) {
         [self fetchDailyChallenge];
     }
+}
+
+- (void)refreshControlSetup {
+    // initialization
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    
     // Programagtic view of dragging and dropping in code
     [self.refreshControl addTarget:self action:@selector(fetchUserActs) forControlEvents:UIControlEventValueChanged];
     
     // Nests views into subviews
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self.tableView sendSubviewToBack:self.refreshControl];
-    
-    CustomUser.currentUser.delegate = self;
-    
 }
 
 - (void)fetchUserActs {
@@ -116,13 +123,16 @@
         }
     }];
 }
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [NSString stringWithFormat:@"%@ %@ %ld %@", @"Personal Acts", @"(",[CustomUser.currentUser.chosenActs count], @")"];
 }
+
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     header.textLabel.font = [UIFont boldSystemFontOfSize:20.0f];
 }
+
 - (void)fetchDailyChallenge {
     PFQuery *challengeQuery = [Act query];
     [challengeQuery includeKey:@"category"];
@@ -216,6 +226,7 @@
     Act *act = cell.act;
     [self userDidCompleteAct:act];
 }
+
 - (void) customLayout {
     ActsTableViewCell *cell;
     UIView *viewTemp= (UIView *)cell.cellView;
@@ -468,14 +479,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqual: @"detailSegue"]) {
-        ActsTableViewCell *tappedCell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        Act *act = self.userActs[indexPath.row];
-        DetailViewController *detailViewController = [segue destinationViewController];
-        detailViewController.act = act;
-    }
-    else if ([segue.identifier isEqualToString:@"popupSegue"]){
+    if ([segue.identifier isEqualToString:@"popupSegue"]){
         PopupViewController *popupVC = (PopupViewController *) [segue destinationViewController];
         popupVC.providesPresentationContextTransitionStyle = YES;
         popupVC.definesPresentationContext = YES;

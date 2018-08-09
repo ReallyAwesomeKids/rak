@@ -61,7 +61,6 @@
 		5D329D2220FD160C00C180C9 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D329D2120FD160C00C180C9 /* Profile.storyboard */; };
 		5D329D2920FD169800C180C9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2820FD169800C180C9 /* HomeViewController.m */; };
 		5D329D2D20FD16C500C180C9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2C20FD16C500C180C9 /* ProfileViewController.m */; };
-		5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D2F20FD16DD00C180C9 /* DetailViewController.m */; };
 		5D329D3320FD170500C180C9 /* CategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3220FD170500C180C9 /* CategoriesViewController.m */; };
 		5D329D3920FD184900C180C9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3820FD184900C180C9 /* LoginViewController.m */; };
 		5D329D3F20FD1AA900C180C9 /* Act.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D329D3E20FD1AA900C180C9 /* Act.m */; };
@@ -206,8 +205,6 @@
 		5D329D2820FD169800C180C9 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		5D329D2B20FD16C500C180C9 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		5D329D2C20FD16C500C180C9 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		5D329D2E20FD16DD00C180C9 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		5D329D2F20FD16DD00C180C9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5D329D3120FD170500C180C9 /* CategoriesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoriesViewController.h; sourceTree = "<group>"; };
 		5D329D3220FD170500C180C9 /* CategoriesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoriesViewController.m; sourceTree = "<group>"; };
 		5D329D3720FD184900C180C9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -410,8 +407,6 @@
 				5451684E2101506000D45FE3 /* ComposingViewController.m */,
 				2C23A5CE2106A61C00BD228A /* DescriptionViewController.h */,
 				2C23A5CF2106A61C00BD228A /* DescriptionViewController.m */,
-				5D329D2E20FD16DD00C180C9 /* DetailViewController.h */,
-				5D329D2F20FD16DD00C180C9 /* DetailViewController.m */,
 				5D329D2720FD169800C180C9 /* HomeViewController.h */,
 				5D329D2820FD169800C180C9 /* HomeViewController.m */,
 				2C5C3B9D2101105C004568EF /* LocationsViewController.h */,
@@ -775,7 +770,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D329D3920FD184900C180C9 /* LoginViewController.m in Sources */,
-				5D329D3020FD16DD00C180C9 /* DetailViewController.m in Sources */,
 				5451684F2101506000D45FE3 /* ComposingViewController.m in Sources */,
 				5D329CF920FD15A300C180C9 /* main.m in Sources */,
 				2C5C3B9F2101105C004568EF /* LocationsViewController.m in Sources */,
