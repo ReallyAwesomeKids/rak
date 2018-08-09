@@ -41,7 +41,7 @@
     
     self.mapView.delegate = self;
     
-    MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.785834, -122.406417), MKCoordinateSpanMake(0.1, 0.1));
+    MKCoordinateRegion region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.481134, -122.156419), MKCoordinateSpanMake(0.1, 0.1));
     [self.mapView setRegion:region animated:NO];
     
     self.locationManager = [CLLocationManager new];
@@ -58,6 +58,7 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     if (locations.count != 0) {
         CLLocation *currentLocation = locations[0];
+        NSLog(@"%f, %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
         MKCoordinateRegion region = MKCoordinateRegionMake(currentLocation.coordinate, MKCoordinateSpanMake(0.115, 0.115));
         
         [self.mapView setRegion:region animated:YES];

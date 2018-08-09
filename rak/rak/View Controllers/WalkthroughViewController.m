@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.pageInfoStrings = @[@"Get ideas for fun acts of kindness you can do every day", @"Complete acts of kindness to level up and earn achievements", @"Read and share stories of how kindness has touched your life"];
-    self.pageImageNames = @[@"categorySS", @"profileSS", @"timelineSS"];
+    self.pageImageNames = @[@"catalogueSS", @"profileSS", @"timelineSS"];
     
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];

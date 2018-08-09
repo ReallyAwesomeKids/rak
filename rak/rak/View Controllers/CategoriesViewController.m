@@ -29,7 +29,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    [self.carousel reloadData];
+    [self fetchCategories];
 }
 
 //Current Loaded View
@@ -117,6 +117,10 @@
     [cview addSubview:tableView];
     if ([cat.categoryName isEqualToString:@"Local Needs"]) {
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 500, 330, 40)];
+        CGRect tableFrame = tableView.frame;
+        tableFrame.size.height = tableFrame.size.height -= 40;
+        tableView.frame = tableFrame;
+        button.backgroundColor = [UIColor whiteColor];
         [button setTitle:@"View Map" forState:UIControlStateNormal];
         [button setTitleColor:[UIColor colorWithRed:cat.colorR green:cat.colorG blue:cat.colorB alpha:1] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(didTapCategory:) forControlEvents:UIControlEventTouchUpInside];
