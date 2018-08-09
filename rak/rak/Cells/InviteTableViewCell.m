@@ -18,12 +18,12 @@
     self.name.text = contact.givenName;
     self.familyName.text = contact.familyName;
     
-    if (contact.phoneNumbers != nil && contact.emailAddresses != nil) {
+    if (contact.emailAddresses > 0) {
         self.email.text = [contact.emailAddresses[0] valueForKey:@"value"];
     } else {
         self.email.text = @"no e-mail";
     }
-    if (contact.emailAddresses != nil) {
+    if (contact.phoneNumbers.count > 0) {
         self.number.text = [[contact.phoneNumbers[0] valueForKey:@"value"] valueForKey:@"digits"];
     } else {
         self.number.text = @"no phone number";

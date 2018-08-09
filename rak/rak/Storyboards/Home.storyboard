@@ -288,7 +288,7 @@
                                         <rect key="frame" x="83" y="12" width="144.5" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="AJX-zf-OlZ"/>
-                                            <constraint firstAttribute="width" constant="144.5" id="acQ-RD-P5l"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="144.5" id="acQ-RD-P5l"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
                                         <color key="textColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -353,7 +353,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dailyChallengeBottomConstraint" destination="Eca-Dy-ezf" id="cww-9L-u01"/>
                         <outlet property="dailyChallengeButton" destination="cHC-r4-Rdd" id="VjM-Cm-9RW"/>
+                        <outlet property="dailyChallengeTitle" destination="A7O-Zo-TKf" id="Bph-jP-kUK"/>
+                        <outlet property="dailyChallengeTopConstraint" destination="TEm-SD-XPY" id="J0f-YK-hYN"/>
                         <outlet property="dailyChallengeView" destination="HvJ-sv-jpY" id="yuy-M7-rKI"/>
                         <outlet property="homeTaskName" destination="GPj-mr-fdr" id="LIZ-Bu-0oT"/>
                         <outlet property="tableView" destination="5Wp-XI-8V7" id="PBE-1h-9Kd"/>

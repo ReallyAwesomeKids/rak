@@ -188,12 +188,12 @@ CORE
 - [x] (Gustavo) Delete View All
 - [x] (Gustavo) Take off select property of tableview in category
 - [x] (Gustavo) Once you post in the timeline it automatically refreshes
-- [ ] (Halima) Daily challenges when it is done should have a header view saying it is done
+- [x] (Halima) Daily challenges when it is done should have a header view saying it is done
 - [x] (Haley) When user adds own act should be refreshed at category automatically
 - [x] (Gustavo) Add act view to category as in Home as well
 - [x] (Gustavo) Make search bar color in all VCs match the top bar
 - [ ] (Gustavo) Change trophy at at Profile, change "badges" font and color, change progress bar thickness and border color, center name of the user
-- [ ] (Haley) Search can't exit keyboard
+- [x] (Haley) Search should be able to exit keyboard
 - [x] (Haley) move walkthrough to the first page
 
 ## Extended Functionality Ideas
