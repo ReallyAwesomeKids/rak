@@ -189,11 +189,12 @@ CORE
 - [x] (Gustavo) Take off select property of tableview in category
 - [ ] Once you post in the timeline it automatically refreshes
 - [ ] Daily challenges when it is done should have a header view saying it is done
-- [ ] When user adds own act should be refreshed at category automatically
+- [x] (Haley) When user adds own act should be refreshed at category automatically
 - [ ] Add act view to category as in Home as well
 - [ ] Make search bar color in all VCs match the top bar
 - [ ] Change trophy at at Profile, change "badges" font and color, change progress bar thickness and border color, center name of the user
 - [ ] Search can't exit keyboard
+- [x] (Haley) move walkthrough to the first page
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
