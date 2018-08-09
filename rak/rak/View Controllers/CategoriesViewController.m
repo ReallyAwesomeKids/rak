@@ -159,7 +159,8 @@
     NSMutableArray *chosenActs = [CustomUser.currentUser.chosenActs mutableCopy];
     
     if (actCell.isInUserChosenActs) {
-        [chosenActs removeObject:actCell.selectAct];
+        [CustomUser.currentUser removeActsFromChosenActs:actCell.selectAct];
+        chosenActs = [CustomUser.currentUser.chosenActs mutableCopy];
         [MessageView presentMessageViewWithText:@"Act deleted from home"
                             withTapInstructions:nil
                                onViewController:self

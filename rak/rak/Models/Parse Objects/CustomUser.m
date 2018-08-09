@@ -170,12 +170,22 @@
     return result;
 }
 
-//- (void)removeActsFromChosenActs:(Act *)act {
-//    for (Act *chosenAct in self.chosenActs) {
-//        if ([chosenAct.objectId isEqualToString:act.objectId]){
-//            
-//        }
-//    }
-//}
+- (void)removeActsFromChosenActs:(Act *)act {
+    Act *toRemove;
+    int i = 0;
+    while (i < self.chosenActs.count) {
+        Act *chosenAct = [self.chosenActs objectAtIndex:i];
+        if ([chosenAct.objectId isEqualToString:act.objectId]){
+            toRemove = chosenAct;
+            break;
+        }
+        i += 1;
+    }
+    if (toRemove != nil) {
+        NSMutableArray *mutableChosen = [self.chosenActs mutableCopy];
+        [mutableChosen removeObject:toRemove];
+        self.chosenActs = [mutableChosen copy];
+    }
+}
 
 @end

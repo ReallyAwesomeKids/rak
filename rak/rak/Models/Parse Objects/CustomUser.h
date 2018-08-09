@@ -45,5 +45,6 @@
 - (BOOL)userDidDailyChallengeToday;
 
 - (BOOL)actIsInChosenActs:(Act *)act;
+- (void)removeActsFromChosenActs:(Act *)act;
 
 @end
