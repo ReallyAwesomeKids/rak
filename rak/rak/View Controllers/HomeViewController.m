@@ -12,10 +12,13 @@
 #import "ComposingViewController.h"
 #import "PointToLevelConverter.h"
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, CustomUserDelegate, PopupViewControllerDelegate, ComposingViewControllerDelegate, MessageViewDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *dailyChallengeTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *dailyChallengeBottomConstraint;
 
 @property (weak, nonatomic) IBOutlet PopupView *popupView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *dailyChallengeView;
+@property (weak, nonatomic) IBOutlet UILabel *dailyChallengeTitle;
 @property (strong, nonatomic) UIView *noActsChosenView;
 @property (weak, nonatomic) IBOutlet UILabel *homeTaskName;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -49,7 +52,7 @@
     [super viewWillAppear:YES];
     [self fetchUserActs];
     if ([CustomUser.currentUser userDidDailyChallengeToday])
-        [self hideDailyChallengeAnimated:NO];
+        [self dailyChallengeCompletedView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -77,7 +80,6 @@
     [cell customLayout];
     // fetch data from db
     [self fetchUserActs];
-    [self fetchDailyChallenge];
 
     
     NSDate *dateLastDidDailyChallenge = CustomUser.currentUser.dateLastDidDailyChallenge;
@@ -94,11 +96,6 @@
     CustomUser.currentUser.delegate = self;
     
 }
-//- (void)fetchCategoryImages {
-//    PFQuery *categoryImageQuery = [ActCategory query];
-//    [categoryImageQuery whereKey:<#(nonnull NSString *)#> equalTo:<#(nonnull id)#>];
-//    []
-//}
 
 - (void)fetchUserActs {
     PFQuery *userActQuery = [CustomUser query];
@@ -249,6 +246,7 @@
         [self.dailyChallengeButton setAlpha:1.f];
     } completion:^(BOOL finished) {
         [self hideDailyChallengeAnimated:YES];
+        
     }];
 
     // Notification
@@ -275,27 +273,16 @@
         self.dailyChallengeView = nil;
     }
     else {
-    [UIView animateWithDuration:.5
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAllowUserInteraction
-                     animations:^{
-                         self.dailyChallengeView.frame = CGRectMake(self.dailyChallengeView.frame.origin.x,
-                                                                    -105,
-                                                                    self.dailyChallengeView.frame.size.width,
-                                                                    self.dailyChallengeView.frame.size.height);
-                         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x,
-                                                           0,
-                                                           self.tableView.frame.size.width,
-                                                           self.tableView.frame.size.height);
-                     }
-                     completion:^(BOOL finished) {
-                         self.tableViewTopConstraint.constant = 0;
-                         [self.dailyChallengeView removeFromSuperview];
-                         self.dailyChallengeView = nil;
-                     }];
+        [self dailyChallengeCompletedView];
     }
 }
-
+- (void)dailyChallengeCompletedView {
+    self.dailyChallengeTitle.text = @"Daily Challenge Completed";
+    self.dailyChallengeTopConstraint.constant = 35;
+    self.dailyChallengeBottomConstraint.constant = 45;
+    [self.homeTaskName removeFromSuperview];
+    [self.dailyChallengeButton removeFromSuperview];
+}
 - (void)userDidCompleteAct:(Act *)act {
     [CustomUser.currentUser userDidCompleteAct:act];
     NSInteger levelNumber = [PointToLevelConverter getCurrentLevelFromPoints:CustomUser.currentUser.experiencePoints];
