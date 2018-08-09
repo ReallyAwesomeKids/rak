@@ -4,7 +4,6 @@
 #import "CustomUser.h"
 #import "Parse.h"
 #import "ActsTableViewCell.h"
-#import "DetailViewController.h"
 #import "DateFunctions.h"
 #import "PopupView.h"
 #import "PopupViewController.h"
@@ -81,7 +80,6 @@
 - (void)tableViewSetup {
     self.tableView.backgroundColor = [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1.0];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    // TableView setup
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -125,13 +123,16 @@
         }
     }];
 }
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [NSString stringWithFormat:@"%@ %@ %ld %@", @"Personal Acts", @"(",[CustomUser.currentUser.chosenActs count], @")"];
 }
+
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     header.textLabel.font = [UIFont boldSystemFontOfSize:20.0f];
 }
+
 - (void)fetchDailyChallenge {
     PFQuery *challengeQuery = [Act query];
     [challengeQuery includeKey:@"category"];
@@ -225,6 +226,7 @@
     Act *act = cell.act;
     [self userDidCompleteAct:act];
 }
+
 - (void) customLayout {
     ActsTableViewCell *cell;
     UIView *viewTemp= (UIView *)cell.cellView;
@@ -477,14 +479,7 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqual: @"detailSegue"]) {
-        ActsTableViewCell *tappedCell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        Act *act = self.userActs[indexPath.row];
-        DetailViewController *detailViewController = [segue destinationViewController];
-        detailViewController.act = act;
-    }
-    else if ([segue.identifier isEqualToString:@"popupSegue"]){
+    if ([segue.identifier isEqualToString:@"popupSegue"]){
         PopupViewController *popupVC = (PopupViewController *) [segue destinationViewController];
         popupVC.providesPresentationContextTransitionStyle = YES;
         popupVC.definesPresentationContext = YES;

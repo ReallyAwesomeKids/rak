@@ -1,11 +1,3 @@
-//
-//  PopupView.h
-//  rak
-//
-//  Created by Haley Zeng on 7/23/18.
-//  Copyright © 2018 Really Awesome Kids. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 #import <ParseUI/ParseUI.h>
 #import "Badge.h"
@@ -17,8 +9,8 @@
 
 @end
 
-
 @interface PopupView : UIView
+
 @property (strong, nonatomic) IBOutlet PopupView *contentView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
