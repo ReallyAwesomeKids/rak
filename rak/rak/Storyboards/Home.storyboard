@@ -192,19 +192,13 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="261" height="23.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-oK-LkM">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="83.5" height="23.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="23.5"/>
                                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sr-10-PMO">
-                                                                            <rect key="frame" x="88.5" y="0.0" width="84" height="23.5"/>
-                                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTN-l4-XFx">
-                                                                            <rect key="frame" x="177.5" y="0.0" width="83.5" height="23.5"/>
+                                                                            <rect key="frame" x="133" y="0.0" width="128" height="23.5"/>
                                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -271,6 +265,8 @@
                                             <outlet property="checkButton" destination="n1k-5F-Kki" id="Wq8-VV-01S"/>
                                             <outlet property="detailHeight" destination="kYa-8C-hy6" id="Rjv-hK-blv"/>
                                             <outlet property="detailView" destination="3pu-Xg-IQg" id="m1R-QZ-8l5"/>
+                                            <outlet property="detailViewPoints" destination="3zc-oK-LkM" id="CE7-ut-Z05"/>
+                                            <outlet property="detailViewTimesDone" destination="5sr-10-PMO" id="Ybd-4G-MS7"/>
                                             <outlet property="homeBackgroundView" destination="UBX-g4-7D2" id="aYA-CE-8u8"/>
                                             <outlet property="homeCellActImage" destination="Fjn-hY-ehq" id="ejJ-c3-dxF"/>
                                             <outlet property="homeCellActName" destination="SQ3-ZR-dSE" id="qVv-x1-hjq"/>
