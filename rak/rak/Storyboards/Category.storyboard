@@ -35,11 +35,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="4Jo-WP-XIW">
-                        <barButtonItem key="leftBarButtonItem" title="View All" id="URM-m9-OrL">
-                            <connections>
-                                <segue destination="rP0-wh-l6X" kind="show" identifier="viewAllSegue" id="opE-Ub-aws"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus-white" id="Bqb-g0-tgJ">
                             <connections>
                                 <segue destination="QD0-nW-eD2" kind="show" identifier="addActSegue" id="wcr-by-OIB"/>
@@ -54,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdR-jW-Ehk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360.80000000000001" y="129.98500749625188"/>
+            <point key="canvasLocation" x="1300" y="129.98500749625188"/>
         </scene>
         <!--Map-->
         <scene sceneID="3cu-Te-CBy">
@@ -166,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MI-Ef-e1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184.8" y="129.98500749625188"/>
+            <point key="canvasLocation" x="2124" y="129.98500749625188"/>
         </scene>
         <!--Add Act View Controller-->
         <scene sceneID="NF6-Ac-vgi">
@@ -203,17 +198,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSz-B6-5mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087.1999999999998" y="129.98500749625188"/>
+            <point key="canvasLocation" x="3026.4000000000001" y="129.98500749625188"/>
         </scene>
     </scenes>
     <resources>
         <image name="minus" width="512" height="512"/>
         <image name="plus" width="512" height="512"/>
-        <image name="plus-white" width="20" height="20"/>
+        <image name="plus-white" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d4d-qB-26r"/>
-        <segue reference="opE-Ub-aws"/>
+        <segue reference="wcr-by-OIB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
