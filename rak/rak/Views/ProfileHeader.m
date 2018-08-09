@@ -20,6 +20,7 @@
     
     // Setting labels
     self.displayNameLabel.text = self.user.displayName;
+    self.actsNumberLabel.text = [NSString stringWithFormat:@"%ld", self.user.amountActsDone];
     
     // Setting streak
     [self.user updateDailyStreak];
@@ -39,7 +40,7 @@
     
     CGFloat newWidth = self.percentBar.frame.size.width * percentToNextLevel;
     self.movingPercentBarWidthConstraint.constant = newWidth;
-    self.movingPercentBar.layer.cornerRadius = self.movingPercentBar.frame.size.height/2;   
+    self.movingPercentBar.layer.cornerRadius = self.movingPercentBar.frame.size.height/2;
     self.percentToNextLevelLabel.text = [NSString stringWithFormat:@"%d%% to Level %ld", (int)(percentToNextLevel * 100), levelNumber + 1];
 }
 

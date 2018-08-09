@@ -294,8 +294,17 @@
                                         <color key="textColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
+                                        <rect key="frame" x="83" y="31" width="249" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="hNi-yf-b92"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
+                                        <color key="textColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHC-r4-Rdd">
-                                        <rect key="frame" x="342" y="40" width="25" height="25"/>
+                                        <rect key="frame" x="331" y="40" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="6yf-5T-w9Z"/>
                                             <constraint firstAttribute="width" constant="25" id="jTp-yl-HLQ"/>
@@ -305,15 +314,6 @@
                                             <action selector="didTapDailyChallenge:" destination="9DP-4D-YYf" eventType="touchUpInside" id="gK6-Zn-3gO"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPj-mr-fdr">
-                                        <rect key="frame" x="83" y="31" width="243" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="hNi-yf-b92"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
-                                        <color key="textColor" red="0.027450980390000001" green="0.23137254900000001" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -321,8 +321,8 @@
                                     <constraint firstItem="10G-vc-XkH" firstAttribute="leading" secondItem="HvJ-sv-jpY" secondAttribute="leading" constant="8" id="2P2-vP-oFF"/>
                                     <constraint firstItem="GPj-mr-fdr" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="31" id="AqY-Uk-Cg8"/>
                                     <constraint firstAttribute="bottom" secondItem="A7O-Zo-TKf" secondAttribute="bottom" constant="67" id="Eca-Dy-ezf"/>
-                                    <constraint firstAttribute="trailing" secondItem="cHC-r4-Rdd" secondAttribute="trailing" constant="8" id="Ppo-wE-Df2"/>
-                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="GPj-mr-fdr" secondAttribute="trailing" constant="16" id="Qa6-aO-090"/>
+                                    <constraint firstAttribute="trailing" secondItem="cHC-r4-Rdd" secondAttribute="trailing" constant="19" id="Ppo-wE-Df2"/>
+                                    <constraint firstItem="cHC-r4-Rdd" firstAttribute="leading" secondItem="GPj-mr-fdr" secondAttribute="trailing" constant="-1" id="Qa6-aO-090"/>
                                     <constraint firstItem="A7O-Zo-TKf" firstAttribute="top" secondItem="HvJ-sv-jpY" secondAttribute="top" constant="12" id="TEm-SD-XPY"/>
                                     <constraint firstItem="A7O-Zo-TKf" firstAttribute="leading" secondItem="10G-vc-XkH" secondAttribute="trailing" constant="10" id="X3i-71-xP1"/>
                                     <constraint firstItem="cHC-r4-Rdd" firstAttribute="centerY" secondItem="HvJ-sv-jpY" secondAttribute="centerY" id="cmq-K6-3PZ"/>

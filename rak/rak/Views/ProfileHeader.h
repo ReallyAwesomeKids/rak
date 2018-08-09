@@ -11,6 +11,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *streakLabel;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 @property (weak, nonatomic) IBOutlet UILabel *streakNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *actsNumberLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *percentToNextLevelLabel;
 

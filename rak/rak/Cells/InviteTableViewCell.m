@@ -18,19 +18,13 @@
     self.name.text = contact.givenName;
     self.familyName.text = contact.familyName;
     
-    if (contact.emailAddresses > 0) {
-        self.email.text = [contact.emailAddresses[0] valueForKey:@"value"];
-    } else {
-        self.email.text = @"no e-mail";
-    }
-    if (contact.phoneNumbers.count > 0) {
-        self.number.text = [[contact.phoneNumbers[0] valueForKey:@"value"] valueForKey:@"digits"];
-    } else {
-        self.number.text = @"no phone number";
-    }
+    self.email.text = (contact.emailAddresses > 0) ? [contact.emailAddresses[0] valueForKey:@"value"] : @"no e-mail";
+    
+    self.email.text = (contact.phoneNumbers.count > 0) ? [[contact.phoneNumbers[0] valueForKey:@"value"] valueForKey:@"digits"] : @"no phone number";
+
     [self.contactButton addTarget:self
-                       action:@selector(didTapContact:)
-             forControlEvents:UIControlEventTouchUpInside];
+                        action:@selector(didTapContact:)
+                        forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (IBAction)didTapContact:(id)sender {
