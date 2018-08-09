@@ -1,8 +1,8 @@
 parse-dashboard --appId rak_id --masterKey rak_key --serverURL https://random-acts-of-kindness.herokuapp.com/parse
 
-# Team Project - *RAK*
+# Team Project - *Do Güd*
 
-**RAK** is an app where users can do random acts of kindness and build kind habits.
+**Do Güd** is an app where users can do random acts of kindness and build kind habits.
 
 ## Considerations
 
