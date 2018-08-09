@@ -195,7 +195,8 @@ CORE
 - [ ] (Gustavo) Change trophy at at Profile, change "badges" font and color, change progress bar thickness and border color, center name of the user
 - [x] (Haley) Search should be able to exit keyboard
 - [x] (Haley) Move walkthrough to the first page
-- [ ] (Halima) The same act can be added multiple times to homepage and the Plus and Minus no longer working properly
+- [x] (Halima + Haley) The same act can be added multiple times to homepage and the Plus and Minus no longer working properly
+- [ ] (Halima) Message says the wrong level when you complete an act
 
 ## Extended Functionality Ideas
 - [x] (Gustavo) User can write their own acts of kindness
