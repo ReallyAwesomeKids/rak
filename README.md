@@ -187,7 +187,7 @@ CORE
 - [x] (Haley) Map annotations are cut off
 - [x] (Gustavo) Delete View All
 - [x] (Gustavo) Take off select property of tableview in category
-- [ ] Once you post in the timeline it automatically refreshes
+- [x] (Gustavo) Once you post in the timeline it automatically refreshes
 - [ ] Daily challenges when it is done should have a header view saying it is done
 - [x] (Haley) When user adds own act should be refreshed at category automatically
 - [ ] Add act view to category as in Home as well
