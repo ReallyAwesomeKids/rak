@@ -109,6 +109,7 @@
     tableView.dataSource = self;
     tableView.category = cat;
     tableView.acts = cat.acts;
+    tableView.allowsSelection = NO;
     [tableView registerClass:[ActsCell class] forCellReuseIdentifier:@"ActCategoryCell"];
       [tableView reloadData];
 
