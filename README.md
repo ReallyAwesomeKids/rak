@@ -49,9 +49,7 @@ Haley:
 - After completing the act of kindness, he checked it off. And look at that! He earned an achievement.
 - /ZuckZuck is excited about the badge he just got. "Oh wow! I got a new badge! I'm going to share this accomplishment to the timeline"
 - ZuckZuck posts about his achievement on the timeline and goes to the timeline to see posts by other users.
-- /ZuckZuck reads Ari's post aloud/
-- ZuckZuck decides to take a look at Ari's profile
-- /ZuckZuck plays around Ari's profile, clicking badges and icons. "I wonder who else is on this app/
+- /ZuckZuck reads someone's post aloud. "I wonder who else is on this app/
 - ZuckZuck searches for other users.
 - /ZuchZuck: "Oh look it's Sheryl! Wow she did so many acts of kindness, earned all these badges! She inspires me to do more acts of kindness and one day reach her level.
 - From that day on, ZuckZuck did lots of acts of kindness every day.
