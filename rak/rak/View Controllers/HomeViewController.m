@@ -223,6 +223,8 @@
 - (IBAction)didTapCheckButton:(id)sender {
     UIButton *button = (UIButton *)sender;
     ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview.superview;
+    cell.timesDone += 1;
+    cell.detailViewTimesDone.text = [NSString stringWithFormat:@"%@  %ld",@"Done:",  (long)cell.timesDone];
     Act *act = cell.act;
     [self userDidCompleteAct:act];
 }

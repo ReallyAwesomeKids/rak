@@ -30,7 +30,7 @@
     self.menu1 = [[ManaDropDownMenu alloc] initWithFrame:frame title:@"Choose a category"];
     self.menu1.delegate = self;
     self.menu1.numberOfRows = 6;
-    self.menu1.textOfRows = @[@"Local Needs", @"Dating", @"Friends", @"Work", @"Community", @"Family"];
+    self.menu1.textOfRows = @[@"Local Needs", @"Relationship", @"Friends", @"Work", @"Community", @"Family"];
     self.menu1.colorOfRows = @[backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor];
     self.menu1.heightOfRows = 50;
     self.menu1.activeColor = palleteGreen;
