@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" id="4Jo-WP-XIW">
                         <barButtonItem key="rightBarButtonItem" image="plus-white" id="Bqb-g0-tgJ">
                             <connections>
-                                <segue destination="QD0-nW-eD2" kind="show" identifier="addActSegue" id="wcr-by-OIB"/>
+                                <segue destination="QD0-nW-eD2" kind="show" id="dr5-Ti-ZyZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdR-jW-Ehk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="129.98500749625188"/>
+            <point key="canvasLocation" x="2239.1999999999998" y="129.98500749625188"/>
         </scene>
         <!--Map-->
         <scene sceneID="3cu-Te-CBy">
@@ -57,7 +57,7 @@
             </objects>
             <point key="canvasLocation" x="-156" y="630"/>
         </scene>
-        <!--Add Act View Controller-->
+        <!--Add your own act!-->
         <scene sceneID="NF6-Ac-vgi">
             <objects>
                 <viewController id="QD0-nW-eD2" customClass="AddActViewController" sceneMemberID="viewController">
@@ -66,16 +66,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="act name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eqi-s3-QRK">
-                                <rect key="frame" x="44" y="146" width="287" height="30"/>
+                                <rect key="frame" x="44" y="105" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctj-aZ-YvQ">
-                                <rect key="frame" x="44" y="221" width="287" height="30"/>
+                                <rect key="frame" x="44" y="176" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.066666666669999999" green="0.54117647059999996" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.023529411760000001" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
@@ -86,13 +86,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="eWA-87-hM0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add your own act!" id="lKX-dF-Hic"/>
                     <connections>
                         <outlet property="userActName" destination="Eqi-s3-QRK" id="GFf-QK-fUT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSz-B6-5mv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2089" y="130"/>
+            <point key="canvasLocation" x="3967.1999999999998" y="129.98500749625188"/>
         </scene>
     </scenes>
     <resources>
