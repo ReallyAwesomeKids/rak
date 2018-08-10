@@ -51,8 +51,9 @@ Haley:
 - ZuckZuck posts about his achievement on the timeline and goes to the timeline to see posts by other users.
 - /ZuckZuck reads someone's post aloud. "I wonder who else is on this app/
 - ZuckZuck searches for other users.
-- /ZuchZuck: "Oh look it's Sheryl! Wow she did so many acts of kindness, earned all these badges! She inspires me to do more acts of kindness and one day reach her level.
-- From that day on, ZuckZuck did lots of acts of kindness every day.
+- /ZuchZuck: "Oh look it's Sheryl! Wow she did so many acts of kindness, earned all these badges! She motivates me to do more acts of kindness and hopefully one day reach her level.
+- Because ZuckZuck wanted to increase his streak, earn more badges, and level up, he started to do more acts of kindness everyday. Before he even knew it, he had brightened the lives of so many people around him. 
+- We hope that ZuckZuck's story inspires you to use our app, give back to your community, and do good.
 
 As he scrolled through different categories, he picked the acts of kindness that he wanted to do the most, including map stuff, opens the map; **add tell a friend you appreciate them**, goes back to homepage and X says appreciate Y on stage. Click checkmark. Show Badge. Click share to timeline. Post. Scroll through timeline "what's sheryl doing?", reads Sheryl's post, goes to Shery's profile, 
 "omg I wonder who else is on this app?", goes to search, clicks on Ari.
