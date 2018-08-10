@@ -43,7 +43,7 @@ Haley:
 - /ZuckZuck reads one of the acts and nods/
 - He was particularly interested in the Local Needs category that shows opportunities to directly give back his community. 
 - /ZuckZuck reads one of the map acts and adds it/
-- After choosing some acts that he wanted to work on, he went back to the homepage to see a list of his choices. He also can see the Daily Challenge, a curated act of kindness that rotates everyday. 
+- After choosing some acts that he wanted to work on, he went back to the homepage to see a list of his choices and get started
 - /ZuckZuck taps on the appreciate act: "I'm going to do this act of kindness and tell someone I appreciate them"/
 - /ZuckZuck tells Halima that he appreciates her. Halima says thanks/
 - After completing the act of kindness, he checked it off. And look at that! He earned an achievement.
@@ -53,7 +53,7 @@ Haley:
 - ZuckZuck searches for other users.
 - /ZuchZuck: "Oh look it's Sheryl! Wow she did so many acts of kindness, earned all these badges! She motivates me to do more acts of kindness and hopefully one day reach her level.
 - Because ZuckZuck wanted to increase his streak, earn more badges, and level up, he started to do more acts of kindness everyday. Before he even knew it, he had brightened the lives of so many people around him. 
-- We hope that ZuckZuck's story inspires you to use our app, give back to your community, and do good.
+- We hope that ZuckZuck's story inspires you to use our app to give back to your community, promote positivity, and do good.
 
 As he scrolled through different categories, he picked the acts of kindness that he wanted to do the most, including map stuff, opens the map; **add tell a friend you appreciate them**, goes back to homepage and X says appreciate Y on stage. Click checkmark. Show Badge. Click share to timeline. Post. Scroll through timeline "what's sheryl doing?", reads Sheryl's post, goes to Shery's profile, 
 "omg I wonder who else is on this app?", goes to search, clicks on Ari.
