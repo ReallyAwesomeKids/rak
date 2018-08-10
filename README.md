@@ -37,5 +37,16 @@ What mobile features do you leverage?
 - We provide three aspects to it: we give ideas, we make a game out of it, and we bring a community together.
 
 ** home page / categories *
-- Meet "Zuck Zuck", he really wanted to do acts of kindness in his community, so he joined Do Güd. As he scrolled through different categories, he picked the acts of kindness that he wanted to do the most, including map stuff, opens the map; **add tell a friend you appreciate them**, goes back to homepage and X says appreciate Y on stage. Click checkmark. Show Badge. Click share to timeline. Post. Scroll through timeline "what's sheryl doing?", reads Sheryl's post, goes to Shery's profile, 
+- Meet "Zuck Zuck", he really wanted to do acts of kindness in his community, so he joined Do Güd. 
+- He hasn't chosen any acts to work on yet, so he went to the act catalogue and chose some acts he liked. He was particularly interested in the Local Needs category that shows acts of kindness he can do in his community. 
+- After choosing some acts that he wanted to work on, he went back to the homepage to get started on his acts of kindness.
+- /ZuckZuck tells Halima that he appreciates her./
+- After completing the act of kindness, he checked it off.
+- /ZuckZuck is excited about the badge he just got. "I'm going to share this accomplishment to the timeline"
+- ZuckZuck writes a post 
+- On the timeline, ZuckZuck reads through stories posted by other users.
+- /ZuckZuck talks about Sheryl/
+- ZuckZuck goes to Sheryl's profile
+
+As he scrolled through different categories, he picked the acts of kindness that he wanted to do the most, including map stuff, opens the map; **add tell a friend you appreciate them**, goes back to homepage and X says appreciate Y on stage. Click checkmark. Show Badge. Click share to timeline. Post. Scroll through timeline "what's sheryl doing?", reads Sheryl's post, goes to Shery's profile, 
 "omg I wonder who else is on this app?", goes to search, clicks on Ari.
