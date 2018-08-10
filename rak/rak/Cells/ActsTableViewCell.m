@@ -13,6 +13,13 @@
     _act = act;
     self.homeCellActName.text = self.act.actName;
     [self configureCategoryImage];
+    
+    NSArray *history = [CustomUser.currentUser.actHistory objectForKey:act.objectId];
+    if (history == nil)
+        self.timesDone = 0;
+    else
+        self.timesDone = history.count;
+    
     self.detailViewPoints.text = [NSString stringWithFormat:@"%@ %ld", @"Points:", (long)self.act.pointsWorth];
     self.detailViewTimesDone.text = [NSString stringWithFormat:@"%@  %ld",@"Done:",  (long)self.timesDone];
 }
@@ -38,7 +45,6 @@
     
 }
 - (IBAction)didTapCellCheckmark:(id)sender {
-    self.timesDone = self.timesDone +1;
     [self.checkButton setAlpha:0.f];
     [self.checkButton setImage:[UIImage imageNamed:@"check-filled"] forState:UIControlStateNormal];
     
