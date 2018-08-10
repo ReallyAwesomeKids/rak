@@ -28,3 +28,14 @@ What will your final demo look like?
 What mobile features do you leverage?
 - **Convenience and mobility of phones**: Everyone always has their phone, so it's easy to open the app and mark the act of kindness you completed right after you did it
 - **Maps**: The Local Needs tab uses a map to show needs in the community
+
+## Script
+
+** person not speaking shows walkthrough **
+- Hello, I am Gustavo, Haley, Halima, the developers of Do Güd
+- The mission of our app is to incentivize people to do good.
+- We provide three aspects to it: we give ideas, we make a game out of it, and we bring a community together.
+
+** home page / categories *
+- Meet "Zuck Zuck", he really wanted to do acts of kindness in his community, so he joined Do Güd. As he scrolled through different categories, he picked the acts of kindness that he wanted to do the most, including map stuff, opens the map; **add tell a friend you appreciate them**, goes back to homepage and X says appreciate Y on stage. Click checkmark. Show Badge. Click share to timeline. Post. Scroll through timeline "what's sheryl doing?", reads Sheryl's post, goes to Shery's profile, 
+"omg I wonder who else is on this app?", goes to search, clicks on Ari.
