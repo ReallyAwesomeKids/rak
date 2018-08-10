@@ -30,6 +30,9 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self fetchUser];
+}
 
 #pragma mark - Navigation
 
