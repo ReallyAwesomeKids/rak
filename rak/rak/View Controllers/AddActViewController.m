@@ -11,6 +11,7 @@
 @property (nonatomic, strong) ManaDropDownMenu *menu1;
 
 - (IBAction)didTapDone:(id)sender;
+- (IBAction)didTapOut:(id)sender;
 
 @end
 
@@ -18,10 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self menuSetup];
-    
-    
 }
 
 - (void)menuSetup {
@@ -36,7 +34,6 @@
     self.menu1.colorOfRows = @[backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor];
     self.menu1.heightOfRows = 50;
     self.menu1.activeColor = palleteGreen;
-    self.menu1.inactiveColor = [UIColor blackColor];
     [self.view addSubview:self.menu1];
 }
 
@@ -50,7 +47,6 @@
               withPoints:1
       inCategoryWithName:self.name];
     [self.navigationController popViewControllerAnimated:YES];
-
 }
 
 + (Act *)addActWithName:(NSString *)name
@@ -87,11 +83,13 @@
     return actToBeAdded;
 }
 
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [[self view] endEditing:YES];
+}
+
 - (void)dropDownMenu:(CCDropDownMenu *)dropDownMenu didSelectRowAtIndex:(NSInteger)index {
     NSString *dropdownCategory = ((ManaDropDownMenu *)dropDownMenu).title;
     self.name = dropdownCategory;
-
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,14 +97,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
