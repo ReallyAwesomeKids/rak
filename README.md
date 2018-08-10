@@ -52,7 +52,7 @@ What mobile features do you leverage?
 - ZuckZuck posts about his achievement on the timeline and goes to the timeline to see posts by other users.
 - __ZuckZuck reads someone's post aloud.__ "I wonder who else is on this app/
 - ZuckZuck searches for other users.
-- __ZuchZuck__: "Oh look it's Sheryl! Wow she did so many acts of kindness __tap on heart__, earned all these badges __tap on a badge__, and she's been doing acts of kindness everyday for months __tap on streak__! She motivates me to do more acts of kindness and hopefully one day reach her level."
+- __ZuchZuck__: "Oh look it's Sheryl! Wow she did so many acts of kindness __tap on heart__, earned all these badges __tap on a badge__, and has kept up a daily streak for months __tap on streak__! She motivates me to do more acts of kindness and hopefully one day reach her level."
 - Because ZuckZuck wanted to increase his streak, earn more badges, and level up, he started to do more acts of kindness everyday. Before he even knew it, he had brightened the lives of so many people around him. 
 - We hope that ZuckZuck's story inspires you to use our app to give back to your community, promote positivity, and do good.
 
