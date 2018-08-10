@@ -39,10 +39,11 @@ What mobile features do you leverage?
 ** home page / categories *
 - Meet "Zuck Zuck", he really wanted to do acts of kindness in his community, so he joined Do Güd. 
 - He hasn't chosen any acts to work on yet, so he went to the act catalogue and chose some acts he liked. He was particularly interested in the Local Needs category that shows acts of kindness he can do in his community. 
-- After choosing some acts that he wanted to work on, he went back to the homepage to get started on his acts of kindness.
+- After choosing some acts that he wanted to work on, he went back to the homepage to see a list of his choices. He also can see the Daily Challenge, a curated act of kindness that rotates daily. 
+- /ZuckZuck taps on the appreciate act: "I'm going to do this act of kindness and tell someone I appreciate them"/
 - /ZuckZuck tells Halima that he appreciates her./
 - After completing the act of kindness, he checked it off.
-- /ZuckZuck is excited about the badge he just got. "I'm going to share this accomplishment to the timeline"
+- /ZuckZuck is excited about the badge he just got. "Oh wow! I got a new badge! I'm going to share this accomplishment to the timeline"
 - ZuckZuck writes a post 
 - On the timeline, ZuckZuck reads through stories posted by other users.
 - /ZuckZuck talks about Sheryl/
