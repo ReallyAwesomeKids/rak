@@ -37,17 +37,24 @@ What mobile features do you leverage?
 - We provide three aspects to it: we give ideas, we make a game out of it, and we bring a community together.
 
 ** home page / categories *
+Haley:
 - Meet "Zuck Zuck", he really wanted to do acts of kindness in his community, so he joined Do Güd. 
-- He hasn't chosen any acts to work on yet, so he went to the act catalogue and chose some acts he liked. He was particularly interested in the Local Needs category that shows acts of kindness he can do in his community. 
-- After choosing some acts that he wanted to work on, he went back to the homepage to see a list of his choices. He also can see the Daily Challenge, a curated act of kindness that rotates daily. 
+- The first thing he did after joining the app was to browse the act catalogue and choose some acts of kindness he wanted to do. 
+- /ZuckZuck reads one of the acts and nods/
+- He was particularly interested in the Local Needs category that shows opportunities to directly give back his community. 
+- /ZuckZuck reads one of the map acts and adds it/
+- After choosing some acts that he wanted to work on, he went back to the homepage to see a list of his choices. He also can see the Daily Challenge, a curated act of kindness that rotates everyday. 
 - /ZuckZuck taps on the appreciate act: "I'm going to do this act of kindness and tell someone I appreciate them"/
-- /ZuckZuck tells Halima that he appreciates her./
-- After completing the act of kindness, he checked it off.
+- /ZuckZuck tells Halima that he appreciates her. Halima says thanks/
+- After completing the act of kindness, he checked it off. And look at that! He earned an achievement.
 - /ZuckZuck is excited about the badge he just got. "Oh wow! I got a new badge! I'm going to share this accomplishment to the timeline"
-- ZuckZuck writes a post 
-- On the timeline, ZuckZuck reads through stories posted by other users.
-- /ZuckZuck talks about Sheryl/
-- ZuckZuck goes to Sheryl's profile
+- ZuckZuck posts about his achievement on the timeline and goes to the timeline to see posts by other users.
+- /ZuckZuck reads Ari's post aloud/
+- ZuckZuck decides to take a look at Ari's profile
+- /ZuckZuck plays around Ari's profile, clicking badges and icons. "I wonder who else is on this app/
+- ZuckZuck searches for other users.
+- /ZuchZuck: "Oh look it's Sheryl! Wow she did so many acts of kindness, earned all these badges! She inspires me to do more acts of kindness and one day reach her level.
+- From that day on, ZuckZuck did lots of acts of kindness every day.
 
 As he scrolled through different categories, he picked the acts of kindness that he wanted to do the most, including map stuff, opens the map; **add tell a friend you appreciate them**, goes back to homepage and X says appreciate Y on stage. Click checkmark. Show Badge. Click share to timeline. Post. Scroll through timeline "what's sheryl doing?", reads Sheryl's post, goes to Shery's profile, 
 "omg I wonder who else is on this app?", goes to search, clicks on Ari.
