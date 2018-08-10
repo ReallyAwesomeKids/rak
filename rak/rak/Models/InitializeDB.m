@@ -78,7 +78,7 @@
                          @"Call a family member and tell them you love them",
                          @"Call a family member and tell them you appreciate them"];
     
-    NSArray *dating = @[@"Tell your partner how amazingly \"hot\" they are",
+    NSArray *relationship = @[@"Tell your partner how amazingly \"hot\" they are",
                         @"Tell your partner what a good hair day they’re having",
                         @"Tell your partners parents how talented your partner is at something",
                         @"Do the dishes for your partner",
@@ -109,7 +109,7 @@
     NSDictionary *categories = @{@"Community" : community,
                                  @"Family" : family,
                                  @"Friends" : friends,
-                                 @"Dating" : dating,
+                                 @"Relationship" : relationship,
                                  @"Work" : work,
                                  @"Daily Challenges" : dailyChallenges
                                  };
@@ -130,7 +130,7 @@
 }
 
 + (void)initializeActCategories {
-    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Dating", @"Work", @"Local Needs"];
+    NSArray *cats = @[@"Community", @"Family", @"Friends", @"Relationship", @"Work", @"Local Needs"];
     for (NSString *cat in cats) {
         
         ActCategory *category = [[ActCategory alloc] init];
