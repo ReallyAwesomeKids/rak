@@ -37,7 +37,6 @@ What mobile features do you leverage?
 - We provide three aspects to it: we give ideas, we make a game out of it, and we bring a community together.
 
 **Haley**
-Haley:
 - Meet "Zuck Zuck", he really wanted to do acts of kindness in his community, so he joined Do Güd. 
 - The first thing he did after joining the app was to browse the act catalogue and choose some acts of kindness he wanted to do. 
 - __ZuckZuck reads one of the acts and nods__
@@ -48,6 +47,8 @@ Haley:
 - __ZuckZuck tells Halima that he appreciates her. Halima says thanks__
 - After completing the act of kindness, he checked it off. And look at that! He earned an achievement.
 - __ZuckZuck is excited about the badge he just got.__ "Oh wow! I got a new badge! I'm going to share this accomplishment to the timeline"
+
+**Halima**
 - ZuckZuck posts about his achievement on the timeline and goes to the timeline to see posts by other users.
 - __ZuckZuck reads someone's post aloud.__ "I wonder who else is on this app/
 - ZuckZuck searches for other users.
