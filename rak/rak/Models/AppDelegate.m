@@ -36,7 +36,18 @@
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
+    AppDelegate* shared=[UIApplication sharedApplication].delegate;
+    shared.blockRotation=YES;
+    
     return YES;
+}
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application       supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if (self.blockRotation) {
+        return UIInterfaceOrientationMaskPortrait;
+    }
+    return UIInterfaceOrientationMaskAll;
 }
 
 @end
