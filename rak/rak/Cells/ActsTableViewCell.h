@@ -17,6 +17,14 @@
 @property (weak, nonatomic) IBOutlet PFImageView *homeCellActImage;
 @property (weak, nonatomic) IBOutlet UIView *detailView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *detailHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewCenterYConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageViewTopConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *imageViewExpandedTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *checkMarkCenterYConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *checkMarkExpandedTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *actLabelCenterYConstraint;
+@property (strong, nonatomic) NSLayoutConstraint *actLabelExpandedTopConstraint;
+
 @property (weak, nonatomic) IBOutlet UIView *homeBackgroundView;
 @property (weak, nonatomic) IBOutlet UILabel *detailViewPoints;
 @property (weak, nonatomic) IBOutlet UILabel *detailViewTimesDone;

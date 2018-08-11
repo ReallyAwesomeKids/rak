@@ -179,12 +179,6 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBX-g4-7D2">
                                                     <rect key="frame" x="8" y="8" width="359" height="107"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ3-ZR-dSE">
-                                                            <rect key="frame" x="50" y="19" width="261" height="45"/>
-                                                            <gestureRecognizers/>
-                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pu-Xg-IQg">
                                                             <rect key="frame" x="50" y="72" width="261" height="24"/>
                                                             <subviews>
@@ -234,6 +228,12 @@
                                                                 <action selector="didTapCheckButton:" destination="9DP-4D-YYf" eventType="touchUpInside" id="ubd-tA-Nkd"/>
                                                             </connections>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="500" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" text="Bring donuts or other delicious sweets to work" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ3-ZR-dSE">
+                                                            <rect key="frame" x="50" y="19" width="261" height="45"/>
+                                                            <gestureRecognizers/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.023529411760000001" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -263,6 +263,7 @@
                                         <connections>
                                             <outlet property="cellView" destination="OJ5-FV-LSE" id="h05-ZW-O6v"/>
                                             <outlet property="checkButton" destination="n1k-5F-Kki" id="Wq8-VV-01S"/>
+                                            <outlet property="checkMarkCenterYConstraint" destination="j32-Yd-OkJ" id="nyT-VV-9yV"/>
                                             <outlet property="detailHeight" destination="kYa-8C-hy6" id="Rjv-hK-blv"/>
                                             <outlet property="detailView" destination="3pu-Xg-IQg" id="m1R-QZ-8l5"/>
                                             <outlet property="detailViewPoints" destination="3zc-oK-LkM" id="CE7-ut-Z05"/>
@@ -270,6 +271,8 @@
                                             <outlet property="homeBackgroundView" destination="UBX-g4-7D2" id="aYA-CE-8u8"/>
                                             <outlet property="homeCellActImage" destination="Fjn-hY-ehq" id="ejJ-c3-dxF"/>
                                             <outlet property="homeCellActName" destination="SQ3-ZR-dSE" id="qVv-x1-hjq"/>
+                                            <outlet property="imageViewCenterYConstraint" destination="u4v-Qp-v7j" id="ETl-gA-0Mk"/>
+                                            <outlet property="imageViewTopConstraint" destination="qJq-H8-otr" id="Zc5-Om-Iaj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

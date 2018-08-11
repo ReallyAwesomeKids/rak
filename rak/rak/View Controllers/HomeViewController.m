@@ -125,12 +125,12 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [NSString stringWithFormat:@"%@ %@ %ld %@", @"Personal Acts", @"(",[CustomUser.currentUser.chosenActs count], @")"];
+    return [NSString stringWithFormat:@"%@ %@ %ld %@", @"Your Chosen Acts", @"(",[CustomUser.currentUser.chosenActs count], @")"];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
-    header.textLabel.font = [UIFont boldSystemFontOfSize:20.0f];
+    header.textLabel.font = [UIFont boldSystemFontOfSize:18.0f];
 }
 
 - (void)fetchDailyChallenge {
@@ -512,16 +512,48 @@
         cell.detailViewBool = NO;
         cell.detailHeight.constant = 46;
         [cell.detailView updateConstraints];
-        NSLog(@"%@", [NSString stringWithFormat:@"%f", cell.detailHeight.constant]);
-        [self.tableView beginUpdates];
-        [self.tableView endUpdates];
+        
+        if (cell.imageViewExpandedTopConstraint == nil) {
+            cell.imageViewCenterYConstraint.active = NO;
+            NSLayoutConstraint *newTopConstraint =
+            [NSLayoutConstraint
+             constraintWithItem:cell.homeCellActImage
+             attribute:NSLayoutAttributeTop
+             relatedBy:NSLayoutRelationEqual
+             toItem:cell.homeBackgroundView
+             attribute:NSLayoutAttributeTop
+             multiplier:1
+             constant:cell.homeCellActImage.frame.origin.y];
+            cell.imageViewExpandedTopConstraint = newTopConstraint;
+            [cell.homeBackgroundView addConstraint:cell.imageViewExpandedTopConstraint];
+        }
+        if (cell.checkMarkExpandedTopConstraint == nil) {
+            cell.checkMarkCenterYConstraint.active = NO;
+            NSLayoutConstraint *newTopConstraint =
+            [NSLayoutConstraint
+             constraintWithItem:cell.checkButton
+             attribute:NSLayoutAttributeTop
+             relatedBy:NSLayoutRelationEqual
+             toItem:cell.homeBackgroundView
+             attribute:NSLayoutAttributeTop
+             multiplier:1
+             constant:cell.checkButton.frame.origin.y];
+            cell.checkMarkExpandedTopConstraint = newTopConstraint;
+            [cell.homeBackgroundView addConstraint:cell.checkMarkExpandedTopConstraint];
+        }
+        cell.detailView.hidden = NO;
+        
+       [self.tableView beginUpdates];
+       [self.tableView endUpdates];
+
     }
     else {
         NSLog(@"Did tap cell to unexpand");
         cell.detailViewBool = YES;
         cell.detailHeight.constant = 0;
+        cell.detailView.hidden = YES;
         [cell.detailView updateConstraints];
-        NSLog(@"%@", [NSString stringWithFormat:@"%f", cell.detailHeight.constant]);
+
         [self.tableView beginUpdates];
         [self.tableView endUpdates];
 
