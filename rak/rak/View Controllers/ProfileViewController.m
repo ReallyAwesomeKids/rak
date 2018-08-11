@@ -73,8 +73,18 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     ProfileHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"profileHeader" forIndexPath:indexPath];
-    
     header.user = self.user;
+   
+    UITapGestureRecognizer *heart = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapHeart:)];
+   [header.actAmountImageView addGestureRecognizer:heart];
+    
+    UITapGestureRecognizer *star = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapStar:)];
+   [header.levelImageView addGestureRecognizer:star];
+    
+    UITapGestureRecognizer *fire = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapFire:)];
+    
+   [header.streakImageView addGestureRecognizer:fire];
+    
     return header;
 }
 
@@ -102,7 +112,7 @@
                                           initWithTarget:self
                                           action:@selector(didTapBadge:)];
     [cell addGestureRecognizer:tapGesture];
-
+    
     return cell;
 }
 
@@ -138,7 +148,7 @@
     label.frame = newLabelFrame;
     
     self.popoverVC = [self.storyboard instantiateViewControllerWithIdentifier:@"popover"];
-
+    
     [self.popoverVC.view addSubview:label];
     
     self.popoverVC.preferredContentSize = CGSizeMake(label.frame.size.width + 30, label.frame.size.height + 30);
@@ -147,6 +157,82 @@
     popoverController.delegate = self;
     popoverController.sourceView = cell;
     popoverController.sourceRect = [cell.badgeImageView frame];
+    
+    [self presentViewController:self.popoverVC animated:YES completion:nil];
+}
+
+
+- (IBAction)didTapHeart:(id)sender {
+    NSLog(@"tapping");
+    UITapGestureRecognizer *tapGesture = (UITapGestureRecognizer *)sender;
+    UIView *view = tapGesture.view;
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"Amount of acts done overall";
+    [label sizeToFit];
+    CGRect newLabelFrame = CGRectMake(15, 15, label.frame.size.width, label.frame.size.height);
+    label.frame = newLabelFrame;
+    
+    self.popoverVC = [self.storyboard instantiateViewControllerWithIdentifier:@"popover"];
+    
+    [self.popoverVC.view addSubview:label];
+    
+    self.popoverVC.preferredContentSize = CGSizeMake(label.frame.size.width + 30, label.frame.size.height + 30);
+    self.popoverVC.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController *popoverController = self.popoverVC.popoverPresentationController;
+    popoverController.delegate = self;
+    popoverController.sourceView = view;
+    popoverController.sourceRect = [view frame];
+    
+    [self presentViewController:self.popoverVC animated:YES completion:nil];
+}
+
+- (IBAction)didTapStar:(id)sender {
+        NSLog(@"tapping");
+    UITapGestureRecognizer *tapGesture = (UITapGestureRecognizer *)sender;
+    UIView *view = tapGesture.view;
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"Current Level";
+    [label sizeToFit];
+    CGRect newLabelFrame = CGRectMake(15, 15, label.frame.size.width, label.frame.size.height);
+    label.frame = newLabelFrame;
+    
+    self.popoverVC = [self.storyboard instantiateViewControllerWithIdentifier:@"popover"];
+    
+    [self.popoverVC.view addSubview:label];
+    
+    self.popoverVC.preferredContentSize = CGSizeMake(label.frame.size.width + 30, label.frame.size.height + 30);
+    self.popoverVC.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController *popoverController = self.popoverVC.popoverPresentationController;
+    popoverController.delegate = self;
+    popoverController.sourceView = view;
+    popoverController.sourceRect = [view frame];
+    
+    [self presentViewController:self.popoverVC animated:YES completion:nil];
+}
+
+
+- (IBAction)didTapFire:(id)sender {
+    NSLog(@"tapping");
+    UITapGestureRecognizer *tapGesture = (UITapGestureRecognizer *)sender;
+    UIView *view = tapGesture.view;
+    UILabel *label = [[UILabel alloc] init];
+    label.text = @"Act completion streak";
+    [label sizeToFit];
+    CGRect newLabelFrame = CGRectMake(15, 15, label.frame.size.width, label.frame.size.height);
+    label.frame = newLabelFrame;
+    
+    self.popoverVC = [self.storyboard instantiateViewControllerWithIdentifier:@"popover"];
+    
+    [self.popoverVC.view addSubview:label];
+    
+    self.popoverVC.preferredContentSize = CGSizeMake(label.frame.size.width + 30, label.frame.size.height + 30);
+    self.popoverVC.modalPresentationStyle = UIModalPresentationPopover;
+    UIPopoverPresentationController *popoverController = self.popoverVC.popoverPresentationController;
+    popoverController.delegate = self;
+    popoverController.sourceView = view;
+    popoverController.sourceRect = [view frame];
     
     [self presentViewController:self.popoverVC animated:YES completion:nil];
 }
@@ -161,13 +247,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

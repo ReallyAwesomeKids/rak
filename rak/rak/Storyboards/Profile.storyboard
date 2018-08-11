@@ -106,27 +106,29 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xBB-tv-XMh">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xBB-tv-XMh">
                                             <rect key="frame" x="217" y="55.5" width="51" height="49"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="49" id="WGR-UN-8mS"/>
                                                 <constraint firstAttribute="width" constant="51" id="miS-hF-AgA"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KG2-Xo-izo">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KG2-Xo-izo">
                                             <rect key="frame" x="214" y="73" width="58" height="20"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="ySj-5G-3tV">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire" translatesAutoresizingMaskIntoConstraints="NO" id="ySj-5G-3tV">
                                             <rect key="frame" x="290" y="56" width="50" height="50"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="7PZ-z4-FP2"/>
                                                 <constraint firstAttribute="height" constant="50" id="OeK-Gc-6aZ"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1l-A8-YU6">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1l-A8-YU6">
                                             <rect key="frame" x="312" y="77" width="8" height="21"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -164,15 +166,16 @@
                                                 <constraint firstItem="WqP-Oe-bik" firstAttribute="leading" secondItem="wgz-OG-3ex" secondAttribute="leading" id="wW3-BY-gbb"/>
                                             </constraints>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orangeheart" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-zF-GgH">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orangeheart" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-zF-GgH">
                                             <rect key="frame" x="150" y="56" width="49" height="49"/>
                                             <color key="tintColor" red="0.96384006079999995" green="0.74726083789999997" blue="0.28541666669999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="49" id="oKf-KA-Kv9"/>
                                                 <constraint firstAttribute="width" constant="49" id="rPT-Of-sFr"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="540" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIS-EJ-fQa">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="540" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIS-EJ-fQa">
                                             <rect key="frame" x="158" y="69" width="33.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -206,6 +209,7 @@
                                         <constraint firstAttribute="trailing" secondItem="9C6-ha-B6D" secondAttribute="trailing" constant="16" id="zaL-hK-zrw"/>
                                     </constraints>
                                     <connections>
+                                        <outlet property="actAmountImageView" destination="fDm-zF-GgH" id="3qc-T0-7XH"/>
                                         <outlet property="actsNumberLabel" destination="tIS-EJ-fQa" id="npa-j9-8A8"/>
                                         <outlet property="displayNameLabel" destination="9C6-ha-B6D" id="Qgc-uf-moN"/>
                                         <outlet property="levelImageView" destination="xBB-tv-XMh" id="gwo-DS-cer"/>
@@ -215,6 +219,7 @@
                                         <outlet property="percentBar" destination="wgz-OG-3ex" id="w9U-N9-hXW"/>
                                         <outlet property="percentToNextLevelLabel" destination="WqP-Oe-bik" id="MQL-bX-7qy"/>
                                         <outlet property="profileImageView" destination="p0D-er-isk" id="Uo8-Mw-ULN"/>
+                                        <outlet property="streakImageView" destination="ySj-5G-3tV" id="EJW-3I-MKh"/>
                                         <outlet property="streakNumberLabel" destination="n1l-A8-YU6" id="0zy-GU-4ER"/>
                                     </connections>
                                 </collectionReusableView>

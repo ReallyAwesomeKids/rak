@@ -24,7 +24,6 @@
     
     // Setting streak
     [self.user updateDailyStreak];
-    self.streakLabel.text = [NSString stringWithFormat:@"🔥%ld days", self.user.streak];
     self.streakNumberLabel.text = [NSString stringWithFormat:@"%ld", self.user.streak];
     
     // Setting user level
@@ -43,5 +42,6 @@
     self.movingPercentBar.layer.cornerRadius = self.movingPercentBar.frame.size.height/2;
     self.percentToNextLevelLabel.text = [NSString stringWithFormat:@"%d%% to Level %ld", (int)(percentToNextLevel * 100), levelNumber + 1];
 }
+
 
 @end
