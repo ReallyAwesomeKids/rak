@@ -34,22 +34,22 @@ What mobile features do you leverage?
 **Halima**
 - Hello, I am Gustavo, Haley, Halima, the developers of Do Güd
 - The mission of our app is to incentivize people to do good.
-- We provide three aspects to it: we give ideas, we make a game out of it, and we bring a community together.
+- We approach this goal in three ways: 1) we offer ideas for good deeds, 2) we make a game out of doing these deeds, and 3) we build a community centered on doing good.
 
 **Haley**
 - Meet "Zuck Zuck", he really wanted to do acts of kindness in his community, so he joined Do Güd. 
-- The first thing he did after joining the app was to browse the act catalogue and choose some acts of kindness he wanted to do.
-- He was particularly interested in the Local Needs category that shows opportunities to directly give back his community. 
+- The first thing he did after joining the app was to browse the ideas catalogue and choose some acts of kindness he wanted to do.
+- He was particularly interested in the Local Needs category that shows opportunities to directly give back to his community. 
 - __ZuckZuck reads one of the map acts and adds it__
-- After choosing some acts that he wanted to work on, he went back to the homepage to see the acts he chose and get started
+- Zuckzuck then went back to the homepage to see the acts he chose and got started
 - __ZuckZuck taps on the appreciate act__ "I'm going to do this act of kindness and tell someone I appreciate them"
 - __ZuckZuck tells Halima that he appreciates her. Halima says thanks__
-- After completing the act of kindness, he checked it off. And look at that! He earned an achievement.
+- After doing that kind act, he checked it off the list.
 - __ZuckZuck is excited about the badge he just got.__ "Oh wow! I got a new badge! I'm going to share this accomplishment to the timeline"
 
 **Halima**
 - ZuckZuck posts about his achievement on the timeline and goes to the timeline to see posts by other users.
-- __ZuckZuck reads someone's post aloud.__ "I wonder who else is on this app/
+- __ZuckZuck reads someone's post aloud.__ "I wonder who else is on this app"
 - ZuckZuck searches for other users.
 - __ZuchZuck__: "Oh look it's Sheryl! Wow she did so many acts of kindness __tap on heart__, earned all these badges __tap on a badge__, and has kept up a daily streak for months __tap on streak__! She motivates me to do more acts of kindness and hopefully one day reach her level."
 - Because ZuckZuck wanted to increase his streak, earn more badges, and level up, he started to do more acts of kindness everyday. Before he even knew it, he had brightened the lives of so many people around him. 
