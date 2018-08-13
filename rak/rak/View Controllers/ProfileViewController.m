@@ -28,6 +28,7 @@
     [self fetchBadges];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    
     if (self.user != CustomUser.currentUser) {
         self.settingsButton.enabled = NO;
         self.settingsButton.tintColor = [UIColor clearColor];
@@ -42,11 +43,6 @@
     self.user = (self.userProfile != nil) ? self.userProfile : CustomUser.currentUser;
     [self.collectionView reloadData];
 }
-//
-//- (void)refreshData {
-//    self.userProfile.file = self.user.profileImage;
-//    [self.userProfile loadInBackground];
-//}
 
 - (void)fetchBadges {
     PFQuery *query = [CustomUser query];
@@ -67,12 +63,31 @@
     return self.overallBadges.count + self.streakBadges.count;
 }
 
+
+
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     ProfileHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"profileHeader" forIndexPath:indexPath];
     header.user = self.user;
 
- 
-
+    
+    // THESE ARE NOT WORKING!! //
+    
+//    UITapGestureRecognizer *heartTapGesture = [[UITapGestureRecognizer alloc]
+//                                          initWithTarget:self
+//                                          action:@selector(didTapHeart:)];
+//    [header.actAmountImageView addGestureRecognizer:heartTapGesture];
+//
+//    UITapGestureRecognizer *starTapGesture = [[UITapGestureRecognizer alloc]
+//                                          initWithTarget:self
+//                                          action:@selector(didTapStar:)];
+//    [header.levelImageView addGestureRecognizer:starTapGesture];
+//
+//    UITapGestureRecognizer *fireTapGesture = [[UITapGestureRecognizer alloc]
+//                                              initWithTarget:self
+//                                              action:@selector(didTapFire:)];
+//    [header.streakImageView addGestureRecognizer:fireTapGesture];
+//
+    
     return header;
 }
 
@@ -222,6 +237,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)tapped:(id)sender {
+    NSLog(@"tapppppped");
+}
+
+- (IBAction)tapp:(id)sender {
+    NSLog(@"tffsapppppped");
 }
 
 /*
