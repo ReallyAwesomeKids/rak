@@ -179,13 +179,13 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBX-g4-7D2">
                                                     <rect key="frame" x="8" y="8" width="359" height="107"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pu-Xg-IQg">
+                                                        <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="3pu-Xg-IQg">
                                                             <rect key="frame" x="50" y="66" width="261" height="30"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nsc-E9-8M8">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nsc-E9-8M8">
                                                                     <rect key="frame" x="0.0" y="0.0" width="261" height="30"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="i7g-dS-GaP">
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="i7g-dS-GaP">
                                                                             <rect key="frame" x="0.0" y="0.0" width="126.5" height="30"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" horizontalCompressionResistancePriority="760" verticalCompressionResistancePriority="760" image="expicon" translatesAutoresizingMaskIntoConstraints="NO" id="bnb-Uu-NoK">
@@ -195,25 +195,24 @@
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-oK-LkM">
-                                                                                    <rect key="frame" x="38" y="0.0" width="88.5" height="30"/>
+                                                                                    <rect key="frame" x="38" y="3.5" width="88.5" height="23.5"/>
                                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kRQ-Od-Qxq">
+                                                                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kRQ-Od-Qxq">
                                                                             <rect key="frame" x="134.5" y="0.0" width="126.5" height="30"/>
                                                                             <subviews>
                                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" horizontalCompressionResistancePriority="760" verticalCompressionResistancePriority="760" image="checkicon" translatesAutoresizingMaskIntoConstraints="NO" id="MM9-k8-MQs">
-                                                                                    <rect key="frame" x="0.0" y="2" width="26" height="26"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="26" id="VQ6-CZ-nYy"/>
-                                                                                        <constraint firstAttribute="height" constant="26" id="u8B-hr-g42"/>
+                                                                                        <constraint firstAttribute="width" constant="30" id="VQ6-CZ-nYy"/>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sr-10-PMO">
-                                                                                    <rect key="frame" x="34" y="3.5" width="92.5" height="23.5"/>
+                                                                                    <rect key="frame" x="38" y="3.5" width="88.5" height="23.5"/>
                                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -280,7 +279,7 @@
                                                 <constraint firstItem="UBX-g4-7D2" firstAttribute="top" secondItem="OJ5-FV-LSE" secondAttribute="top" constant="8" id="G3L-vE-gra"/>
                                                 <constraint firstAttribute="trailing" secondItem="UBX-g4-7D2" secondAttribute="trailing" constant="8" id="N6X-XN-Awi"/>
                                                 <constraint firstItem="UBX-g4-7D2" firstAttribute="leading" secondItem="OJ5-FV-LSE" secondAttribute="leading" constant="8" id="Qin-RW-Lps"/>
-                                                <constraint firstAttribute="bottom" secondItem="UBX-g4-7D2" secondAttribute="bottom" constant="-0.5" id="svH-nl-dR2"/>
+                                                <constraint firstAttribute="bottom" secondItem="UBX-g4-7D2" secondAttribute="bottom" id="svH-nl-dR2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -452,7 +451,7 @@
         <image name="Daily Challenges" width="65" height="65"/>
         <image name="category" width="25" height="25"/>
         <image name="check" width="23" height="23"/>
-        <image name="checkicon" width="163" height="164"/>
+        <image name="checkicon" width="180" height="180"/>
         <image name="expicon" width="100" height="100"/>
         <image name="home-1" width="25" height="25"/>
         <image name="profile" width="30" height="30"/>

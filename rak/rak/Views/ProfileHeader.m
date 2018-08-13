@@ -16,8 +16,6 @@
     self.profileImageView.file = self.user.profileImage;
     [self.profileImageView loadInBackground];
     
-    self.levelImageView.image = [UIImage imageNamed:@"level.png"];
-    
     // Setting labels
     self.displayNameLabel.text = self.user.displayName;
     self.actsNumberLabel.text = [NSString stringWithFormat:@"%ld", self.user.amountActsDone];
@@ -41,6 +39,11 @@
     self.movingPercentBarWidthConstraint.constant = newWidth;
     self.movingPercentBar.layer.cornerRadius = self.movingPercentBar.frame.size.height/2;
     self.percentToNextLevelLabel.text = [NSString stringWithFormat:@"%d%% to Level %ld", (int)(percentToNextLevel * 100), levelNumber + 1];
+    
+}
+
+- (IBAction)didTapHeart:(id)sender {
+    NSLog(@"Tapping...");
 }
 
 

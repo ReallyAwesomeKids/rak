@@ -528,7 +528,6 @@
     UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
     cell = (ActsTableViewCell*) gesture.view;
     if (cell.detailViewBool == YES) {
-        NSLog(@"Did tap cell to expand");
         cell.detailViewBool = NO;
         cell.detailHeight.constant = 30;
         [cell.detailView updateConstraints];
@@ -568,7 +567,6 @@
 
     }
     else {
-        NSLog(@"Did tap cell to unexpand");
         cell.detailViewBool = YES;
         cell.detailHeight.constant = 0;
         cell.detailView.hidden = YES;

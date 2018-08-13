@@ -61,51 +61,29 @@
     }];
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
-}
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSArray *overallBadges = self.overallBadges;
-    NSArray *streakBadges = self.streakBadges;
-    return (section == 0) ? overallBadges.count : streakBadges.count;
+    return self.overallBadges.count + self.streakBadges.count;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     ProfileHeader *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"profileHeader" forIndexPath:indexPath];
     header.user = self.user;
-   
-    UITapGestureRecognizer *heart = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapHeart:)];
-   [header.actAmountImageView addGestureRecognizer:heart];
-    
-    UITapGestureRecognizer *star = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapStar:)];
-   [header.levelImageView addGestureRecognizer:star];
-    
-    UITapGestureRecognizer *fire = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapFire:)];
-    
-   [header.streakImageView addGestureRecognizer:fire];
-    
-    return header;
-}
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return CGSizeMake(self.collectionView.bounds.size.width, 205);
-        
-    } else {
-        return CGSizeZero;
-    }
+ 
+
+    return header;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     BadgeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"badgeCell" forIndexPath:indexPath];
     Badge *badge;
-    if (indexPath.section == 0) {
+    if (indexPath.row < self.overallBadges.count)
         badge = self.overallBadges[indexPath.row];
-    }
-    else {
-        badge = self.streakBadges[indexPath.row];
-    }
+    else
+        badge = self.streakBadges[indexPath.row - self.overallBadges.count];
+    
     
     cell.badge = badge;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
