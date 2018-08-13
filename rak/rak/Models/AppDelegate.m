@@ -22,8 +22,8 @@
     [InitializeDB initializeDatabase];
     
     // Nav bar appearence
-    UIImage *navBackgroundImage = [UIImage imageNamed:@"example"];
-    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+  //  UIImage *navBackgroundImage = [UIImage imageNamed:@"example"];
+  //  [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTranslucent:NO];
     
     if (CustomUser.currentUser) {

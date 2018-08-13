@@ -33,7 +33,7 @@
                         <viewLayoutGuide key="safeArea" id="zFr-C0-wDD"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" id="4Jo-WP-XIW">
+                    <navigationItem key="navigationItem" title="Catalogue" id="4Jo-WP-XIW">
                         <barButtonItem key="rightBarButtonItem" image="plus-white" id="Bqb-g0-tgJ">
                             <connections>
                                 <segue destination="QD0-nW-eD2" kind="show" id="dr5-Ti-ZyZ"/>
@@ -68,7 +68,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ctj-aZ-YvQ">
                                 <rect key="frame" x="44" y="176" width="287" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.023529411760000001" green="0.83921568629999999" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.22801518649999999" blue="0.3581522513" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Done"/>
                                 <connections>

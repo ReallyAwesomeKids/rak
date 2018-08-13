@@ -8,7 +8,7 @@
 #import "MessageView.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate, CLLocationManagerDelegate>
+@interface PhotoMapViewController () <MKMapViewDelegate, DescriptionViewControllerDelegate, CLLocationManagerDelegate, MessageViewDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -168,7 +168,7 @@
                 NSLog(@"error: %@", error.localizedDescription);
             else {
                 [MessageView presentMessageViewWithText:@"Act added to home"
-                                    withTapInstructions:nil
+                                          withTapAction:nil
                                        onViewController:self
                                             forDuration:1.5];
             }
@@ -180,6 +180,14 @@
 
 - (IBAction)pinLocation:(id)sender {
     [self performSegueWithIdentifier:@"locationsSegue" sender:nil];
+}
+
+- (void)userDidTapMessage:(id)sender {
+    UITapGestureRecognizer *gestureRecognizer = (UITapGestureRecognizer *)sender;
+    MessageView *messageView = (MessageView *)gestureRecognizer.view;
+    NSString *tapAction = messageView.tapAction;
+    if ([tapAction isEqualToString:@"home"])
+        self.tabBarController.selectedIndex = 0;
 }
 
 #pragma mark - Navigation

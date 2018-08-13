@@ -10,7 +10,7 @@
 
 @protocol MessageViewDelegate
 
-- (void)userDidTapMessage;
+- (IBAction)userDidTapMessage:(id)sender;
 
 @end
 
@@ -19,9 +19,10 @@
 @property (strong, nonatomic) id<MessageViewDelegate> delegate;
 @property (nonatomic) CGFloat hiddenYCor;
 @property (nonatomic) CGFloat shownYCor;
+@property (strong, nonatomic) NSString *tapAction;
 
 + (void)presentMessageViewWithText:(NSString *)text
-               withTapInstructions:(NSString *)tapInstructions
+                     withTapAction:(NSString *)tapAction
                   onViewController:(UIViewController *)vc
                        forDuration:(CGFloat)duration;
 

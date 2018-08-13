@@ -264,7 +264,7 @@
 
     // Notification
     [MessageView presentMessageViewWithText:@"You have completed your Daily Challenge!"
-                        withTapInstructions:@"Tap to the share the story"
+                        withTapAction:@"share"
                            onViewController:self
                                 forDuration:6];
 }
@@ -303,7 +303,7 @@
     self.percentUntilNextLevelText = [NSString stringWithFormat:@"%d%% to Level %ld", (int) (percentUntilNextLevel *100), levelNumber+1];
     NSString *messageString = [NSString stringWithFormat:@"Act of kindness completed. %@", self.percentUntilNextLevelText ];
     [MessageView presentMessageViewWithText: messageString
-                        withTapInstructions:@"Tap to the share the story"
+                        withTapAction:@"share"
                            onViewController:self
                                 forDuration:6];
 }
@@ -322,8 +322,14 @@
     [self performSegueWithIdentifier:@"shareSegue" sender:nil];
 }
 
-- (void)userDidTapMessage {
-    [self performSegueWithIdentifier:@"shareSegue" sender:nil];
+- (IBAction)userDidTapMessage:(id)sender {
+    UITapGestureRecognizer *gestureRecognizer = (UITapGestureRecognizer *)sender;
+    MessageView *messageView = (MessageView *)gestureRecognizer.view;
+    NSString *tapAction = messageView.tapAction;
+    if ([tapAction isEqualToString:@"share"])
+        [self performSegueWithIdentifier:@"shareSegue" sender:nil];
+    else if ([tapAction isEqualToString:@"timeline"])
+        self.tabBarController.selectedIndex = 2;
 }
 
 - (void)userDidClosePopup {
@@ -336,7 +342,7 @@
     self.badgeForPopup = nil;
     self.levelForPopup = 0;
     [MessageView presentMessageViewWithText:@"Achievement shared to timeline"
-                        withTapInstructions:nil
+                        withTapAction:@"timeline"
                            onViewController:self
                                 forDuration:1.5];
 }
@@ -348,7 +354,7 @@
 
 - (void)checkForNoActsChosen {
     if (self.userActs.count == 0) {
-        self.tableView.hidden = YES;
+        self.tableView.hidden = NO;
         if (self.noActsChosenView == nil) {
             [self addNoActsChosenView];
         }
@@ -365,30 +371,36 @@
 
 - (void)addNoActsChosenView {
     CGRect frame = CGRectMake(0,
-                              self.dailyChallengeView.frame.size.height,
+                              self.dailyChallengeView.frame.size.height + 26,
                               self.view.frame.size.width,
-                              self.tableView.frame.size.height);
+                              self.tableView.frame.size.height - 26);
     UIView *view = [[UIView alloc] initWithFrame:frame];
     UILabel *label = [UILabel new];
-    label.text = @"You haven't chosen any acts";
-    label.font = [UIFont systemFontOfSize:36.0];
-    label.textColor = [UIColor colorWithRed:7.0f/255.0f
-                                      green:59.0f/255.0f
-                                       blue:76.0f/255.0f
-                                      alpha:1];
+    label.text = @"You haven't selected\nany acts of kindness";
+    label.font = [UIFont fontWithName:@"Avenir Book" size:30.0];
+    label.textColor = [UIColor darkGrayColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.numberOfLines = 0;
     [label sizeToFit];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"CHOOSE ACTS" forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:20.0];
+    [button setTitle:@"Browse Catalogue" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont fontWithName:@"Avenir Book" size:20.0];
+
+    [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+
     button.titleLabel.numberOfLines = 0;
-    [button setBackgroundColor:[UIColor colorWithRed:7.0f/255.0f
-                                               green:59.0f/255.0f
-                                                blue:76.0f/255.0f
-                                               alpha:1]];
+    [button setBackgroundColor:[[UIColor alloc] initWithRed:255/255.f
+                                                      green:209/255.f
+                                                       blue:102/255.f
+                                                      alpha:1]];
+ 
+    button.layer.cornerRadius = 10;
+    button.clipsToBounds = YES;
     [button sizeToFit];
+    CGRect buttonFrame = button.frame;
+    buttonFrame.size.width += 30;
+    button.frame = buttonFrame;
     
     [button addTarget:self
                action:@selector(didTapCatalogueButton:)
@@ -399,17 +411,13 @@
     
     UIStackView *stackView = [[UIStackView alloc] init];
     stackView.axis = UILayoutConstraintAxisVertical;
-    stackView.distribution = UIStackViewDistributionEqualSpacing;
+    stackView.distribution = UIStackViewDistributionFillProportionally;
     stackView.alignment = UIStackViewAlignmentCenter;
-    stackView.spacing = 20;
+    stackView.spacing = 8;
     [stackView addArrangedSubview:label];
     [stackView addArrangedSubview:button];
-    
-    stackView.frame = CGRectMake(0, 0, 375, 200);
-    NSLog(@"frame: %@", NSStringFromCGRect(label.frame));
-    NSLog(@"frame: %@", NSStringFromCGRect(button.frame));
-    NSLog(@"frame: %@", NSStringFromCGRect(stackView.frame));
-    
+    stackView.frame = CGRectMake(0, 0, 375, 300);
+
     stackView.translatesAutoresizingMaskIntoConstraints = NO;
     
     //Width
@@ -423,6 +431,8 @@
                                        constant:button.frame.size.width + 22];
     
     [stackView addConstraint:buttonWidth];
+
+    
     [view addSubview:stackView];
     
     //CenterX
@@ -469,8 +479,18 @@
     //Add constraints to the Parent
     [view addConstraints:@[centerX, centerY, leading, trailing]];
     
+    
+    UIImageView *background = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
+    background.image = [UIImage imageNamed:@"background3"];
+    background.contentMode = UIViewContentModeScaleAspectFill;
+    background.clipsToBounds = YES;
+    background.alpha = 0.4;
+    
+    [view insertSubview:background belowSubview:stackView];
+    view.backgroundColor = [UIColor whiteColor];
+    
     self.noActsChosenView = view;
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background2"]];
+ 
     [self.view addSubview:self.noActsChosenView];
 }
 

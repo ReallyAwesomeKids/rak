@@ -12,35 +12,38 @@
 @implementation MessageView
 
 - (instancetype)initWithText:(NSString *)text
-         withTapInstructions:(NSString *)tapInstructions
+               withTapAction:(NSString *)tapAction
                      forView:(UIView *)parentView
                 withDelegate:(id<MessageViewDelegate>)delegate {
     self = [super init];
-    [self setBackgroundColor:[UIColor colorWithRed:6.0f/255.0f
-                                             green:214.0f/255.0f
-                                              blue:160.0f/255.0f
-                                             alpha:1]];
+    [self setBackgroundColor:[UIColor darkGrayColor]];
     
     self.delegate = delegate;
+    self.tapAction = tapAction;
     
     // make label
     UILabel *label = [[UILabel alloc] init];
     label.text = text;
     label.font = [UIFont systemFontOfSize:15.0];
-    label.textColor = [UIColor colorWithRed:7.0f/255.0f
-                                      green:59.0f/255.0f
-                                       blue:76.0f/255.0f
-                                      alpha:1];
+    label.textColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;
     [label sizeToFit];
+    
+    NSString *tapInstructions;
+    if ([tapAction isEqualToString:@"share"]) {
+        tapInstructions = @"Tap to share the story";
+    }
+    else if ([tapAction isEqualToString:@"timeline"]) {
+        tapInstructions = @"Tap to view timeline";
+    }
+    else if ([tapAction isEqualToString:@"home"]) {
+        tapInstructions = @"Tap to view home";
+    }
     
     UILabel *tapLabel = [[UILabel alloc] init];
     tapLabel.text = tapInstructions;
     tapLabel.font = [UIFont systemFontOfSize:15.0 weight:UIFontWeightBold];
-    tapLabel.textColor = [UIColor colorWithRed:7.0f/255.0f
-                                         green:59.0f/255.0f
-                                          blue:76.0f/255.0f
-                                         alpha:1];
+    tapLabel.textColor = [UIColor whiteColor];
     tapLabel.textAlignment = NSTextAlignmentCenter;
     [tapLabel sizeToFit];
     
@@ -75,9 +78,9 @@
     self.shownYCor = self.frame.origin.y - self.frame.size.height;
     
     
-    if (tapInstructions != nil) {
+    if (tapAction != nil) {
         [self setUserInteractionEnabled:YES];
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userDidTapMessage)];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userDidTapMessage:)];
         [self addGestureRecognizer:tapGesture];
     }
     
@@ -85,12 +88,12 @@
 }
 
 + (void)presentMessageViewWithText:(NSString *)text
-               withTapInstructions:(NSString *)tapInstructions
+                     withTapAction:(NSString *)tapAction
                   onViewController:(UIViewController<MessageViewDelegate> *)vc
                        forDuration:(CGFloat)duration {
     
     MessageView *messageView = [[MessageView alloc] initWithText:text
-                                             withTapInstructions:tapInstructions
+                                                   withTapAction:tapAction
                                                          forView:vc.view
                                                     withDelegate:vc];
     
@@ -125,10 +128,9 @@
     }];
 }
 
-- (void)userDidTapMessage {
+- (IBAction)userDidTapMessage:(id)sender {
     [self hide];
-    [self.delegate userDidTapMessage];
+    [self.delegate userDidTapMessage:sender];
 }
-
 
 @end

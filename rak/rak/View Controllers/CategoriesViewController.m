@@ -14,7 +14,7 @@
 #import "CustomUser.h"
 #import "MessageView.h"
 
-@interface CategoriesViewController ()<iCarouselDelegate, iCarouselDataSource, UITableViewDelegate, UITableViewDataSource>
+@interface CategoriesViewController ()<iCarouselDelegate, iCarouselDataSource, UITableViewDelegate, UITableViewDataSource, MessageViewDelegate>
 
 @property (strong,nonatomic) NSArray *categories;
 @property (weak, nonatomic) IBOutlet iCarousel *carousel;
@@ -162,7 +162,7 @@
         [CustomUser.currentUser removeActsFromChosenActs:actCell.selectAct];
         chosenActs = [CustomUser.currentUser.chosenActs mutableCopy];
         [MessageView presentMessageViewWithText:@"Act deleted from home"
-                            withTapInstructions:nil
+                            withTapAction:nil
                                onViewController:self
                                     forDuration:1.5];
     }
@@ -170,7 +170,7 @@
     else {
         [chosenActs addObject:actCell.selectAct];
         [MessageView presentMessageViewWithText:@"Act added to home"
-                            withTapInstructions:nil
+                            withTapAction:nil
                                onViewController:self
                                     forDuration:1.5];
     }
@@ -248,6 +248,14 @@
     else {
         return value;
     }
+}
+
+- (void)userDidTapMessage:(id)sender {
+    UITapGestureRecognizer *gestureRecognizer = (UITapGestureRecognizer *)sender;
+    MessageView *messageView = (MessageView *)gestureRecognizer.view;
+    NSString *tapAction = messageView.tapAction;
+    if ([tapAction isEqualToString:@"home"])
+        self.tabBarController.selectedIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning {

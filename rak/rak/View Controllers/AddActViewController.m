@@ -27,13 +27,15 @@
     UIColor *backgroundColor = [UIColor colorWithRed:(247/255.0) green:(247/255.0) blue:(247/255.0) alpha:1.0];
     UIColor *palleteGreen = [UIColor colorWithRed:(6/255.0) green:(214/255.0) blue:(160/255.0) alpha:1.0];
     
+    UIColor *darkBlue = [UIColor colorWithRed:(21/255.0) green:(59/255.0) blue:(91/255.0) alpha:1.0];
+    
     self.menu1 = [[ManaDropDownMenu alloc] initWithFrame:frame title:@"Choose a category"];
     self.menu1.delegate = self;
     self.menu1.numberOfRows = 6;
     self.menu1.textOfRows = @[@"Local Needs", @"Relationship", @"Friends", @"Work", @"Community", @"Family"];
     self.menu1.colorOfRows = @[backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor, backgroundColor];
     self.menu1.heightOfRows = 50;
-    self.menu1.activeColor = palleteGreen;
+    self.menu1.activeColor = darkBlue;
     [self.view addSubview:self.menu1];
 }
 
