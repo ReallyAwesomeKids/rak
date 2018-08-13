@@ -224,7 +224,7 @@
     UIButton *button = (UIButton *)sender;
     ActsTableViewCell *cell =  (ActsTableViewCell *)button.superview.superview.superview;
     cell.timesDone += 1;
-    cell.detailViewTimesDone.text = [NSString stringWithFormat:@"%@  %ld",@"Done:",  (long)cell.timesDone];
+    cell.detailViewTimesDone.text = [NSString stringWithFormat:@"%ld",  (long)cell.timesDone];
     Act *act = cell.act;
     [self userDidCompleteAct:act];
 }
@@ -510,7 +510,7 @@
     if (cell.detailViewBool == YES) {
         NSLog(@"Did tap cell to expand");
         cell.detailViewBool = NO;
-        cell.detailHeight.constant = 46;
+        cell.detailHeight.constant = 30;
         [cell.detailView updateConstraints];
         
         if (cell.imageViewExpandedTopConstraint == nil) {

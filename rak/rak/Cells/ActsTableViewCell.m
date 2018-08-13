@@ -20,8 +20,8 @@
     else
         self.timesDone = history.count;
     
-    self.detailViewPoints.text = [NSString stringWithFormat:@"%@ %ld", @"Points:", (long)self.act.pointsWorth];
-    self.detailViewTimesDone.text = [NSString stringWithFormat:@"%@  %ld",@"Done:",  (long)self.timesDone];
+    self.detailViewPoints.text = [NSString stringWithFormat:@"%ld pts", (long)self.act.pointsWorth];
+    self.detailViewTimesDone.text = [NSString stringWithFormat:@"%ld", (long)self.timesDone];
 }
 
 - (void)configureCategoryImage {
