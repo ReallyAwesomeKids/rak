@@ -25,7 +25,7 @@
 - (void)menuSetup {
     CGRect frame = CGRectMake((CGRectGetWidth(self.view.frame)-240)/2, 45, 240, 37);
     UIColor *backgroundColor = [UIColor colorWithRed:(247/255.0) green:(247/255.0) blue:(247/255.0) alpha:1.0];
-    UIColor *palleteGreen = [UIColor colorWithRed:(6/255.0) green:(214/255.0) blue:(160/255.0) alpha:1.0];
+   // UIColor *palleteGreen = [UIColor colorWithRed:(6/255.0) green:(214/255.0) blue:(160/255.0) alpha:1.0];
     
     UIColor *darkBlue = [UIColor colorWithRed:(21/255.0) green:(59/255.0) blue:(91/255.0) alpha:1.0];
     

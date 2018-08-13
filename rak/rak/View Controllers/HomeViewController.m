@@ -413,7 +413,7 @@
     stackView.axis = UILayoutConstraintAxisVertical;
     stackView.distribution = UIStackViewDistributionFillProportionally;
     stackView.alignment = UIStackViewAlignmentCenter;
-    stackView.spacing = 8;
+    stackView.spacing = 10;
     [stackView addArrangedSubview:label];
     [stackView addArrangedSubview:button];
     stackView.frame = CGRectMake(0, 0, 375, 300);

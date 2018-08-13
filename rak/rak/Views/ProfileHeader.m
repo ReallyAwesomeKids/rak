@@ -34,7 +34,7 @@
     float percentToNextLevel = [PointToLevelConverter getPercentToNextLevelFromPoints:self.user.experiencePoints];
   
     self.percentBar.layer.borderColor = [UIColor orangeColor].CGColor;
-    self.percentBar.layer.borderWidth = 2.0f;
+    self.percentBar.layer.borderWidth = 1.0f;
     self.percentBar.layer.cornerRadius = self.percentBar.frame.size.height/2;    
     
     CGFloat newWidth = self.percentBar.frame.size.width * percentToNextLevel;
