@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupLogoLabel];
+    self.usernameTextField.text = @"zuck";
+    self.passwordTextField.text = @"zuck";
 }
 
 - (void)setupLogoLabel {
