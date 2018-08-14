@@ -27,11 +27,12 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 200;
 }
 
 - (void) refreshControlSetup {
     self.refreshControl = [[UIRefreshControl alloc] init];
-
+    
     // Programagtic view of dragging and dropping in code
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     
@@ -53,7 +54,6 @@
             // do something with the array of object returned by the call
             for (PFObject *post in posts) {
                 [self.timelinePosts addObject:post];
-                NSLog(@"%@", self.timelinePosts);
                 [self.tableView reloadData];
                 [self.refreshControl endRefreshing];
             }
@@ -71,6 +71,42 @@
     Post *post = self.timelinePosts[indexPath.row];
     cell.post = post;
     cell.delegate = self;
+    
+    [cell.timelinePostImage removeConstraints:cell.timelinePostImage.constraints];
+
+    // Checks if post has an image
+    if ([[APIManager shared] checksForAFile:cell.post.image]) {
+        cell.timelinePostImage.file = cell.post.image;
+        [cell.timelinePostImage loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+           
+            CGFloat imageHeight = image.size.height;
+            CGFloat imageWidth = image.size.width;
+            NSLayoutConstraint *aspectRatio = [NSLayoutConstraint
+                                               constraintWithItem:cell.timelinePostImage
+                                               attribute:NSLayoutAttributeHeight
+                                               relatedBy:NSLayoutRelationEqual
+                                               toItem:cell.timelinePostImage
+                                               attribute:NSLayoutAttributeWidth
+                                               multiplier:(imageHeight / imageWidth)
+                                               constant:0];
+            [cell.timelinePostImage addConstraint:aspectRatio];
+             [self.tableView beginUpdates];
+            [self.tableView endUpdates];
+        }];
+    } else {
+        cell.timelinePostImage.image = nil;
+        NSLayoutConstraint *height = [NSLayoutConstraint
+                                           constraintWithItem:cell.timelinePostImage
+                                           attribute:NSLayoutAttributeHeight
+                                           relatedBy:NSLayoutRelationEqual
+                                           toItem:nil
+                                           attribute:NSLayoutAttributeNotAnAttribute
+                                           multiplier:1
+                                           constant:0];
+        [cell.timelinePostImage addConstraint:height];
+        [self.tableView beginUpdates];
+        [self.tableView endUpdates];
+    }
 
     // tap profile picture leads to profile page
     UITapGestureRecognizer *iconGesture = [[UITapGestureRecognizer alloc]
@@ -90,24 +126,24 @@
     // grab an item we want to share
     NSString *text= cell.post.caption;
     NSArray *items = @[text];
-
+    
     // build an activity view controller
     UIActivityViewController *controller = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
     
     NSArray *excluded = @[UIActivityTypePostToWeibo,
-                         UIActivityTypeMessage,
-                         UIActivityTypePrint,
-                         UIActivityTypeCopyToPasteboard,
-                         UIActivityTypeAssignToContact,
-                         UIActivityTypeSaveToCameraRoll,
-                         UIActivityTypeAddToReadingList,
-                         UIActivityTypePostToFlickr,
-                         UIActivityTypePostToVimeo,
-                         UIActivityTypePostToTencentWeibo,
-                         UIActivityTypeAirDrop,
-                         UIActivityTypeOpenInIBooks];
+                          UIActivityTypeMessage,
+                          UIActivityTypePrint,
+                          UIActivityTypeCopyToPasteboard,
+                          UIActivityTypeAssignToContact,
+                          UIActivityTypeSaveToCameraRoll,
+                          UIActivityTypeAddToReadingList,
+                          UIActivityTypePostToFlickr,
+                          UIActivityTypePostToVimeo,
+                          UIActivityTypePostToTencentWeibo,
+                          UIActivityTypeAirDrop,
+                          UIActivityTypeOpenInIBooks];
     controller.excludedActivityTypes = excluded;
-
+    
     // and present it
     [self presentViewController:controller animated:YES completion:^{
         // executes after the user selects something
@@ -135,20 +171,20 @@
     [super didReceiveMemoryWarning];
 }
 
- #pragma mark - Navigation
+#pragma mark - Navigation
 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-     TimelineTableViewCell *tappedCell = sender;
-
-     if ([segue.identifier  isEqual: @"goToProfileViewSegue"]) {
-         ProfileViewController *profileViewController = [segue destinationViewController];
-         profileViewController.userProfile = tappedCell.post.author;
-     }
-     if ([segue.identifier isEqualToString:@"composeSegue"]) {
-         ComposingViewController *composingVC = (ComposingViewController *)[segue destinationViewController];
-         composingVC.delegate = self;
-     }
- }
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    TimelineTableViewCell *tappedCell = sender;
+    
+    if ([segue.identifier  isEqual: @"goToProfileViewSegue"]) {
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        profileViewController.userProfile = tappedCell.post.author;
+    }
+    if ([segue.identifier isEqualToString:@"composeSegue"]) {
+        ComposingViewController *composingVC = (ComposingViewController *)[segue destinationViewController];
+        composingVC.delegate = self;
+    }
+}
 
 @end

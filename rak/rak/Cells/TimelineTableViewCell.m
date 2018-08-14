@@ -10,48 +10,20 @@
     // parse objects setup
     _post = post;
     self.user = CustomUser.currentUser;
-    __weak TimelineTableViewCell *weakSelf = self;
-
-    
+   
     // Setting texts/labels
     self.timelineText.text = self.post.caption;
     self.timelineProfileName.text = [NSString stringWithFormat: @"%@", self.post.author.displayName];
-    self.timelineTimestamp.text = [NSString stringWithFormat: @"• %@", [self.post creatingTimestamp]];
+    self.timelineTimestamp.text = [NSString stringWithFormat: @" • %@", [self.post creatingTimestamp]];
 
     
-    self.timelineLevel.text = [NSString stringWithFormat:@"Level %ld", (long)[PointToLevelConverter
+    self.timelineLevel.text = [NSString stringWithFormat:@" Level %ld", (long)[PointToLevelConverter
                                                                               getCurrentLevelFromPoints:post.author.experiencePoints]];
     
     // Setting profile picture
     self.timelineProfilePicture.file = self.post.author.profileImage;
     self.timelineProfilePicture.layer.cornerRadius = self.timelineProfilePicture.frame.size.height/2;
     [self.timelineProfilePicture loadInBackground];
-    
-    // Checks if post has an image
-    if ([[APIManager shared] checksForAFile:self.post.image]) {
-        self.timelinePostImage.file = self.post.image;
-        [self.timelinePostImage loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
-            // Programatically adjusts size of the cell if image has text, no text, image, no image
-            CGFloat imageWidth = image.size.width;
-            CGFloat imageHeight = image.size.height;
-            CGFloat newImageHeightConstraintConstant = (imageHeight * self.timelinePostImageWidthConstraint.constant) / imageWidth;
-            self.timelinePostImageHeightConstraint.constant = newImageHeightConstraintConstant;
-            
-            // fade-in image implementation
-            weakSelf.timelinePostImage.alpha = 0.0;
-            weakSelf.timelinePostImage.image = image;
-            
-            //Animate UIImageView back to alpha 1 over 0.3sec
-            [UIView animateWithDuration:0.1 animations:^{
-                weakSelf.timelinePostImage.alpha = 1.0;
-            }];
-        }];
-        self.postImageToButtonConstraint.constant = 12;
-    } else {
-        self.timelinePostImage.image = nil;
-        self.timelinePostImageHeightConstraint.constant = 0;
-        self.postImageToButtonConstraint.constant = 0;
-    }
     
     [self.dotButton addTarget:self
                        action:@selector(didTapMore:)
