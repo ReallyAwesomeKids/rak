@@ -38,9 +38,9 @@ What mobile features do you leverage?
 
 **Haley**
 - Meet "Zuck Zuck", he really wanted to do acts of kindness in his community, so he joined Do Güd. 
-- The first thing he did after joining the app was to browse the ideas catalogue. He can select the acts that he likes and they will be added to his homepage. He also has the ability to contribute his own ideas to the catalogue.
-- He was particularly interested in the Local Needs category that shows opportunities to directly give back to his community. 
-- __ZuckZuck reads one of the map acts and adds it__
+- The first thing he did after joining the app was to browse the ideas catalogue to find acts of kindness he wants to do.
+- He was particularly interested in the Local Needs category that shows opportunities to directly give back to his community. On this page he also has the ability to add an opportunity to the map.
+- __ZuckZuck reads out what he is adding__
 - Zuckzuck then went back to the homepage to see the acts he chose and got started
 - __ZuckZuck taps on the appreciate act__ "I'm going to do this act of kindness and tell someone I appreciate them"
 - __ZuckZuck tells Halima that he appreciates her. Halima says thanks__
